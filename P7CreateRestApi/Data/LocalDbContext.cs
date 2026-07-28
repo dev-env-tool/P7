@@ -3,9 +3,9 @@ using Dot.Net.WebApi.Domain;
 
 namespace Dot.Net.WebApi.Data
 {
-    public class LocalDbContext : DbContext
+    public class P7Referential : DbContext
     {
-        public LocalDbContext(DbContextOptions<LocalDbContext> options) : base(options) { }
+        public P7Referential(DbContextOptions<P7Referential> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

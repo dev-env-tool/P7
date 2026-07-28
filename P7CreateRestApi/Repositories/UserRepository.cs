@@ -6,22 +6,24 @@ namespace Dot.Net.WebApi.Repositories
 {
     public class UserRepository
     {
-        public LocalDbContext DbContext { get; }
 
-        public UserRepository(LocalDbContext dbContext)
+        private static P7Referential? _context;
+
+        public UserRepository(P7Referential context)
         {
-            DbContext = dbContext;
+            _context = context;
         }
+
 
         public User FindByUserName(string userName)
         {
-            return DbContext.Users.Where(user => user.UserName == userName)
+            return _context.Users.Where(user => user.UserName == userName)
                                   .FirstOrDefault();
         }
 
-        public async Task<List<User>> FindAll()
+        public async Task<List<User>> FindAllUsers()
         {
-            return await DbContext.Users.ToListAsync();
+            return await _context.Users.ToListAsync();
         }
 
         public void Add(User user)
@@ -30,7 +32,8 @@ namespace Dot.Net.WebApi.Repositories
 
         public User FindById(int id)
         {
-            return null;
+            return _context.Users.Where(user => user.Id == id)
+                                  .FirstOrDefault();
         }
     }
 }
