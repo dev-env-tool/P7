@@ -5,7 +5,7 @@ namespace Dot.Net.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class CurveController : ControllerBase
+    public class CurvesController : ControllerBase
     {
         // TODO: Inject Curve Point service
 

@@ -5,7 +5,7 @@ namespace Dot.Net.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class TradeController : ControllerBase
+    public class TradesController : ControllerBase
     {
         // TODO: Inject Trade service
 

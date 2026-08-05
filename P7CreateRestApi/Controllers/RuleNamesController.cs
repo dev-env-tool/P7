@@ -4,7 +4,7 @@ namespace Dot.Net.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class RuleNameController : ControllerBase
+    public class RuleNamesController : ControllerBase
     {
         // TODO: Inject RuleName service
 

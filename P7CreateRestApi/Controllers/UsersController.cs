@@ -6,11 +6,11 @@ namespace Dot.Net.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class UserController : ControllerBase
+    public class UsersController : ControllerBase
     {
         private UserRepository _userRepository;
 
-        public UserController(UserRepository userRepository)
+        public UsersController(UserRepository userRepository)
         {
             _userRepository = userRepository;
         }

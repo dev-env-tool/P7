@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace Dot.Net.WebApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class BidListController : ControllerBase
+    [Route("api/[controller]")]
+    public class BidListsController : ControllerBase
     {
         [HttpGet]
         [Route("validate")]
@@ -15,9 +15,17 @@ namespace Dot.Net.WebApi.Controllers
             return Ok();
         }
 
+
+        [HttpGet]
+        [Route("")]
+        public IActionResult ShowUpdateForm(int id)
+        {
+            return Ok();
+        }
+
         [HttpGet]
         [Route("update/{id}")]
-        public IActionResult ShowUpdateForm(int id)
+        public IActionResult ShowUpdateFormById(int id)
         {
             return Ok();
         }

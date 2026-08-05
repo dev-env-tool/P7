@@ -11,7 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<LocalDbContext>(options =>
+builder.Services.AddDbContext<P7Referential>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("P7Referential")));
 
 var app = builder.Build();
