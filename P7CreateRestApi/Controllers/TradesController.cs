@@ -1,4 +1,4 @@
-using Dot.Net.WebApi.Domain;
+using P7CreateRestApi.Domain;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Dot.Net.WebApi.Controllers

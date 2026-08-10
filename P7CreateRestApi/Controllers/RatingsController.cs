@@ -1,59 +1,105 @@
 using Dot.Net.WebApi.Controllers.Domain;
+using P7CreateRestApi.Domain;
+using P7CreateRestApi.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using P7CreateRestApi.IRepositories;
+using System.Collections;
+using System.Diagnostics;
 
 namespace Dot.Net.WebApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class RatingsController : ControllerBase
     {
-        // TODO: Inject Rating service
+        private IRatingRepository _RatingRepository;
 
-        [HttpGet]
-        [Route("list")]
-        public IActionResult Home()
+        public RatingsController(IRatingRepository RatingRepository)
         {
-            // TODO: find all Rating, add to model
-            return Ok();
+            _RatingRepository = RatingRepository;
         }
 
         [HttpGet]
-        [Route("add")]
-        public IActionResult AddRatingForm([FromBody]Rating rating)
+        [Route("")]
+        public async Task<IActionResult> GetAllRatings()
         {
-            return Ok();
+            IEnumerable<Rating> listOfRatings = await _RatingRepository.GetAllRatings();
+            if (listOfRatings.Count() == 0)
+            {
+                return NotFound("No information found.");
+            }
+            return Ok(listOfRatings);
         }
+
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> GetRatingById(int id)
+        {
+            IEnumerable<Rating> listOfRatings = await _RatingRepository.GetRatingById(id);
+
+            if (id == 0)
+            {
+                return BadRequest("Bad request. ID must be an integer and larger than 0.");
+            }
+            if (listOfRatings.Count() == 0)
+            {
+                return NotFound("A user with the specified ID was not found.");
+            }
+            return Ok(listOfRatings);
+        }
+
 
         [HttpGet]
         [Route("validate")]
-        public IActionResult Validate([FromBody]Rating rating)
+        private IActionResult ValidateRatingById([FromBody] Rating rating)
         {
-            // TODO: check data valid and save to db, after saving return Rating list
+            // TODO: check data valid and save to db, after saving return bid list
             return Ok();
         }
 
-        [HttpGet]
-        [Route("update/{id}")]
-        public IActionResult ShowUpdateForm(int id)
-        {
-            // TODO: get Rating by Id and to model then show to the form
-            return Ok();
-        }
 
         [HttpPost]
-        [Route("update/{id}")]
-        public IActionResult UpdateRating(int id, [FromBody] Rating rating)
+        [Route("")]
+        public IActionResult CreateRating(int id, [FromBody] Rating rating)
         {
-            // TODO: check required fields, if valid call service to update Rating and return Rating list
+            // TODO: check required fields, if valid call service to update Bid and return list Bid
+            _RatingRepository.CreateRating(rating);
+            return Ok();
+        }
+
+
+
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> UpdateRatingById(int id, [FromBody] Rating rating)
+        {
+            // TODO: check required fields, if valid call service to update Bid and return list Bid
+            await _RatingRepository.UpdateRating(rating);
             return Ok();
         }
 
         [HttpDelete]
         [Route("{id}")]
-        public IActionResult DeleteRating(int id)
+        public async Task<IActionResult> DeleteRating(int id)
         {
-            // TODO: Find Rating by Id and delete the Rating, return to Rating list
-            return Ok();
+            if (id == 0)
+            {
+                return BadRequest("Bad request. User ID must be an integer and larger than 0.");
+            }
+            if (id > 0)
+            {
+                _RatingRepository.DeleteRatingById(id);
+                IEnumerable<Rating> listOfRatings = await _RatingRepository.GetRatingById(id);
+                if (listOfRatings.Count() == 0)
+                {
+                    return Ok("The item was deleted with success.");
+                }
+                else
+                {
+                    return StatusCode(500, "Unexpected error happened.");
+                }
+            }
+            return StatusCode(500, "Unexpected error happened.");
         }
     }
 }
