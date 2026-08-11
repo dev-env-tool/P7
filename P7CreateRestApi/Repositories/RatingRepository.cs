@@ -39,10 +39,14 @@ namespace P7CreateRestApi.Repositories
 
         public async Task UpdateRating(Rating rating)
         {
+            int maxRatingId = await GetMaxRatingId();
             if (rating != null)
             {
-                _context!.Entry(rating).State = EntityState.Modified;
-                _context.SaveChanges();
+                if ((rating.Id > 0) && (rating.Id <= maxRatingId))
+                {
+                    _context!.Entry(rating).State = EntityState.Modified;
+                    _context.SaveChanges();
+                }
             }
         }
 
@@ -56,6 +60,11 @@ namespace P7CreateRestApi.Repositories
                 _context!.Ratings.Remove(rating);
                 _context.SaveChanges();
             }
+        }
+        private static async Task<int> GetMaxRatingId()
+        {
+            int maxRatingId = _context!.Ratings.Select(r => r.Id).Max();
+            return await Task.FromResult(maxRatingId);
         }
     }
 }

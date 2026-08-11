@@ -40,12 +40,12 @@
 
 
 //using Dot.Net.WebApi.Controllers.Domain;
-//using P7CreateRestApi.Data;
-//using P7CreateRestApi.Domain;
 //using Microsoft.EntityFrameworkCore;
 //using P7CreateRestApi.Data;
+//using P7CreateRestApi.Domain;
 //using P7CreateRestApi.IRepositories;
 //using System.Collections;
+//using System.Diagnostics;
 
 //namespace P7CreateRestApi.Repositories
 //{
@@ -81,10 +81,14 @@
 
 //        public async Task UpdateUser(User user)
 //        {
+//            int maxUserId = await GetMaxUserId();
 //            if (user != null)
 //            {
-//                _context.Entry(user).State = EntityState.Modified;
-//                _context.SaveChanges();
+//                if ((user.Id > 0) && (user.Id <= maxUserId))
+//                {
+//                    _context.Entry(user).State = EntityState.Modified;
+//                    _context!.SaveChanges();
+//                }
 //            }
 //        }
 
@@ -96,8 +100,15 @@
 //            if (user != null)
 //            {
 //                _context!.Users.Remove(user);
-//                _context.SaveChanges();
+//                _context!.SaveChanges();
 //            }
+//        }
+
+
+//        private static async Task<int> GetMaxUserId()
+//        {
+//            int maxUserId = _context!.Users.Select(u => u.Id).Max();
+//            return await Task.FromResult(maxUserId);
 //        }
 //    }
 //}

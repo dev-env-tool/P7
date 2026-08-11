@@ -39,10 +39,14 @@ namespace P7CreateRestApi.Repositories
         }
         public async Task UpdateRuleName(RuleName ruleName)
         {
+            int maxRuleNameId = await GetMaxRuleNameId();
             if (ruleName != null)
             {
-                _context!.Entry(ruleName).State = EntityState.Modified;
-                _context.SaveChanges();
+                if ((ruleName.Id > 0) && (ruleName.Id <= maxRuleNameId))
+                {
+                    _context!.Entry(ruleName).State = EntityState.Modified;
+                    _context.SaveChanges();
+                }
             }
         }
 
@@ -55,6 +59,11 @@ namespace P7CreateRestApi.Repositories
                 _context!.RuleNames.Remove(ruleName);
                 _context.SaveChanges();
             }
+        }
+        private static async Task<int> GetMaxRuleNameId()
+        {
+            int maxRuleNameId = _context!.RuleNames.Select(r => r.Id).Max();
+            return await Task.FromResult(maxRuleNameId);
         }
     }
 }
