@@ -1,29 +1,21 @@
 using P7CreateRestApi.Domain;
-using P7CreateRestApi.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using P7CreateRestApi.IRepositories;
-using System.Collections;
-using System.Diagnostics;
 
-namespace Dot.Net.WebApi.Controllers
+namespace P7CreateRestApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class BidListsController : ControllerBase
+    public class BidListsController(IBidListRepository bidListRepository) : ControllerBase
     {
-        private IBidListRepository _bidListRepository;
-
-        public BidListsController(IBidListRepository bidListRepository)
-        {
-            _bidListRepository = bidListRepository;
-        }
+        private readonly IBidListRepository _bidListRepository = bidListRepository;
 
         [HttpGet]
         [Route("")]
         public async Task<IActionResult> GetAllBidLists()
         {
             IEnumerable<BidList> listOfBidLists = await _bidListRepository.GetAllBidLists();
-            if (listOfBidLists.Count() == 0)
+            if (!listOfBidLists.Any())
             {
                 return NotFound("No information found.");
             }
@@ -40,9 +32,9 @@ namespace Dot.Net.WebApi.Controllers
             {
                 return BadRequest("Bad request. ID must be an integer and larger than 0.");
             }
-            if (listOfBidLists.Count() == 0)
+            if (!listOfBidLists.Any())
             {
-                return NotFound("A user with the specified ID was not found.");
+                return NotFound("The information with the specified ID was not found.");
             }
             return Ok(listOfBidLists);
         }
@@ -50,7 +42,7 @@ namespace Dot.Net.WebApi.Controllers
 
         [HttpGet]
         [Route("validate")]
-        private IActionResult ValidateBidListById([FromBody] BidList bidList)
+        private IActionResult ValidateBidListById([FromBody] BidList BidList)
         {
             // TODO: check data valid and save to db, after saving return bid list
             return Ok();
@@ -59,19 +51,21 @@ namespace Dot.Net.WebApi.Controllers
 
         [HttpPost]
         [Route("")]
-        public IActionResult CreateBidList(int id, [FromBody] BidList bidList)
+        public IActionResult CreateBidList([FromBody] BidList BidList)
         {
             // TODO: check required fields, if valid call service to update Bid and return list Bid
+            _bidListRepository.CreateBidList(BidList);
             return Ok();
         }
 
 
 
         [HttpPut]
-        [Route("{id}")]
-        public IActionResult UpdateBidListById(int id, [FromBody] BidList bidList)
+        [Route("")]
+        public async Task<IActionResult> UpdateBidListById([FromBody] BidList BidList)
         {
             // TODO: check required fields, if valid call service to update Bid and return list Bid
+            await _bidListRepository.UpdateBidList(BidList);
             return Ok();
         }
 
@@ -84,10 +78,10 @@ namespace Dot.Net.WebApi.Controllers
                 return BadRequest("Bad request. User ID must be an integer and larger than 0.");
             }
             if (id > 0)
-            { 
+            {
                 _bidListRepository.DeleteBidListById(id);
-                IEnumerable<BidList> listofBidLists = await _bidListRepository.GetBidListById(id);
-                if (listofBidLists.Count() == 0)
+                IEnumerable<BidList> listOfBidLists = await _bidListRepository.GetBidListById(id);
+                if (!listOfBidLists.Any())
                 {
                     return Ok("The item was deleted with success.");
                 }
@@ -96,7 +90,7 @@ namespace Dot.Net.WebApi.Controllers
                     return StatusCode(500, "Unexpected error happened.");
                 }
             }
-            return StatusCode(500,"Unexpected error happened.");
+            return StatusCode(500, "Unexpected error happened.");
         }
     }
 }

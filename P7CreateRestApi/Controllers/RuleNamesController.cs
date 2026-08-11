@@ -1,58 +1,98 @@
+using P7CreateRestApi.Controllers;
+//using P7CreateRestApi.Controllers.Domain;
 using Microsoft.AspNetCore.Mvc;
+using P7CreateRestApi.Domain;
+using P7CreateRestApi.IRepositories;
 
-namespace Dot.Net.WebApi.Controllers
+namespace P7CreateRestApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class RuleNamesController : ControllerBase
+    [Route("api/[controller]")]
+    public class RuleNamesController(IRuleNameRepository ruleNameRepository) : ControllerBase
     {
-        // TODO: Inject RuleName service
+        private readonly IRuleNameRepository _ruleNameRepository = ruleNameRepository;
 
         [HttpGet]
-        [Route("list")]
-        public IActionResult Home()
+        [Route("")]
+        public async Task<IActionResult> GetAllRuleNames()
         {
-            // TODO: find all RuleName, add to model
-            return Ok();
+            IEnumerable<RuleName> listOfRuleNames = await _ruleNameRepository.GetAllRuleNames();
+            if (!listOfRuleNames.Any())
+            {
+                return NotFound("No information found.");
+            }
+            return Ok(listOfRuleNames);
         }
 
         [HttpGet]
-        [Route("add")]
-        public IActionResult AddRuleName([FromBody]RuleName trade)
+        [Route("{id}")]
+        public async Task<IActionResult> GetRuleNameById(int id)
         {
-            return Ok();
+            IEnumerable<RuleName> listOfRuleNames = await _ruleNameRepository.GetRuleNameById(id);
+
+            if (id == 0)
+            {
+                return BadRequest("Bad request. ID must be an integer and larger than 0.");
+            }
+            if (!listOfRuleNames.Any())
+            {
+                return NotFound("The information with the specified ID was not found.");
+            }
+            return Ok(listOfRuleNames);
         }
+
 
         [HttpGet]
         [Route("validate")]
-        public IActionResult Validate([FromBody]RuleName trade)
+        private IActionResult ValidateRuleNameById([FromBody] RuleName ruleName)
         {
-            // TODO: check data valid and save to db, after saving return RuleName list
+            // TODO: check data valid and save to db, after saving return bid list
             return Ok();
         }
 
-        [HttpGet]
-        [Route("update/{id}")]
-        public IActionResult ShowUpdateForm(int id)
-        {
-            // TODO: get RuleName by Id and to model then show to the form
-            return Ok();
-        }
 
         [HttpPost]
-        [Route("update/{id}")]
-        public IActionResult UpdateRuleName(int id, [FromBody] RuleName rating)
+        [Route("")]
+        public IActionResult CreateRuleName([FromBody] RuleName ruleName)
         {
-            // TODO: check required fields, if valid call service to update RuleName and return RuleName list
+            // TODO: check required fields, if valid call service to update Bid and return list Bid
+            _ruleNameRepository.CreateRuleName(ruleName);
+            return Ok();
+        }
+
+
+
+        [HttpPut]
+        [Route("")]
+        public async Task<IActionResult> UpdateRuleNameById([FromBody] RuleName ruleName)
+        {
+            // TODO: check required fields, if valid call service to update Bid and return list Bid
+            await _ruleNameRepository.UpdateRuleName(ruleName);
             return Ok();
         }
 
         [HttpDelete]
         [Route("{id}")]
-        public IActionResult DeleteRuleName(int id)
+        public async Task<IActionResult> DeleteRuleName(int id)
         {
-            // TODO: Find RuleName by Id and delete the RuleName, return to Rule list
-            return Ok();
+            if (id == 0)
+            {
+                return BadRequest("Bad request. The information ID must be an integer and larger than 0.");
+            }
+            if (id > 0)
+            {
+                _ruleNameRepository.DeleteRuleNameById(id);
+                IEnumerable<RuleName> listOfRuleNames = await _ruleNameRepository.GetRuleNameById(id);
+                if (!listOfRuleNames.Any())
+                {
+                    return Ok("The item was deleted with success.");
+                }
+                else
+                {
+                    return StatusCode(500, "Unexpected error happened.");
+                }
+            }
+            return StatusCode(500, "Unexpected error happened.");
         }
     }
 }

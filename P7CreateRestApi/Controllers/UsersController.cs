@@ -8,7 +8,7 @@
 //    [Route("[controller]")]
 //    public class UsersController : ControllerBase
 //    {
-//        private UserRepository _userRepository;
+//        private readonly UserRepository _userRepository;
 
 //        public UsersController(UserRepository userRepository)
 //        {

@@ -1,30 +1,21 @@
-using Dot.Net.WebApi.Controllers.Domain;
 using P7CreateRestApi.Domain;
-using P7CreateRestApi.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using P7CreateRestApi.IRepositories;
-using System.Collections;
-using System.Diagnostics;
 
-namespace Dot.Net.WebApi.Controllers
+namespace P7CreateRestApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class RatingsController : ControllerBase
+    public class RatingsController(IRatingRepository ratingRepository) : ControllerBase
     {
-        private IRatingRepository _RatingRepository;
-
-        public RatingsController(IRatingRepository RatingRepository)
-        {
-            _RatingRepository = RatingRepository;
-        }
+        private readonly IRatingRepository _ratingRepository = ratingRepository;
 
         [HttpGet]
         [Route("")]
         public async Task<IActionResult> GetAllRatings()
         {
-            IEnumerable<Rating> listOfRatings = await _RatingRepository.GetAllRatings();
-            if (listOfRatings.Count() == 0)
+            IEnumerable<Rating> listOfRatings = await _ratingRepository.GetAllRatings();
+            if (!listOfRatings.Any())
             {
                 return NotFound("No information found.");
             }
@@ -35,15 +26,15 @@ namespace Dot.Net.WebApi.Controllers
         [Route("{id}")]
         public async Task<IActionResult> GetRatingById(int id)
         {
-            IEnumerable<Rating> listOfRatings = await _RatingRepository.GetRatingById(id);
+            IEnumerable<Rating> listOfRatings = await _ratingRepository.GetRatingById(id);
 
             if (id == 0)
             {
                 return BadRequest("Bad request. ID must be an integer and larger than 0.");
             }
-            if (listOfRatings.Count() == 0)
+            if (!listOfRatings.Any())
             {
-                return NotFound("A user with the specified ID was not found.");
+                return NotFound("The information with the specified ID was not found.");
             }
             return Ok(listOfRatings);
         }
@@ -60,21 +51,21 @@ namespace Dot.Net.WebApi.Controllers
 
         [HttpPost]
         [Route("")]
-        public IActionResult CreateRating(int id, [FromBody] Rating rating)
+        public IActionResult CreateRating([FromBody] Rating rating)
         {
             // TODO: check required fields, if valid call service to update Bid and return list Bid
-            _RatingRepository.CreateRating(rating);
+            _ratingRepository.CreateRating(rating);
             return Ok();
         }
 
 
 
         [HttpPut]
-        [Route("{id}")]
-        public async Task<IActionResult> UpdateRatingById(int id, [FromBody] Rating rating)
+        [Route("")]
+        public async Task<IActionResult> UpdateRatingById([FromBody] Rating rating)
         {
             // TODO: check required fields, if valid call service to update Bid and return list Bid
-            await _RatingRepository.UpdateRating(rating);
+            await _ratingRepository.UpdateRating(rating);
             return Ok();
         }
 
@@ -84,13 +75,13 @@ namespace Dot.Net.WebApi.Controllers
         {
             if (id == 0)
             {
-                return BadRequest("Bad request. User ID must be an integer and larger than 0.");
+                return BadRequest("Bad request. The information ID must be an integer and larger than 0.");
             }
             if (id > 0)
             {
-                _RatingRepository.DeleteRatingById(id);
-                IEnumerable<Rating> listOfRatings = await _RatingRepository.GetRatingById(id);
-                if (listOfRatings.Count() == 0)
+                _ratingRepository.DeleteRatingById(id);
+                IEnumerable<Rating> listOfRatings = await _ratingRepository.GetRatingById(id);
+                if (!listOfRatings.Any())
                 {
                     return Ok("The item was deleted with success.");
                 }

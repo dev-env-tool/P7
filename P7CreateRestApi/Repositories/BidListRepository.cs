@@ -1,10 +1,9 @@
 
-using Dot.Net.WebApi.Controllers.Domain;
+//using Dot.Net.WebApi.Controllers.Domain;
 using P7CreateRestApi.Data;
 using P7CreateRestApi.Domain;
 using Microsoft.EntityFrameworkCore;
 using P7CreateRestApi.IRepositories;
-using System.Collections;
 
 namespace P7CreateRestApi.Repositories
 {
@@ -41,7 +40,7 @@ namespace P7CreateRestApi.Repositories
         {
             if (bidList != null)
             {
-                _context.Entry(bidList).State = EntityState.Modified;
+                _context!.Entry(bidList).State = EntityState.Modified;
                 _context.SaveChanges();
             }
         }

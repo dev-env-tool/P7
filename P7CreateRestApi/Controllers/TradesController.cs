@@ -1,59 +1,98 @@
-using P7CreateRestApi.Domain;
+using P7CreateRestApi.Controllers;
+//using Dot.Net.WebApi.Controllers.Domain;
 using Microsoft.AspNetCore.Mvc;
+using P7CreateRestApi.Domain;
+using P7CreateRestApi.IRepositories;
 
-namespace Dot.Net.WebApi.Controllers
+namespace P7CreateRestApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class TradesController : ControllerBase
+    [Route("api/[controller]")]
+    public class TradesController(ITradeRepository tradeRepository) : ControllerBase
     {
-        // TODO: Inject Trade service
+        private readonly ITradeRepository _tradeRepository = tradeRepository;
 
         [HttpGet]
-        [Route("list")]
-        public IActionResult Home()
+        [Route("")]
+        public async Task<IActionResult> GetAllTrades()
         {
-            // TODO: find all Trade, add to model
-            return Ok();
+            IEnumerable<Trade> listOfTrades = await _tradeRepository.GetAllTrades();
+            if (!listOfTrades.Any())
+            {
+                return NotFound("No information found.");
+            }
+            return Ok(listOfTrades);
         }
 
         [HttpGet]
-        [Route("add")]
-        public IActionResult AddTrade([FromBody]Trade trade)
+        [Route("{id}")]
+        public async Task<IActionResult> GetTradeById(int id)
         {
-            return Ok();
+            IEnumerable<Trade> listOfTrades = await _tradeRepository.GetTradeById(id);
+
+            if (id == 0)
+            {
+                return BadRequest("Bad request. ID must be an integer and larger than 0.");
+            }
+            if (!listOfTrades.Any())
+            {
+                return NotFound("The information with the specified ID was not found.");
+            }
+            return Ok(listOfTrades);
         }
+
 
         [HttpGet]
         [Route("validate")]
-        public IActionResult Validate([FromBody]Trade trade)
+        private IActionResult ValidateTradeById([FromBody] Trade trade)
         {
-            // TODO: check data valid and save to db, after saving return Trade list
+            // TODO: check data valid and save to db, after saving return bid list
             return Ok();
         }
 
-        [HttpGet]
-        [Route("update/{id}")]
-        public IActionResult ShowUpdateForm(int id)
-        {
-            // TODO: get Trade by Id and to model then show to the form
-            return Ok();
-        }
 
         [HttpPost]
-        [Route("update/{id}")]
-        public IActionResult UpdateTrade(int id, [FromBody] Trade trade)
+        [Route("")]
+        public IActionResult CreateTrade([FromBody] Trade trade)
         {
-            // TODO: check required fields, if valid call service to update Trade and return Trade list
+            // TODO: check required fields, if valid call service to update Bid and return list Bid
+            _tradeRepository.CreateTrade(trade);
+            return Ok();
+        }
+
+
+
+        [HttpPut]
+        [Route("")]
+        public async Task<IActionResult> UpdateTradeById([FromBody] Trade trade)
+        {
+            // TODO: check required fields, if valid call service to update Bid and return list Bid
+            await _tradeRepository.UpdateTrade(trade);
             return Ok();
         }
 
         [HttpDelete]
         [Route("{id}")]
-        public IActionResult DeleteTrade(int id)
+        public async Task<IActionResult> DeleteTrade(int id)
         {
-            // TODO: Find Trade by Id and delete the Trade, return to Trade list
-            return Ok();
+            if (id == 0)
+            {
+                return BadRequest("Bad request. The information ID must be an integer and larger than 0.");
+            }
+            if (id > 0)
+            {
+                _tradeRepository.DeleteTradeById(id);
+                IEnumerable<Trade> listOfTrades = await _tradeRepository.GetTradeById(id);
+                if (!listOfTrades.Any())
+                {
+                    return Ok("The item was deleted with success.");
+                }
+                else
+                {
+                    return StatusCode(500, "Unexpected error happened.");
+                }
+            }
+            return StatusCode(500, "Unexpected error happened.");
         }
     }
 }

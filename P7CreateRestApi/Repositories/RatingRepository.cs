@@ -1,9 +1,9 @@
-using Dot.Net.WebApi.Controllers.Domain;
+//using Dot.Net.WebApi.Controllers.Domain;
 using P7CreateRestApi.Data;
 using P7CreateRestApi.Domain;
 using Microsoft.EntityFrameworkCore;
 using P7CreateRestApi.IRepositories;
-using System.Collections;
+
 
 namespace P7CreateRestApi.Repositories
 {
@@ -24,7 +24,7 @@ namespace P7CreateRestApi.Repositories
 
         public async Task<IEnumerable<Rating>> GetRatingById(int id)
         {
-            return await _context!.Ratings.Where(bL => bL.Id == id)
+            return await _context!.Ratings.Where(r => r.Id == id)
                                   .ToListAsync();
         }
 
@@ -41,7 +41,7 @@ namespace P7CreateRestApi.Repositories
         {
             if (rating != null)
             {
-                _context.Entry(rating).State = EntityState.Modified;
+                _context!.Entry(rating).State = EntityState.Modified;
                 _context.SaveChanges();
             }
         }
@@ -49,7 +49,7 @@ namespace P7CreateRestApi.Repositories
 
         public void DeleteRatingById(int id)
         {
-            Rating rating = _context!.Ratings.First(b => b.Id == id);
+            Rating rating = _context!.Ratings.First(r => r.Id == id);
 
             if (rating != null)
             {

@@ -1,58 +1,97 @@
 using P7CreateRestApi.Domain;
 using Microsoft.AspNetCore.Mvc;
+using P7CreateRestApi.IRepositories;
 
-namespace Dot.Net.WebApi.Controllers
+
+namespace P7CreateRestApi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
-    public class CurvePointsController : ControllerBase
+    [Route("api/[controller]")]
+    public class CurvePointsController(ICurvePointRepository curvePointRepository) : ControllerBase
     {
-        // TODO: Inject Curve Point service
+        private readonly ICurvePointRepository _curvePointRepository = curvePointRepository;
 
         [HttpGet]
-        [Route("list")]
-        public IActionResult Home()
+        [Route("")]
+        public async Task<IActionResult> GetAllCurvePoints()
         {
-            return Ok();
+            IEnumerable<CurvePoint> listOfCurvePoints = await _curvePointRepository.GetAllCurvePoints();
+            if (!listOfCurvePoints.Any())
+            {
+                return NotFound("No information found.");
+            }
+            return Ok(listOfCurvePoints);
         }
 
         [HttpGet]
-        [Route("add")]
-        public IActionResult AddCurvePoint([FromBody]CurvePoint curvePoint)
+        [Route("{id}")]
+        public async Task<IActionResult> GetCurvePointById(int id)
         {
-            return Ok();
+            IEnumerable<CurvePoint> listOfCurvePoints = await _curvePointRepository.GetCurvePointById(id);
+
+            if (id == 0)
+            {
+                return BadRequest("Bad request. ID must be an integer and larger than 0.");
+            }
+            if (!listOfCurvePoints.Any())
+            {
+                return NotFound("The information with the specified ID was not found.");
+            }
+            return Ok(listOfCurvePoints);
         }
+
 
         [HttpGet]
         [Route("validate")]
-        public IActionResult Validate([FromBody]CurvePoint curvePoint)
+        private IActionResult ValidateCurvePointById([FromBody] CurvePoint curvePoint)
         {
             // TODO: check data valid and save to db, after saving return bid list
             return Ok();
         }
 
-        [HttpGet]
-        [Route("update/{id}")]
-        public IActionResult ShowUpdateForm(int id)
+
+        [HttpPost]
+        [Route("")]
+        public IActionResult CreateCurvePoint([FromBody] CurvePoint curvePoint)
         {
-            // TODO: get CurvePoint by Id and to model then show to the form
+            // TODO: check required fields, if valid call service to update Bid and return list Bid
+            _curvePointRepository.CreateCurvePoint(curvePoint);
             return Ok();
         }
 
-        [HttpPost]
-        [Route("update/{id}")]
-        public IActionResult UpdateCurvePoint(int id, [FromBody] CurvePoint curvePoint)
+
+
+        [HttpPut]
+        [Route("")]
+        public async Task<IActionResult> UpdateCurvePointById([FromBody] CurvePoint curvePoint)
         {
-            // TODO: check required fields, if valid call service to update Curve and return Curve list
+            // TODO: check required fields, if valid call service to update Bid and return list Bid
+            await _curvePointRepository.UpdateCurvePoint(curvePoint);
             return Ok();
         }
 
         [HttpDelete]
         [Route("{id}")]
-        public IActionResult DeleteBid(int id)
+        public async Task<IActionResult> DeleteCurvePoint(int id)
         {
-            // TODO: Find Curve by Id and delete the Curve, return to Curve list
-            return Ok();
+            if (id == 0)
+            {
+                return BadRequest("Bad request. User ID must be an integer and larger than 0.");
+            }
+            if (id > 0)
+            {
+                _curvePointRepository.DeleteCurvePointById(id);
+                IEnumerable<CurvePoint> listOfCurvePoints = await _curvePointRepository.GetCurvePointById(id);
+                if (!listOfCurvePoints.Any())
+                {
+                    return Ok("The item was deleted with success.");
+                }
+                else
+                {
+                    return StatusCode(500, "Unexpected error happened.");
+                }
+            }
+            return StatusCode(500, "Unexpected error happened.");
         }
     }
 }

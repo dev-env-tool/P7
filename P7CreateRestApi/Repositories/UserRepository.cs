@@ -39,65 +39,65 @@
 //}
 
 
-using Dot.Net.WebApi.Controllers.Domain;
-using P7CreateRestApi.Data;
-using P7CreateRestApi.Domain;
-using Microsoft.EntityFrameworkCore;
-using P7CreateRestApi.Data;
-using P7CreateRestApi.IRepositories;
-using System.Collections;
+//using Dot.Net.WebApi.Controllers.Domain;
+//using P7CreateRestApi.Data;
+//using P7CreateRestApi.Domain;
+//using Microsoft.EntityFrameworkCore;
+//using P7CreateRestApi.Data;
+//using P7CreateRestApi.IRepositories;
+//using System.Collections;
 
-namespace P7CreateRestApi.Repositories
-{
-    public class UserRepository : IUserRepository
-    {
+//namespace P7CreateRestApi.Repositories
+//{
+//    public class UserRepository : IUserRepository
+//    {
 
-        private static P7Referential? _context;
+//        private static P7Referential? _context;
 
-        public UserRepository(P7Referential context)
-        {
-            _context = context;
-        }
+//        public UserRepository(P7Referential context)
+//        {
+//            _context = context;
+//        }
 
-        public async Task<IEnumerable<User>> GetAllUsers()
-        {
-            return await _context!.Users.ToListAsync();
-        }
+//        public async Task<IEnumerable<User>> GetAllUsers()
+//        {
+//            return await _context!.Users.ToListAsync();
+//        }
 
-        public async Task<IEnumerable<User>> GetUserById(int id)
-        {
-            return await _context!.Users.Where(u => u.Id == id)
-                                  .ToListAsync();
-        }
+//        public async Task<IEnumerable<User>> GetUserById(int id)
+//        {
+//            return await _context!.Users.Where(u => u.Id == id)
+//                                  .ToListAsync();
+//        }
 
-        public void CreateUser(User user)
-        {
-            if (user != null)
-            {
-                _context!.Users.Add(user);
-                _context.SaveChanges();
-            }
-        }
+//        public void CreateUser(User user)
+//        {
+//            if (user != null)
+//            {
+//                _context!.Users.Add(user);
+//                _context.SaveChanges();
+//            }
+//        }
 
-        public async Task UpdateUser(User user)
-        {
-            if (user != null)
-            {
-                _context.Entry(user).State = EntityState.Modified;
-                _context.SaveChanges();
-            }
-        }
+//        public async Task UpdateUser(User user)
+//        {
+//            if (user != null)
+//            {
+//                _context.Entry(user).State = EntityState.Modified;
+//                _context.SaveChanges();
+//            }
+//        }
 
 
-        public void DeleteUserById(int id)
-        {
-            User user = _context!.Users.First(u => u.Id == id);
+//        public void DeleteUserById(int id)
+//        {
+//            User user = _context!.Users.First(u => u.Id == id);
 
-            if (user != null)
-            {
-                _context!.Users.Remove(user);
-                _context.SaveChanges();
-            }
-        }
-    }
-}
+//            if (user != null)
+//            {
+//                _context!.Users.Remove(user);
+//                _context.SaveChanges();
+//            }
+//        }
+//    }
+//}

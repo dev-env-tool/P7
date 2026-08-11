@@ -1,9 +1,5 @@
-﻿using Dot.Net.WebApi.Controllers.Domain;
+﻿//using Dot.Net.WebApi.Controllers.Domain;
 using P7CreateRestApi.Domain;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace P7CreateRestApi.IRepositories
 {

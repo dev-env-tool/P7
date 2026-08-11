@@ -1,5 +1,5 @@
-using Dot.Net.WebApi.Controllers;
-using Dot.Net.WebApi.Controllers.Domain;
+using P7CreateRestApi.Controllers;
+//using Dot.Net.WebApi.Controllers.Domain;
 using P7CreateRestApi.Domain;
 using P7CreateRestApi.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -16,7 +16,7 @@ namespace P7CreateRestApi.Data
             base.OnModelCreating(builder);
         }
 
-        public DbSet<User> Users { get; set; }
+        //public DbSet<User> Users { get; set; }
         public DbSet<BidList> BidLists { get; set;}
         public DbSet<CurvePoint> CurvePoints { get; set; }
         public DbSet<Rating> Ratings { get; set; }
