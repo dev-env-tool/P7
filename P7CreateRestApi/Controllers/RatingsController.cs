@@ -6,9 +6,14 @@ namespace P7CreateRestApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class RatingsController(IRatingRepository ratingRepository) : ControllerBase
+    public class RatingsController : ControllerBase
     {
-        private readonly IRatingRepository _ratingRepository = ratingRepository;
+        private readonly IRatingRepository _ratingRepository;
+
+        public RatingsController(IRatingRepository ratingRepository)
+        {
+            _ratingRepository = ratingRepository;
+        }
 
         [HttpGet]
         [Route("")]

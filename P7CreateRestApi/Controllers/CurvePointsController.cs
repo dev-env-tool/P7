@@ -7,9 +7,15 @@ namespace P7CreateRestApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CurvePointsController(ICurvePointRepository curvePointRepository) : ControllerBase
+    public class CurvePointsController : ControllerBase
     {
-        private readonly ICurvePointRepository _curvePointRepository = curvePointRepository;
+        
+        private readonly ICurvePointRepository _curvePointRepository;
+
+        public CurvePointsController(ICurvePointRepository curvePointRepository)
+        {
+            _curvePointRepository = curvePointRepository;
+        }
 
         [HttpGet]
         [Route("")]

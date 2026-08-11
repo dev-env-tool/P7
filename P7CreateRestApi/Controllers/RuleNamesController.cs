@@ -1,16 +1,22 @@
-using P7CreateRestApi.Controllers;
 //using P7CreateRestApi.Controllers.Domain;
 using Microsoft.AspNetCore.Mvc;
+using P7CreateRestApi.Controllers;
 using P7CreateRestApi.Domain;
 using P7CreateRestApi.IRepositories;
+using P7CreateRestApi.Repositories;
 
 namespace P7CreateRestApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class RuleNamesController(IRuleNameRepository ruleNameRepository) : ControllerBase
+    public class RuleNamesController : ControllerBase
     {
-        private readonly IRuleNameRepository _ruleNameRepository = ruleNameRepository;
+        private readonly IRuleNameRepository _ruleNameRepository;
+
+        public RuleNamesController(IRuleNameRepository ruleNameRepository)
+        {
+            _ruleNameRepository = ruleNameRepository;
+        }
 
         [HttpGet]
         [Route("")]

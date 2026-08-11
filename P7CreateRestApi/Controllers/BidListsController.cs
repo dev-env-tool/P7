@@ -6,9 +6,16 @@ namespace P7CreateRestApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class BidListsController(IBidListRepository bidListRepository) : ControllerBase
+    public class BidListsController : ControllerBase
     {
-        private readonly IBidListRepository _bidListRepository = bidListRepository;
+
+        
+        private readonly IBidListRepository _bidListRepository;
+
+        public BidListsController(IBidListRepository bidListRepository)
+        {
+            _bidListRepository = bidListRepository;
+        }
 
         [HttpGet]
         [Route("")]

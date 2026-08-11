@@ -8,9 +8,14 @@ namespace P7CreateRestApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class TradesController(ITradeRepository tradeRepository) : ControllerBase
+    public class TradesController : ControllerBase
     {
-        private readonly ITradeRepository _tradeRepository = tradeRepository;
+        private readonly ITradeRepository _tradeRepository;
+
+        public TradesController(ITradeRepository tradeRepository)
+        {
+            _tradeRepository = tradeRepository;
+        }
 
         [HttpGet]
         [Route("")]
