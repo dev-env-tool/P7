@@ -78,7 +78,7 @@ namespace P7CreateRestApi.Controllers
 
         [HttpDelete]
         [Route("{id}")]
-        public async Task<IActionResult> DeleteTrade(int id)
+        public async Task<IActionResult> DeleteTradeById(int id)
         {
             if (id == 0)
             {

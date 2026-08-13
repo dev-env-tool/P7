@@ -79,7 +79,7 @@ namespace P7CreateRestApi.Controllers
 
         [HttpDelete]
         [Route("{id}")]
-        public async Task<IActionResult> DeleteRuleName(int id)
+        public async Task<IActionResult> DeleteRuleNameById(int id)
         {
             if (id == 0)
             {

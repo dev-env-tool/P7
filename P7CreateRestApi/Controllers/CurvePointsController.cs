@@ -78,7 +78,7 @@ namespace P7CreateRestApi.Controllers
 
         [HttpDelete]
         [Route("{id}")]
-        public async Task<IActionResult> DeleteCurvePoint(int id)
+        public async Task<IActionResult> DeleteCurvePointById(int id)
         {
             if (id == 0)
             {

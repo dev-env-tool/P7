@@ -76,7 +76,7 @@ namespace P7CreateRestApi.Controllers
 
         [HttpDelete]
         [Route("{id}")]
-        public async Task<IActionResult> DeleteRating(int id)
+        public async Task<IActionResult> DeleteRatingById(int id)
         {
             if (id == 0)
             {
