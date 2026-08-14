@@ -100,10 +100,10 @@ namespace P7CreateRestApi.Controllers
     public class AccountController : ControllerBase
     {
 
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
 
-        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -142,7 +142,7 @@ namespace P7CreateRestApi.Controllers
 
         [HttpGet("validate")]
         //[Route("validate")]
-        private IActionResult ValidateUserById([FromBody] IdentityUser User)
+        private IActionResult ValidateUserById([FromBody] User user)
         {
             // TODO: check data valid and save to db, after saving return bid list
             return Ok();
@@ -154,8 +154,8 @@ namespace P7CreateRestApi.Controllers
         public async Task<IActionResult> CreateUser([FromBody] RegisterModel registerModel)
         {
             // TODO: check required fields, if valid call service to update Bid and return list Bid
-            IdentityUser user = new IdentityUser() {UserName = registerModel.UserName, Email = registerModel.Email};
-            await _userManager.CreateAsync(user, registerModel.Password);
+            User user = new User() {UserName = registerModel.UserName, Email = registerModel.Email, Role = registerModel.Role};
+            //await _userManager.CreateAsync(user, registerModel.Password);
             //return Ok("okok");
             var result = _userManager.CreateAsync(user, registerModel.Password);
             if (result.IsCompletedSuccessfully)
@@ -169,7 +169,7 @@ namespace P7CreateRestApi.Controllers
 
         [HttpPut]
         [Route("userName")]
-        public async Task<IActionResult> UpdateUser([FromBody] IdentityUser user)
+        public async Task<IActionResult> UpdateUser([FromBody] User user)
         {
             // TODO: check required fields, if valid call service to update Bid and return list Bid
             if (user.Email == "")
