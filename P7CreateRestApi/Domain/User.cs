@@ -6,10 +6,10 @@ namespace P7CreateRestApi.Domain
 {
     public class User : IdentityUser
     {
-        public string Id { get; set; }
-        public  string UserName { get; set; }
-        public string Password { get; set; }
-        public string Fullname { get; set; }
-        public string Role { get; set; }
+        public override string Id { get; set; } = string.Empty;
+        public override string UserName { get; set; }
+        public string Password { get; set; } = string.Empty;
+        public string Fullname { get; set; } = string.Empty;
+        public string Role { get; set; } = string.Empty;
     }
 }

@@ -3,16 +3,19 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using P7CreateRestApi.Domain;
 
-public class ApplicationDbContext : IdentityDbContext<IdentityUser>
+namespace P7CreateRestApi.Data
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) :
-        base(options)
+    public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     {
-    }
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) :
+            base(options)
+        {
+        }
 
-    //protected override void OnModelCreating(ModelBuilder builder)
-    //{
-    //    base.OnModelCreating(builder);
-    //}
-    public DbSet<User> Users { get; set; }
+        //protected override void OnModelCreating(ModelBuilder builder)
+        //{
+        //    base.OnModelCreating(builder);
+        //}
+        //public DbSet<User> Users { get; set; }
+    }
 }

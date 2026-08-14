@@ -1,4 +1,5 @@
 ﻿//using Dot.Net.WebApi.Controllers.Domain;
+using Microsoft.AspNetCore.Identity;
 using P7CreateRestApi.Domain;
 
 //using Microsoft.AspNetCore.Mvc;
@@ -10,11 +11,11 @@ namespace P7CreateRestApi.IRepositories
 {
     public interface IUserRepository
     {
-        Task<IEnumerable<User>> GetAllUsers();
-        Task<IEnumerable<User>> GetUserByUserName(string userName);
-        void CreateUser(User user);
-        Task UpdateUser(User user);
-        void DeleteUserByUserName(string userName);
+        Task<IEnumerable<IdentityUser>> GetAllUsers();
+        Task<IEnumerable<IdentityUser>> GetUserByEmail(string email);
+        void CreateUser(IdentityUser user);
+        Task UpdateUser(IdentityUser user);
+        void DeleteUserByEmail(string email);
 
     }
 }

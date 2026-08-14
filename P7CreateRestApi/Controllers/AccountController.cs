@@ -90,27 +90,31 @@
 using P7CreateRestApi.Domain;
 using Microsoft.AspNetCore.Mvc;
 using P7CreateRestApi.IRepositories;
+using Microsoft.AspNetCore.Identity;
+using P7CreateRestApi.Models;
 
 namespace P7CreateRestApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class UsersController : ControllerBase
+    public class AccountController : ControllerBase
     {
 
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
 
-        private readonly IUserRepository _UserRepository;
-
-        public UsersController(IUserRepository UserRepository)
+        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
-            _UserRepository = UserRepository;
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         [HttpGet]
         [Route("")]
         public async Task<IActionResult> GetAllUsers()
         {
-            IEnumerable<User> listOfUsers = await _UserRepository.GetAllUsers();
+            //IEnumerable<User> listOfUsers = await _userManager.Users();
+            IEnumerable<IdentityUser> listOfUsers = _userManager.Users;
             if (!listOfUsers.Any())
             {
                 return NotFound("No information found.");
@@ -118,83 +122,84 @@ namespace P7CreateRestApi.Controllers
             return Ok(listOfUsers);
         }
 
-        [HttpGet]
-        [Route("{userName}")]
-        public async Task<IActionResult> GetUserByUserName(string userName)
-        {
-            IEnumerable<User> listOfUsers = await _UserRepository.GetUserByUserName(userName);
+        //[HttpGet]
+        //[Route("{email}")]
+        //public async Task<IActionResult> GetUserByEmail(string email)
+        //{
+        //    IEnumerable<User> listOfUsers = await _userRepository.GetUserByEmail(email);
 
-            if (userName == "")
-            {
-                return BadRequest("Bad request. UserName must be a character string.");
-            }
-            if (!listOfUsers.Any())
-            {
-                return NotFound("The information with the specified UserName was not found.");
-            }
-            return Ok(listOfUsers);
-        }
+        //    if (email == "")
+        //    {
+        //        return BadRequest("Bad request. UserName must be a character string.");
+        //    }
+        //    if (!listOfUsers.Any())
+        //    {
+        //        return NotFound("The information with the specified UserName was not found.");
+        //    }
+        //    return Ok(listOfUsers);
+        //}
 
 
-        [HttpGet]
-        [Route("validate")]
-        private IActionResult ValidateUserById([FromBody] User User)
+        [HttpGet("validate")]
+        //[Route("validate")]
+        private IActionResult ValidateUserById([FromBody] IdentityUser User)
         {
             // TODO: check data valid and save to db, after saving return bid list
             return Ok();
         }
 
 
-        [HttpPost]
-        [Route("")]
-        public IActionResult CreateUser([FromBody] User User)
+        [HttpPost("register")]
+        //[Route("register")]
+        public async Task<IActionResult> CreateUser([FromBody] RegisterModel registerModel)
         {
             // TODO: check required fields, if valid call service to update Bid and return list Bid
-            _UserRepository.CreateUser(User);
-            return Ok();
+            IdentityUser user = new IdentityUser() {UserName = registerModel.UserName, Email = registerModel.Email};
+            await _userManager.CreateAsync(user, registerModel.Password);
+            //return Ok("okok");
+            var result = _userManager.CreateAsync(user, registerModel.Password);
+            if (result.IsCompletedSuccessfully)
+            {
+                return Ok("User was successfully registered.");
+            }
+            return BadRequest(result.Result);
         }
 
 
 
         [HttpPut]
         [Route("userName")]
-        public async Task<IActionResult> UpdateUser([FromBody] User user)
+        public async Task<IActionResult> UpdateUser([FromBody] IdentityUser user)
         {
             // TODO: check required fields, if valid call service to update Bid and return list Bid
-            if (user.UserName == "")
+            if (user.Email == "")
             {
                 return BadRequest("Bad request. UserNamemust be a character string.");
             }
-            if (GetUserByUserName(user.UserName) == null)
-            {
-                return NotFound("The information with the specified UserName was not found.");
-            }
+            //if (GetUserByEmail(user.Email) == null)
+            //{
+            //    return NotFound("The information with the specified UserName was not found.");
+            //}
             else
             {
-                await _UserRepository.UpdateUser(user);
+                await _userManager.UpdateAsync(user);
                 return Ok();
             }
         }
 
         [HttpDelete]
-        [Route("{userName}")]
-        public async Task<IActionResult> DeleteUserByUserName(string userName)
+        [Route("{email}")]
+        public async Task<IActionResult> DeleteUserByEmail(string email)
         {
-            if (userName == "")
+            if (email == "")
             {
                 return BadRequest("Bad request. UserName must be a character string.");
             }
             else
             {
-                _UserRepository.DeleteUserByUserName(userName);
-                if (GetUserByUserName(userName) == null)
-                {
-                    return Ok("The item was deleted with success.");
-                }
-                else
-                {
-                    return StatusCode(500, "Unexpected error happened.");
-                }
+                //User user = await _userManager.GetUserAsync(em);
+                //await _userManager.DeleteAsync();
+                return Ok("The item was deleted with success.");
             }
         }
     }

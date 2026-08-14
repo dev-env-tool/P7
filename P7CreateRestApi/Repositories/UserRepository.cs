@@ -38,6 +38,7 @@
 //    }
 //}
 
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 
@@ -61,18 +62,18 @@ namespace P7CreateRestApi.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<User>> GetAllUsers()
+        public async Task<IEnumerable<IdentityUser>> GetAllUsers()
         {
             return await _context!.Users.ToListAsync();
         }
 
-        public async Task<IEnumerable<User>> GetUserByUserName(string userName)
+        public async Task<IEnumerable<IdentityUser>> GetUserByEmail(string email)
         {
-            return await _context!.Users.Where(u => u.UserName == userName)
+            return await _context!.Users.Where(u => u.UserName == email)
                                   .ToListAsync();
         }
 
-        public void CreateUser(User user)
+        public void CreateUser(IdentityUser user)
         {
             if (user != null)
             {
@@ -81,11 +82,11 @@ namespace P7CreateRestApi.Repositories
             }
         }
 
-        public async Task UpdateUser([FromBody] User user)
+        public async Task UpdateUser([FromBody] IdentityUser user)
         {
             if (user != null)
             {
-                if (GetUserByUserName(user.UserName) != null)
+                if (GetUserByEmail(user.UserName) != null)
                 {
                     _context!.Entry(user).State = EntityState.Modified;
                     _context!.SaveChanges();
@@ -94,9 +95,9 @@ namespace P7CreateRestApi.Repositories
         }
 
 
-        public void DeleteUserByUserName(string userName)
+        public void DeleteUserByEmail(string email)
         {
-            User user = _context!.Users.First(u => u.UserName == userName);
+            IdentityUser user = _context!.Users.First(u => u.Email == email);
 
             if (user != null)
             {
