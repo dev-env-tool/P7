@@ -8,9 +8,9 @@ namespace P7CreateRestApi.IRepositories
     {
         Task<IEnumerable<RuleName>> GetAllRuleNames();
         Task<IEnumerable<RuleName>> GetRuleNameById(int id);
-        void CreateRuleName(RuleName ruleName);
+        Task CreateRuleName(RuleName ruleName);
         Task UpdateRuleName(RuleName ruleName);
-        void DeleteRuleNameById(int id);
+        Task DeleteRuleNameById(int id);
 
     }
 }

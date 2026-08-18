@@ -8,9 +8,9 @@ namespace P7CreateRestApi.IRepositories
     {
         Task<IEnumerable<CurvePoint>> GetAllCurvePoints();
         Task<IEnumerable<CurvePoint>> GetCurvePointById(int id);
-        void CreateCurvePoint(CurvePoint curvePoint);
+        Task CreateCurvePoint(CurvePoint curvePoint);
         Task UpdateCurvePoint(CurvePoint curvePoint);
-        void DeleteCurvePointById(int id);
+        Task DeleteCurvePointById(int id);
 
     }
 }

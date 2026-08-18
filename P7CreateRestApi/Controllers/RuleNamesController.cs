@@ -1,4 +1,5 @@
 //using P7CreateRestApi.Controllers.Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using P7CreateRestApi.Controllers;
 using P7CreateRestApi.Domain;
@@ -9,6 +10,7 @@ namespace P7CreateRestApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class RuleNamesController : ControllerBase
     {
         private readonly IRuleNameRepository _ruleNameRepository;

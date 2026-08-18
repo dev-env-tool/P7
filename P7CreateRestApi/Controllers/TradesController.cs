@@ -1,6 +1,7 @@
-using P7CreateRestApi.Controllers;
+using Microsoft.AspNetCore.Authorization;
 //using Dot.Net.WebApi.Controllers.Domain;
 using Microsoft.AspNetCore.Mvc;
+using P7CreateRestApi.Controllers;
 using P7CreateRestApi.Domain;
 using P7CreateRestApi.IRepositories;
 
@@ -8,6 +9,7 @@ namespace P7CreateRestApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class TradesController : ControllerBase
     {
         private readonly ITradeRepository _tradeRepository;

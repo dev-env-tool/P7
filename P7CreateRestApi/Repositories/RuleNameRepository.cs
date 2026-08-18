@@ -29,7 +29,7 @@ namespace P7CreateRestApi.Repositories
                                   .ToListAsync();
         }
 
-        public void CreateRuleName(RuleName ruleName)
+        public async Task CreateRuleName(RuleName ruleName)
         {
             if (ruleName != null)
             {
@@ -50,7 +50,7 @@ namespace P7CreateRestApi.Repositories
             }
         }
 
-        public void DeleteRuleNameById(int id)
+        public async Task DeleteRuleNameById(int id)
         {
             RuleName ruleName = _context!.RuleNames.First(r => r.Id == id);
 

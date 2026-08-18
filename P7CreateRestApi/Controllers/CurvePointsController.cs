@@ -1,5 +1,6 @@
-using P7CreateRestApi.Domain;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using P7CreateRestApi.Domain;
 using P7CreateRestApi.IRepositories;
 
 
@@ -7,6 +8,7 @@ namespace P7CreateRestApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class CurvePointsController : ControllerBase
     {
         

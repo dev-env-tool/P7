@@ -16,6 +16,6 @@ namespace P7CreateRestApi.Data
         //{
         //    base.OnModelCreating(builder);
         //}
-        //public DbSet<User> Users { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

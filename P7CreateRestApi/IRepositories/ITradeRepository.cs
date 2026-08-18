@@ -7,9 +7,9 @@ namespace P7CreateRestApi.IRepositories
     {
         Task<IEnumerable<Trade>> GetAllTrades();
         Task<IEnumerable<Trade>> GetTradeById(int id);
-        void CreateTrade(Trade trade);
+        Task CreateTrade(Trade trade);
         Task UpdateTrade(Trade trade);
-        void DeleteTradeById(int id);
+        Task DeleteTradeById(int id);
 
     }
 }

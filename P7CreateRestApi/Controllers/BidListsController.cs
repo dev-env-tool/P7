@@ -1,11 +1,14 @@
 using P7CreateRestApi.Domain;
 using Microsoft.AspNetCore.Mvc;
 using P7CreateRestApi.IRepositories;
+using Microsoft.AspNetCore.Authorization;
 
 namespace P7CreateRestApi.Controllers
 {
+
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class BidListsController : ControllerBase
     {
 
@@ -58,11 +61,11 @@ namespace P7CreateRestApi.Controllers
 
         [HttpPost]
         [Route("")]
-        public IActionResult CreateBidList([FromBody] BidList BidList)
+        public async Task <IActionResult> CreateBidList([FromBody] BidList BidList)
         {
             // TODO: check required fields, if valid call service to update Bid and return list Bid
             _bidListRepository.CreateBidList(BidList);
-            return Ok();
+            return Ok("Item was successfully created");
         }
 
 

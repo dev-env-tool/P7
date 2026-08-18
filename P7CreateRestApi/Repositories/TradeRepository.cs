@@ -28,7 +28,7 @@ namespace P7CreateRestApi.Repositories
                                   .ToListAsync();
         }
 
-        public void CreateTrade(Trade trade)
+        public async Task CreateTrade(Trade trade)
         {
             if (trade != null)
             {
@@ -50,7 +50,7 @@ namespace P7CreateRestApi.Repositories
             }
         }
 
-        public void DeleteTradeById(int id)
+        public async Task DeleteTradeById(int id)
         {
             Trade trade = _context!.Trades.First(t => t.TradeId == id);
 

@@ -28,7 +28,7 @@ namespace P7CreateRestApi.Repositories
                                   .ToListAsync();
         }
 
-        public void CreateRating(Rating rating)
+        public async Task CreateRating(Rating rating)
         {
             if (rating != null)
             {
@@ -51,7 +51,7 @@ namespace P7CreateRestApi.Repositories
         }
 
 
-        public void DeleteRatingById(int id)
+        public async Task DeleteRatingById(int id)
         {
             Rating rating = _context!.Ratings.First(r => r.Id == id);
 

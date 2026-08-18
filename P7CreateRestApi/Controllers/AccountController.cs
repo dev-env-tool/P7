@@ -2,21 +2,21 @@ using P7CreateRestApi.Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using P7CreateRestApi.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace P7CreateRestApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class AccountController : ControllerBase
     {
 
         private readonly UserManager<User> _userManager;
-        private readonly SignInManager<User> _signInManager;
 
-        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager)
+        public AccountController(UserManager<User> userManager)
         {
             _userManager = userManager;
-            _signInManager = signInManager;
         }
 
         [HttpGet]
@@ -52,7 +52,7 @@ namespace P7CreateRestApi.Controllers
 
 
 
-        [HttpPost("register")]
+        [HttpPost("")]
         //[Route("register")]
         public async Task<IActionResult> CreateUser([FromBody] RegisterModel registerModel)
         {
@@ -68,7 +68,7 @@ namespace P7CreateRestApi.Controllers
 
 
         [HttpPut]
-        [Route("update/generalinfo/{email}")]
+        [Route("generalinfo/{email}")]
         public async Task<IActionResult> UpdateUserByEmail(string email, [FromBody] UpdateGeneralInfosModel updateGeneralInfosModel)
         {
             if (email == "")
@@ -100,7 +100,7 @@ namespace P7CreateRestApi.Controllers
 
 
         [HttpPut]
-        [Route("update/password/{email}")]
+        [Route("password/{email}")]
         public async Task<IActionResult> UpdateUserPasswordByEmail(string email, [FromBody] UpdatePasswordModel updatePasswordModel)
         {
             if (email == "")

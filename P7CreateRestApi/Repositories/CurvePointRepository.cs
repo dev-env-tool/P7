@@ -29,7 +29,7 @@ namespace P7CreateRestApi.Repositories
                                   .ToListAsync();
         }
 
-        public void CreateCurvePoint(CurvePoint curvePoint)
+        public async Task CreateCurvePoint(CurvePoint curvePoint)
         {
             if (curvePoint != null)
             {
@@ -50,7 +50,7 @@ namespace P7CreateRestApi.Repositories
             }
         }
 
-        public void DeleteCurvePointById(int id)
+        public async Task DeleteCurvePointById(int id)
         {
             CurvePoint CurvePoint = _context!.CurvePoints.First(c => c.Id == id);
 

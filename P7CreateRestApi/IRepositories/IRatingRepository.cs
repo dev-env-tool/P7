@@ -7,9 +7,9 @@ namespace P7CreateRestApi.IRepositories
     {
         Task<IEnumerable<Rating>> GetAllRatings();
         Task<IEnumerable<Rating>> GetRatingById(int id);
-        void CreateRating(Rating rating);
+        Task CreateRating(Rating rating);
         Task UpdateRating(Rating rating);
-        void DeleteRatingById(int id);
+        Task DeleteRatingById(int id);
 
     }
 }

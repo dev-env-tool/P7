@@ -28,12 +28,13 @@ namespace P7CreateRestApi.Repositories
                                   .ToListAsync();
         }
 
-        public void CreateBidList(BidList bidList)
+        public async Task CreateBidList(BidList bidList)
         {
             if (bidList != null)
             {
                 _context!.BidLists.Add(bidList);
                 _context.SaveChanges();
+                
             }
         }
         public async Task UpdateBidList(BidList bidList)
@@ -49,7 +50,7 @@ namespace P7CreateRestApi.Repositories
             }
         }
 
-        public void DeleteBidListById(int id)
+        public async Task DeleteBidListById(int id)
         {
             BidList bidList = _context!.BidLists.First(b => b.BidListId == id);
 

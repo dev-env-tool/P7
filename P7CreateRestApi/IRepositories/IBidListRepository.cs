@@ -8,9 +8,9 @@ namespace P7CreateRestApi.IRepositories
     {
         Task<IEnumerable<BidList>> GetAllBidLists();
         Task<IEnumerable<BidList>> GetBidListById(int id);
-        void CreateBidList(BidList bidList);
+        Task CreateBidList(BidList bidList);
         Task UpdateBidList(BidList bidList);
-        void DeleteBidListById(int id);
+        Task DeleteBidListById(int id);
 
     }
 }
