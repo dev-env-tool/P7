@@ -58,10 +58,10 @@ namespace P7CreateRestApi.Controllers
 
         [HttpPost]
         [Route("")]
-        public IActionResult CreateRating([FromBody] Rating rating)
+        public async Task<IActionResult> CreateRating([FromBody] Rating rating)
         {
             // TODO: check required fields, if valid call service to update Bid and return list Bid
-            _ratingRepository.CreateRating(rating);
+            await _ratingRepository.CreateRating(rating);
             return Ok();
         }
 
@@ -86,7 +86,7 @@ namespace P7CreateRestApi.Controllers
             }
             if (id > 0)
             {
-                _ratingRepository.DeleteRatingById(id);
+                await _ratingRepository.DeleteRatingById(id);
                 IEnumerable<Rating> listOfRatings = await _ratingRepository.GetRatingById(id);
                 if (!listOfRatings.Any())
                 {

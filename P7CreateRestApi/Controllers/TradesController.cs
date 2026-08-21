@@ -60,10 +60,10 @@ namespace P7CreateRestApi.Controllers
 
         [HttpPost]
         [Route("")]
-        public IActionResult CreateTrade([FromBody] Trade trade)
+        public async Task<IActionResult> CreateTrade([FromBody] Trade trade)
         {
             // TODO: check required fields, if valid call service to update Bid and return list Bid
-            _tradeRepository.CreateTrade(trade);
+            await _tradeRepository.CreateTrade(trade);
             return Ok();
         }
 
@@ -88,7 +88,7 @@ namespace P7CreateRestApi.Controllers
             }
             if (id > 0)
             {
-                _tradeRepository.DeleteTradeById(id);
+                await _tradeRepository.DeleteTradeById(id);
                 IEnumerable<Trade> listOfTrades = await _tradeRepository.GetTradeById(id);
                 if (!listOfTrades.Any())
                 {

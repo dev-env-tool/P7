@@ -60,10 +60,10 @@ namespace P7CreateRestApi.Controllers
 
         [HttpPost]
         [Route("")]
-        public IActionResult CreateCurvePoint([FromBody] CurvePoint curvePoint)
+        public async Task<IActionResult> CreateCurvePoint([FromBody] CurvePoint curvePoint)
         {
             // TODO: check required fields, if valid call service to update Bid and return list Bid
-            _curvePointRepository.CreateCurvePoint(curvePoint);
+            await _curvePointRepository.CreateCurvePoint(curvePoint);
             return Ok();
         }
 
@@ -88,7 +88,7 @@ namespace P7CreateRestApi.Controllers
             }
             if (id > 0)
             {
-                _curvePointRepository.DeleteCurvePointById(id);
+                await _curvePointRepository.DeleteCurvePointById(id);
                 IEnumerable<CurvePoint> listOfCurvePoints = await _curvePointRepository.GetCurvePointById(id);
                 if (!listOfCurvePoints.Any())
                 {

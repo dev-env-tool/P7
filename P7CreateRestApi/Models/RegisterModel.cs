@@ -1,5 +1,8 @@
-﻿namespace P7CreateRestApi.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace P7CreateRestApi.Models
 {
+    [NotMapped]
     public class RegisterModel
     {
         public string UserName { get; set; }

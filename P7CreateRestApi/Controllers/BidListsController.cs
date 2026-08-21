@@ -64,7 +64,7 @@ namespace P7CreateRestApi.Controllers
         public async Task <IActionResult> CreateBidList([FromBody] BidList BidList)
         {
             // TODO: check required fields, if valid call service to update Bid and return list Bid
-            _bidListRepository.CreateBidList(BidList);
+            await _bidListRepository.CreateBidList(BidList);
             return Ok("Item was successfully created");
         }
 
@@ -89,7 +89,7 @@ namespace P7CreateRestApi.Controllers
             }
             if (id > 0)
             {
-                _bidListRepository.DeleteBidListById(id);
+                await _bidListRepository.DeleteBidListById(id);
                 IEnumerable<BidList> listOfBidLists = await _bidListRepository.GetBidListById(id);
                 if (!listOfBidLists.Any())
                 {

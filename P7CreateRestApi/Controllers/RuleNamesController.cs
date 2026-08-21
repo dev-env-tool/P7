@@ -61,10 +61,10 @@ namespace P7CreateRestApi.Controllers
 
         [HttpPost]
         [Route("")]
-        public IActionResult CreateRuleName([FromBody] RuleName ruleName)
+        public async Task<IActionResult> CreateRuleName([FromBody] RuleName ruleName)
         {
             // TODO: check required fields, if valid call service to update Bid and return list Bid
-            _ruleNameRepository.CreateRuleName(ruleName);
+            await _ruleNameRepository.CreateRuleName(ruleName);
             return Ok();
         }
 
@@ -89,7 +89,7 @@ namespace P7CreateRestApi.Controllers
             }
             if (id > 0)
             {
-                _ruleNameRepository.DeleteRuleNameById(id);
+                await _ruleNameRepository.DeleteRuleNameById(id);
                 IEnumerable<RuleName> listOfRuleNames = await _ruleNameRepository.GetRuleNameById(id);
                 if (!listOfRuleNames.Any())
                 {
