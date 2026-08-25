@@ -1,0 +1,266 @@
+2026-08-24 16:15:07.031 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-24 16:15:07.047 +02:00 [INF] Hosting environment: Development
+2026-08-24 16:15:07.050 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-08-24 16:20:47.607 +02:00 [INF] The global log file has been configured
+2026-08-24 16:20:47.669 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-24 16:20:47.679 +02:00 [DBG] Reading data from file 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys\key-6af0e56a-7245-4335-8ced-2d5e772780aa.xml'.
+2026-08-24 16:20:47.694 +02:00 [DBG] Reading data from file 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys\key-6d168a49-1136-4c68-8849-be879c7c1f3c.xml'.
+2026-08-24 16:20:47.694 +02:00 [DBG] Reading data from file 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys\key-b366d42f-9340-42a9-a196-6a54c156d14c.xml'.
+2026-08-24 16:20:47.695 +02:00 [DBG] Reading data from file 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys\key-eb149d25-fb7e-4f1d-a18d-3670060f0459.xml'.
+2026-08-24 16:20:47.695 +02:00 [DBG] Reading data from file 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys\key-eb3569a0-463f-417f-9404-a115e61f4bdd.xml'.
+2026-08-24 16:20:47.698 +02:00 [DBG] Found key {6af0e56a-7245-4335-8ced-2d5e772780aa}.
+2026-08-24 16:20:47.700 +02:00 [DBG] Found key {6d168a49-1136-4c68-8849-be879c7c1f3c}.
+2026-08-24 16:20:47.700 +02:00 [DBG] Found key {b366d42f-9340-42a9-a196-6a54c156d14c}.
+2026-08-24 16:20:47.700 +02:00 [DBG] Found key {eb149d25-fb7e-4f1d-a18d-3670060f0459}.
+2026-08-24 16:20:47.700 +02:00 [DBG] Found key {eb3569a0-463f-417f-9404-a115e61f4bdd}.
+2026-08-24 16:20:47.705 +02:00 [DBG] Considering key {eb149d25-fb7e-4f1d-a18d-3670060f0459} with expiration date 2026-11-19 09:39:56Z as default key.
+2026-08-24 16:20:47.709 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-08-24 16:20:47.711 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2026-08-24 16:20:47.713 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-08-24 16:20:47.716 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-08-24 16:20:47.717 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-08-24 16:20:47.718 +02:00 [DBG] Using key {eb149d25-fb7e-4f1d-a18d-3670060f0459} as the default key.
+2026-08-24 16:20:47.718 +02:00 [DBG] Key ring with default key {eb149d25-fb7e-4f1d-a18d-3670060f0459} was loaded during application startup.
+2026-08-24 16:20:47.721 +02:00 [DBG] Middleware loaded
+2026-08-24 16:20:47.723 +02:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (14935 B).
+2026-08-24 16:20:47.723 +02:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-08-24 16:20:47.782 +02:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2026-08-24 16:20:47.877 +02:00 [INF] Now listening on: https://localhost:7210
+2026-08-24 16:20:47.877 +02:00 [INF] Now listening on: http://localhost:5267
+2026-08-24 16:20:47.877 +02:00 [DBG] Loaded hosting startup assembly P7CreateRestApi
+2026-08-24 16:20:47.877 +02:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-08-24 16:20:47.877 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-08-24 16:20:47.877 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-08-24 16:20:47.977 +02:00 [DBG] Connection id "0HNO1TBIA36QJ" received FIN.
+2026-08-24 16:20:47.977 +02:00 [DBG] Connection id "0HNO1TBIA36QK" received FIN.
+2026-08-24 16:20:47.989 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2026-08-24 16:20:47.989 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2026-08-24 16:20:48.007 +02:00 [DBG] Connection id "0HNO1TBIA36QK" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-24 16:20:48.007 +02:00 [DBG] Connection id "0HNO1TBIA36QJ" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-24 16:20:48.402 +02:00 [DBG] Connection id "0HNO1TBIA36QM" received FIN.
+2026-08-24 16:20:48.404 +02:00 [DBG] Connection 0HNO1TBIA36QL established using the following protocol: "Tls13"
+2026-08-24 16:20:48.405 +02:00 [DBG] Connection 0HNO1TBIA36QM established using the following protocol: "Tls13"
+2026-08-24 16:20:48.429 +02:00 [DBG] Connection id "0HNO1TBIA36QM" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-24 16:20:48.489 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-08-24 16:20:48.601 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-08-24 16:20:48.623 +02:00 [DBG] No candidates found for the request path '/swagger'
+2026-08-24 16:20:48.624 +02:00 [DBG] Request did not match any endpoints
+2026-08-24 16:20:48.634 +02:00 [INF] HTTP GET /swagger responded 301 in 6.5670 ms
+2026-08-24 16:20:48.640 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 161.5413ms
+2026-08-24 16:20:48.645 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-08-24 16:20:48.651 +02:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2026-08-24 16:20:48.651 +02:00 [DBG] Request did not match any endpoints
+2026-08-24 16:20:48.698 +02:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-08-24 16:20:48.706 +02:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-08-24 16:20:48.728 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 76.8528 ms
+2026-08-24 16:20:48.729 +02:00 [DBG] Response markup was updated to include Browser Link script injection.
+2026-08-24 16:20:48.730 +02:00 [DBG] Response markup was updated to include browser refresh script injection.
+2026-08-24 16:20:48.731 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 85.7603ms
+2026-08-24 16:20:48.757 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-08-24 16:20:48.758 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-24 16:20:48.762 +02:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-08-24 16:20:48.763 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 5.2652ms
+2026-08-24 16:20:48.802 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 45.2313ms
+2026-08-24 16:20:48.869 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-08-24 16:20:48.869 +02:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2026-08-24 16:20:48.869 +02:00 [DBG] Request did not match any endpoints
+2026-08-24 16:20:48.885 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 16.3287 ms
+2026-08-24 16:20:48.887 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 18.5191ms
+2026-08-24 16:21:29.758 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 55
+2026-08-24 16:21:29.763 +02:00 [DBG] 1 candidate(s) found for the request path '/api/Login/Login'
+2026-08-24 16:21:29.766 +02:00 [DBG] Endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)' with route pattern 'api/Login/Login' is valid for the request path '/api/Login/Login'
+2026-08-24 16:21:29.766 +02:00 [DBG] Request matched endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 16:21:29.767 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-08-24 16:21:29.803 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-08-24 16:21:51.825 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 16:21:51.970 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-08-24 16:21:51.994 +02:00 [DBG] Attempting to bind parameter 'loginModel' of type 'P7CreateRestApi.Models.LoginModel' using the name '' in request data ...
+2026-08-24 16:21:51.995 +02:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-08-24 16:21:52.010 +02:00 [DBG] Done attempting to bind parameter 'loginModel' of type 'P7CreateRestApi.Models.LoginModel'.
+2026-08-24 16:21:52.297 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2026-08-24 16:21:52.297 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2026-08-24 16:21:52.459 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 16:21:52.511 +02:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .FirstOrDefault(u => u.NormalizedUserName == __normalizedUserName_0)'
+2026-08-24 16:21:52.627 +02:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<User>(
+    asyncEnumerable: new SingleQueryingEnumerable<User>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (string) Required PK AfterSave:Throw, 0], [Property: User.AccessFailedCount (int) Required, 1], [Property: User.ConcurrencyStamp (string) Concurrency, 2], [Property: User.Email (string) MaxLength(256), 3], [Property: User.EmailConfirmed (bool) Required, 4], [Property: User.Fullname (string) Required, 5], [Property: User.LockoutEnabled (bool) Required, 6], [Property: User.LockoutEnd (DateTimeOffset?), 7], [Property: User.NormalizedEmail (string) Index MaxLength(256), 8], [Property: User.NormalizedUserName (string) Index MaxLength(256), 9], [Property: User.Password (string) Required, 10], [Property: User.PasswordHash (string), 11], [Property: User.PhoneNumber (string), 12], [Property: User.PhoneNumberConfirmed (bool) Required, 13], [Property: User.Role (string) Required, 14], [Property: User.SecurityStamp (string), 15], [Property: User.TwoFactorEnabled (bool) Required, 16], [Property: User.UserName (string) Required MaxLength(256), 17] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.ConcurrencyStamp, a.Email, a.EmailConfirmed, a.Fullname, a.LockoutEnabled, a.LockoutEnd, a.NormalizedEmail, a.NormalizedUserName, a.Password, a.PasswordHash, a.PhoneNumber, a.PhoneNumberConfirmed, a.Role, a.SecurityStamp, a.TwoFactorEnabled, a.UserName
+            FROM AspNetUsers AS a
+            WHERE a.NormalizedUserName == @__normalizedUserName_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+        P7CreateRestApi.Data.ApplicationDbContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2026-08-24 16:21:52.657 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-24 16:21:52.686 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (27ms).
+2026-08-24 16:21:52.698 +02:00 [DBG] Opening connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:21:53.934 +02:00 [DBG] Opened connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:21:53.944 +02:00 [DBG] Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-08-24 16:21:53.994 +02:00 [INF] Executed DbCommand (53ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-08-24 16:21:54.024 +02:00 [DBG] Context 'ApplicationDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-24 16:21:54.061 +02:00 [DBG] A data reader was disposed.
+2026-08-24 16:21:54.063 +02:00 [DBG] Closing connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:21:54.067 +02:00 [DBG] Closed connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:21:54.180 +02:00 [DBG] Compiling query expression: 
+'DbSet<IdentityUserClaim<string>>()
+    .Where(uc => uc.UserId.Equals(__user_Id_0))
+    .Select(c => c.ToClaim())'
+2026-08-24 16:21:54.202 +02:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Claim>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Client Projections:
+            0 -> Dictionary<IProperty, int> { [Property: IdentityUserClaim<string>.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: IdentityUserClaim<string>.ClaimType (string), 1], [Property: IdentityUserClaim<string>.ClaimValue (string), 2], [Property: IdentityUserClaim<string>.UserId (string) Required FK Index, 3] }
+        SELECT a.Id, a.ClaimType, a.ClaimValue, a.UserId
+        FROM AspNetUserClaims AS a
+        WHERE a.UserId == @__user_Id_0), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Claim>, 
+    P7CreateRestApi.Data.ApplicationDbContext, 
+    False, 
+    False, 
+    True
+)'
+2026-08-24 16:21:54.203 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-24 16:21:54.203 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2026-08-24 16:21:54.203 +02:00 [DBG] Opening connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:21:54.204 +02:00 [DBG] Opened connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:21:54.204 +02:00 [DBG] Executing DbCommand [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-08-24 16:21:54.207 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-08-24 16:21:54.208 +02:00 [DBG] A data reader was disposed.
+2026-08-24 16:21:54.209 +02:00 [DBG] Closing connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:21:54.209 +02:00 [DBG] Closed connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:21:54.223 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-08-24 16:21:54.242 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-08-24 16:21:54.243 +02:00 [DBG] No information found on request to perform content negotiation.
+2026-08-24 16:21:54.244 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-08-24 16:21:54.244 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-08-24 16:21:54.244 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2026-08-24 16:21:54.245 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-08-24 16:21:54.253 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 16:21:54.253 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 24486.6586 ms
+2026-08-24 16:21:54.255 +02:00 [DBG] 'ApplicationDbContext' disposed.
+2026-08-24 16:21:54.256 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 24498.6602ms
+2026-08-24 16:22:12.247 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/BidLists - null null
+2026-08-24 16:22:12.248 +02:00 [DBG] 1 candidate(s) found for the request path '/api/BidLists'
+2026-08-24 16:22:12.248 +02:00 [DBG] Endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)' with route pattern 'api/BidLists' is valid for the request path '/api/BidLists'
+2026-08-24 16:22:12.248 +02:00 [DBG] Request matched endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)'
+2026-08-24 16:22:12.248 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-08-24 16:22:12.280 +02:00 [DBG] Successfully validated the token.
+2026-08-24 16:22:12.284 +02:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-08-24 16:22:12.289 +02:00 [DBG] Authorization was successful.
+2026-08-24 16:22:36.769 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)'
+2026-08-24 16:22:36.837 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'P7Referential' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 16:22:36.837 +02:00 [DBG] Compiling query expression: 
+'DbSet<BidList>()'
+2026-08-24 16:22:36.841 +02:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<BidList>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: BidList.BidListId (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: BidList.Account (string) Required, 1], [Property: BidList.Ask (double?), 2], [Property: BidList.AskQuantity (double?), 3], [Property: BidList.Benchmark (string) Required, 4], [Property: BidList.Bid (double?), 5], [Property: BidList.BidListDate (DateTime?), 6], [Property: BidList.BidQuantity (double?), 7], [Property: BidList.BidSecurity (string) Required, 8], [Property: BidList.BidStatus (string) Required, 9], [Property: BidList.BidType (string) Required, 10], [Property: BidList.Book (string) Required, 11], [Property: BidList.Commentary (string) Required, 12], [Property: BidList.CreationDate (DateTime?), 13], [Property: BidList.CreationName (string) Required, 14], [Property: BidList.DealName (string) Required, 15], [Property: BidList.DealType (string) Required, 16], [Property: BidList.RevisionDate (DateTime?), 17], [Property: BidList.RevisionName (string) Required, 18], [Property: BidList.Side (string) Required, 19], [Property: BidList.SourceListId (string) Required, 20], [Property: BidList.Trader (string) Required, 21] }
+        SELECT b.BidListId, b.Account, b.Ask, b.AskQuantity, b.Benchmark, b.Bid, b.BidListDate, b.BidQuantity, b.BidSecurity, b.BidStatus, b.BidType, b.Book, b.Commentary, b.CreationDate, b.CreationName, b.DealName, b.DealType, b.RevisionDate, b.RevisionName, b.Side, b.SourceListId, b.Trader
+        FROM BidLists AS b), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, BidList>, 
+    P7CreateRestApi.Data.P7Referential, 
+    False, 
+    False, 
+    True
+)'
+2026-08-24 16:22:36.842 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-24 16:22:36.842 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2026-08-24 16:22:36.842 +02:00 [DBG] Opening connection to database 'P7Referential' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:22:36.894 +02:00 [DBG] Opened connection to database 'P7Referential' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:22:36.894 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+2026-08-24 16:22:36.903 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+2026-08-24 16:22:36.909 +02:00 [DBG] Context 'P7Referential' started tracking 'BidList' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-24 16:22:36.937 +02:00 [DBG] Context 'P7Referential' started tracking 'BidList' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-24 16:22:36.937 +02:00 [DBG] Context 'P7Referential' started tracking 'BidList' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-24 16:22:36.937 +02:00 [DBG] Context 'P7Referential' started tracking 'BidList' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-24 16:22:36.937 +02:00 [DBG] A data reader was disposed.
+2026-08-24 16:22:36.937 +02:00 [DBG] Closing connection to database 'P7Referential' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:22:36.937 +02:00 [DBG] Closed connection to database 'P7Referential' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:22:36.938 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-08-24 16:22:36.938 +02:00 [DBG] No information found on request to perform content negotiation.
+2026-08-24 16:22:36.938 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-08-24 16:22:36.938 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-08-24 16:22:36.938 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-08-24 16:22:36.938 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Domain.BidList, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 16:22:36.954 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)'
+2026-08-24 16:22:36.954 +02:00 [INF] HTTP GET /api/BidLists responded 200 in 24705.6044 ms
+2026-08-24 16:22:36.954 +02:00 [DBG] 'P7Referential' disposed.
+2026-08-24 16:22:36.954 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/BidLists - 200 null application/json; charset=utf-8 24707.6864ms
+2026-08-24 16:25:27.103 +02:00 [DBG] Connection id "0HNO1TBIA36QL" received FIN.
+2026-08-24 16:25:27.104 +02:00 [DBG] Connection id "0HNO1TBIA36QL" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-24 16:25:27.874 +02:00 [DBG] Connection 0HNO1TBIA36QN established using the following protocol: "Tls13"
+2026-08-24 16:25:27.878 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/BidLists - null null
+2026-08-24 16:25:27.878 +02:00 [DBG] 1 candidate(s) found for the request path '/api/BidLists'
+2026-08-24 16:25:27.878 +02:00 [DBG] Endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)' with route pattern 'api/BidLists' is valid for the request path '/api/BidLists'
+2026-08-24 16:25:27.878 +02:00 [DBG] Request matched endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)'
+2026-08-24 16:25:27.878 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-08-24 16:25:27.879 +02:00 [DBG] Successfully validated the token.
+2026-08-24 16:25:27.879 +02:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-08-24 16:25:27.880 +02:00 [DBG] Authorization was successful.
+2026-08-24 16:25:54.909 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)'
+2026-08-24 16:25:54.925 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'P7Referential' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 16:25:54.926 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-24 16:25:54.926 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2026-08-24 16:25:54.926 +02:00 [DBG] Opening connection to database 'P7Referential' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:25:54.926 +02:00 [DBG] Opened connection to database 'P7Referential' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:25:54.926 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+2026-08-24 16:25:54.928 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+2026-08-24 16:25:54.929 +02:00 [DBG] Context 'P7Referential' started tracking 'BidList' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-24 16:25:54.929 +02:00 [DBG] Context 'P7Referential' started tracking 'BidList' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-24 16:25:54.929 +02:00 [DBG] Context 'P7Referential' started tracking 'BidList' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-24 16:25:54.929 +02:00 [DBG] Context 'P7Referential' started tracking 'BidList' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-24 16:25:54.929 +02:00 [DBG] A data reader was disposed.
+2026-08-24 16:25:54.929 +02:00 [DBG] Closing connection to database 'P7Referential' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:25:54.929 +02:00 [DBG] Closed connection to database 'P7Referential' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:25:54.929 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-08-24 16:25:54.929 +02:00 [DBG] No information found on request to perform content negotiation.
+2026-08-24 16:25:54.930 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-08-24 16:25:54.930 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-08-24 16:25:54.930 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-08-24 16:25:54.930 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Domain.BidList, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 16:25:54.932 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)'
+2026-08-24 16:25:54.932 +02:00 [INF] HTTP GET /api/BidLists responded 200 in 27054.1968 ms
+2026-08-24 16:25:54.932 +02:00 [DBG] 'P7Referential' disposed.
+2026-08-24 16:25:54.932 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/BidLists - 200 null application/json; charset=utf-8 27055.2239ms

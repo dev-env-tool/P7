@@ -1,7 +1,9 @@
-using P7CreateRestApi.Domain;
-using Microsoft.AspNetCore.Mvc;
-using P7CreateRestApi.IRepositories;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using P7CreateRestApi.Domain;
+using P7CreateRestApi.IRepositories;
+using Serilog;
 
 namespace P7CreateRestApi.Controllers
 {
@@ -29,6 +31,7 @@ namespace P7CreateRestApi.Controllers
             {
                 return NotFound("No information found.");
             }
+            //Log.Information("{UserName} at {Now}",Serilog.Context.LogContext. , DateTime.Now);
             return Ok(listOfBidLists);
         }
 

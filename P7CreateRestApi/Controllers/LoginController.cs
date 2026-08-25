@@ -112,10 +112,10 @@ namespace P7CreateRestApi.Controllers
             if (result == true)
             {
                 string tokenString = await _iLoginService.GenerateTokenString(loginModel);
-                //Log.Information("User {UserName} logged in at {Now}", loginModel.UserName, DateTime.Now);
+                Log.Information("User {UserName} logged in at {Now}", loginModel.UserName, DateTime.Now);
                 return Ok(tokenString);
             }
-            //Log.Warning("Access was denied for User {UserName} trying to login at {Now}", loginModel.UserName, DateTime.Now);
+            Log.Warning("Access was denied for User {UserName} trying to login at {Now}", loginModel.UserName, DateTime.Now);
             return BadRequest("Access denied");
         }
 
@@ -130,12 +130,6 @@ namespace P7CreateRestApi.Controllers
             
             if (result.IsCompletedSuccessfully)
             {
-                //using (LogContext.PushProperty("UserName", context.User.Identity.Name))
-                //{
-                //    await (context);
-                //}
-                
-                //Log.Information<RequestUserIdEnricher>("", RequestUserIdEnricher test (User.GetDisplayName()));
                 return Ok("Logged out");
             }
             return BadRequest("Logout failed");

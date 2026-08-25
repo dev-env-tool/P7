@@ -1,0 +1,110 @@
+2026-08-24 16:06:03.996 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-24 16:06:04.009 +02:00 [INF] Hosting environment: Development
+2026-08-24 16:06:04.010 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-08-24 16:06:45.338 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-08-24 16:06:47.746 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 2400.9752ms
+2026-08-24 16:07:16.035 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-08-24 16:07:16.109 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 72.5157ms
+2026-08-24 16:10:41.452 +02:00 [INF] The global log file has been configured
+2026-08-24 16:10:41.512 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-24 16:10:41.525 +02:00 [DBG] Reading data from file 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys\key-6af0e56a-7245-4335-8ced-2d5e772780aa.xml'.
+2026-08-24 16:10:41.533 +02:00 [DBG] Reading data from file 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys\key-6d168a49-1136-4c68-8849-be879c7c1f3c.xml'.
+2026-08-24 16:10:41.533 +02:00 [DBG] Reading data from file 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys\key-b366d42f-9340-42a9-a196-6a54c156d14c.xml'.
+2026-08-24 16:10:41.533 +02:00 [DBG] Reading data from file 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys\key-eb149d25-fb7e-4f1d-a18d-3670060f0459.xml'.
+2026-08-24 16:10:41.533 +02:00 [DBG] Reading data from file 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys\key-eb3569a0-463f-417f-9404-a115e61f4bdd.xml'.
+2026-08-24 16:10:41.536 +02:00 [DBG] Found key {6af0e56a-7245-4335-8ced-2d5e772780aa}.
+2026-08-24 16:10:41.539 +02:00 [DBG] Found key {6d168a49-1136-4c68-8849-be879c7c1f3c}.
+2026-08-24 16:10:41.539 +02:00 [DBG] Found key {b366d42f-9340-42a9-a196-6a54c156d14c}.
+2026-08-24 16:10:41.539 +02:00 [DBG] Found key {eb149d25-fb7e-4f1d-a18d-3670060f0459}.
+2026-08-24 16:10:41.539 +02:00 [DBG] Found key {eb3569a0-463f-417f-9404-a115e61f4bdd}.
+2026-08-24 16:10:41.544 +02:00 [DBG] Considering key {eb149d25-fb7e-4f1d-a18d-3670060f0459} with expiration date 2026-11-19 09:39:56Z as default key.
+2026-08-24 16:10:41.548 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-08-24 16:10:41.550 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2026-08-24 16:10:41.551 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-08-24 16:10:41.553 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-08-24 16:10:41.555 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-08-24 16:10:41.556 +02:00 [DBG] Using key {eb149d25-fb7e-4f1d-a18d-3670060f0459} as the default key.
+2026-08-24 16:10:41.556 +02:00 [DBG] Key ring with default key {eb149d25-fb7e-4f1d-a18d-3670060f0459} was loaded during application startup.
+2026-08-24 16:10:41.560 +02:00 [DBG] Middleware loaded
+2026-08-24 16:10:41.562 +02:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (14935 B).
+2026-08-24 16:10:41.562 +02:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-08-24 16:10:41.616 +02:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2026-08-24 16:10:41.710 +02:00 [INF] Now listening on: https://localhost:7210
+2026-08-24 16:10:41.710 +02:00 [INF] Now listening on: http://localhost:5267
+2026-08-24 16:10:41.710 +02:00 [DBG] Loaded hosting startup assembly P7CreateRestApi
+2026-08-24 16:10:41.710 +02:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-08-24 16:10:41.710 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-08-24 16:10:41.710 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-08-24 16:10:41.974 +02:00 [DBG] Connection id "0HNO1T5TMSKQP" received FIN.
+2026-08-24 16:10:41.974 +02:00 [DBG] Connection id "0HNO1T5TMSKQO" received FIN.
+2026-08-24 16:10:42.042 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2026-08-24 16:10:42.042 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2026-08-24 16:10:42.084 +02:00 [DBG] Connection id "0HNO1T5TMSKQP" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-24 16:10:42.084 +02:00 [DBG] Connection id "0HNO1T5TMSKQO" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-24 16:10:42.763 +02:00 [DBG] Connection id "0HNO1T5TMSKQR" received FIN.
+2026-08-24 16:10:42.774 +02:00 [DBG] Connection 0HNO1T5TMSKQQ established using the following protocol: "Tls13"
+2026-08-24 16:10:42.774 +02:00 [DBG] Connection 0HNO1T5TMSKQR established using the following protocol: "Tls13"
+2026-08-24 16:10:42.809 +02:00 [DBG] Connection id "0HNO1T5TMSKQR" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-24 16:10:42.869 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-08-24 16:10:42.984 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-08-24 16:10:43.011 +02:00 [DBG] No candidates found for the request path '/swagger'
+2026-08-24 16:10:43.012 +02:00 [DBG] Request did not match any endpoints
+2026-08-24 16:10:43.020 +02:00 [INF] HTTP GET /swagger responded 301 in 4.4843 ms
+2026-08-24 16:10:43.025 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 172.3907ms
+2026-08-24 16:10:43.030 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-08-24 16:10:43.037 +02:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2026-08-24 16:10:43.037 +02:00 [DBG] Request did not match any endpoints
+2026-08-24 16:10:43.089 +02:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-08-24 16:10:43.097 +02:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-08-24 16:10:43.118 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 81.0436 ms
+2026-08-24 16:10:43.119 +02:00 [DBG] Response markup was updated to include Browser Link script injection.
+2026-08-24 16:10:43.120 +02:00 [DBG] Response markup was updated to include browser refresh script injection.
+2026-08-24 16:10:43.121 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 91.1845ms
+2026-08-24 16:10:43.153 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-08-24 16:10:43.153 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-24 16:10:43.159 +02:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-08-24 16:10:43.160 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 6.6498ms
+2026-08-24 16:10:43.203 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 50.3275ms
+2026-08-24 16:10:43.272 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-08-24 16:10:43.273 +02:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2026-08-24 16:10:43.273 +02:00 [DBG] Request did not match any endpoints
+2026-08-24 16:10:43.291 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 18.0913 ms
+2026-08-24 16:10:43.292 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 20.1728ms
+2026-08-24 16:11:04.112 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 55
+2026-08-24 16:11:04.116 +02:00 [DBG] 1 candidate(s) found for the request path '/api/Login/Login'
+2026-08-24 16:11:04.119 +02:00 [DBG] Endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)' with route pattern 'api/Login/Login' is valid for the request path '/api/Login/Login'
+2026-08-24 16:11:04.120 +02:00 [DBG] Request matched endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 16:11:04.121 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-08-24 16:11:04.159 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-08-24 16:11:10.821 +02:00 [ERR] HTTP POST /api/Login/Login responded 500 in 6699.9742 ms
+System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values. (Parameter 'index')
+   at System.Linq.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ElementAt[TSource](IEnumerable`1 source, Int32 index)
+   at P7CreateRestApi.LogUserNameMiddleware.LogUserNameMiddleware.InvokeAsync(HttpContext context) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\LogPipeline\LogUserNameMiddleware.cs:line 16
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-24 16:11:10.837 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values. (Parameter 'index')
+   at System.Linq.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument)
+   at System.Linq.Enumerable.ElementAt[TSource](IEnumerable`1 source, Int32 index)
+   at P7CreateRestApi.LogUserNameMiddleware.LogUserNameMiddleware.InvokeAsync(HttpContext context) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\LogPipeline\LogUserNameMiddleware.cs:line 16
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-08-24 16:11:10.842 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 500 null text/plain; charset=utf-8 6730.0347ms

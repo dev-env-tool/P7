@@ -1478,3 +1478,1245 @@ FROM [AspNetUsers] AS [a]
 2026-08-21 14:02:45.029 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
 2026-08-21 14:02:45.031 +02:00 [INF] HTTP GET /api/Account responded 200 in 48.8721 ms
 2026-08-21 14:02:45.032 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 103.7152ms
+2026-08-21 14:55:48.864 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-21 14:55:49.135 +02:00 [INF] Now listening on: https://localhost:7210
+2026-08-21 14:55:49.139 +02:00 [INF] Now listening on: http://localhost:5267
+2026-08-21 14:55:49.302 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-21 14:55:49.303 +02:00 [INF] Hosting environment: Development
+2026-08-21 14:55:49.304 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-08-21 14:55:50.580 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-08-21 14:55:50.751 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 180.6925ms
+2026-08-21 14:55:50.813 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-08-21 14:55:50.925 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 111.8657ms
+2026-08-21 14:55:50.977 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-21 14:55:50.990 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 14.303ms
+2026-08-21 14:55:50.999 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-08-21 14:55:51.088 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 89.0042ms
+2026-08-21 14:55:51.209 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-08-21 14:55:51.234 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 25.1493ms
+2026-08-21 14:56:18.363 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 55
+2026-08-21 14:56:18.406 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-21 14:56:18.432 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-08-21 14:56:19.077 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-21 14:56:20.697 +02:00 [INF] Executed DbCommand (51ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-08-21 14:56:20.886 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-08-21 14:56:20.907 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-08-21 14:56:20.932 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-08-21 14:56:20.942 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 2501.7554ms
+2026-08-21 14:56:20.943 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-21 14:56:20.946 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 2540.2155 ms
+2026-08-21 14:56:20.955 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 2591.6626ms
+2026-08-21 14:57:39.590 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-21 14:57:39.600 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-08-21 14:57:39.604 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-21 14:57:39.606 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 401 0 null 17.0694ms
+2026-08-21 14:58:00.304 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-21 14:58:13.463 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-21 14:58:13.469 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-08-21 14:58:13.513 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-21 14:58:13.528 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-21 14:58:13.535 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-21 14:58:13.552 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-21 14:58:13.567 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 96.3619ms
+2026-08-21 14:58:13.569 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-21 14:58:13.570 +02:00 [INF] HTTP GET /api/Account responded 200 in 107.2078 ms
+2026-08-21 14:58:13.572 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 13267.9251ms
+2026-08-21 14:59:51.540 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-21 14:59:53.235 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-21 14:59:53.236 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-08-21 14:59:53.249 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-21 14:59:53.253 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-21 14:59:53.256 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-21 14:59:53.260 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-21 14:59:53.264 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 24.8313ms
+2026-08-21 14:59:53.265 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-21 14:59:53.266 +02:00 [INF] HTTP GET /api/Account responded 200 in 31.1809 ms
+2026-08-21 14:59:53.268 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 1728.0595ms
+2026-08-21 15:04:52.074 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-21 15:04:52.277 +02:00 [INF] Now listening on: https://localhost:7210
+2026-08-21 15:04:52.280 +02:00 [INF] Now listening on: http://localhost:5267
+2026-08-21 15:04:52.454 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-21 15:04:52.456 +02:00 [INF] Hosting environment: Development
+2026-08-21 15:04:52.457 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-08-21 15:04:53.243 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-08-21 15:04:53.393 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 161.3163ms
+2026-08-21 15:04:53.501 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-08-21 15:04:53.604 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 103.0376ms
+2026-08-21 15:04:53.644 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-21 15:04:53.653 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 9.6805ms
+2026-08-21 15:04:53.662 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-08-21 15:04:53.719 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 57.7133ms
+2026-08-21 15:04:53.811 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-08-21 15:04:53.842 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 30.9034ms
+2026-08-21 15:05:20.096 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 55
+2026-08-21 15:05:34.494 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-21 15:05:34.519 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-08-21 15:05:35.060 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-21 15:05:35.571 +02:00 [INF] Executed DbCommand (64ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-08-21 15:05:35.834 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-08-21 15:05:35.851 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-08-21 15:05:35.878 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-08-21 15:05:35.886 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 1360.6241ms
+2026-08-21 15:05:35.888 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-21 15:05:35.891 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 1398.0469 ms
+2026-08-21 15:05:35.898 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 15802.325ms
+2026-08-21 15:05:53.905 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-21 15:07:06.989 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-21 15:07:07.001 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-08-21 15:07:07.041 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-21 15:07:07.054 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-21 15:07:07.060 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-21 15:07:07.072 +02:00 [ERR] An error occurred using the connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-21 15:07:07.101 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'P7CreateRestApi.Data.ApplicationDbContext'.
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-08-21 15:07:07.107 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 104.9987ms
+2026-08-21 15:07:07.108 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-21 15:07:07.109 +02:00 [INF] HTTP GET /api/Account responded 200 in 120.7904 ms
+2026-08-21 15:07:07.111 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 499 null application/json; charset=utf-8 73206.5381ms
+2026-08-21 15:07:21.870 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-21 15:07:23.967 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-21 15:07:23.969 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-08-21 15:07:23.982 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-21 15:07:23.986 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-21 15:07:23.990 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-21 15:07:23.993 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-21 15:07:24.004 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 31.5706ms
+2026-08-21 15:07:24.006 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-21 15:07:24.008 +02:00 [INF] HTTP GET /api/Account responded 200 in 41.1251 ms
+2026-08-21 15:07:24.010 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 2140.5564ms
+2026-08-24 10:06:28.798 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-24 10:06:31.327 +02:00 [INF] Now listening on: https://localhost:7210
+2026-08-24 10:06:31.332 +02:00 [INF] Now listening on: http://localhost:5267
+2026-08-24 10:06:31.640 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-24 10:06:31.643 +02:00 [INF] Hosting environment: Development
+2026-08-24 10:06:31.648 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-08-24 10:06:33.209 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-08-24 10:06:34.822 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 1634.1694ms
+2026-08-24 10:06:34.861 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-08-24 10:06:35.528 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 666.5445ms
+2026-08-24 10:06:36.738 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-24 10:06:36.738 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-08-24 10:06:36.853 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 132.0876ms
+2026-08-24 10:06:37.173 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 452.3389ms
+2026-08-24 10:06:39.814 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-08-24 10:06:39.848 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 34.4449ms
+2026-08-24 10:09:40.208 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 55
+2026-08-24 10:09:40.301 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 10:09:40.352 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-08-24 10:09:41.204 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 10:09:43.165 +02:00 [INF] Executed DbCommand (77ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-08-24 10:09:43.405 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-08-24 10:09:43.433 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-08-24 10:09:43.469 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-08-24 10:09:43.479 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 3116.5804ms
+2026-08-24 10:09:43.481 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 10:09:43.487 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 3187.9981 ms
+2026-08-24 10:09:43.499 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 3291.077ms
+2026-08-24 10:10:30.738 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/BidLists - null null
+2026-08-24 10:10:30.754 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-08-24 10:10:30.758 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-24 10:10:30.760 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/BidLists - 401 0 null 22.067ms
+2026-08-24 10:10:58.596 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/BidLists - null null
+2026-08-24 10:10:58.604 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-08-24 10:10:58.606 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-24 10:10:58.607 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/BidLists - 401 0 null 10.823ms
+2026-08-24 10:11:24.537 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/BidLists - null null
+2026-08-24 10:11:24.638 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)'
+2026-08-24 10:11:24.648 +02:00 [INF] Route matched with {action = "GetAllBidLists", controller = "BidLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBidLists() on controller P7CreateRestApi.Controllers.BidListsController (P7CreateRestApi).
+2026-08-24 10:11:24.731 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'P7Referential' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 10:11:24.911 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+2026-08-24 10:11:24.965 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Domain.BidList, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 10:11:24.986 +02:00 [INF] Executed action P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi) in 336.4795ms
+2026-08-24 10:11:24.991 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)'
+2026-08-24 10:11:24.993 +02:00 [INF] HTTP GET /api/BidLists responded 200 in 355.3802 ms
+2026-08-24 10:11:24.995 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/BidLists - 200 null application/json; charset=utf-8 457.9132ms
+2026-08-24 10:29:14.924 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-24 10:29:15.148 +02:00 [INF] Now listening on: https://localhost:7210
+2026-08-24 10:29:15.150 +02:00 [INF] Now listening on: http://localhost:5267
+2026-08-24 10:29:15.234 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-24 10:29:15.236 +02:00 [INF] Hosting environment: Development
+2026-08-24 10:29:15.237 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-08-24 10:29:16.107 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-08-24 10:29:16.303 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 207.7224ms
+2026-08-24 10:29:16.310 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-08-24 10:29:16.395 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 84.9433ms
+2026-08-24 10:29:16.419 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-08-24 10:29:16.420 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-24 10:29:16.439 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 19.3519ms
+2026-08-24 10:29:16.474 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 54.7124ms
+2026-08-24 10:29:16.562 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-08-24 10:29:16.589 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 27.7462ms
+2026-08-24 10:29:36.926 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 55
+2026-08-24 10:29:36.982 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 10:29:37.009 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-08-24 10:29:37.728 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 10:29:39.374 +02:00 [INF] Executed DbCommand (50ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-08-24 10:29:39.569 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-08-24 10:29:39.586 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-08-24 10:29:39.615 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-08-24 10:29:39.623 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 2607.4873ms
+2026-08-24 10:29:39.626 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 10:29:39.630 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 2647.7075 ms
+2026-08-24 10:29:39.641 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 2715.1749ms
+2026-08-24 10:30:01.913 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 55
+2026-08-24 10:30:01.976 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 10:30:01.978 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-08-24 10:30:02.024 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 10:30:02.030 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-08-24 10:30:02.103 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-08-24 10:30:02.106 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-08-24 10:30:02.109 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-08-24 10:30:02.111 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 131.4498ms
+2026-08-24 10:30:02.113 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 10:30:02.114 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 137.8592 ms
+2026-08-24 10:30:02.118 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 205.1955ms
+2026-08-24 10:30:16.471 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 10:30:16.480 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 10:30:16.485 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-08-24 10:30:16.497 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 10:30:16.511 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 10:30:16.515 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 10:30:16.530 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 10:30:16.539 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 52.7667ms
+2026-08-24 10:30:16.540 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 10:30:16.541 +02:00 [INF] HTTP GET /api/Account responded 200 in 61.4389 ms
+2026-08-24 10:30:16.543 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 72.4139ms
+2026-08-24 11:09:18.911 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 11:09:18.920 +02:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '24/08/2026 08:44:39', Current time (UTC): '24/08/2026 09:09:18'.
+   at Microsoft.IdentityModel.Tokens.ValidatorUtilities.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateJWS(String token, TokenValidationParameters validationParameters, BaseConfiguration currentConfiguration, SecurityToken& signatureValidatedToken, ExceptionDispatchInfo& exceptionThrown)
+--- End of stack trace from previous location ---
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, JwtSecurityToken outerToken, TokenValidationParameters validationParameters, SecurityToken& signatureValidatedToken)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2026-08-24 11:09:18.945 +02:00 [INF] Bearer was not authenticated. Failure message: IDX10223: Lifetime validation failed. The token is expired. ValidTo (UTC): '24/08/2026 08:44:39', Current time (UTC): '24/08/2026 09:09:18'.
+2026-08-24 11:09:18.948 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-08-24 11:09:18.952 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-24 11:09:18.954 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 401 0 null 42.8575ms
+2026-08-24 11:20:06.151 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-24 11:20:06.376 +02:00 [INF] Now listening on: https://localhost:7210
+2026-08-24 11:20:06.378 +02:00 [INF] Now listening on: http://localhost:5267
+2026-08-24 11:20:06.451 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-24 11:20:06.454 +02:00 [INF] Hosting environment: Development
+2026-08-24 11:20:06.455 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-08-24 11:20:07.111 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-08-24 11:20:07.264 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 164.1938ms
+2026-08-24 11:20:07.272 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-08-24 11:20:07.345 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 72.8361ms
+2026-08-24 11:20:07.378 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-08-24 11:20:07.378 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-24 11:20:07.391 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 13.3614ms
+2026-08-24 11:20:07.429 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 51.6249ms
+2026-08-24 11:20:07.512 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-08-24 11:20:07.534 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 22.8153ms
+2026-08-24 11:20:58.513 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-24 11:20:58.747 +02:00 [INF] Now listening on: https://localhost:7210
+2026-08-24 11:20:58.749 +02:00 [INF] Now listening on: http://localhost:5267
+2026-08-24 11:20:58.952 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-24 11:20:58.954 +02:00 [INF] Hosting environment: Development
+2026-08-24 11:20:58.956 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-08-24 11:20:59.404 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-08-24 11:20:59.554 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 162.5249ms
+2026-08-24 11:20:59.559 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-08-24 11:20:59.638 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 79.7095ms
+2026-08-24 11:20:59.664 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-08-24 11:20:59.664 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-24 11:20:59.678 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 14.4038ms
+2026-08-24 11:20:59.726 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 61.9279ms
+2026-08-24 11:20:59.817 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-08-24 11:20:59.837 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.749ms
+2026-08-24 11:21:11.467 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-24 11:21:11.680 +02:00 [INF] Now listening on: https://localhost:7210
+2026-08-24 11:21:11.683 +02:00 [INF] Now listening on: http://localhost:5267
+2026-08-24 11:21:11.769 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-24 11:21:11.771 +02:00 [INF] Hosting environment: Development
+2026-08-24 11:21:11.772 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-08-24 11:21:12.584 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-08-24 11:21:12.720 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 151.3844ms
+2026-08-24 11:21:12.728 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-08-24 11:21:12.802 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 74.543ms
+2026-08-24 11:21:12.827 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-08-24 11:21:12.827 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-24 11:21:12.846 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 18.7695ms
+2026-08-24 11:21:12.884 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 57.1881ms
+2026-08-24 11:21:12.943 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-08-24 11:21:12.967 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 23.959ms
+2026-08-24 11:21:44.596 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-24 11:21:44.800 +02:00 [INF] Now listening on: https://localhost:7210
+2026-08-24 11:21:44.802 +02:00 [INF] Now listening on: http://localhost:5267
+2026-08-24 11:21:44.957 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-24 11:21:44.959 +02:00 [INF] Hosting environment: Development
+2026-08-24 11:21:44.960 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-08-24 11:21:45.611 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-08-24 11:21:45.763 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 162.5316ms
+2026-08-24 11:21:45.770 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-08-24 11:21:45.845 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 75.0461ms
+2026-08-24 11:21:45.867 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-08-24 11:21:45.871 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-24 11:21:45.885 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 13.7634ms
+2026-08-24 11:21:45.918 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 51.2408ms
+2026-08-24 11:21:45.978 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-08-24 11:21:46.002 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 24.4605ms
+2026-08-24 11:22:17.712 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 55
+2026-08-24 11:22:57.734 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 11:22:57.754 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-08-24 11:22:57.876 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 115.7482ms
+2026-08-24 11:22:57.879 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 11:22:57.881 +02:00 [ERR] HTTP POST /api/Login/Login responded 500 in 172.1512 ms
+System.IO.IOException: The request stream was aborted.
+ ---> Microsoft.AspNetCore.Connections.ConnectionAbortedException: The HTTP/2 connection faulted.
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpRequestStream.ReadAsyncInternal(Memory`1 destination, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Text.Json.Serialization.StreamReadBufferState.ReadAsync(Stream stream, CancellationToken cancellationToken, Boolean fillBuffer)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsync[TReadBufferState,TStream](TStream utf8Json, TReadBufferState bufferState, CancellationToken cancellationToken)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.DeserializeAsObjectAsync(Stream utf8Json, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter.ReadRequestBodyAsync(InputFormatterContext context, Encoding encoding)
+   at Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter.ReadRequestBodyAsync(InputFormatterContext context, Encoding encoding)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinder.BindModelAsync(ModelBindingContext bindingContext)
+   at Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder.BindModelAsync(ActionContext actionContext, IModelBinder modelBinder, IValueProvider valueProvider, ParameterDescriptor parameter, ModelMetadata metadata, Object value, Object container)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerBinderDelegateProvider.<>c__DisplayClass0_0.<<CreateBinderDelegate>g__Bind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-08-24 11:22:57.898 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 499 null null 40185.9888ms
+2026-08-24 11:23:02.230 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 55
+2026-08-24 11:23:04.417 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 11:23:04.419 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-08-24 11:23:04.881 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 11:23:06.345 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-08-24 11:23:06.546 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-08-24 11:23:06.562 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-08-24 11:23:06.584 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-08-24 11:23:06.589 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 2168.6508ms
+2026-08-24 11:23:06.591 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 11:23:06.592 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 2175.1747 ms
+2026-08-24 11:23:06.598 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 4368.5365ms
+2026-08-24 11:24:01.878 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 11:24:57.774 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:24:57.811 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-08-24 11:24:57.848 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 11:24:57.862 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:24:57.869 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 11:24:57.882 +02:00 [ERR] An error occurred using the connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 11:24:57.901 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'P7CreateRestApi.Data.ApplicationDbContext'.
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-08-24 11:24:57.907 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 94.9861ms
+2026-08-24 11:24:57.909 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:24:57.909 +02:00 [INF] HTTP GET /api/Account responded 200 in 135.7997 ms
+2026-08-24 11:24:57.911 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 499 null application/json; charset=utf-8 56032.9618ms
+2026-08-24 11:25:00.836 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 11:25:02.348 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:25:02.350 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-08-24 11:25:02.360 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 11:25:02.364 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:25:02.367 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 11:25:02.370 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:25:02.379 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 26.8194ms
+2026-08-24 11:25:02.381 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:25:02.382 +02:00 [INF] HTTP GET /api/Account responded 200 in 34.0774 ms
+2026-08-24 11:25:02.384 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 1548.7816ms
+2026-08-24 11:39:51.675 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 11:39:54.427 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:39:54.428 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-08-24 11:39:54.447 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 11:39:55.487 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:39:55.494 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 11:39:55.499 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:39:55.504 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 1074.1518ms
+2026-08-24 11:39:55.509 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:39:55.511 +02:00 [INF] HTTP GET /api/Account responded 200 in 1083.9773 ms
+2026-08-24 11:39:55.514 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 3839.5889ms
+2026-08-24 11:41:38.293 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 11:41:38.297 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:41:38.300 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-08-24 11:41:38.302 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 11:41:38.305 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:41:38.307 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 11:41:38.315 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:41:38.319 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 17.9873ms
+2026-08-24 11:41:38.321 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:41:38.321 +02:00 [INF] HTTP GET /api/Account responded 200 in 24.6529 ms
+2026-08-24 11:41:38.323 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 30.3628ms
+2026-08-24 11:43:44.628 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-24 11:43:44.830 +02:00 [INF] Now listening on: https://localhost:7210
+2026-08-24 11:43:44.832 +02:00 [INF] Now listening on: http://localhost:5267
+2026-08-24 11:43:44.908 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-24 11:43:44.910 +02:00 [INF] Hosting environment: Development
+2026-08-24 11:43:44.910 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-08-24 11:43:45.715 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-08-24 11:43:45.908 +02:00 [INF] HTTP GET /swagger responded 301 in 3.8349 ms
+2026-08-24 11:43:45.917 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 214.6342ms
+2026-08-24 11:43:45.923 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-08-24 11:43:45.993 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 61.0390 ms
+2026-08-24 11:43:45.998 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 75.7184ms
+2026-08-24 11:43:46.020 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-24 11:43:46.020 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-08-24 11:43:46.036 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 15.6279ms
+2026-08-24 11:43:46.079 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 59.6255ms
+2026-08-24 11:43:46.172 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-08-24 11:43:46.195 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 19.4422 ms
+2026-08-24 11:43:46.199 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 27.5359ms
+2026-08-24 11:43:49.632 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 11:43:49.674 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-08-24 11:43:49.679 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-24 11:43:49.681 +02:00 [INF] HTTP GET /api/Account responded 401 in 44.1708 ms
+2026-08-24 11:43:49.683 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 401 0 null 51.5075ms
+2026-08-24 11:44:11.580 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 55
+2026-08-24 11:44:11.589 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 11:44:11.613 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-08-24 11:44:12.256 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 11:44:12.739 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-08-24 11:44:12.914 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-08-24 11:44:12.930 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-08-24 11:44:12.955 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-08-24 11:44:12.961 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 1342.0767ms
+2026-08-24 11:44:12.963 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 11:44:12.964 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 1377.6270 ms
+2026-08-24 11:44:12.970 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 1389.5995ms
+2026-08-24 11:44:25.311 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 11:44:25.352 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:44:25.359 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-08-24 11:44:25.403 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 11:44:25.420 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:44:25.427 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 11:44:25.440 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:44:25.451 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 90.034ms
+2026-08-24 11:44:25.452 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:44:25.454 +02:00 [INF] HTTP GET /api/Account responded 200 in 139.2482 ms
+2026-08-24 11:44:25.456 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 145.5422ms
+2026-08-24 11:45:39.039 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 11:45:39.048 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:45:39.051 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-08-24 11:45:39.062 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 11:45:39.068 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:45:39.071 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 11:45:39.075 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:45:39.079 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 25.6233ms
+2026-08-24 11:45:39.080 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:45:39.081 +02:00 [INF] HTTP GET /api/Account responded 200 in 37.8859 ms
+2026-08-24 11:45:39.083 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 44.1313ms
+2026-08-24 11:46:16.661 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 11:46:16.666 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:46:16.667 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-08-24 11:46:16.675 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 11:46:16.678 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:46:16.681 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 11:46:16.684 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:46:16.689 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 19.7436ms
+2026-08-24 11:46:16.690 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:46:16.691 +02:00 [INF] HTTP GET /api/Account responded 200 in 25.5622 ms
+2026-08-24 11:46:16.693 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 33.2232ms
+2026-08-24 11:46:20.894 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 11:46:20.897 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:46:20.899 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-08-24 11:46:20.900 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 11:46:20.903 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:46:20.905 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 11:46:20.907 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:46:20.910 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 9.7397ms
+2026-08-24 11:46:20.911 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:46:20.912 +02:00 [INF] HTTP GET /api/Account responded 200 in 15.8417 ms
+2026-08-24 11:46:20.914 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 20.8447ms
+2026-08-24 11:49:38.192 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-24 11:49:38.392 +02:00 [INF] Now listening on: https://localhost:7210
+2026-08-24 11:49:38.394 +02:00 [INF] Now listening on: http://localhost:5267
+2026-08-24 11:49:38.493 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-24 11:49:38.494 +02:00 [INF] Hosting environment: Development
+2026-08-24 11:49:38.495 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-08-24 11:49:38.919 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-08-24 11:49:39.058 +02:00 [INF] HTTP GET /swagger responded 301 in 4.7047 ms
+2026-08-24 11:49:39.068 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 162.5466ms
+2026-08-24 11:49:39.076 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-08-24 11:49:39.146 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 60.3380 ms
+2026-08-24 11:49:39.149 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 73.0034ms
+2026-08-24 11:49:39.167 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-08-24 11:49:39.167 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-24 11:49:39.181 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 14.1862ms
+2026-08-24 11:49:39.216 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 49.5111ms
+2026-08-24 11:49:39.280 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-08-24 11:49:39.300 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 16.4034 ms
+2026-08-24 11:49:39.304 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 24.0161ms
+2026-08-24 11:49:43.534 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 11:49:43.576 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-08-24 11:49:43.580 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-24 11:49:43.581 +02:00 [INF] HTTP GET /api/Account responded 401 in 42.3322 ms
+2026-08-24 11:49:43.584 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 401 0 null 50.0805ms
+2026-08-24 11:49:57.892 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-24 11:49:58.111 +02:00 [INF] Now listening on: https://localhost:7210
+2026-08-24 11:49:58.113 +02:00 [INF] Now listening on: http://localhost:5267
+2026-08-24 11:49:58.300 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-24 11:49:58.301 +02:00 [INF] Hosting environment: Development
+2026-08-24 11:49:58.303 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-08-24 11:49:58.729 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-08-24 11:49:58.854 +02:00 [INF] HTTP GET /swagger responded 301 in 4.1302 ms
+2026-08-24 11:49:58.864 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 149.1401ms
+2026-08-24 11:49:58.869 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-08-24 11:49:58.938 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 58.4787 ms
+2026-08-24 11:49:58.942 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 72.4944ms
+2026-08-24 11:49:58.967 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-08-24 11:49:58.968 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-24 11:49:58.986 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 18.861ms
+2026-08-24 11:49:59.018 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 50.9917ms
+2026-08-24 11:49:59.068 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-08-24 11:49:59.092 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 19.7149 ms
+2026-08-24 11:49:59.097 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 28.8524ms
+2026-08-24 11:50:19.137 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-24 11:50:19.339 +02:00 [INF] Now listening on: https://localhost:7210
+2026-08-24 11:50:19.340 +02:00 [INF] Now listening on: http://localhost:5267
+2026-08-24 11:50:19.498 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-24 11:50:19.499 +02:00 [INF] Hosting environment: Development
+2026-08-24 11:50:19.500 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-08-24 11:50:20.146 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-08-24 11:50:20.267 +02:00 [INF] HTTP GET /swagger responded 301 in 3.2921 ms
+2026-08-24 11:50:20.277 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 143.355ms
+2026-08-24 11:50:20.281 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-08-24 11:50:20.349 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 58.7492 ms
+2026-08-24 11:50:20.354 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 72.9126ms
+2026-08-24 11:50:20.387 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-08-24 11:50:20.388 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-24 11:50:20.402 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 14.4032ms
+2026-08-24 11:50:20.433 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 46.8528ms
+2026-08-24 11:50:20.488 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-08-24 11:50:20.512 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 21.2981 ms
+2026-08-24 11:50:20.517 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 28.9116ms
+2026-08-24 11:52:04.817 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-24 11:52:05.006 +02:00 [INF] Now listening on: https://localhost:7210
+2026-08-24 11:52:05.009 +02:00 [INF] Now listening on: http://localhost:5267
+2026-08-24 11:52:05.100 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-24 11:52:05.102 +02:00 [INF] Hosting environment: Development
+2026-08-24 11:52:05.103 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-08-24 11:52:05.797 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-08-24 11:52:11.766 +02:00 [INF] HTTP GET /swagger responded 301 in 4.2197 ms
+2026-08-24 11:52:11.774 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 5988.1079ms
+2026-08-24 11:52:11.780 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-08-24 11:52:15.782 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 63.5875 ms
+2026-08-24 11:52:15.786 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 4006.0014ms
+2026-08-24 11:52:15.810 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-08-24 11:52:15.811 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-24 11:52:15.827 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 15.3868ms
+2026-08-24 11:52:15.856 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 46.5984ms
+2026-08-24 11:52:15.909 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-08-24 11:52:18.108 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 13.5599 ms
+2026-08-24 11:52:18.110 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 2201.6711ms
+2026-08-24 11:53:07.131 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 55
+2026-08-24 11:53:10.775 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 11:53:10.798 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-08-24 11:53:11.282 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 11:53:11.710 +02:00 [INF] Executed DbCommand (37ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-08-24 11:53:11.936 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-08-24 11:53:11.956 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-08-24 11:53:11.983 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-08-24 11:53:11.991 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 1187.8612ms
+2026-08-24 11:53:11.994 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 11:53:11.995 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 1268.4156 ms
+2026-08-24 11:53:12.001 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 4871.5631ms
+2026-08-24 11:53:35.531 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 11:53:39.011 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:53:39.019 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-08-24 11:53:39.064 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 11:53:39.079 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:53:39.086 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 11:53:39.097 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:53:39.106 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 84.6094ms
+2026-08-24 11:53:39.107 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:53:39.109 +02:00 [INF] HTTP GET /api/Account responded 200 in 141.1878 ms
+2026-08-24 11:53:39.111 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 3580.5158ms
+2026-08-24 11:55:09.649 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 11:56:52.134 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:56:52.135 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-08-24 11:56:52.145 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 11:56:52.150 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:57:12.438 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 11:57:12.446 +02:00 [ERR] An error occurred using the connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 11:57:12.459 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'P7CreateRestApi.Data.ApplicationDbContext'.
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2026-08-24 11:57:12.466 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 20329.0247ms
+2026-08-24 11:57:12.467 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:57:12.468 +02:00 [INF] HTTP GET /api/Account responded 200 in 20343.7258 ms
+2026-08-24 11:57:12.469 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 499 null application/json; charset=utf-8 122821.9049ms
+2026-08-24 11:57:16.000 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 11:57:21.872 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:57:21.873 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-08-24 11:57:21.880 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 11:57:21.883 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:57:36.517 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 11:57:36.523 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:57:36.527 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 14652.1972ms
+2026-08-24 11:57:36.530 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:57:36.531 +02:00 [INF] HTTP GET /api/Account responded 200 in 14661.4327 ms
+2026-08-24 11:57:36.533 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 20533.2898ms
+2026-08-24 11:57:39.545 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 11:57:51.024 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:57:51.025 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-08-24 11:57:51.029 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 11:57:51.033 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:57:52.323 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 11:57:52.328 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:57:52.330 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 1302.0458ms
+2026-08-24 11:57:52.332 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:57:52.333 +02:00 [INF] HTTP GET /api/Account responded 200 in 1309.0675 ms
+2026-08-24 11:57:52.335 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 12790.4753ms
+2026-08-24 11:57:54.616 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 11:58:13.815 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:58:13.816 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-08-24 11:58:13.820 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 11:58:13.822 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:58:18.828 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 11:58:18.832 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 11:58:18.835 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 5016.5141ms
+2026-08-24 11:58:18.837 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 11:58:18.838 +02:00 [INF] HTTP GET /api/Account responded 200 in 5023.3433 ms
+2026-08-24 11:58:18.839 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 24224.3561ms
+2026-08-24 11:58:27.042 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 55
+2026-08-24 11:58:32.558 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 11:58:32.561 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-08-24 11:58:32.565 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 11:58:32.571 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-08-24 11:58:32.643 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-08-24 11:58:32.647 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-08-24 11:58:32.648 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-08-24 11:58:32.649 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 86.5104ms
+2026-08-24 11:58:32.650 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 11:58:32.652 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 94.0803 ms
+2026-08-24 11:58:32.654 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 5611.4833ms
+2026-08-24 11:58:55.708 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/BidLists - null null
+2026-08-24 12:01:39.948 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-24 12:01:40.139 +02:00 [INF] Now listening on: https://localhost:7210
+2026-08-24 12:01:40.142 +02:00 [INF] Now listening on: http://localhost:5267
+2026-08-24 12:01:40.232 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-24 12:01:40.234 +02:00 [INF] Hosting environment: Development
+2026-08-24 12:01:40.235 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-08-24 12:01:40.607 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-08-24 12:01:40.746 +02:00 [INF] HTTP GET /swagger responded 301 in 5.5166 ms
+2026-08-24 12:01:40.755 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 160.6919ms
+2026-08-24 12:01:40.761 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-08-24 12:01:40.841 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 69.6048 ms
+2026-08-24 12:01:40.846 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 85.1018ms
+2026-08-24 12:01:40.873 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-08-24 12:01:40.873 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-24 12:01:40.890 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 17.2035ms
+2026-08-24 12:01:40.931 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 57.9588ms
+2026-08-24 12:01:41.001 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-08-24 12:01:41.024 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 18.7433 ms
+2026-08-24 12:01:41.027 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 26.3984ms
+2026-08-24 12:01:47.851 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 12:01:47.909 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-08-24 12:01:47.914 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-08-24 12:01:47.916 +02:00 [INF] HTTP GET /api/Account responded 401 in 59.4417 ms
+2026-08-24 12:01:47.918 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 401 0 null 67.0917ms
+2026-08-24 12:02:09.898 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 55
+2026-08-24 12:02:09.907 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 12:02:09.934 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-08-24 12:02:10.495 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 12:02:10.948 +02:00 [INF] Executed DbCommand (39ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-08-24 12:02:11.126 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-08-24 12:02:11.142 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-08-24 12:02:11.163 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-08-24 12:02:11.171 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 1230.1562ms
+2026-08-24 12:02:11.173 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 12:02:11.174 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 1270.4378 ms
+2026-08-24 12:02:11.180 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 1281.7066ms
+2026-08-24 12:02:28.316 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 12:02:28.355 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 12:02:28.361 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-08-24 12:02:28.405 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 12:02:28.421 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 12:02:28.427 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 12:02:28.440 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 12:02:28.450 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 87.7855ms
+2026-08-24 12:02:28.461 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 12:02:28.462 +02:00 [INF] HTTP GET /api/Account responded 200 in 142.0021 ms
+2026-08-24 12:02:28.464 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 148.3133ms
+2026-08-24 14:45:44.314 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-24 14:45:44.503 +02:00 [INF] Now listening on: https://localhost:7210
+2026-08-24 14:45:44.505 +02:00 [INF] Now listening on: http://localhost:5267
+2026-08-24 14:45:44.577 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-24 14:45:44.578 +02:00 [INF] Hosting environment: Development
+2026-08-24 14:45:44.579 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-08-24 14:45:45.284 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-08-24 14:45:45.416 +02:00 [INF] HTTP GET /swagger responded 301 in 3.4665 ms
+2026-08-24 14:45:45.424 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 154.7555ms
+2026-08-24 14:45:45.430 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-08-24 14:45:45.501 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 62.7981 ms
+2026-08-24 14:45:45.507 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 76.3183ms
+2026-08-24 14:45:45.540 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-08-24 14:45:45.540 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-24 14:45:45.554 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 13.7593ms
+2026-08-24 14:45:45.581 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 41.9108ms
+2026-08-24 14:45:45.646 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-08-24 14:45:45.667 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 16.7207 ms
+2026-08-24 14:45:45.669 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 23.0326ms
+2026-08-24 14:46:01.823 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 55
+2026-08-24 14:46:01.877 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 14:46:01.905 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-08-24 14:46:02.490 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 14:46:04.044 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-08-24 14:46:04.236 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-08-24 14:46:04.252 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-08-24 14:46:04.275 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-08-24 14:46:04.283 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 2371.6905ms
+2026-08-24 14:46:04.285 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 14:46:04.286 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 2458.7702 ms
+2026-08-24 14:46:04.291 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 2468.1005ms
+2026-08-24 14:46:18.524 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/BidLists - null null
+2026-08-24 14:46:18.568 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)'
+2026-08-24 14:46:18.573 +02:00 [INF] Route matched with {action = "GetAllBidLists", controller = "BidLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBidLists() on controller P7CreateRestApi.Controllers.BidListsController (P7CreateRestApi).
+2026-08-24 14:46:18.637 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'P7Referential' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 14:46:18.700 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+2026-08-24 14:46:18.743 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Domain.BidList, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 14:46:18.763 +02:00 [INF] Executed action P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi) in 187.3737ms
+2026-08-24 14:46:18.765 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)'
+2026-08-24 14:46:18.766 +02:00 [INF] HTTP GET /api/BidLists responded 200 in 237.2482 ms
+2026-08-24 14:46:18.768 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/BidLists - 200 null application/json; charset=utf-8 244.9871ms
+2026-08-24 14:47:09.268 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/BidLists - null null
+2026-08-24 14:47:09.274 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)'
+2026-08-24 14:47:09.276 +02:00 [INF] Route matched with {action = "GetAllBidLists", controller = "BidLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBidLists() on controller P7CreateRestApi.Controllers.BidListsController (P7CreateRestApi).
+2026-08-24 14:47:09.288 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'P7Referential' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 14:47:09.302 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+2026-08-24 14:47:09.305 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Domain.BidList, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 14:47:09.307 +02:00 [INF] Executed action P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi) in 28.1207ms
+2026-08-24 14:47:09.308 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)'
+2026-08-24 14:47:09.309 +02:00 [INF] HTTP GET /api/BidLists responded 200 in 36.8928 ms
+2026-08-24 14:47:09.311 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/BidLists - 200 null application/json; charset=utf-8 43.0202ms
+2026-08-24 14:47:24.995 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/BidLists - null null
+2026-08-24 15:46:26.757 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-24 15:46:27.042 +02:00 [INF] Now listening on: https://localhost:7210
+2026-08-24 15:46:27.045 +02:00 [INF] Now listening on: http://localhost:5267
+2026-08-24 15:46:27.142 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-08-24 15:46:27.144 +02:00 [INF] Hosting environment: Development
+2026-08-24 15:46:27.146 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-08-24 15:46:27.679 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-08-24 15:46:27.831 +02:00 [INF] HTTP GET /swagger responded 301 in 4.0016 ms
+2026-08-24 15:46:27.840 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 170.1382ms
+2026-08-24 15:46:27.847 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-08-24 15:46:27.923 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 67.1330 ms
+2026-08-24 15:46:27.928 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 81.5008ms
+2026-08-24 15:46:27.959 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-24 15:46:27.969 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-08-24 15:46:27.970 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 11.7687ms
+2026-08-24 15:46:28.015 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 46.5757ms
+2026-08-24 15:46:28.080 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-08-24 15:46:28.100 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 16.3355 ms
+2026-08-24 15:46:28.103 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 23.7441ms
+2026-08-24 15:46:53.835 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 55
+2026-08-24 15:46:53.876 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 15:46:53.900 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-08-24 15:46:54.558 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 15:46:56.045 +02:00 [INF] Executed DbCommand (43ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-08-24 15:46:56.241 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-08-24 15:46:56.256 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-08-24 15:46:56.285 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-08-24 15:46:56.291 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 2384.9423ms
+2026-08-24 15:46:56.293 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 15:46:56.295 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 2452.5719 ms
+2026-08-24 15:46:56.300 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 2464.4847ms
+2026-08-24 15:47:15.542 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/BidLists - null null
+2026-08-24 15:47:15.595 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)'
+2026-08-24 15:47:15.600 +02:00 [INF] Route matched with {action = "GetAllBidLists", controller = "BidLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBidLists() on controller P7CreateRestApi.Controllers.BidListsController (P7CreateRestApi).
+2026-08-24 15:47:15.662 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'P7Referential' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 15:47:15.734 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+2026-08-24 15:47:15.778 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Domain.BidList, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 15:47:15.797 +02:00 [INF] Executed action P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi) in 194.7409ms
+2026-08-24 15:47:15.800 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)'
+2026-08-24 15:47:15.801 +02:00 [INF] HTTP GET /api/BidLists responded 200 in 255.3808 ms
+2026-08-24 15:47:15.804 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/BidLists - 200 null application/json; charset=utf-8 262.967ms
+2026-08-24 15:47:55.455 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/BidLists - null null
+2026-08-24 15:48:02.301 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)'
+2026-08-24 15:48:02.303 +02:00 [INF] Route matched with {action = "GetAllBidLists", controller = "BidLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBidLists() on controller P7CreateRestApi.Controllers.BidListsController (P7CreateRestApi).
+2026-08-24 15:48:02.313 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'P7Referential' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 15:48:02.327 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+2026-08-24 15:48:02.330 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Domain.BidList, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 15:48:02.332 +02:00 [INF] Executed action P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi) in 26.4758ms
+2026-08-24 15:48:02.333 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)'
+2026-08-24 15:48:02.334 +02:00 [INF] HTTP GET /api/BidLists responded 200 in 35.7679 ms
+2026-08-24 15:48:02.335 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/BidLists - 200 null application/json; charset=utf-8 6882.8638ms
+2026-08-24 15:52:07.313 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/BidLists - null null
+2026-08-24 15:52:07.317 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)'
+2026-08-24 15:52:07.318 +02:00 [INF] Route matched with {action = "GetAllBidLists", controller = "BidLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBidLists() on controller P7CreateRestApi.Controllers.BidListsController (P7CreateRestApi).
+2026-08-24 15:52:07.322 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'P7Referential' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 15:52:07.326 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+2026-08-24 15:52:07.329 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Domain.BidList, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 15:52:07.330 +02:00 [INF] Executed action P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi) in 10.0583ms
+2026-08-24 15:52:07.331 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)'
+2026-08-24 15:52:07.332 +02:00 [INF] HTTP GET /api/BidLists responded 200 in 16.0177 ms
+2026-08-24 15:52:07.334 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/BidLists - 200 null application/json; charset=utf-8 21.1263ms
+2026-08-24 15:56:36.669 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/BidLists - null null
+2026-08-24 15:56:47.715 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)'
+2026-08-24 15:56:47.716 +02:00 [INF] Route matched with {action = "GetAllBidLists", controller = "BidLists"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBidLists() on controller P7CreateRestApi.Controllers.BidListsController (P7CreateRestApi).
+2026-08-24 15:56:47.719 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'P7Referential' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 15:56:47.722 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[BidListId], [b].[Account], [b].[Ask], [b].[AskQuantity], [b].[Benchmark], [b].[Bid], [b].[BidListDate], [b].[BidQuantity], [b].[BidSecurity], [b].[BidStatus], [b].[BidType], [b].[Book], [b].[Commentary], [b].[CreationDate], [b].[CreationName], [b].[DealName], [b].[DealType], [b].[RevisionDate], [b].[RevisionName], [b].[Side], [b].[SourceListId], [b].[Trader]
+FROM [BidLists] AS [b]
+2026-08-24 15:56:47.725 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[P7CreateRestApi.Domain.BidList, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 15:56:47.727 +02:00 [INF] Executed action P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi) in 9.2016ms
+2026-08-24 15:56:47.728 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.BidListsController.GetAllBidLists (P7CreateRestApi)'
+2026-08-24 15:56:47.729 +02:00 [INF] HTTP GET /api/BidLists responded 200 in 15.3411 ms
+2026-08-24 15:56:47.731 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/BidLists - 200 null application/json; charset=utf-8 11063.1241ms
+2026-08-24 16:06:03.689 +02:00 [INF] The global log file has been configured
+2026-08-24 16:06:03.745 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-08-24 16:06:03.753 +02:00 [DBG] Reading data from file 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys\key-6af0e56a-7245-4335-8ced-2d5e772780aa.xml'.
+2026-08-24 16:06:03.757 +02:00 [DBG] Reading data from file 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys\key-6d168a49-1136-4c68-8849-be879c7c1f3c.xml'.
+2026-08-24 16:06:03.758 +02:00 [DBG] Reading data from file 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys\key-b366d42f-9340-42a9-a196-6a54c156d14c.xml'.
+2026-08-24 16:06:03.758 +02:00 [DBG] Reading data from file 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys\key-eb149d25-fb7e-4f1d-a18d-3670060f0459.xml'.
+2026-08-24 16:06:03.759 +02:00 [DBG] Reading data from file 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys\key-eb3569a0-463f-417f-9404-a115e61f4bdd.xml'.
+2026-08-24 16:06:03.763 +02:00 [DBG] Found key {6af0e56a-7245-4335-8ced-2d5e772780aa}.
+2026-08-24 16:06:03.765 +02:00 [DBG] Found key {6d168a49-1136-4c68-8849-be879c7c1f3c}.
+2026-08-24 16:06:03.765 +02:00 [DBG] Found key {b366d42f-9340-42a9-a196-6a54c156d14c}.
+2026-08-24 16:06:03.765 +02:00 [DBG] Found key {eb149d25-fb7e-4f1d-a18d-3670060f0459}.
+2026-08-24 16:06:03.765 +02:00 [DBG] Found key {eb3569a0-463f-417f-9404-a115e61f4bdd}.
+2026-08-24 16:06:03.769 +02:00 [DBG] Considering key {eb149d25-fb7e-4f1d-a18d-3670060f0459} with expiration date 2026-11-19 09:39:56Z as default key.
+2026-08-24 16:06:03.772 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-08-24 16:06:03.774 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2026-08-24 16:06:03.774 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-08-24 16:06:03.777 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-08-24 16:06:03.778 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-08-24 16:06:03.778 +02:00 [DBG] Using key {eb149d25-fb7e-4f1d-a18d-3670060f0459} as the default key.
+2026-08-24 16:06:03.779 +02:00 [DBG] Key ring with default key {eb149d25-fb7e-4f1d-a18d-3670060f0459} was loaded during application startup.
+2026-08-24 16:06:03.782 +02:00 [DBG] Middleware loaded
+2026-08-24 16:06:03.784 +02:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (14935 B).
+2026-08-24 16:06:03.784 +02:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-08-24 16:06:03.832 +02:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2026-08-24 16:06:03.918 +02:00 [INF] Now listening on: https://localhost:7210
+2026-08-24 16:06:03.918 +02:00 [INF] Now listening on: http://localhost:5267
+2026-08-24 16:06:03.918 +02:00 [DBG] Loaded hosting startup assembly P7CreateRestApi
+2026-08-24 16:06:03.918 +02:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-08-24 16:06:03.918 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-08-24 16:06:03.918 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-08-24 16:06:04.385 +02:00 [DBG] Connection id "0HNO1T3AVJAAC" received FIN.
+2026-08-24 16:06:04.411 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2026-08-24 16:06:04.428 +02:00 [DBG] Connection id "0HNO1T3AVJAAC" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-24 16:06:05.122 +02:00 [DBG] Connection id "0HNO1T3AVJAAE" received FIN.
+2026-08-24 16:06:05.123 +02:00 [DBG] Connection 0HNO1T3AVJAAE established using the following protocol: "Tls13"
+2026-08-24 16:06:05.123 +02:00 [DBG] Connection 0HNO1T3AVJAAD established using the following protocol: "Tls13"
+2026-08-24 16:06:05.152 +02:00 [DBG] Connection id "0HNO1T3AVJAAE" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-08-24 16:06:05.222 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-08-24 16:06:05.398 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-08-24 16:06:05.425 +02:00 [DBG] No candidates found for the request path '/swagger'
+2026-08-24 16:06:05.426 +02:00 [DBG] Request did not match any endpoints
+2026-08-24 16:06:05.434 +02:00 [INF] HTTP GET /swagger responded 301 in 5.4031 ms
+2026-08-24 16:06:05.440 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 237.2568ms
+2026-08-24 16:06:05.446 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-08-24 16:06:05.453 +02:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2026-08-24 16:06:05.453 +02:00 [DBG] Request did not match any endpoints
+2026-08-24 16:06:05.513 +02:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-08-24 16:06:05.526 +02:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-08-24 16:06:05.562 +02:00 [INF] HTTP GET /swagger/index.html responded 200 in 108.0892 ms
+2026-08-24 16:06:05.564 +02:00 [DBG] Response markup was updated to include Browser Link script injection.
+2026-08-24 16:06:05.566 +02:00 [DBG] Response markup was updated to include browser refresh script injection.
+2026-08-24 16:06:05.566 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 119.9523ms
+2026-08-24 16:06:05.853 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-08-24 16:06:05.858 +02:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-08-24 16:06:05.859 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 5.723ms
+2026-08-24 16:06:05.863 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-08-24 16:06:05.909 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 46.0047ms
+2026-08-24 16:06:06.015 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-08-24 16:06:06.015 +02:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2026-08-24 16:06:06.016 +02:00 [DBG] Request did not match any endpoints
+2026-08-24 16:06:06.033 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 17.8037 ms
+2026-08-24 16:06:06.034 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 18.9342ms
+2026-08-24 16:06:45.272 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 55
+2026-08-24 16:06:45.276 +02:00 [DBG] 1 candidate(s) found for the request path '/api/Login/Login'
+2026-08-24 16:06:45.280 +02:00 [DBG] Endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)' with route pattern 'api/Login/Login' is valid for the request path '/api/Login/Login'
+2026-08-24 16:06:45.280 +02:00 [DBG] Request matched endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 16:06:45.282 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-08-24 16:06:45.315 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2026-08-24 16:06:45.317 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 16:06:45.419 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-08-24 16:06:45.448 +02:00 [DBG] Attempting to bind parameter 'loginModel' of type 'P7CreateRestApi.Models.LoginModel' using the name '' in request data ...
+2026-08-24 16:06:45.460 +02:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2026-08-24 16:06:45.476 +02:00 [DBG] Done attempting to bind parameter 'loginModel' of type 'P7CreateRestApi.Models.LoginModel'.
+2026-08-24 16:06:45.777 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2026-08-24 16:06:45.778 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2026-08-24 16:06:45.932 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 16:06:46.000 +02:00 [DBG] Compiling query expression: 
+'DbSet<User>()
+    .FirstOrDefault(u => u.NormalizedUserName == __normalizedUserName_0)'
+2026-08-24 16:06:46.124 +02:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<User>(
+    asyncEnumerable: new SingleQueryingEnumerable<User>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.SelectExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (string) Required PK AfterSave:Throw, 0], [Property: User.AccessFailedCount (int) Required, 1], [Property: User.ConcurrencyStamp (string) Concurrency, 2], [Property: User.Email (string) MaxLength(256), 3], [Property: User.EmailConfirmed (bool) Required, 4], [Property: User.Fullname (string) Required, 5], [Property: User.LockoutEnabled (bool) Required, 6], [Property: User.LockoutEnd (DateTimeOffset?), 7], [Property: User.NormalizedEmail (string) Index MaxLength(256), 8], [Property: User.NormalizedUserName (string) Index MaxLength(256), 9], [Property: User.Password (string) Required, 10], [Property: User.PasswordHash (string), 11], [Property: User.PhoneNumber (string), 12], [Property: User.PhoneNumberConfirmed (bool) Required, 13], [Property: User.Role (string) Required, 14], [Property: User.SecurityStamp (string), 15], [Property: User.TwoFactorEnabled (bool) Required, 16], [Property: User.UserName (string) Required MaxLength(256), 17] }
+            SELECT TOP(1) a.Id, a.AccessFailedCount, a.ConcurrencyStamp, a.Email, a.EmailConfirmed, a.Fullname, a.LockoutEnabled, a.LockoutEnd, a.NormalizedEmail, a.NormalizedUserName, a.Password, a.PasswordHash, a.PhoneNumber, a.PhoneNumberConfirmed, a.Role, a.SecurityStamp, a.TwoFactorEnabled, a.UserName
+            FROM AspNetUsers AS a
+            WHERE a.NormalizedUserName == @__normalizedUserName_0), 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+        P7CreateRestApi.Data.ApplicationDbContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2026-08-24 16:06:46.153 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-24 16:06:46.177 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (22ms).
+2026-08-24 16:06:46.185 +02:00 [DBG] Opening connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:06:47.478 +02:00 [DBG] Opened connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:06:47.486 +02:00 [DBG] Executing DbCommand [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-08-24 16:06:47.530 +02:00 [INF] Executed DbCommand (46ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-08-24 16:06:47.560 +02:00 [DBG] Context 'ApplicationDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-24 16:06:47.594 +02:00 [DBG] A data reader was disposed.
+2026-08-24 16:06:47.596 +02:00 [DBG] Closing connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:06:47.600 +02:00 [DBG] Closed connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:06:47.687 +02:00 [DBG] Compiling query expression: 
+'DbSet<IdentityUserClaim<string>>()
+    .Where(uc => uc.UserId.Equals(__user_Id_0))
+    .Select(c => c.ToClaim())'
+2026-08-24 16:06:47.705 +02:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Claim>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Client Projections:
+            0 -> Dictionary<IProperty, int> { [Property: IdentityUserClaim<string>.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: IdentityUserClaim<string>.ClaimType (string), 1], [Property: IdentityUserClaim<string>.ClaimValue (string), 2], [Property: IdentityUserClaim<string>.UserId (string) Required FK Index, 3] }
+        SELECT a.Id, a.ClaimType, a.ClaimValue, a.UserId
+        FROM AspNetUserClaims AS a
+        WHERE a.UserId == @__user_Id_0), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Claim>, 
+    P7CreateRestApi.Data.ApplicationDbContext, 
+    False, 
+    False, 
+    True
+)'
+2026-08-24 16:06:47.706 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-24 16:06:47.706 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2026-08-24 16:06:47.706 +02:00 [DBG] Opening connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:06:47.707 +02:00 [DBG] Opened connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:06:47.707 +02:00 [DBG] Executing DbCommand [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-08-24 16:06:47.711 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-08-24 16:06:47.712 +02:00 [DBG] A data reader was disposed.
+2026-08-24 16:06:47.712 +02:00 [DBG] Closing connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:06:47.712 +02:00 [DBG] Closed connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:06:47.724 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-08-24 16:06:47.740 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-08-24 16:06:47.741 +02:00 [DBG] No information found on request to perform content negotiation.
+2026-08-24 16:06:47.742 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-08-24 16:06:47.742 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-08-24 16:06:47.742 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2026-08-24 16:06:47.742 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-08-24 16:06:47.750 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-08-24 16:06:47.751 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 2469.7090 ms
+2026-08-24 16:06:47.753 +02:00 [DBG] 'ApplicationDbContext' disposed.
+2026-08-24 16:06:47.754 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 2482.5405ms
+2026-08-24 16:07:08.423 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 16:07:08.425 +02:00 [DBG] 1 candidate(s) found for the request path '/api/Account'
+2026-08-24 16:07:08.425 +02:00 [DBG] Endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)' with route pattern 'api/Account' is valid for the request path '/api/Account'
+2026-08-24 16:07:08.425 +02:00 [DBG] Request matched endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 16:07:08.426 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-08-24 16:07:08.459 +02:00 [DBG] Successfully validated the token.
+2026-08-24 16:07:08.460 +02:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-08-24 16:07:08.464 +02:00 [DBG] Authorization was successful.
+2026-08-24 16:07:16.030 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 16:07:16.075 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-08-24 16:07:16.077 +02:00 [DBG] Compiling query expression: 
+'DbSet<User>()'
+2026-08-24 16:07:16.079 +02:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<User>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (string) Required PK AfterSave:Throw, 0], [Property: User.AccessFailedCount (int) Required, 1], [Property: User.ConcurrencyStamp (string) Concurrency, 2], [Property: User.Email (string) MaxLength(256), 3], [Property: User.EmailConfirmed (bool) Required, 4], [Property: User.Fullname (string) Required, 5], [Property: User.LockoutEnabled (bool) Required, 6], [Property: User.LockoutEnd (DateTimeOffset?), 7], [Property: User.NormalizedEmail (string) Index MaxLength(256), 8], [Property: User.NormalizedUserName (string) Index MaxLength(256), 9], [Property: User.Password (string) Required, 10], [Property: User.PasswordHash (string), 11], [Property: User.PhoneNumber (string), 12], [Property: User.PhoneNumberConfirmed (bool) Required, 13], [Property: User.Role (string) Required, 14], [Property: User.SecurityStamp (string), 15], [Property: User.TwoFactorEnabled (bool) Required, 16], [Property: User.UserName (string) Required MaxLength(256), 17] }
+        SELECT a.Id, a.AccessFailedCount, a.ConcurrencyStamp, a.Email, a.EmailConfirmed, a.Fullname, a.LockoutEnabled, a.LockoutEnd, a.NormalizedEmail, a.NormalizedUserName, a.Password, a.PasswordHash, a.PhoneNumber, a.PhoneNumberConfirmed, a.Role, a.SecurityStamp, a.TwoFactorEnabled, a.UserName
+        FROM AspNetUsers AS a), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+    P7CreateRestApi.Data.ApplicationDbContext, 
+    False, 
+    False, 
+    True
+)'
+2026-08-24 16:07:16.081 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-24 16:07:16.082 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2026-08-24 16:07:16.082 +02:00 [DBG] Opening connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:07:16.083 +02:00 [DBG] Opened connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:07:16.083 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 16:07:16.085 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 16:07:16.086 +02:00 [DBG] Context 'ApplicationDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-24 16:07:16.087 +02:00 [DBG] A data reader was disposed.
+2026-08-24 16:07:16.088 +02:00 [DBG] Closing connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:07:16.088 +02:00 [DBG] Closed connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:07:16.089 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2026-08-24 16:07:16.089 +02:00 [DBG] No information found on request to perform content negotiation.
+2026-08-24 16:07:16.089 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2026-08-24 16:07:16.089 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2026-08-24 16:07:16.089 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2026-08-24 16:07:16.089 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-08-24 16:07:16.097 +02:00 [DBG] Compiling query expression: 
+'DbSet<User>()'
+2026-08-24 16:07:16.099 +02:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<User>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IProperty, int> { [Property: User.Id (string) Required PK AfterSave:Throw, 0], [Property: User.AccessFailedCount (int) Required, 1], [Property: User.ConcurrencyStamp (string) Concurrency, 2], [Property: User.Email (string) MaxLength(256), 3], [Property: User.EmailConfirmed (bool) Required, 4], [Property: User.Fullname (string) Required, 5], [Property: User.LockoutEnabled (bool) Required, 6], [Property: User.LockoutEnd (DateTimeOffset?), 7], [Property: User.NormalizedEmail (string) Index MaxLength(256), 8], [Property: User.NormalizedUserName (string) Index MaxLength(256), 9], [Property: User.Password (string) Required, 10], [Property: User.PasswordHash (string), 11], [Property: User.PhoneNumber (string), 12], [Property: User.PhoneNumberConfirmed (bool) Required, 13], [Property: User.Role (string) Required, 14], [Property: User.SecurityStamp (string), 15], [Property: User.TwoFactorEnabled (bool) Required, 16], [Property: User.UserName (string) Required MaxLength(256), 17] }
+        SELECT a.Id, a.AccessFailedCount, a.ConcurrencyStamp, a.Email, a.EmailConfirmed, a.Fullname, a.LockoutEnabled, a.LockoutEnd, a.NormalizedEmail, a.NormalizedUserName, a.Password, a.PasswordHash, a.PhoneNumber, a.PhoneNumberConfirmed, a.Role, a.SecurityStamp, a.TwoFactorEnabled, a.UserName
+        FROM AspNetUsers AS a), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, User>, 
+    P7CreateRestApi.Data.ApplicationDbContext, 
+    False, 
+    False, 
+    True
+)'
+2026-08-24 16:07:16.100 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-08-24 16:07:16.100 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2026-08-24 16:07:16.100 +02:00 [DBG] Opening connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:07:16.100 +02:00 [DBG] Opened connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:07:16.100 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 16:07:16.101 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-08-24 16:07:16.105 +02:00 [DBG] Context 'ApplicationDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-24 16:07:16.105 +02:00 [DBG] Context 'ApplicationDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-24 16:07:16.106 +02:00 [DBG] Context 'ApplicationDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-24 16:07:16.106 +02:00 [DBG] Context 'ApplicationDbContext' started tracking 'User' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-08-24 16:07:16.107 +02:00 [DBG] A data reader was disposed.
+2026-08-24 16:07:16.107 +02:00 [DBG] Closing connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:07:16.108 +02:00 [DBG] Closed connection to database 'P7Identity' on server '(localdb)\mssqlLocalDB'.
+2026-08-24 16:07:16.110 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 16:07:16.111 +02:00 [INF] HTTP GET /api/Account responded 200 in 7685.1118 ms
+2026-08-24 16:07:16.111 +02:00 [DBG] 'ApplicationDbContext' disposed.
+2026-08-24 16:07:16.111 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 7687.9806ms
+2026-08-24 16:08:30.729 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-08-24 16:08:30.730 +02:00 [DBG] 1 candidate(s) found for the request path '/api/Account'
+2026-08-24 16:08:30.730 +02:00 [DBG] Endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)' with route pattern 'api/Account' is valid for the request path '/api/Account'
+2026-08-24 16:08:30.730 +02:00 [DBG] Request matched endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-08-24 16:08:30.730 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-08-24 16:08:30.731 +02:00 [DBG] Successfully validated the token.
+2026-08-24 16:08:30.731 +02:00 [DBG] AuthenticationScheme: Bearer was successfully authenticated.
+2026-08-24 16:08:30.732 +02:00 [DBG] Authorization was successful.

@@ -9,6 +9,8 @@ using P7CreateRestApi.Domain;
 using P7CreateRestApi.IRepositories;
 using P7CreateRestApi.IServices;
 using P7CreateRestApi.LogUserNameMiddleware;
+
+//using P7CreateRestApi.LogUserNameMiddleware;
 using P7CreateRestApi.Repositories;
 using P7CreateRestApi.Services;
 using Serilog;
@@ -121,12 +123,7 @@ builder.Services.AddAuthentication(options =>
 
 builder.Host.UseSerilog((context, loggerConfig) =>
     loggerConfig.ReadFrom.Configuration(context.Configuration));
-
-
-
-
-
-
+    
 
 
 var app = builder.Build();
@@ -146,6 +143,7 @@ app.MapControllers();
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseMiddleware<LogUserNameMiddleware>();
 
 //-----------------------Serilog intitial configuration----------------------------------------
 //using var log = new LoggerConfiguration()
@@ -180,7 +178,7 @@ app.UseAuthorization();
 //    .RequireAuthorization();
 //---------------------------------------------------------------------------------------------
 
-app.UseMiddleware<LogUserNameMiddleware>();
+//app.UseMiddleware<LogUserNameMiddleware>();
 app.UseSerilogRequestLogging();
 app.Run();
 
