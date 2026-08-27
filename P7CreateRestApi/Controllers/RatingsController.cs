@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using P7CreateRestApi.Domain;
+using P7CreateRestApi.Filters;
 using P7CreateRestApi.IRepositories;
 
 namespace P7CreateRestApi.Controllers
@@ -60,7 +61,6 @@ namespace P7CreateRestApi.Controllers
         [Route("")]
         public async Task<IActionResult> CreateRating([FromBody] Rating rating)
         {
-            // TODO: check required fields, if valid call service to update Bid and return list Bid
             await _ratingRepository.CreateRating(rating);
             return Ok();
         }
@@ -71,7 +71,6 @@ namespace P7CreateRestApi.Controllers
         [Route("")]
         public async Task<IActionResult> UpdateRatingById([FromBody] Rating rating)
         {
-            // TODO: check required fields, if valid call service to update Bid and return list Bid
             await _ratingRepository.UpdateRating(rating);
             return Ok();
         }

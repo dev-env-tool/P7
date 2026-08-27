@@ -36,11 +36,27 @@ builder.Services.AddAuthorization();
 //builder.Services.AddAuthentication("Bearer").AddJwtBearer();
 builder.Services.AddIdentityApiEndpoints<User>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
+
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    // Default Password settings.
+    options.Password.RequireDigit = true;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequireUppercase = true;
+    options.Password.RequiredLength = 10;
+    options.Password.RequiredUniqueChars = 1;
+});
+
 //---------------------------------------------------------------------
 //builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 //---------------------------------------------------------------------
 
-builder.Services.AddControllers();
+builder.Services.AddControllers();//.ConfigureApiBehaviorOptions(options =>
+//{
+//    options.SuppressModelStateInvalidFilter = true;
+//});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>

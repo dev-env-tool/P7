@@ -58,11 +58,11 @@ namespace P7CreateRestApi.Controllers
         {
             User user = new User() {UserName = registerModel.UserName, Email = registerModel.Email, Role = registerModel.Role};
             var result = _userManager.CreateAsync(user, registerModel.Password);
-            if (result.IsCompletedSuccessfully)
+            if (result.Result.Errors.Count() > 0)
             {
-                return Ok("User was successfully registered.");
+                return BadRequest(result.Result); 
             }
-            return BadRequest(result.Result);
+            return Ok("User was successfully registered.");
         }
 
 
