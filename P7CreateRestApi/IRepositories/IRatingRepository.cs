@@ -1,5 +1,6 @@
 ﻿//using Dot.Net.WebApi.Controllers.Domain;
 using P7CreateRestApi.Domain;
+using P7CreateRestApi.DTO;
 
 namespace P7CreateRestApi.IRepositories
 {

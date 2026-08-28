@@ -1,23 +1,26 @@
+using AutoMapper;
 using AutoMapper.Configuration;
 using Duende.IdentityServer.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using P7CreateRestApi.Data;
 using P7CreateRestApi.Domain;
+using P7CreateRestApi.DTO;
 using P7CreateRestApi.IRepositories;
 using P7CreateRestApi.IServices;
 using P7CreateRestApi.LogUserNameMiddleware;
-
-//using P7CreateRestApi.LogUserNameMiddleware;
 using P7CreateRestApi.Repositories;
 using P7CreateRestApi.Services;
 using Serilog;
+using Serilog.Core;
 using System;
+using System.Runtime;
 using System.Security.Claims;
 using System.Text;
-
+using Microsoft.Extensions.Logging;
 //using Serilog.Sinks;
 //using Serilog.Sinks.File;
 //using Serilog.Enrichers;
@@ -92,11 +95,16 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 
-//Add IRepository
 
+
+
+
+builder.Services.AddAutoMapper(configAction => configAction.CreateMap<Rating, RatingDto>());
+builder.Services.AddAutoMapper(configAction => configAction.CreateMap<RatingDto, Rating>());
 builder.Services.AddScoped<IBidListRepository, BidListRepository>();
 builder.Services.AddScoped<ICurvePointRepository, CurvePointRepository>();
 builder.Services.AddScoped<IRatingRepository, RatingRepository>();
+builder.Services.AddScoped<IRatingService, RatingService>();
 builder.Services.AddScoped<IRuleNameRepository, RuleNameRepository>();
 builder.Services.AddScoped<ITradeRepository, TradeRepository>();
 builder.Services.AddScoped<ILoginService, LoginService>();
@@ -111,6 +119,23 @@ builder.Services.AddDbContext<P7Referential>(options =>
 builder.Services.AddDbContext<ApplicationDbContext>(
     options => options.UseSqlServer(builder.Configuration.GetConnectionString("P7Identity")));
 
+
+
+
+//-----------------------AutoMapper configuration in older versions ---------------------------------
+//var config = new MapperConfiguration(cfg => cfg.CreateMap<Rating, RatingDto>(), loggerFactory);
+//public MapperConfiguration(
+//    MapperConfigurationExpression configurationExpression,
+//    ILoggerFactory loggerFactory);
+
+
+
+//var config = new MapperConfiguration(cfg =>
+//{
+//    cfg.CreateMap<Rating, RatingDto>();
+//});
+
+//var mapper = config.CreateMapper();
 
 //-----------------------JWT Token configuration----------------------------------------
 
@@ -139,7 +164,9 @@ builder.Services.AddAuthentication(options =>
 
 builder.Host.UseSerilog((context, loggerConfig) =>
     loggerConfig.ReadFrom.Configuration(context.Configuration));
-    
+
+
+
 
 
 var app = builder.Build();
