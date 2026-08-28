@@ -61,7 +61,7 @@ namespace P7CreateRestApi.Controllers
             return Ok();
         }
 
-
+        [ServiceFilter(typeof(AsyncActionFilter))]
         [HttpPost]
         [Route("")]
         public async Task<IActionResult> CreateRating([FromBody] RatingDto ratingDto)

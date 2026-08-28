@@ -4,11 +4,14 @@ using Duende.IdentityServer.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using P7CreateRestApi;
 using P7CreateRestApi.Data;
 using P7CreateRestApi.Domain;
 using P7CreateRestApi.DTO;
+using P7CreateRestApi.Filters;
 using P7CreateRestApi.IRepositories;
 using P7CreateRestApi.IServices;
 using P7CreateRestApi.LogUserNameMiddleware;
@@ -20,7 +23,6 @@ using System;
 using System.Runtime;
 using System.Security.Claims;
 using System.Text;
-using Microsoft.Extensions.Logging;
 //using Serilog.Sinks;
 //using Serilog.Sinks.File;
 //using Serilog.Enrichers;
@@ -55,10 +57,14 @@ builder.Services.Configure<IdentityOptions>(options =>
 //builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 //---------------------------------------------------------------------
 
-builder.Services.AddControllers();//.ConfigureApiBehaviorOptions(options =>
+builder.Services.AddControllers().ConfigureApiBehaviorOptions(options =>
+{
+    options.SuppressModelStateInvalidFilter = true;
+});
+//builder.Services.AddControllers(options =>
 //{
-//    options.SuppressModelStateInvalidFilter = true;
-//});
+//    options.Filters.Add
+//}
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -98,7 +104,7 @@ builder.Services.AddSwaggerGen(options =>
 
 
 
-
+builder.Services.AddScoped<AsyncActionFilter>();
 builder.Services.AddAutoMapper(configAction => configAction.CreateMap<Rating, RatingDto>());
 builder.Services.AddAutoMapper(configAction => configAction.CreateMap<RatingDto, Rating>());
 builder.Services.AddScoped<IBidListRepository, BidListRepository>();
