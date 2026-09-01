@@ -15,12 +15,14 @@ namespace P7CreateRestApi.Services
     public class LoginService : ILoginService
 
     {
+        private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly IConfiguration _iConfiguration;
 
 
-        public LoginService(SignInManager<User> signInManager, IConfiguration iConfiguration)
+        public LoginService(UserManager<User> userManager, SignInManager<User> signInManager, IConfiguration iConfiguration)
         {
+            _userManager = userManager;
             _signInManager = signInManager;
             _iConfiguration = iConfiguration;
         }
@@ -50,10 +52,18 @@ namespace P7CreateRestApi.Services
 
         public async Task<string> GenerateTokenString(LoginModel loginModel)
         {
+            User user = await _userManager.FindByEmailAsync(loginModel.UserName);
+            string role = "Member";
+            bool isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
+            if (isAdmin == true)
+            {
+                role = "Admin";
+            }
+
             IEnumerable<Claim> claims = new List<Claim>()
             {
                 new Claim(ClaimTypes.Email, loginModel.UserName),
-                new Claim(ClaimTypes.Role,"Admin"),
+                new Claim(ClaimTypes.Role,role),
             };
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_iConfiguration.GetSection("Jwt:Key").Value));
             //SigningCredentials signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha512Signature);

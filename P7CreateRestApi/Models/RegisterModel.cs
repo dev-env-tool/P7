@@ -8,6 +8,6 @@ namespace P7CreateRestApi.Models
         public string UserName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; } = string.Empty;
-        public string Role { get; set; } = string.Empty;
+        public string Role { get; set; } = "Admin / Member";
     }
 }
