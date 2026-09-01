@@ -39,29 +39,12 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
         ConfigurationManager configuration = builder.Configuration;
 
-        // Add services to the container. 
-        //builder.Services.AddAuthorization();
-        ////builder.Services.AddAuthentication("Bearer").AddJwtBearer();
 
         builder.Services.AddIdentityApiEndpoints<User>()
             .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
-        //builder.Services.AddIdentityCore<User>()
-        //    .AddRoles<IdentityRole>()
-        //    .AddSignInManager<SignInManager<User>>()
-        //    .AddEntityFrameworkStores<ApplicationDbContext>();
-
-
-
-
-        //builder.Services.AddAuthentication(o =>
-        //{
-        //    o.DefaultScheme = IdentityConstants.ApplicationScheme;
-        //    o.DefaultSignInScheme = IdentityConstants.ExternalScheme;
-        //})
-        //.AddIdentityCookies();
 
 
         builder.Services.Configure<IdentityOptions>(options =>
@@ -75,22 +58,12 @@ public class Program
             options.Password.RequiredUniqueChars = 1;
         });
 
-        //var identity = new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
-        //identity.AddClaim(new Claim(ClaimTypes.Role, "Admin"));
-        //identity.AddClaim(new Claim(ClaimTypes.Role, "Member"));
-
-        //---------------------------------------------------------------------
-        //builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
-        //---------------------------------------------------------------------
 
         builder.Services.AddControllers().ConfigureApiBehaviorOptions(options =>
         {
             options.SuppressModelStateInvalidFilter = true;
         });
-        //builder.Services.AddControllers(options =>
-        //{
-        //    options.Filters.Add
-        //}
+
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
@@ -140,9 +113,6 @@ public class Program
         builder.Services.AddScoped<IRuleNameRepository, RuleNameRepository>();
         builder.Services.AddScoped<ITradeRepository, TradeRepository>();
         builder.Services.AddScoped<ILoginService, LoginService>();
-        //builder.Services.AddScoped<SignInManager<User>, SignInManager<User>>();
-        //builder.Services.AddScoped<UserManager<User>, UserManager<User>>();
-        //builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         builder.Services.AddHttpContextAccessor();
 
         builder.Services.AddDbContext<P7Referential>(options =>
@@ -151,23 +121,6 @@ public class Program
         builder.Services.AddDbContext<ApplicationDbContext>(
             options => options.UseSqlServer(builder.Configuration.GetConnectionString("P7Identity")));
 
-
-
-
-        //-----------------------AutoMapper configuration in older versions ---------------------------------
-        //var config = new MapperConfiguration(cfg => cfg.CreateMap<Rating, RatingDto>(), loggerFactory);
-        //public MapperConfiguration(
-        //    MapperConfigurationExpression configurationExpression,
-        //    ILoggerFactory loggerFactory);
-
-
-
-        //var config = new MapperConfiguration(cfg =>
-        //{
-        //    cfg.CreateMap<Rating, RatingDto>();
-        //});
-
-        //var mapper = config.CreateMapper();
 
         //-----------------------JWT Token configuration----------------------------------------
 
@@ -200,9 +153,6 @@ public class Program
         builder.Host.UseSerilog((context, loggerConfig) =>
             loggerConfig.ReadFrom.Configuration(context.Configuration));
 
-
-        //builder.Services.AddAuthorizationBuilder().AddPolicy("RequireAdministratorRole", policy =>
-        //policy.RequireRole("Admin"));
         builder.Services.AddAuthorizationBuilder();
 
 
@@ -223,44 +173,9 @@ public class Program
         app.MapControllers();
 
 
-
-
         app.UseMiddleware<LogUserNameMiddleware>();
 
-        //-----------------------Serilog intitial configuration----------------------------------------
-        //using var log = new LoggerConfiguration()
-        //    .CreateLogger();
 
-        //log.Information("Hello, Serilog!");
-        //Log.Logger = log;
-        //Log.Information("The global logger has been configured");
-
-        //Log.Logger = new LoggerConfiguration()
-        //    .MinimumLevel.Debug()
-        //    .Enrich.WithRequestUserId()
-        //    .WriteTo.File("logs/P7CreateRestApi.txt", rollingInterval: RollingInterval.Month)
-        //    .CreateLogger();
-
-        //Log.Information("The global log file has been configured");
-
-
-
-
-
-        //-----------------------Calling middleware helps each log to get signed in userName-----------
-        //app.UseMiddleware<LogUserNameMiddleware>();
-
-        //-----------------------Functions working as endpoint shortcuts-------------------------------
-        //app.MapIdentityApi<IdentityUser>();
-
-        //app.MapGet("/secret", (ClaimsPrincipal user) => $"Hello {user.Identity?.Name}. My secret")
-        //    .RequireAuthorization();
-
-        //app.MapGet("/BidLists", (ClaimsPrincipal user) => $"Hello {user.Identity?.Name}. My BidList")
-        //    .RequireAuthorization();
-        //---------------------------------------------------------------------------------------------
-
-        //app.UseMiddleware<LogUserNameMiddleware>();
         app.UseSerilogRequestLogging();
 
         using (var scope = app.Services.CreateScope())
@@ -320,5 +235,5 @@ public class Program
         app.Run();
     }
 }
-//---------------------------------------------------------------------------------------------
+
 

@@ -27,8 +27,6 @@ namespace P7CreateRestApi.Controllers
         [Route("")]
         public async Task<IActionResult> GetAllUsers()
         {
-            bool test = User.Identity.IsAuthenticated;
-            string test2 = User.Identity.AuthenticationType;
             //IEnumerable<User> listOfUsers = await _userManager.Users();
             IEnumerable<User> listOfUsers = _userManager.Users;
             if (!listOfUsers.Any())
@@ -42,7 +40,6 @@ namespace P7CreateRestApi.Controllers
         [Route("{email}")]
         public async Task<IActionResult> GetUserByEmail(string email)
         {
-            bool test = System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.DefaultMapInboundClaims;
             User foundUser = await _userManager.FindByEmailAsync(email);
 
             if (email == "")
