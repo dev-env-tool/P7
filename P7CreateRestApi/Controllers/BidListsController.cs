@@ -1,45 +1,47 @@
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using P7CreateRestApi.Domain;
+using P7CreateRestApi.Filters;
 using P7CreateRestApi.IRepositories;
-using Serilog;
+using P7CreateRestApi.DTO;
+using AutoMapper;
+using P7CreateRestApi.IServices;
 
 namespace P7CreateRestApi.Controllers
 {
-
     [ApiController]
     [Route("api/[controller]")]
     [Authorize]
     public class BidListsController : ControllerBase
     {
-
-        
         private readonly IBidListRepository _bidListRepository;
+        private readonly IBidListService _bidListService;
 
-        public BidListsController(IBidListRepository bidListRepository)
+        public BidListsController(IBidListRepository bidListRepository, IBidListService bidListService)
         {
             _bidListRepository = bidListRepository;
+            _bidListService = bidListService;
         }
 
+        [Authorize(Roles = "Member, Admin")]
         [HttpGet]
         [Route("")]
         public async Task<IActionResult> GetAllBidLists()
         {
-            IEnumerable<BidList> listOfBidLists = await _bidListRepository.GetAllBidLists();
+            IEnumerable<BidListDto> listOfBidLists = await _bidListService.GetAllBidListsDto();
             if (!listOfBidLists.Any())
             {
                 return NotFound("No information found.");
             }
-            //Log.Information("{UserName} at {Now}",Serilog.Context.LogContext. , DateTime.Now);
             return Ok(listOfBidLists);
         }
 
+        [Authorize(Roles = "Member, Admin")]
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> GetBidListById(int id)
         {
-            IEnumerable<BidList> listOfBidLists = await _bidListRepository.GetBidListById(id);
+            IEnumerable<BidListDto> listOfBidLists = await _bidListService.GetBidListDtoById(id);
 
             if (id == 0)
             {
@@ -55,45 +57,45 @@ namespace P7CreateRestApi.Controllers
 
         [HttpGet]
         [Route("validate")]
-        private IActionResult ValidateBidListById([FromBody] BidList BidList)
+        private IActionResult ValidateBidListById([FromBody] BidListDto BidList)
         {
             // TODO: check data valid and save to db, after saving return bid list
             return Ok();
         }
 
-
+        [Authorize(Roles = "Admin")]
+        [ServiceFilter(typeof(AsyncActionFilter))]
         [HttpPost]
         [Route("")]
-        public async Task <IActionResult> CreateBidList([FromBody] BidList BidList)
+        public async Task<IActionResult> CreateBidList([FromBody] BidListDto BidListDto)
         {
-            // TODO: check required fields, if valid call service to update Bid and return list Bid
-            await _bidListRepository.CreateBidList(BidList);
-            return Ok("Item was successfully created");
-        }
-
-
-
-        [HttpPut]
-        [Route("")]
-        public async Task<IActionResult> UpdateBidListById([FromBody] BidList BidList)
-        {
-            // TODO: check required fields, if valid call service to update Bid and return list Bid
-            await _bidListRepository.UpdateBidList(BidList);
+            await _bidListService.CreateBidListWithBidListDto(BidListDto);
             return Ok();
         }
 
+
+        [Authorize(Roles = "Admin")]
+        [HttpPut]
+        [Route("")]
+        public async Task<IActionResult> UpdateBidListById([FromBody] BidListDto BidListDto)
+        {
+            await _bidListService.UpdateBidListWithBidListDto(BidListDto);
+            return Ok();
+        }
+
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
         [Route("{id}")]
         public async Task<IActionResult> DeleteBidListById(int id)
         {
             if (id == 0)
             {
-                return BadRequest("Bad request. User ID must be an integer and larger than 0.");
+                return BadRequest("Bad request. The information ID must be an integer and larger than 0.");
             }
             if (id > 0)
             {
                 await _bidListRepository.DeleteBidListById(id);
-                IEnumerable<BidList> listOfBidLists = await _bidListRepository.GetBidListById(id);
+                IEnumerable<BidListDto> listOfBidLists = await _bidListService.GetBidListDtoById(id);
                 if (!listOfBidLists.Any())
                 {
                     return Ok("The item was deleted with success.");

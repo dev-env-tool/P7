@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Authorization;
-//using Dot.Net.WebApi.Controllers.Domain;
 using Microsoft.AspNetCore.Mvc;
-using P7CreateRestApi.Controllers;
 using P7CreateRestApi.Domain;
+using P7CreateRestApi.Filters;
 using P7CreateRestApi.IRepositories;
+using P7CreateRestApi.DTO;
+using AutoMapper;
+using P7CreateRestApi.IServices;
 
 namespace P7CreateRestApi.Controllers
 {
@@ -12,18 +14,21 @@ namespace P7CreateRestApi.Controllers
     [Authorize]
     public class TradesController : ControllerBase
     {
-        private readonly ITradeRepository _tradeRepository;
+        private readonly ITradeRepository _TradeRepository;
+        private readonly ITradeService _TradeService;
 
-        public TradesController(ITradeRepository tradeRepository)
+        public TradesController(ITradeRepository TradeRepository, ITradeService TradeService)
         {
-            _tradeRepository = tradeRepository;
+            _TradeRepository = TradeRepository;
+            _TradeService = TradeService;
         }
 
+        [Authorize(Roles = "Member, Admin")]
         [HttpGet]
         [Route("")]
         public async Task<IActionResult> GetAllTrades()
         {
-            IEnumerable<Trade> listOfTrades = await _tradeRepository.GetAllTrades();
+            IEnumerable<TradeDto> listOfTrades = await _TradeService.GetAllTradesDto();
             if (!listOfTrades.Any())
             {
                 return NotFound("No information found.");
@@ -31,11 +36,12 @@ namespace P7CreateRestApi.Controllers
             return Ok(listOfTrades);
         }
 
+        [Authorize(Roles = "Member, Admin")]
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> GetTradeById(int id)
         {
-            IEnumerable<Trade> listOfTrades = await _tradeRepository.GetTradeById(id);
+            IEnumerable<TradeDto> listOfTrades = await _TradeService.GetTradeDtoById(id);
 
             if (id == 0)
             {
@@ -51,33 +57,33 @@ namespace P7CreateRestApi.Controllers
 
         [HttpGet]
         [Route("validate")]
-        private IActionResult ValidateTradeById([FromBody] Trade trade)
+        private IActionResult ValidateTradeById([FromBody] TradeDto Trade)
         {
             // TODO: check data valid and save to db, after saving return bid list
             return Ok();
         }
 
-
+        [Authorize(Roles = "Admin")]
+        [ServiceFilter(typeof(AsyncActionFilter))]
         [HttpPost]
         [Route("")]
-        public async Task<IActionResult> CreateTrade([FromBody] Trade trade)
+        public async Task<IActionResult> CreateTrade([FromBody] TradeDto TradeDto)
         {
-            // TODO: check required fields, if valid call service to update Bid and return list Bid
-            await _tradeRepository.CreateTrade(trade);
+            await _TradeService.CreateTradeWithTradeDto(TradeDto);
             return Ok();
         }
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPut]
         [Route("")]
-        public async Task<IActionResult> UpdateTradeById([FromBody] Trade trade)
+        public async Task<IActionResult> UpdateTradeById([FromBody] TradeDto TradeDto)
         {
-            // TODO: check required fields, if valid call service to update Bid and return list Bid
-            await _tradeRepository.UpdateTrade(trade);
+            await _TradeService.UpdateTradeWithTradeDto(TradeDto);
             return Ok();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
         [Route("{id}")]
         public async Task<IActionResult> DeleteTradeById(int id)
@@ -88,8 +94,8 @@ namespace P7CreateRestApi.Controllers
             }
             if (id > 0)
             {
-                await _tradeRepository.DeleteTradeById(id);
-                IEnumerable<Trade> listOfTrades = await _tradeRepository.GetTradeById(id);
+                await _TradeRepository.DeleteTradeById(id);
+                IEnumerable<TradeDto> listOfTrades = await _TradeService.GetTradeDtoById(id);
                 if (!listOfTrades.Any())
                 {
                     return Ok("The item was deleted with success.");

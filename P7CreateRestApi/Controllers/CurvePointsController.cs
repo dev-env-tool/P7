@@ -1,8 +1,9 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using P7CreateRestApi.Domain;
+using P7CreateRestApi.Filters;
 using P7CreateRestApi.IRepositories;
-
+using P7CreateRestApi.DTO;
+using P7CreateRestApi.IServices;
 
 namespace P7CreateRestApi.Controllers
 {
@@ -11,19 +12,21 @@ namespace P7CreateRestApi.Controllers
     [Authorize]
     public class CurvePointsController : ControllerBase
     {
-        
-        private readonly ICurvePointRepository _curvePointRepository;
+        private readonly ICurvePointRepository _CurvePointRepository;
+        private readonly ICurvePointService _CurvePointService;
 
-        public CurvePointsController(ICurvePointRepository curvePointRepository)
+        public CurvePointsController(ICurvePointRepository curvePointRepository, ICurvePointService curvePointService)
         {
-            _curvePointRepository = curvePointRepository;
+            _CurvePointRepository = curvePointRepository;
+            _CurvePointService = curvePointService;
         }
 
+        [Authorize(Roles = "Member, Admin")]
         [HttpGet]
         [Route("")]
         public async Task<IActionResult> GetAllCurvePoints()
         {
-            IEnumerable<CurvePoint> listOfCurvePoints = await _curvePointRepository.GetAllCurvePoints();
+            IEnumerable<CurvePointDto> listOfCurvePoints = await _CurvePointService.GetAllCurvePointsDto();
             if (!listOfCurvePoints.Any())
             {
                 return NotFound("No information found.");
@@ -31,11 +34,12 @@ namespace P7CreateRestApi.Controllers
             return Ok(listOfCurvePoints);
         }
 
+        [Authorize(Roles = "Member, Admin")]
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> GetCurvePointById(int id)
         {
-            IEnumerable<CurvePoint> listOfCurvePoints = await _curvePointRepository.GetCurvePointById(id);
+            IEnumerable<CurvePointDto> listOfCurvePoints = await _CurvePointService.GetCurvePointDtoById(id);
 
             if (id == 0)
             {
@@ -51,45 +55,45 @@ namespace P7CreateRestApi.Controllers
 
         [HttpGet]
         [Route("validate")]
-        private IActionResult ValidateCurvePointById([FromBody] CurvePoint curvePoint)
+        private IActionResult ValidateCurvePointById([FromBody] CurvePointDto curvePoint)
         {
             // TODO: check data valid and save to db, after saving return bid list
             return Ok();
         }
 
-
+        [Authorize(Roles = "Admin")]
+        [ServiceFilter(typeof(AsyncActionFilter))]
         [HttpPost]
         [Route("")]
-        public async Task<IActionResult> CreateCurvePoint([FromBody] CurvePoint curvePoint)
+        public async Task<IActionResult> CreateCurvePoint([FromBody] CurvePointDto curvePointDto)
         {
-            // TODO: check required fields, if valid call service to update Bid and return list Bid
-            await _curvePointRepository.CreateCurvePoint(curvePoint);
+            await _CurvePointService.CreateCurvePointWithCurvePointDto(curvePointDto);
             return Ok();
         }
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPut]
         [Route("")]
-        public async Task<IActionResult> UpdateCurvePointById([FromBody] CurvePoint curvePoint)
+        public async Task<IActionResult> UpdateCurvePointById([FromBody] CurvePointDto curvePointDto)
         {
-            // TODO: check required fields, if valid call service to update Bid and return list Bid
-            await _curvePointRepository.UpdateCurvePoint(curvePoint);
+            await _CurvePointService.UpdateCurvePointWithCurvePointDto(curvePointDto);
             return Ok();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
         [Route("{id}")]
         public async Task<IActionResult> DeleteCurvePointById(int id)
         {
             if (id == 0)
             {
-                return BadRequest("Bad request. User ID must be an integer and larger than 0.");
+                return BadRequest("Bad request. The information ID must be an integer and larger than 0.");
             }
             if (id > 0)
             {
-                await _curvePointRepository.DeleteCurvePointById(id);
-                IEnumerable<CurvePoint> listOfCurvePoints = await _curvePointRepository.GetCurvePointById(id);
+                await _CurvePointRepository.DeleteCurvePointById(id);
+                IEnumerable<CurvePointDto> listOfCurvePoints = await _CurvePointService.GetCurvePointDtoById(id);
                 if (!listOfCurvePoints.Any())
                 {
                     return Ok("The item was deleted with success.");

@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using P7CreateRestApi.Domain;
 using P7CreateRestApi.DTO;
 using P7CreateRestApi.IRepositories;
 using P7CreateRestApi.IServices;
-using P7CreateRestApi.Repositories;
 
 
 namespace P7CreateRestApi.Services
@@ -24,27 +21,27 @@ namespace P7CreateRestApi.Services
         public async Task<IEnumerable<RatingDto>> GetAllRatingsDto()
         {
             Task<IEnumerable<Rating>> ratings = _iRatingRepository!.GetAllRatings();
-            List<RatingDto> ListOfratingDtos = new List<RatingDto>();
+            List<RatingDto> listOfratingDtos = new List<RatingDto>();
             foreach (Rating rating in await ratings)
             {
                 RatingDto ratingDto = await MapRatingToRatingDto(rating);
-                ListOfratingDtos.Add(ratingDto);
+                listOfratingDtos.Add(ratingDto);
             }
 
-            return ListOfratingDtos;
+            return listOfratingDtos;
         }
 
         public async Task<IEnumerable<RatingDto>> GetRatingDtoById(int id)
         {
             Task<IEnumerable<Rating>> ratings = _iRatingRepository!.GetRatingById(id);
-            List<RatingDto> ListOfratingDtos = new List<RatingDto>();
+            List<RatingDto> listOfratingDtos = new List<RatingDto>();
             foreach (Rating rating in await ratings)
             {
                 RatingDto ratingDto = await MapRatingToRatingDto(rating);
-                ListOfratingDtos.Add(ratingDto);
+                listOfratingDtos.Add(ratingDto);
             }
 
-            return ListOfratingDtos;
+            return listOfratingDtos;
         }
 
         public async Task CreateRatingWithRatingDto(RatingDto ratingDto)
@@ -63,15 +60,6 @@ namespace P7CreateRestApi.Services
             {
                 await _iRatingRepository.UpdateRating(rating);
             }
-            //int maxRatingId = await GetMaxRatingId();
-            //if (rating != null)
-            //{
-            //    if ((rating.Id > 0) && (rating.Id <= maxRatingId))
-            //    {
-            //        _context!.Entry(rating).State = EntityState.Modified;
-            //        _context.SaveChanges();
-            //    }
-            //}
         }
 
 

@@ -1,9 +1,8 @@
-
-//using Dot.Net.WebApi.Controllers.Domain;
+using Microsoft.EntityFrameworkCore;
 using P7CreateRestApi.Data;
 using P7CreateRestApi.Domain;
-using Microsoft.EntityFrameworkCore;
 using P7CreateRestApi.IRepositories;
+
 
 namespace P7CreateRestApi.Repositories
 {
@@ -24,7 +23,7 @@ namespace P7CreateRestApi.Repositories
 
         public async Task<IEnumerable<BidList>> GetBidListById(int id)
         {
-            return await _context!.BidLists.Where(bL => bL.BidListId == id)
+            return await _context!.BidLists.Where(b => b.BidListId == id)
                                   .ToListAsync();
         }
 
@@ -34,21 +33,22 @@ namespace P7CreateRestApi.Repositories
             {
                 _context!.BidLists.Add(bidList);
                 _context.SaveChanges();
-                
             }
         }
+
         public async Task UpdateBidList(BidList bidList)
         {
             int maxBidListId = await GetMaxBidListId();
             if (bidList != null)
             {
                 if ((bidList.BidListId > 0) && (bidList.BidListId <= maxBidListId))
-                { 
+                {
                     _context!.Entry(bidList).State = EntityState.Modified;
                     _context.SaveChanges();
                 }
             }
         }
+
 
         public async Task DeleteBidListById(int id)
         {

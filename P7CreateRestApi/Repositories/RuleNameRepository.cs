@@ -1,10 +1,8 @@
-
-//using Dot.Net.WebApi.Controllers;
-//using Dot.Net.WebApi.Controllers.Domain;
 using Microsoft.EntityFrameworkCore;
 using P7CreateRestApi.Data;
 using P7CreateRestApi.Domain;
 using P7CreateRestApi.IRepositories;
+
 
 namespace P7CreateRestApi.Repositories
 {
@@ -37,6 +35,7 @@ namespace P7CreateRestApi.Repositories
                 _context.SaveChanges();
             }
         }
+
         public async Task UpdateRuleName(RuleName ruleName)
         {
             int maxRuleNameId = await GetMaxRuleNameId();
@@ -49,6 +48,7 @@ namespace P7CreateRestApi.Repositories
                 }
             }
         }
+
 
         public async Task DeleteRuleNameById(int id)
         {

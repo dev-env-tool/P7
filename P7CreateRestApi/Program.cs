@@ -24,11 +24,7 @@ using System;
 using System.Runtime;
 using System.Security.Claims;
 using System.Text;
-//using Serilog.Sinks;
-//using Serilog.Sinks.File;
-//using Serilog.Enrichers;
 
-//using P7CreateRestApi.LogUserNameMiddleware;
 
 
 
@@ -104,14 +100,27 @@ public class Program
 
 
         builder.Services.AddScoped<AsyncActionFilter>();
+        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<BidList, BidListDto>());
+        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<BidListDto, BidList>());
+        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<CurvePoint, CurvePointDto>());
+        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<CurvePointDto, CurvePoint>());
         builder.Services.AddAutoMapper(configAction => configAction.CreateMap<Rating, RatingDto>());
         builder.Services.AddAutoMapper(configAction => configAction.CreateMap<RatingDto, Rating>());
+        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<RuleName, RuleNameDto>());
+        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<RuleNameDto, RuleName>());
+        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<Trade, TradeDto>());
+        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<TradeDto, Trade>());
+
         builder.Services.AddScoped<IBidListRepository, BidListRepository>();
+        builder.Services.AddScoped<IBidListService, BidListService>();
         builder.Services.AddScoped<ICurvePointRepository, CurvePointRepository>();
+        builder.Services.AddScoped<ICurvePointService, CurvePointService>();
         builder.Services.AddScoped<IRatingRepository, RatingRepository>();
         builder.Services.AddScoped<IRatingService, RatingService>();
         builder.Services.AddScoped<IRuleNameRepository, RuleNameRepository>();
+        builder.Services.AddScoped<IRuleNameService, RuleNameService>();
         builder.Services.AddScoped<ITradeRepository, TradeRepository>();
+        builder.Services.AddScoped<ITradeService, TradeService>();
         builder.Services.AddScoped<ILoginService, LoginService>();
         builder.Services.AddHttpContextAccessor();
 
@@ -157,6 +166,7 @@ public class Program
 
 
         var app = builder.Build();
+        //app.UseStaticFiles();
 
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())

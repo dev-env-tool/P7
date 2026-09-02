@@ -23,6 +23,7 @@ namespace P7CreateRestApi.Controllers
             _ratingService = ratingService;
         }
 
+        [Authorize(Roles = "Member, Admin")]
         [HttpGet]
         [Route("")]
         public async Task<IActionResult> GetAllRatings()
@@ -35,6 +36,7 @@ namespace P7CreateRestApi.Controllers
             return Ok(listOfRatings);
         }
 
+        [Authorize(Roles = "Member, Admin")]
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> GetRatingById(int id)
@@ -61,6 +63,7 @@ namespace P7CreateRestApi.Controllers
             return Ok();
         }
 
+        [Authorize(Roles = "Admin")]
         [ServiceFilter(typeof(AsyncActionFilter))]
         [HttpPost]
         [Route("")]
@@ -71,7 +74,7 @@ namespace P7CreateRestApi.Controllers
         }
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPut]
         [Route("")]
         public async Task<IActionResult> UpdateRatingById([FromBody] RatingDto ratingDto)
@@ -80,6 +83,7 @@ namespace P7CreateRestApi.Controllers
             return Ok();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
         [Route("{id}")]
         public async Task<IActionResult> DeleteRatingById(int id)

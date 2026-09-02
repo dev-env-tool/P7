@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace P7CreateRestApi.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     [ApiController]
     [Route("api/[controller]")]
     
@@ -22,7 +22,7 @@ namespace P7CreateRestApi.Controllers
             _roleManager = roleManager;
         }
 
-        [Authorize(Roles = "Admin")]
+        
         [HttpGet]
         [Route("")]
         public async Task<IActionResult> GetAllUsers()

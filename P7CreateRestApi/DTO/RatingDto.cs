@@ -1,11 +1,9 @@
-using Duende.IdentityServer.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace P7CreateRestApi.DTO
 {
     public class RatingDto
     {
-
         public int Id { get; set; }
         public string MoodysRating { get; set; }
         public string SandPRating { get; set; }

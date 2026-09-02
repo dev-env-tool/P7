@@ -1,10 +1,11 @@
-//using P7CreateRestApi.Controllers.Domain;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using P7CreateRestApi.Controllers;
 using P7CreateRestApi.Domain;
+using P7CreateRestApi.Filters;
 using P7CreateRestApi.IRepositories;
-using P7CreateRestApi.Repositories;
+using P7CreateRestApi.DTO;
+using AutoMapper;
+using P7CreateRestApi.IServices;
 
 namespace P7CreateRestApi.Controllers
 {
@@ -13,18 +14,21 @@ namespace P7CreateRestApi.Controllers
     [Authorize]
     public class RuleNamesController : ControllerBase
     {
-        private readonly IRuleNameRepository _ruleNameRepository;
+        private readonly IRuleNameRepository _RuleNameRepository;
+        private readonly IRuleNameService _RuleNameService;
 
-        public RuleNamesController(IRuleNameRepository ruleNameRepository)
+        public RuleNamesController(IRuleNameRepository RuleNameRepository, IRuleNameService RuleNameService)
         {
-            _ruleNameRepository = ruleNameRepository;
+            _RuleNameRepository = RuleNameRepository;
+            _RuleNameService = RuleNameService;
         }
 
+        [Authorize(Roles = "Member, Admin")]
         [HttpGet]
         [Route("")]
         public async Task<IActionResult> GetAllRuleNames()
         {
-            IEnumerable<RuleName> listOfRuleNames = await _ruleNameRepository.GetAllRuleNames();
+            IEnumerable<RuleNameDto> listOfRuleNames = await _RuleNameService.GetAllRuleNamesDto();
             if (!listOfRuleNames.Any())
             {
                 return NotFound("No information found.");
@@ -32,11 +36,12 @@ namespace P7CreateRestApi.Controllers
             return Ok(listOfRuleNames);
         }
 
+        [Authorize(Roles = "Member, Admin")]
         [HttpGet]
         [Route("{id}")]
         public async Task<IActionResult> GetRuleNameById(int id)
         {
-            IEnumerable<RuleName> listOfRuleNames = await _ruleNameRepository.GetRuleNameById(id);
+            IEnumerable<RuleNameDto> listOfRuleNames = await _RuleNameService.GetRuleNameDtoById(id);
 
             if (id == 0)
             {
@@ -52,33 +57,33 @@ namespace P7CreateRestApi.Controllers
 
         [HttpGet]
         [Route("validate")]
-        private IActionResult ValidateRuleNameById([FromBody] RuleName ruleName)
+        private IActionResult ValidateRuleNameById([FromBody] RuleNameDto RuleName)
         {
             // TODO: check data valid and save to db, after saving return bid list
             return Ok();
         }
 
-
+        [Authorize(Roles = "Admin")]
+        [ServiceFilter(typeof(AsyncActionFilter))]
         [HttpPost]
         [Route("")]
-        public async Task<IActionResult> CreateRuleName([FromBody] RuleName ruleName)
+        public async Task<IActionResult> CreateRuleName([FromBody] RuleNameDto RuleNameDto)
         {
-            // TODO: check required fields, if valid call service to update Bid and return list Bid
-            await _ruleNameRepository.CreateRuleName(ruleName);
+            await _RuleNameService.CreateRuleNameWithRuleNameDto(RuleNameDto);
             return Ok();
         }
 
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPut]
         [Route("")]
-        public async Task<IActionResult> UpdateRuleNameById([FromBody] RuleName ruleName)
+        public async Task<IActionResult> UpdateRuleNameById([FromBody] RuleNameDto RuleNameDto)
         {
-            // TODO: check required fields, if valid call service to update Bid and return list Bid
-            await _ruleNameRepository.UpdateRuleName(ruleName);
+            await _RuleNameService.UpdateRuleNameWithRuleNameDto(RuleNameDto);
             return Ok();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
         [Route("{id}")]
         public async Task<IActionResult> DeleteRuleNameById(int id)
@@ -89,8 +94,8 @@ namespace P7CreateRestApi.Controllers
             }
             if (id > 0)
             {
-                await _ruleNameRepository.DeleteRuleNameById(id);
-                IEnumerable<RuleName> listOfRuleNames = await _ruleNameRepository.GetRuleNameById(id);
+                await _RuleNameRepository.DeleteRuleNameById(id);
+                IEnumerable<RuleNameDto> listOfRuleNames = await _RuleNameService.GetRuleNameDtoById(id);
                 if (!listOfRuleNames.Any())
                 {
                     return Ok("The item was deleted with success.");

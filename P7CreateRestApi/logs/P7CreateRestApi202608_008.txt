@@ -14443,3 +14443,762 @@ WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)
 RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
 2026-09-01 16:06:48.265 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
 2026-09-01 16:06:48.266 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 403 0 null 10.06ms
+2026-09-02 11:32:52.077 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:32:54.194 +02:00 [INF] Executed DbCommand (64ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:32:54.284 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:32:54.322 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-02 11:32:54.375 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:32:54.397 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:32:54.468 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:32:54.474 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:32:54.807 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-02 11:32:54.809 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-02 11:32:54.959 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-02 11:32:54.961 +02:00 [INF] Hosting environment: Development
+2026-09-02 11:32:54.963 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-02 11:33:10.759 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:33:11.318 +02:00 [INF] Executed DbCommand (41ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:33:11.376 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:33:11.398 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-02 11:33:11.440 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:33:11.456 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:33:11.495 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:33:11.501 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:33:11.678 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-02 11:33:11.680 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-02 11:33:11.773 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-02 11:33:11.775 +02:00 [INF] Hosting environment: Development
+2026-09-02 11:33:11.777 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-02 11:33:30.629 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:33:31.152 +02:00 [INF] Executed DbCommand (41ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:33:31.216 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:33:31.244 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-02 11:33:31.286 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:33:31.297 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:33:31.339 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:33:31.343 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:33:31.503 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-02 11:33:31.504 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-02 11:33:31.670 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-02 11:33:31.672 +02:00 [INF] Hosting environment: Development
+2026-09-02 11:33:31.673 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-02 11:35:34.186 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:35:35.243 +02:00 [INF] Executed DbCommand (70ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:35:35.361 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:35:35.403 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-02 11:35:35.474 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:35:35.492 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:35:35.553 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:35:35.558 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:35:35.947 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-02 11:35:35.949 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-02 11:35:36.082 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-02 11:35:36.084 +02:00 [INF] Hosting environment: Development
+2026-09-02 11:35:36.086 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-02 11:36:23.307 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:36:23.807 +02:00 [INF] Executed DbCommand (35ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:36:23.862 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:36:23.880 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-02 11:36:23.920 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:36:23.943 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:36:23.983 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:36:23.988 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:36:24.143 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-02 11:36:24.144 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-02 11:36:24.244 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-02 11:36:24.246 +02:00 [INF] Hosting environment: Development
+2026-09-02 11:36:24.247 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-02 11:36:51.079 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:36:51.681 +02:00 [INF] Executed DbCommand (39ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:36:51.749 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:36:51.773 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-02 11:36:51.827 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:36:51.847 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:36:51.892 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:36:51.897 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:36:52.069 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-02 11:36:52.071 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-02 11:36:52.157 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-02 11:36:52.159 +02:00 [INF] Hosting environment: Development
+2026-09-02 11:36:52.160 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-02 11:38:00.423 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:38:00.924 +02:00 [INF] Executed DbCommand (35ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:38:00.980 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:38:01.001 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-02 11:38:01.038 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:38:01.063 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:38:01.106 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:38:01.111 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:38:01.281 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-02 11:38:01.282 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-02 11:38:01.365 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-02 11:38:01.367 +02:00 [INF] Hosting environment: Development
+2026-09-02 11:38:01.367 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-02 11:41:29.634 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:41:30.244 +02:00 [INF] Executed DbCommand (49ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:41:30.353 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:41:30.396 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-02 11:41:30.480 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:41:30.498 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:41:30.557 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:41:30.565 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:41:30.794 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-02 11:41:30.795 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-02 11:41:30.946 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-02 11:41:30.947 +02:00 [INF] Hosting environment: Development
+2026-09-02 11:41:30.949 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-02 11:46:55.538 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:46:57.018 +02:00 [INF] Executed DbCommand (39ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:46:57.075 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:46:57.097 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-02 11:46:57.139 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:46:57.153 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:46:57.196 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:46:57.201 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:46:57.279 +02:00 [WRN] The WebRootPath was not found: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\wwwroot. Static files may be unavailable.
+2026-09-02 11:46:57.379 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-02 11:46:57.381 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-02 11:46:57.463 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-02 11:46:57.464 +02:00 [INF] Hosting environment: Development
+2026-09-02 11:46:57.465 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-02 11:46:58.208 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-09-02 11:46:58.400 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 205.9682ms
+2026-09-02 11:46:58.406 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-09-02 11:46:58.479 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 73.368ms
+2026-09-02 11:46:58.506 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-02 11:46:58.510 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-09-02 11:46:58.513 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 8.3908ms
+2026-09-02 11:46:58.579 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 68.972ms
+2026-09-02 11:46:58.679 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-09-02 11:46:58.708 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 29.0892ms
+2026-09-02 11:47:58.710 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:47:59.213 +02:00 [INF] Executed DbCommand (36ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:47:59.267 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:47:59.291 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-02 11:47:59.329 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:47:59.351 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:47:59.393 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:47:59.398 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:47:59.588 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-02 11:47:59.590 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-02 11:47:59.681 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-02 11:47:59.683 +02:00 [INF] Hosting environment: Development
+2026-09-02 11:47:59.684 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-02 11:48:00.729 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-09-02 11:48:00.890 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 188.6402ms
+2026-09-02 11:48:00.985 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-09-02 11:48:01.098 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 112.9299ms
+2026-09-02 11:48:01.152 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-02 11:48:01.165 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 14.1802ms
+2026-09-02 11:48:01.169 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-09-02 11:48:01.238 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 69.602ms
+2026-09-02 11:48:01.371 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-09-02 11:48:01.397 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 26.2257ms
+2026-09-02 11:48:18.687 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-09-02 11:48:18.742 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2026-09-02 11:48:18.747 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-09-02 11:48:18.748 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 401 0 null 61.2317ms
+2026-09-02 11:48:22.932 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/BidLists - null null
+2026-09-02 11:48:22.939 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-09-02 11:48:22.940 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2026-09-02 11:48:22.941 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/BidLists - 401 0 null 10.1263ms
+2026-09-02 11:48:53.928 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 65
+2026-09-02 11:48:53.974 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-09-02 11:48:54.004 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-09-02 11:48:54.057 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:48:54.069 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-09-02 11:48:54.208 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-09-02 11:48:54.238 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-09-02 11:48:54.244 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:48:54.256 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2026-09-02 11:48:54.275 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-09-02 11:48:54.280 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:48:54.292 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2026-09-02 11:48:54.310 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)
+2026-09-02 11:48:54.346 +02:00 [INF] User admin@user.com logged in at "2026-09-02T11:48:54.3458650+02:00"
+2026-09-02 11:48:54.362 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-09-02 11:48:54.369 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 359.252ms
+2026-09-02 11:48:54.370 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-09-02 11:48:54.374 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 401.2758 ms
+2026-09-02 11:48:54.381 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 453.0098ms
+2026-09-02 11:49:03.740 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-09-02 11:49:03.797 +02:00 [INF] UserNamehttp://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress: admin@user.com
+2026-09-02 11:49:03.799 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-09-02 11:49:03.805 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-09-02 11:49:03.817 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:49:03.832 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-09-02 11:49:03.838 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-02 11:49:03.852 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-09-02 11:49:03.866 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 58.2587ms
+2026-09-02 11:49:03.868 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-09-02 11:49:03.870 +02:00 [INF] HTTP GET /api/Account responded 200 in 71.1613 ms
+2026-09-02 11:49:03.872 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 133.0398ms
+2026-09-02 11:49:22.651 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Logout - null 0
+2026-09-02 11:49:22.656 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Logout (P7CreateRestApi)'
+2026-09-02 11:49:22.670 +02:00 [INF] Route matched with {action = "Logout", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-09-02 11:49:22.676 +02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2026-09-02 11:49:22.679 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-09-02 11:49:22.680 +02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2026-09-02 11:49:22.681 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-09-02 11:49:22.682 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Logout (P7CreateRestApi) in 10.9054ms
+2026-09-02 11:49:22.684 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Logout (P7CreateRestApi)'
+2026-09-02 11:49:22.685 +02:00 [INF] HTTP POST /api/Login/Logout responded 200 in 29.3090 ms
+2026-09-02 11:49:22.687 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Logout - 200 null text/plain; charset=utf-8 35.5742ms
+2026-09-02 11:49:48.507 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 67
+2026-09-02 11:49:48.513 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-09-02 11:49:48.515 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-09-02 11:49:48.551 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:49:48.555 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-09-02 11:49:48.627 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-09-02 11:49:48.631 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-09-02 11:49:48.634 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:49:48.639 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2026-09-02 11:49:48.642 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-09-02 11:49:48.644 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:49:48.647 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2026-09-02 11:49:48.652 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)
+2026-09-02 11:49:48.654 +02:00 [INF] User member@user.com logged in at "2026-09-02T11:49:48.6540974+02:00"
+2026-09-02 11:49:48.655 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-09-02 11:49:48.656 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 113.2171ms
+2026-09-02 11:49:48.658 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-09-02 11:49:48.659 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 145.8911 ms
+2026-09-02 11:49:48.660 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 153.7322ms
+2026-09-02 11:50:01.995 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-09-02 11:50:02.000 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2026-09-02 11:50:02.013 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2026-09-02 11:50:02.014 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 403 0 null 19.2664ms
+2026-09-02 11:50:59.590 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:51:00.077 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:51:00.126 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:51:00.147 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-02 11:51:00.184 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:51:00.206 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:51:00.255 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:51:00.262 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:51:00.456 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-02 11:51:00.457 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-02 11:51:00.543 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-02 11:51:00.545 +02:00 [INF] Hosting environment: Development
+2026-09-02 11:51:00.546 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-02 11:51:01.771 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-09-02 11:51:02.020 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 266.382ms
+2026-09-02 11:51:02.225 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-09-02 11:51:02.349 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 123.6465ms
+2026-09-02 11:51:02.441 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-02 11:51:02.482 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-09-02 11:51:02.504 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 66.9145ms
+2026-09-02 11:51:02.553 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 71.6722ms
+2026-09-02 11:51:02.655 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-09-02 11:51:02.680 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 25.4703ms
+2026-09-02 11:51:20.610 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 67
+2026-09-02 11:51:20.656 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-09-02 11:51:20.682 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-09-02 11:51:20.725 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:51:20.738 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-09-02 11:51:20.860 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-09-02 11:51:20.895 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-09-02 11:51:20.901 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:51:20.910 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2026-09-02 11:51:20.924 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-09-02 11:51:20.930 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:51:20.940 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2026-09-02 11:51:20.957 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)
+2026-09-02 11:51:20.978 +02:00 [INF] User member@user.com logged in at "2026-09-02T11:51:20.9771718+02:00"
+2026-09-02 11:51:20.991 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-09-02 11:51:20.997 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 309.0606ms
+2026-09-02 11:51:20.999 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-09-02 11:51:21.002 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 346.8413 ms
+2026-09-02 11:51:21.008 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 398.9731ms
+2026-09-02 11:51:30.995 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-09-02 11:51:31.042 +02:00 [INF] UserNamehttp://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress: member@user.com
+2026-09-02 11:51:31.044 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-09-02 11:51:31.048 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-09-02 11:51:31.057 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:51:31.070 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-09-02 11:51:31.075 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-02 11:51:31.087 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-09-02 11:51:31.096 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 45.8913ms
+2026-09-02 11:51:31.097 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-09-02 11:51:31.098 +02:00 [INF] HTTP GET /api/Account responded 200 in 54.1360 ms
+2026-09-02 11:51:31.100 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 105.7076ms
+2026-09-02 11:51:44.489 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Logout - null 0
+2026-09-02 11:51:44.496 +02:00 [INF] UserNamehttp://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress: member@user.com
+2026-09-02 11:51:44.497 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Logout (P7CreateRestApi)'
+2026-09-02 11:51:44.500 +02:00 [INF] Route matched with {action = "Logout", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-09-02 11:51:44.507 +02:00 [INF] AuthenticationScheme: Identity.Application signed out.
+2026-09-02 11:51:44.509 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2026-09-02 11:51:44.510 +02:00 [INF] AuthenticationScheme: Identity.TwoFactorUserId signed out.
+2026-09-02 11:51:44.511 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-09-02 11:51:44.512 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Logout (P7CreateRestApi) in 10.8742ms
+2026-09-02 11:51:44.514 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Logout (P7CreateRestApi)'
+2026-09-02 11:51:44.515 +02:00 [INF] HTTP POST /api/Login/Logout responded 200 in 18.2066 ms
+2026-09-02 11:51:44.517 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Logout - 200 null text/plain; charset=utf-8 28.5348ms
+2026-09-02 11:51:58.531 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 65
+2026-09-02 11:51:58.536 +02:00 [INF] UserNamehttp://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress: member@user.com
+2026-09-02 11:51:58.537 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-09-02 11:51:58.538 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-09-02 11:51:58.545 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:51:58.550 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-09-02 11:51:58.627 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-09-02 11:51:58.631 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-09-02 11:51:58.635 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:51:58.638 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2026-09-02 11:51:58.641 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-09-02 11:51:58.643 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:51:58.647 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2026-09-02 11:51:58.650 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)
+2026-09-02 11:51:58.665 +02:00 [INF] User admin@user.com logged in at "2026-09-02T11:51:58.6651488+02:00"
+2026-09-02 11:51:58.666 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-09-02 11:51:58.668 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 128.3955ms
+2026-09-02 11:51:58.669 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-09-02 11:51:58.670 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 133.1616 ms
+2026-09-02 11:51:58.672 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 141.3111ms
+2026-09-02 11:52:01.945 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 65
+2026-09-02 11:52:01.949 +02:00 [INF] UserNamehttp://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress: member@user.com
+2026-09-02 11:52:01.950 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-09-02 11:52:01.951 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-09-02 11:52:01.954 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:52:01.959 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-09-02 11:52:02.036 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-09-02 11:52:02.040 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-09-02 11:52:02.043 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:52:02.046 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2026-09-02 11:52:02.049 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-09-02 11:52:02.051 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:52:02.055 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2026-09-02 11:52:02.059 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)
+2026-09-02 11:52:02.062 +02:00 [INF] User admin@user.com logged in at "2026-09-02T11:52:02.0621822+02:00"
+2026-09-02 11:52:02.063 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-09-02 11:52:02.064 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 111.0864ms
+2026-09-02 11:52:02.066 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-09-02 11:52:02.067 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 116.8758 ms
+2026-09-02 11:52:02.068 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 123.7105ms
+2026-09-02 11:52:13.317 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-09-02 11:52:13.325 +02:00 [INF] UserNamehttp://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress: admin@user.com
+2026-09-02 11:52:13.326 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-09-02 11:52:13.327 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-09-02 11:52:13.330 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:52:13.332 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-09-02 11:52:13.334 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-02 11:52:13.337 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-09-02 11:52:13.340 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 11.1271ms
+2026-09-02 11:52:13.341 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-09-02 11:52:13.342 +02:00 [INF] HTTP GET /api/Account responded 200 in 15.8524 ms
+2026-09-02 11:52:13.344 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 27.3285ms
+2026-09-02 11:52:51.257 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:52:51.765 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:52:51.818 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:52:51.839 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-02 11:52:51.877 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:52:51.902 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:52:51.944 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:52:51.949 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:52:52.113 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-02 11:52:52.114 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-02 11:52:52.191 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-02 11:52:52.193 +02:00 [INF] Hosting environment: Development
+2026-09-02 11:52:52.195 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-02 11:52:53.596 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-09-02 11:52:53.736 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 154.5114ms
+2026-09-02 11:52:53.831 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-09-02 11:52:53.926 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 95.0328ms
+2026-09-02 11:52:53.974 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-02 11:52:53.987 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-09-02 11:52:53.988 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 14.5039ms
+2026-09-02 11:52:54.049 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 62.8834ms
+2026-09-02 11:52:54.147 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-09-02 11:52:54.170 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 22.648ms
+2026-09-02 11:53:13.146 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 67
+2026-09-02 11:53:13.194 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-09-02 11:53:13.219 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-09-02 11:53:13.265 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:53:13.275 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-09-02 11:53:13.401 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-09-02 11:53:13.428 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-09-02 11:53:13.433 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:53:13.444 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2026-09-02 11:53:13.459 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-09-02 11:53:13.465 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:53:13.476 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2026-09-02 11:53:13.493 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)
+2026-09-02 11:53:13.510 +02:00 [INF] User member@user.com logged in at "2026-09-02T11:53:13.5101960+02:00"
+2026-09-02 11:53:13.521 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-09-02 11:53:13.527 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 302.1125ms
+2026-09-02 11:53:13.529 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-09-02 11:53:13.532 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 338.0998 ms
+2026-09-02 11:53:13.537 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 391.4236ms
+2026-09-02 11:53:24.062 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-09-02 11:53:24.112 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2026-09-02 11:53:24.116 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2026-09-02 11:53:24.118 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 403 0 null 55.6102ms
+2026-09-02 11:53:42.807 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 65
+2026-09-02 11:53:42.813 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-09-02 11:53:42.814 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-09-02 11:53:42.817 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:53:42.822 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-09-02 11:53:42.895 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-09-02 11:53:42.900 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-09-02 11:53:42.903 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-02 11:53:42.907 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2026-09-02 11:53:42.910 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-09-02 11:53:42.912 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-02 11:53:42.916 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2026-09-02 11:53:42.920 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)
+2026-09-02 11:53:42.934 +02:00 [INF] User admin@user.com logged in at "2026-09-02T11:53:42.9344638+02:00"
+2026-09-02 11:53:42.936 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-09-02 11:53:42.937 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 121.7279ms
+2026-09-02 11:53:42.938 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-09-02 11:53:42.939 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 126.6664 ms
+2026-09-02 11:53:42.942 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 135.8767ms
+2026-09-02 11:53:51.294 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/api/Account - null null
+2026-09-02 11:53:51.301 +02:00 [INF] UserNamehttp://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress: admin@user.com
+2026-09-02 11:53:51.302 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-09-02 11:53:51.306 +02:00 [INF] Route matched with {action = "GetAllUsers", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllUsers() on controller P7CreateRestApi.Controllers.AccountController (P7CreateRestApi).
+2026-09-02 11:53:51.315 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-02 11:53:51.326 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-09-02 11:53:51.331 +02:00 [INF] Executing OkObjectResult, writing value of type 'Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1[[P7CreateRestApi.Domain.User, P7CreateRestApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-09-02 11:53:51.342 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2026-09-02 11:53:51.351 +02:00 [INF] Executed action P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi) in 42.838ms
+2026-09-02 11:53:51.352 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
+2026-09-02 11:53:51.353 +02:00 [INF] HTTP GET /api/Account responded 200 in 50.5554 ms
+2026-09-02 11:53:51.355 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 61.4129ms
