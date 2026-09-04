@@ -16,6 +16,7 @@ using P7CreateRestApi.Filters;
 using P7CreateRestApi.IRepositories;
 using P7CreateRestApi.IServices;
 using P7CreateRestApi.LogUserNameMiddleware;
+using P7CreateRestApi.Models;
 using P7CreateRestApi.Repositories;
 using P7CreateRestApi.Services;
 using Serilog;
@@ -112,6 +113,9 @@ public class Program
         builder.Services.AddAutoMapper(configAction => configAction.CreateMap<TradeDto, Trade>());
         builder.Services.AddAutoMapper(configAction => configAction.CreateMap<User, UserDto>());
         builder.Services.AddAutoMapper(configAction => configAction.CreateMap<UserDto, User>());
+
+        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<UpdateGeneralInfosModel, User>());
+        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<RegisterModel, User>());
 
         builder.Services.AddScoped<IBidListRepository, BidListRepository>();
         builder.Services.AddScoped<IBidListService, BidListService>();
@@ -220,6 +224,7 @@ public class Program
                 var userAdmin = new User();
                 userAdmin.UserName = userAdminEmail;
                 userAdmin.Email = userAdminEmail;
+                userAdmin.Role = role;
 
                 await userManager.CreateAsync(userAdmin, userAdminPassword);
                 await userManager.AddToRoleAsync(userAdmin, role);
@@ -239,6 +244,7 @@ public class Program
                 var userMember = new User();
                 userMember.UserName = userMemberEmail;
                 userMember.Email = userMemberEmail;
+                userMember.Role = role;
 
                 await userManager.CreateAsync(userMember, userMemberPassword);
                 await userManager.AddToRoleAsync(userMember, role);

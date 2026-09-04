@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using P7CreateRestApi.Domain;
 using P7CreateRestApi.DTO;
 using P7CreateRestApi.IRepositories;
@@ -45,10 +46,12 @@ namespace P7CreateRestApi.Services
             return ListOfUserDtos;
         }
 
-        public async Task CreateUserWithUserDto(UserDto userDto)
+        public async Task CreateUserWithRegisterModel(RegisterModel registerModel)
         {
-            User user = await MapUserDtoToUser(userDto);
-            if (userDto != null)
+
+            //User user = new User() { UserName = registerModel.UserName, Email = registerModel.Email, Role = registerModel.Role };
+            User user = await MapRegisterModelToToUser(registerModel);
+            if (user != null)
             {
                 await _iUserRepository.CreateUser(user);
             }
@@ -58,12 +61,7 @@ namespace P7CreateRestApi.Services
         {
             if (updateGeneralInfosModel != null)
             {
-                User user = new User()
-                {
-                    Email = email,
-                    UserName = updateGeneralInfosModel.UserName,
-                    Role = updateGeneralInfosModel.Role,
-                };
+                User user = await MapUpdateGeneralInfosModelToToUser(updateGeneralInfosModel);
                 await _iUserRepository.UpdateUser(user);
             }
         }
@@ -99,6 +97,16 @@ namespace P7CreateRestApi.Services
         public async Task<User> MapUserDtoToUser(UserDto userDto)
         {
             User user = _mapper.Map<UserDto, User>(userDto);
+            return user;
+        }
+        public async Task<User> MapRegisterModelToToUser(RegisterModel registerModel)
+        {
+            User user = _mapper.Map<RegisterModel, User>(registerModel);
+            return user;
+        }
+        public async Task<User> MapUpdateGeneralInfosModelToToUser(UpdateGeneralInfosModel updateGeneralInfosModel)
+        {
+            User user = _mapper.Map<UpdateGeneralInfosModel, User>(updateGeneralInfosModel);
             return user;
         }
 

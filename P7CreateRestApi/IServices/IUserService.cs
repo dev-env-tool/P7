@@ -9,12 +9,14 @@ namespace P7CreateRestApi.IServices
     {
         Task<IEnumerable<UserDto>> GetAllUsersDto();
         Task<IEnumerable<UserDto>> GetUserDtoByEmail(string email);
-        Task CreateUserWithUserDto(UserDto userDto);
+        Task CreateUserWithRegisterModel(RegisterModel registerModel);
         Task UpdateUserWithUpdateGeneralInfosModel(string email, UpdateGeneralInfosModel updateGeneralInfosModel);
         Task UpdateUserPasswordWithUpdatePasswordModel(string email, UpdatePasswordModel updatePasswordModel);
         Task DeleteUserByEmail(string email);
         Task<UserDto> MapUserToUserDto(User user);
         Task<User> MapUserDtoToUser(UserDto userDto);
+        Task<User> MapRegisterModelToToUser(RegisterModel registerModel);
+        Task<User> MapUpdateGeneralInfosModelToToUser(UpdateGeneralInfosModel updateGeneralInfosModel);
 
     }
 }

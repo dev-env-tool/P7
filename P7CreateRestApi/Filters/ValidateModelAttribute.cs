@@ -9,6 +9,7 @@ using System.Web.Http.Filters;
 using System.Web.Http.ModelBinding;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Identity;
 
 //namespace P7CreateRestApi.Filters
 //{

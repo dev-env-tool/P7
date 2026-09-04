@@ -39,9 +39,10 @@ namespace P7CreateRestApi.Repositories
         {
             if (user != null)
             {
-                _context!.Add(user);
-                _context.SaveChanges();
+                await _userManager.CreateAsync(user, user.Password);
+                await _userManager.AddToRoleAsync(user, user.Role);
             }
+
         }
 
         public async Task UpdateUser(User user)
