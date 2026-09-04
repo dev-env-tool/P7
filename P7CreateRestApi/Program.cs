@@ -110,6 +110,8 @@ public class Program
         builder.Services.AddAutoMapper(configAction => configAction.CreateMap<RuleNameDto, RuleName>());
         builder.Services.AddAutoMapper(configAction => configAction.CreateMap<Trade, TradeDto>());
         builder.Services.AddAutoMapper(configAction => configAction.CreateMap<TradeDto, Trade>());
+        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<User, UserDto>());
+        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<UserDto, User>());
 
         builder.Services.AddScoped<IBidListRepository, BidListRepository>();
         builder.Services.AddScoped<IBidListService, BidListService>();
@@ -122,6 +124,8 @@ public class Program
         builder.Services.AddScoped<ITradeRepository, TradeRepository>();
         builder.Services.AddScoped<ITradeService, TradeService>();
         builder.Services.AddScoped<ILoginService, LoginService>();
+        builder.Services.AddScoped<IUserService, UserService>();
+        builder.Services.AddScoped<IUserRepository, UserRepository>();
         builder.Services.AddHttpContextAccessor();
 
         builder.Services.AddDbContext<P7Referential>(options =>

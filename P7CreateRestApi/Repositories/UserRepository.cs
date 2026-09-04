@@ -1,110 +1,120 @@
-//using Dot.Net.WebApi.Data;
-//using Dot.Net.WebApi.Domain;
-//using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using P7CreateRestApi.Data;
+using P7CreateRestApi.Domain;
+using P7CreateRestApi.IRepositories;
+using P7CreateRestApi.Models;
+using static Duende.IdentityServer.Models.IdentityResources;
 
-//namespace Dot.Net.WebApi.Repositories
-//{
-//    public class UserRepository
-//    {
+namespace P7CreateRestApi.Repositories
+{
+    public class UserRepository : IUserRepository
+    {
 
-//        private static P7Referential? _context;
+        private static ApplicationDbContext? _context;
+        private readonly UserManager<User> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-//        public UserRepository(P7Referential context)
-//        {
-//            _context = context;
-//        }
+        public UserRepository(ApplicationDbContext context, 
+            UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
+        {
+            _context = context;
+            _userManager = userManager;
+            _roleManager = roleManager;
+        }
 
+        public async Task<IEnumerable<User>> GetAllUsers()
+        {
+            return await _context!.Users.ToListAsync();
+        }
 
-//        public User FindByUserName(string userName)
-//        {
-//            return _context.Users.Where(user => user.UserName == userName)
-//                                  .FirstOrDefault();
-//        }
+        public async Task<IEnumerable<User>> GetUserByEmail(string email)
+        {
+            return await _context!.Users.Where(u => u.UserName == email)
+                                  .ToListAsync();
+        }
 
-//        public async Task<List<User>> FindAllUsers()
-//        {
-//            return await _context.Users.ToListAsync();
-//        }
+        public async Task CreateUser(User user)
+        {
+            if (user != null)
+            {
+                _context!.Add(user);
+                _context.SaveChanges();
+            }
+        }
 
-//        public void Add(User user)
-//        {
-//        }
+        public async Task UpdateUser(User user)
+        {
+            User userToFind = await _userManager.FindByEmailAsync(user.Email);
+            if (userToFind == null)
+            {
+                return;
+            }
+            else
+            {
+                userToFind.UserName = user.UserName;
+                var result = await _userManager.UpdateAsync(userToFind);
 
-//        public User FindById(int id)
-//        {
-//            return _context.Users.Where(user => user.Id == id)
-//                                  .FirstOrDefault();
-//        }
-//    }
-//}
+                if(user.Role != null) 
+                {
+                    if (!await _userManager.IsInRoleAsync(userToFind, user.Role))
+                    {
+                        if (!await _roleManager.RoleExistsAsync(user.Role))
+                        {
+                            return;
+                        }
+                        else
+                        {
+                            var roleUpdateResult = await _userManager.AddToRoleAsync(userToFind, user.Role);
+                            IList<string> foundRoles = await _userManager.GetRolesAsync(userToFind);
+                            foundRoles.Remove(user.Role);
+                            foreach (var role in foundRoles)
+                            {
+                                await _userManager.RemoveFromRoleAsync(userToFind, role);
+                            }
+                        }
+                    }
+                }
 
-//using Microsoft.AspNetCore.Identity;
-//using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-//using Microsoft.AspNetCore.Mvc;
-
-////using Dot.Net.WebApi.Controllers.Domain;
-//using Microsoft.EntityFrameworkCore;
-//using P7CreateRestApi.Data;
-//using P7CreateRestApi.Domain;
-//using P7CreateRestApi.IRepositories;
-//using System.Collections;
-//using System.Diagnostics;
-
-//namespace P7CreateRestApi.Repositories
-//{
-//    public class UserRepository : IUserRepository
-//    {
-
-//        private static ApplicationDbContext? _context;
-
-//        public UserRepository(ApplicationDbContext context)
-//        {
-//            _context = context;
-//        }
-
-//        public async Task<IEnumerable<IdentityUser>> GetAllUsers()
-//        {
-//            return await _context!.Users.ToListAsync();
-//        }
-
-//        public async Task<IEnumerable<IdentityUser>> GetUserByEmail(string email)
-//        {
-//            return await _context!.Users.Where(u => u.UserName == email)
-//                                  .ToListAsync();
-//        }
-
-//        public void CreateUser(IdentityUser user)
-//        {
-//            if (user != null)
-//            {
-//                _context!.Users.Add(user);
-//                _context.SaveChanges();
-//            }
-//        }
-
-//        public async Task UpdateUser([FromBody] IdentityUser user)
-//        {
-//            if (user != null)
-//            {
-//                if (GetUserByEmail(user.UserName) != null)
-//                {
-//                    _context!.Entry(user).State = EntityState.Modified;
-//                    _context!.SaveChanges();
-//                }
-//            }
-//        }
+            }
+            //if (user != null)
+            //{
+            //    if (GetUserByEmail(user.UserName) != null)
+            //    {
+            //        _context!.Entry(user).State = EntityState.Modified;
+            //        _context!.SaveChanges();
+            //    }
+            //}
+        }
 
 
-//        public void DeleteUserByEmail(string email)
-//        {
-//            IdentityUser user = _context!.Users.First(u => u.Email == email);
+        public async Task UpdateUserPassword(User user, UpdatePasswordModel updatePasswordModel)
+        {
+            User userToFind = await _userManager.FindByEmailAsync(user.Email);
+            if (userToFind == null)
+            {
+                return;
+            }
+            else
+            {
+                var result = await _userManager.ChangePasswordAsync(userToFind, updatePasswordModel.CurrentPassword, updatePasswordModel.NewPassword);
+            }
 
-//            if (user != null)
-//            {
-//                _context!.Users.Remove(user);
-//                _context!.SaveChanges();
-//            }
-//        }
+        }
 
-//    }
-//}
+
+        public async Task DeleteUserByEmail(string email)
+        {
+            User user = _context!.Users.First(u => u.Email == email);
+
+            if (user != null)
+            {
+                _context!.Users.Remove(user);
+                _context!.SaveChanges();
+            }
+
+        }
+
+    }
+}

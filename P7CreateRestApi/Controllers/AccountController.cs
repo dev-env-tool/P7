@@ -1,8 +1,12 @@
-using P7CreateRestApi.Domain;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Identity;
-using P7CreateRestApi.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using P7CreateRestApi.Domain;
+using P7CreateRestApi.DTO;
+using P7CreateRestApi.IRepositories;
+using P7CreateRestApi.IServices;
+using P7CreateRestApi.Models;
+using P7CreateRestApi.Services;
 
 namespace P7CreateRestApi.Controllers
 {
@@ -12,14 +16,18 @@ namespace P7CreateRestApi.Controllers
     
     public class AccountController : Controller
     {
-
+        private readonly IUserRepository _iUserRepository;
+        private readonly IUserService _iUserService;
         private readonly UserManager<User> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
-        public AccountController(UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
+        public AccountController(UserManager<User> userManager, RoleManager<IdentityRole> roleManager,
+            IUserRepository userRepository, IUserService userService)
         {
             _userManager = userManager;
             _roleManager = roleManager;
+            _iUserRepository = userRepository;
+            _iUserService = userService;
         }
 
         
@@ -28,7 +36,7 @@ namespace P7CreateRestApi.Controllers
         public async Task<IActionResult> GetAllUsers()
         {
             //IEnumerable<User> listOfUsers = await _userManager.Users();
-            IEnumerable<User> listOfUsers = _userManager.Users;
+            IEnumerable<UserDto> listOfUsers = await _iUserService.GetAllUsersDto();
             if (!listOfUsers.Any())
             {
                 return NotFound("No information found.");
@@ -40,17 +48,17 @@ namespace P7CreateRestApi.Controllers
         [Route("{email}")]
         public async Task<IActionResult> GetUserByEmail(string email)
         {
-            User foundUser = await _userManager.FindByEmailAsync(email);
+            IEnumerable<UserDto> foundUserDto = await _iUserService.GetUserDtoByEmail(email);
 
             if (email == "")
             {
                 return BadRequest("Bad request. UserName must be a character string.");
             }
-            if (foundUser == null)
+            if (foundUserDto == null)
             {
                 return NotFound("The information with the specified UserName was not found.");
             }
-            return Ok(foundUser);
+            return Ok(foundUserDto);
         }
 
 
@@ -58,19 +66,9 @@ namespace P7CreateRestApi.Controllers
 
         [HttpPost("")]
         //[Route("register")]
-        public async Task<IActionResult> CreateUser([FromBody] RegisterModel registerModel)
+        public async Task<IActionResult> CreateUser([FromBody] UserDto userDto)
         {
-            User user = new User() {UserName = registerModel.UserName, Email = registerModel.Email, Role = registerModel.Role};
-            var result = _userManager.CreateAsync(user, registerModel.Password);
-            if (result.Result.Errors.Any())
-            {
-                return BadRequest(result.Result); 
-            }
-            var role = _userManager.AddToRoleAsync(user, registerModel.Role);
-            if (role.Result.Errors.Any())
-            {
-                return BadRequest(role.Result);
-            }
+            await _iUserService.CreateUserWithUserDto(userDto);
             return Ok("User was successfully registered.");
         }
 
@@ -82,45 +80,18 @@ namespace P7CreateRestApi.Controllers
         {
             if (email == "")
             {
-                return BadRequest("Bad request. UserNamemust be a character string.");
+                return BadRequest("Bad request. Please give an email.");
             }
-            User userToFind = await _userManager.FindByEmailAsync(email);
-            
 
-            if (userToFind == null)
-            {
-                return NotFound("The information with the specified UserName was not found.");
+            var result = _iUserService.UpdateUserWithUpdateGeneralInfosModel(email, updateGeneralInfosModel);
+
+            if (result.IsCompleted)
+            { 
+                return Ok(result.IsCompleted);
             }
             else
             {
-                userToFind.UserName = updateGeneralInfosModel.UserName;
-                var result = await _userManager.UpdateAsync(userToFind);
-
-                if (!await _userManager.IsInRoleAsync(userToFind, updateGeneralInfosModel.Role))
-                {
-                    if(!await _roleManager.RoleExistsAsync(updateGeneralInfosModel.Role))
-                    {
-                        return BadRequest("Please give one of the followig roles : Admin or Member.");
-                    }
-                    else
-                    { 
-                        var roleUpdateResult = await _userManager.AddToRoleAsync(userToFind, updateGeneralInfosModel.Role);
-                        IList<string> foundRoles = await _userManager.GetRolesAsync(userToFind);
-                        foundRoles.Remove(updateGeneralInfosModel.Role);
-                        foreach (var role in foundRoles)
-                        {
-                            await _userManager.RemoveFromRoleAsync(userToFind, role);
-                        }
-                    }
-                }
-                if (result.Succeeded)
-                { 
-                    return Ok(result.Succeeded);
-                }
-                else
-                {
-                    return BadRequest(result.Errors);
-                }
+                return BadRequest(result.IsFaulted);
             }
         }
 
@@ -131,30 +102,23 @@ namespace P7CreateRestApi.Controllers
         {
             if (email == "")
             {
-                return BadRequest("Bad request. UserNamemust be a character string.");
+                return BadRequest("Bad request. Please give an email.");
             }
-            User userToFind = await _userManager.FindByEmailAsync(email);
 
+            var result = _iUserService.UpdateUserPasswordWithUpdatePasswordModel(email, updatePasswordModel);
 
-            if (userToFind == null)
+            if (result.IsCompleted)
             {
-                return NotFound("The information with the specified UserName was not found.");
+                return Ok(result.IsCompleted);
             }
             else
             {
-                var result = await _userManager.ChangePasswordAsync(userToFind, updatePasswordModel.CurrentPassword, updatePasswordModel.NewPassword);
-                if (result.Succeeded)
-                {
-                    return Ok(result.Succeeded);
-                }
-                else
-                {
-                    return BadRequest(result.Errors);
-                }
+                return BadRequest(result.IsFaulted);
             }
+
         }
 
-       
+        
 
 
         //[HttpGet("validate")]
