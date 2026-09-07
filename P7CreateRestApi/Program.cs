@@ -135,6 +135,9 @@ public class Program
         builder.Services.AddDbContext<P7Referential>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("P7Referential")));
 
+        builder.Services.AddDbContext<P7Referential>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("P7ReferentialForTests")));
+
         builder.Services.AddDbContext<ApplicationDbContext>(
             options => options.UseSqlServer(builder.Configuration.GetConnectionString("P7Identity")));
 

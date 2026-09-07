@@ -1,0 +1,39 @@
+2026-09-07T08:59:49.3916711+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-07T08:59:49.3929083+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-07T08:59:49.3941833+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-07T08:59:49.3941864+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 08:59:49.354
+2026-09-07T08:59:49.3942403+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 20736
+2026-09-07T08:59:49.3943498+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.30
+2026-09-07T08:59:49.3943681+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.30\System.Private.CoreLib.dll
+2026-09-07T08:59:49.3944432+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-07T08:59:49.3945070+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-07T08:59:49.3945137+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 57984'
+2026-09-07T08:59:49.3978411+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-07T08:59:49.4596340+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-07T08:59:49.4687387+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-07T08:59:49.7844441+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-07T08:59:49.7939301+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.30)
+2026-09-07T08:59:49.8363079+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-07T08:59:49.8686128+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-07T08:59:49.8872980+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-07T09:00:06.7069652+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+DatabaseTests.CheckProductModelErrors_ShouldReturn_MissingName [FAIL]
+2026-09-07T09:00:06.7081450+00:00 xUnit.net INFORMATION       System.ArgumentException : Can not instantiate proxy of class: P7CreateRestApi.Controllers.BidListsController.
+2026-09-07T09:00:06.7081571+00:00 xUnit.net INFORMATION       Could not find a parameterless constructor. (Parameter 'constructorArguments')
+2026-09-07T09:00:06.7081583+00:00 xUnit.net INFORMATION       ---- System.MissingMethodException : Constructor on type 'Castle.Proxies.BidListsControllerProxy' not found.
+2026-09-07T09:00:06.7098218+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-07T09:00:06.7104117+00:00 xUnit.net INFORMATION            at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)
+2026-09-07T09:00:06.7104303+00:00 xUnit.net INFORMATION            at Castle.DynamicProxy.ProxyGenerator.CreateClassProxy(Type classToProxy, Type[] additionalInterfacesToProxy, ProxyGenerationOptions options, Object[] constructorArguments, IInterceptor[] interceptors)
+2026-09-07T09:00:06.7105248+00:00 xUnit.net INFORMATION         /_/src/Moq/Interception/CastleProxyFactory.cs(62,0): at Moq.CastleProxyFactory.CreateProxy(Type mockType, IInterceptor interceptor, Type[] interfaces, Object[] arguments)
+2026-09-07T09:00:06.7106077+00:00 xUnit.net INFORMATION         /_/src/Moq/Mock`1.cs(309,0): at Moq.Mock`1.InitializeInstance()
+2026-09-07T09:00:06.7106142+00:00 xUnit.net INFORMATION         /_/src/Moq/Mock`1.cs(323,0): at Moq.Mock`1.OnGetObject()
+2026-09-07T09:00:06.7106949+00:00 xUnit.net INFORMATION         /_/src/Moq/Mock.cs(181,0): at Moq.Mock.get_Object()
+2026-09-07T09:00:06.7107003+00:00 xUnit.net INFORMATION         /_/src/Moq/Mock`1.cs(281,0): at Moq.Mock`1.get_Object()
+2026-09-07T09:00:06.7107662+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(139,0): at P7CreateRestApiTest.DatabaseFixture.DatabaseTests.CheckProductModelErrors_ShouldReturn_MissingName()
+2026-09-07T09:00:06.7107742+00:00 xUnit.net INFORMATION            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+2026-09-07T09:00:06.7108570+00:00 xUnit.net INFORMATION            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+2026-09-07T09:00:06.7108651+00:00 xUnit.net INFORMATION         ----- Inner Stack Trace -----
+2026-09-07T09:00:06.7108706+00:00 xUnit.net INFORMATION            at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture)
+2026-09-07T09:00:06.7108776+00:00 xUnit.net INFORMATION            at Castle.DynamicProxy.ProxyGenerator.CreateClassProxyInstance(Type proxyType, List`1 proxyArguments, Type classToProxy, Object[] constructorArguments)
+2026-09-07T09:00:06.7268042+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-07T09:00:06.7319442+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-07T09:00:06.7386211+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 1, Errors: 0, Failed: 1, Skipped: 0, Not Run: 0, Time: 16,842s

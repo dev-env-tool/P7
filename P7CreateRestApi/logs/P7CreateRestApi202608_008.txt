@@ -19834,3 +19834,218 @@ FROM [AspNetUsers] AS [a]
 2026-09-04 15:32:33.122 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.AccountController.GetAllUsers (P7CreateRestApi)'
 2026-09-04 15:32:33.123 +02:00 [INF] HTTP GET /api/Account responded 200 in 125.7262 ms
 2026-09-04 15:32:33.124 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/api/Account - 200 null application/json; charset=utf-8 180.5423ms
+2026-09-04 16:35:56.008 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-04 16:35:58.268 +02:00 [INF] Executed DbCommand (46ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-04 16:35:58.337 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-04 16:35:58.363 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-04 16:35:58.410 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-04 16:35:58.423 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-04 16:35:58.468 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-04 16:35:58.474 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-04 16:35:58.723 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-04 16:35:58.725 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-04 16:35:58.893 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-04 16:35:58.894 +02:00 [INF] Hosting environment: Development
+2026-09-04 16:35:58.895 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-04 16:36:03.358 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-09-04 16:36:03.420 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 76.7959ms
+2026-09-04 16:36:03.430 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-09-04 16:36:03.504 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 73.5348ms
+2026-09-04 16:36:03.554 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-04 16:36:03.567 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 13.2906ms
+2026-09-04 16:36:03.692 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-09-04 16:36:03.719 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 27.7038ms
+2026-09-04 16:42:20.652 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-04 16:42:21.393 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-04 16:42:21.471 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-04 16:42:21.494 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-04 16:42:21.544 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-04 16:42:21.558 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-04 16:42:21.605 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-04 16:42:21.609 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-04 16:42:21.801 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-04 16:42:21.802 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-04 16:42:21.905 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-04 16:42:21.906 +02:00 [INF] Hosting environment: Development
+2026-09-04 16:42:21.907 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-04 16:42:24.289 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-09-04 16:42:24.378 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 100.8561ms
+2026-09-04 16:42:24.386 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-09-04 16:42:24.481 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 94.2728ms
+2026-09-04 16:42:24.522 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-04 16:42:24.538 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 16.38ms
+2026-09-04 16:42:24.647 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-09-04 16:42:24.685 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 38.3883ms
+2026-09-04 17:10:46.962 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'P7Referential' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-04 17:23:48.316 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-04 17:23:49.856 +02:00 [INF] Executed DbCommand (39ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-04 17:23:49.921 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-04 17:23:49.942 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-04 17:23:49.982 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-04 17:23:50.006 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-04 17:23:50.067 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-04 17:23:50.072 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-04 17:23:50.245 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-04 17:23:50.247 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-04 17:23:50.333 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-04 17:23:50.335 +02:00 [INF] Hosting environment: Development
+2026-09-04 17:23:50.336 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-04 17:23:54.471 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-09-04 17:23:54.531 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 71.4064ms
+2026-09-04 17:23:54.544 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-09-04 17:23:55.234 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 690.2085ms
+2026-09-04 17:23:55.269 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-04 17:23:55.284 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 15.3122ms
+2026-09-04 17:23:55.380 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-09-04 17:23:55.407 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 26.6402ms
+2026-09-07 10:15:39.931 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-07 10:15:40.576 +02:00 [INF] Executed DbCommand (43ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-07 10:15:40.635 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-07 10:15:40.663 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-07 10:15:40.713 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-07 10:15:40.731 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-07 10:15:40.782 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-07 10:15:40.788 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-07 10:15:41.107 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-07 10:15:41.110 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-07 10:15:41.263 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-07 10:15:41.265 +02:00 [INF] Hosting environment: Development
+2026-09-07 10:15:41.267 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-07 10:15:42.049 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-09-07 10:15:42.238 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 206.0945ms
+2026-09-07 10:15:42.241 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-09-07 10:15:42.367 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 125.5547ms
+2026-09-07 10:15:42.391 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/swagger-ui.css - null null
+2026-09-07 10:15:42.392 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/swagger-ui-bundle.js - null null
+2026-09-07 10:15:42.393 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/swagger-ui-standalone-preset.js - null null
+2026-09-07 10:15:42.406 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-07 10:15:42.405 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-09-07 10:15:42.437 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 30.6426ms
+2026-09-07 10:15:42.465 +02:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-09-07 10:15:42.466 +02:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-09-07 10:15:42.470 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/swagger-ui.css - 200 144929 text/css 79.1586ms
+2026-09-07 10:15:42.471 +02:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-09-07 10:15:42.473 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/swagger-ui-standalone-preset.js - 200 312163 text/javascript 80.5205ms
+2026-09-07 10:15:42.482 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/swagger-ui-bundle.js - 200 1061536 text/javascript 90.1857ms
+2026-09-07 10:15:42.522 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 117.2248ms
+2026-09-07 10:15:42.625 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/favicon-32x32.png - null null
+2026-09-07 10:15:42.630 +02:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-09-07 10:15:42.632 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/favicon-32x32.png - 200 628 image/png 7.9379ms
+2026-09-07 10:15:42.673 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-09-07 10:15:42.700 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 27.9513ms
+2026-09-07 10:55:33.307 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-07 10:55:35.809 +02:00 [INF] Executed DbCommand (48ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-07 10:55:35.871 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-07 10:55:35.895 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-07 10:55:35.945 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-07 10:55:35.960 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-07 10:55:36.003 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-07 10:55:36.008 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-07 10:55:36.230 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-07 10:55:36.232 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-07 10:55:36.320 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-07 10:55:36.322 +02:00 [INF] Hosting environment: Development
+2026-09-07 10:55:36.324 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-07 10:55:37.227 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-09-07 10:55:37.276 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 60.4075ms
+2026-09-07 10:55:37.285 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-09-07 10:55:37.354 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 69.3292ms
+2026-09-07 10:55:37.387 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-07 10:55:37.399 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 11.9508ms
+2026-09-07 10:55:37.532 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-09-07 10:55:37.562 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 31.0554ms
+2026-09-07 16:14:34.135 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-07 16:14:35.854 +02:00 [INF] Executed DbCommand (46ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-07 16:14:35.914 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-07 16:14:36.297 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-07 16:14:36.338 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-07 16:14:36.352 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-07 16:14:36.392 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-07 16:14:36.397 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-07 16:14:36.592 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-07 16:14:36.593 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-07 16:14:36.685 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-07 16:14:36.686 +02:00 [INF] Hosting environment: Development
+2026-09-07 16:14:36.687 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-07 16:14:37.394 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-09-07 16:14:37.588 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 210.1077ms
+2026-09-07 16:14:37.592 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-09-07 16:14:37.664 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 72.2887ms
+2026-09-07 16:14:37.696 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-07 16:14:37.701 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-09-07 16:14:37.705 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 9.3057ms
+2026-09-07 16:14:37.767 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 66.4101ms
+2026-09-07 16:14:37.881 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-09-07 16:14:37.900 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 19.0972ms
