@@ -20,19 +20,19 @@ namespace P7CreateRestApi.DTO
         [Range(0.0001, double.MaxValue, ErrorMessage = "The BidQuantity is not greater than 0 and smaller than 1.79 E+308.")]
         [CustomValidation(ErrorMessage = "The BidQuantity is not a double.")]
         [DefaultValue("1")]
-        public string? BidQuantity { get; set; } = "1";
+        public string? BidQuantity { get; set; }
 
 
         [Range(0.0001, double.MaxValue, ErrorMessage = "The AskQuantity is not greater than 0 and smaller than 1.79 E+308.")]
         [CustomValidation(ErrorMessage = "The AskQuantity is not a double.")]
         [DefaultValue("1")]
-        public string? AskQuantity { get; set; } = "1";
+        public string? AskQuantity { get; set; }
 
 
         [Range(0.0001, double.MaxValue, ErrorMessage = "The Bid is not greater than 0 and smaller than 1.79 E+308.")]
         [CustomValidation(ErrorMessage = "The Bid is not a double.")]
         [DefaultValue("1")]
-        public string? Bid { get; set; } = "1";
+        public string? Bid { get; set; }
 
 
         [Range(0.0001, double.MaxValue, ErrorMessage = "The Ask is not greater than 0 and smaller than 1.79 E+308.")]

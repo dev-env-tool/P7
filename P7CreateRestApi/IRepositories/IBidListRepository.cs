@@ -10,7 +10,7 @@ namespace P7CreateRestApi.IRepositories
         Task CreateBidList(BidList bidList);
         Task UpdateBidList(BidList bidList);
         Task DeleteBidListById(int id);
-        Task<int> GetMaxBidListId();
+        //Task<int> GetMaxBidListId();
 
     }
 }

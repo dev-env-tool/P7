@@ -31,21 +31,20 @@ namespace P7CreateRestApi.Repositories
         {
             if (bidList != null)
             {
-                _context!.BidLists.Add(bidList);
-                _context.SaveChanges();
+                await _context!.BidLists.AddAsync(bidList);
+                await _context!.SaveChangesAsync();
             }
         }
 
         public async Task UpdateBidList(BidList bidList)
         {
-            int maxBidListId = await GetMaxBidListId();
-            if (bidList != null)
+
+            var existingProduct = await _context.BidLists.FindAsync(bidList.BidListId);
+
+            if (existingProduct != null)
             {
-                if ((bidList.BidListId > 0) && (bidList.BidListId <= maxBidListId))
-                {
-                    _context!.Update(bidList);
-                    _context.SaveChanges();
-                }
+                _context.Entry(existingProduct).CurrentValues.SetValues(bidList);
+                await _context!.SaveChangesAsync();
             }
         }
 
@@ -57,13 +56,13 @@ namespace P7CreateRestApi.Repositories
             if (bidList != null)
             {
                 _context!.BidLists.Remove(bidList);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
         }
-        public async Task<int> GetMaxBidListId()
-        {
-            int maxBidListId = _context!.BidLists.Select(b => b.BidListId).Max();
-            return await Task.FromResult(maxBidListId);
-        }
+        //public async Task<int> GetMaxBidListId()
+        //{
+        //    int maxBidListId = _context!.BidLists.Select(b => b.BidListId).Max();
+        //    return await Task.FromResult(maxBidListId);
+        //}
     }
 }

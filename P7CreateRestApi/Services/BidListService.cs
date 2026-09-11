@@ -56,7 +56,7 @@ namespace P7CreateRestApi.Services
         public async Task CreateBidListWithBidListDto(BidListDto bidListDto)
         {
             BidList bidList = await MapBidListDtoToBidList(bidListDto);
-            if (bidListDto != null)
+            if (bidList != null)
             {
                 await _iBidListRepository.CreateBidList(bidList);
             }

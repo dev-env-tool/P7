@@ -1,0 +1,46 @@
+2026-09-11T12:31:16.9512337+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-11T12:31:16.9525767+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-11T12:31:16.9539161+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-11T12:31:16.9539204+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 12:31:16.910
+2026-09-11T12:31:16.9539761+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 14956
+2026-09-11T12:31:16.9541628+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.31
+2026-09-11T12:31:16.9541815+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.31\System.Private.CoreLib.dll
+2026-09-11T12:31:16.9541991+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-11T12:31:16.9542539+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-11T12:31:16.9542603+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 56498'
+2026-09-11T12:31:16.9571477+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-11T12:31:17.0040945+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-11T12:31:17.0133880+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-11T12:31:17.3439394+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-11T12:31:17.3533441+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.31)
+2026-09-11T12:31:17.4023507+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-11T12:31:17.4366818+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-11T12:31:17.4541385+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-11T12:32:03.6600294+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+UnitTests.IBidListService_CreateBidListWithBidListDto_ShouldAdd_1BidList [FAIL]
+2026-09-11T12:32:03.6613154+00:00 xUnit.net INFORMATION       AutoMapper.AutoMapperMappingException : Error mapping types.
+2026-09-11T12:32:03.6613220+00:00 xUnit.net INFORMATION       
+2026-09-11T12:32:03.6613235+00:00 xUnit.net INFORMATION       Mapping types:
+2026-09-11T12:32:03.6613246+00:00 xUnit.net INFORMATION       BidListDto -> BidList
+2026-09-11T12:32:03.6613257+00:00 xUnit.net INFORMATION       P7CreateRestApi.DTO.BidListDto -> P7CreateRestApi.Domain.BidList
+2026-09-11T12:32:03.6613267+00:00 xUnit.net INFORMATION       
+2026-09-11T12:32:03.6613277+00:00 xUnit.net INFORMATION       Type Map configuration:
+2026-09-11T12:32:03.6613288+00:00 xUnit.net INFORMATION       BidListDto -> BidList
+2026-09-11T12:32:03.6613415+00:00 xUnit.net INFORMATION       P7CreateRestApi.DTO.BidListDto -> P7CreateRestApi.Domain.BidList
+2026-09-11T12:32:03.6613611+00:00 xUnit.net INFORMATION       
+2026-09-11T12:32:03.6613622+00:00 xUnit.net INFORMATION       Destination Member:
+2026-09-11T12:32:03.6613628+00:00 xUnit.net INFORMATION       BidQuantity
+2026-09-11T12:32:03.6613633+00:00 xUnit.net INFORMATION       
+2026-09-11T12:32:03.6615649+00:00 xUnit.net INFORMATION       ---- System.FormatException : The input string '0.0001' was not in a correct format.
+2026-09-11T12:32:03.6639085+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-11T12:32:03.6653725+00:00 xUnit.net INFORMATION            at lambda_method6(Closure, Object, BidList, ResolutionContext)
+2026-09-11T12:32:03.6656057+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\BidListService.cs(87,0): at P7CreateRestApi.Services.BidListService.MapBidListDtoToBidList(BidListDto bidListDto)
+2026-09-11T12:32:03.6656344+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\BidListService.cs(58,0): at P7CreateRestApi.Services.BidListService.CreateBidListWithBidListDto(BidListDto bidListDto)
+2026-09-11T12:32:03.6656408+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(102,0): at P7CreateRestApiTest.DatabaseFixture.UnitTests.IBidListService_CreateBidListWithBidListDto_ShouldAdd_1BidList()
+2026-09-11T12:32:03.6656420+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-11T12:32:03.6656429+00:00 xUnit.net INFORMATION         ----- Inner Stack Trace -----
+2026-09-11T12:32:03.6656979+00:00 xUnit.net INFORMATION            at System.Number.ThrowFormatException[TChar](ReadOnlySpan`1 value)
+2026-09-11T12:32:03.6657030+00:00 xUnit.net INFORMATION            at System.Convert.ToDouble(String value)
+2026-09-11T12:32:03.6657072+00:00 xUnit.net INFORMATION            at lambda_method6(Closure, Object, BidList, ResolutionContext)
+2026-09-11T12:32:03.6865367+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-11T12:32:03.6928993+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-11T12:32:03.7013442+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 1, Errors: 0, Failed: 1, Skipped: 0, Not Run: 0, Time: 46,235s

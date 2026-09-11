@@ -71,16 +71,17 @@ namespace P7CreateRestApiTest
                 var context = GetInMemoryDbContext();
                 var bidListrepository = new BidListRepository(context);
                 IBidListService iBidListService = new BidListService(bidListrepository, mapper);
+                CustomValidationAttribute customValidationAttribute = new CustomValidationAttribute();
 
                 BidListDto bidListDto = new BidListDto
                 {
                     BidListId = 0,
                     Account = "test",
                     BidType = "string",
-                    BidQuantity = 0.0001,
-                    AskQuantity = 0.0001,
-                    Bid = 0.0001,
-                    Ask = 0.0001,
+                    BidQuantity = "0,0001",
+                    AskQuantity = "0,0001",
+                    Bid = "0,0001",
+                    Ask = "0,0001",
                     Benchmark = "string",
                     BidListDate = "11/08/2026 12:53:27",
                     Commentary = "string",
@@ -99,17 +100,18 @@ namespace P7CreateRestApiTest
                 };
 
                 ///Act
-                Task CreateBidList = iBidListService.CreateBidListWithBidListDto(bidListDto);
-                int id = await bidListrepository.GetMaxBidListId();
-                BidListDto foundBidListDto = iBidListService.GetBidListDtoById(id).Result.FirstOrDefault();
-
+                //bool result = customValidationAttribute.IsValid(bidListDto);
+                Task createBidList = iBidListService.CreateBidListWithBidListDto(bidListDto);
+                int productIdFound = iBidListService.GetAllBidListsDto().Result.Select(b => b.BidListId).Last();
+                BidListDto foundBidListDto = iBidListService.GetBidListDtoById(productIdFound).Result.FirstOrDefault();
+                bidListDto.BidListId = productIdFound;
 
                 ///Assert
-                Xunit.Assert.True(CreateBidList.IsCompletedSuccessfully);
-                bidListDto.BidListId = id;
+                //Xunit.Assert.True(result);
+                Xunit.Assert.True(createBidList.IsCompletedSuccessfully);
                 Xunit.Assert.Equivalent(bidListDto, foundBidListDto);
 
-                await iBidListService.DeleteBidListById(id);
+                await iBidListService.DeleteBidListById(productIdFound);
 
             }
 
@@ -133,10 +135,10 @@ namespace P7CreateRestApiTest
                     BidListId = 0,
                     Account = "test",
                     BidType = "string",
-                    BidQuantity = 0.0001,
-                    AskQuantity = 0.0001,
-                    Bid = 0.0001,
-                    Ask = 0.0001,
+                    BidQuantity = "0,0001",
+                    AskQuantity = "0,0001",
+                    Bid = "0,0001",
+                    Ask = "0,0001",
                     Benchmark = "string",
                     BidListDate = "11/08/2026 12:53:27",
                     Commentary = "string",
@@ -156,17 +158,17 @@ namespace P7CreateRestApiTest
 
 
                 Task createBidList = iBidListService.CreateBidListWithBidListDto(bidListDto);
-                int id = createBidList.Id;
-                //int id = await bidListrepository.GetMaxBidListId();
+                int productIdFound = iBidListService.GetAllBidListsDto().Result.Select(b => b.BidListId).Last();
+
                 BidListDto modifiedBidListDto = new BidListDto
                 {
-                    BidListId = 0,
+                    BidListId = productIdFound,
                     Account = "test2string",
                     BidType = "string",
-                    BidQuantity = 0.0001,
-                    AskQuantity = 0.0001,
-                    Bid = 1,
-                    Ask = 1,
+                    BidQuantity = "0,0001",
+                    AskQuantity = "0,0001",
+                    Bid = "0,0001",
+                    Ask = "0,0001",
                     Benchmark = "string",
                     BidListDate = "11/08/2026 13:53:27",
                     Commentary = "string",
@@ -186,15 +188,14 @@ namespace P7CreateRestApiTest
 
 
                 ///Act
-                BidListDto foundBidListDto = iBidListService.GetBidListDtoById(id).Result.FirstOrDefault();
                 await iBidListService.UpdateBidListWithBidListDto(modifiedBidListDto);
-                BidListDto modifiedFoundBidListDto = iBidListService.GetBidListDtoById(id).Result.FirstOrDefault();
+                BidListDto modifiedFoundBidListDto = iBidListService.GetBidListDtoById(productIdFound).Result.FirstOrDefault();
+                bidListDto.BidListId = productIdFound;
 
                 ///Assert
-                Xunit.Assert.True(createBidList.IsCompletedSuccessfully);
-                bidListDto.BidListId = id;
                 Xunit.Assert.Equivalent(modifiedBidListDto, modifiedFoundBidListDto);
-                await iBidListService.DeleteBidListById(id);
+
+                await iBidListService.DeleteBidListById(productIdFound);
 
             }
 
@@ -218,10 +219,10 @@ namespace P7CreateRestApiTest
                     BidListId = 0,
                     Account = "test",
                     BidType = "string",
-                    BidQuantity = 0.0001,
-                    AskQuantity = 0.0001,
-                    Bid = 0.0001,
-                    Ask = 0.0001,
+                    BidQuantity = "2",
+                    AskQuantity = "2",
+                    Bid = "2",
+                    Ask = "2",
                     Benchmark = "string",
                     BidListDate = "11/08/2026 12:53:27",
                     Commentary = "string",
@@ -240,13 +241,14 @@ namespace P7CreateRestApiTest
                 };
 
                 Task createBidList = iBidListService.CreateBidListWithBidListDto(bidListDto);
-                int id = await bidListrepository.GetMaxBidListId();
+                //int id = await bidListrepository.GetMaxBidListId();
+                int productIdFound = iBidListService.GetAllBidListsDto().Result.Select(b => b.BidListId).Last();
 
                 Xunit.Assert.True(createBidList.IsCompletedSuccessfully);
                 ///Act
-                Task deleteBidList = iBidListService.DeleteBidListById(id);
+                Task deleteBidList = iBidListService.DeleteBidListById(productIdFound);
                 ///Assert
-                Xunit.Assert.True(iBidListService.GetBidListDtoById(id).Result.FirstOrDefault() == null);
+                Xunit.Assert.True(iBidListService.GetBidListDtoById(productIdFound).Result.FirstOrDefault() == null);
                 Xunit.Assert.True(deleteBidList.IsCompletedSuccessfully);
 
             }
@@ -271,10 +273,10 @@ namespace P7CreateRestApiTest
                     BidListId = 0,
                     Account = "test",
                     BidType = "string",
-                    BidQuantity = 0.0001,
-                    AskQuantity = 0.0001,
-                    Bid = 0.0001,
-                    Ask = 0.0001,
+                    BidQuantity = "2",
+                    AskQuantity = "2",
+                    Bid = "2",
+                    Ask = "2",
                     Benchmark = "string",
                     BidListDate = "11/08/2026 12:53:27",
                     Commentary = "string",
@@ -294,23 +296,24 @@ namespace P7CreateRestApiTest
 
 
                 Task createBidList = iBidListService.CreateBidListWithBidListDto(bidListDto);
-                int id = await bidListrepository.GetMaxBidListId();
-                BidListDto FoundBidListDto = iBidListService.GetBidListDtoById(id).Result.FirstOrDefault();
+                //int id = await bidListrepository.GetMaxBidListId();
+                int productIdFound = iBidListService.GetAllBidListsDto().Result.Select(b => b.BidListId).Last();
+                BidListDto FoundBidListDto = iBidListService.GetBidListDtoById(productIdFound).Result.FirstOrDefault();
 
                 ///Act
-                bidListDto.BidListId = id;
-                Task getBidListById = bidListrepository.GetBidListById(id);
+                bidListDto.BidListId = productIdFound;
+                Task getBidListById = bidListrepository.GetBidListById(productIdFound);
 
                 ///Assert
                 Xunit.Assert.Equivalent(bidListDto, FoundBidListDto);
                 Xunit.Assert.True(createBidList.IsCompletedSuccessfully);
                 Xunit.Assert.True(getBidListById.IsCompletedSuccessfully);
 
-                await iBidListService.DeleteBidListById(id);
+                await iBidListService.DeleteBidListById(productIdFound);
             }
 
             [Fact]
-            public async Task IBidListService_GetAllBidLists_ShouldGet_AllBidListById()
+            public async Task IBidListService_GetAllBidLists_ShouldGet_2BidLists()
             {
                 /// Arrange
                 Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
@@ -329,10 +332,10 @@ namespace P7CreateRestApiTest
                     BidListId = 0,
                     Account = "test",
                     BidType = "string",
-                    BidQuantity = 0.0001,
-                    AskQuantity = 0.0001,
-                    Bid = 0.0001,
-                    Ask = 0.0001,
+                    BidQuantity = "2",
+                    AskQuantity = "2",
+                    Bid = "2",
+                    Ask = "2",
                     Benchmark = "string",
                     BidListDate = "11/08/2026 12:53:27",
                     Commentary = "string",
@@ -356,10 +359,10 @@ namespace P7CreateRestApiTest
                     BidListId = 0,
                     Account = "test2",
                     BidType = "string",
-                    BidQuantity = 0.0001,
-                    AskQuantity = 0.0001,
-                    Bid = 0.0001,
-                    Ask = 0.0001,
+                    BidQuantity = "3",
+                    AskQuantity = "3",
+                    Bid = "3",
+                    Ask = "3",
                     Benchmark = "string",
                     BidListDate = "11/08/2026 12:53:27",
                     Commentary = "string",
@@ -380,8 +383,9 @@ namespace P7CreateRestApiTest
 
                 Task createBidList1 = iBidListService.CreateBidListWithBidListDto(bidListDto1);
                 Task createBidList2 = iBidListService.CreateBidListWithBidListDto(bidListDto2);
-                int id = await bidListrepository.GetMaxBidListId();
-                BidListDto FoundBidListDto = iBidListService.GetBidListDtoById(id).Result.FirstOrDefault();
+                //int id = await bidListrepository.GetMaxBidListId();
+                List<int> ids = iBidListService.GetAllBidListsDto().Result.Select(b => b.BidListId).ToList();
+
 
                 ///Act
 
@@ -391,11 +395,11 @@ namespace P7CreateRestApiTest
                 Xunit.Assert.True(createBidList1.IsCompletedSuccessfully);
                 Xunit.Assert.True(createBidList2.IsCompletedSuccessfully);
                 Xunit.Assert.True(getAllBidLists.Count() == 2);
-                Xunit.Assert.True(getAllBidLists.ElementAt(0).BidListId == id - 1);
-                Xunit.Assert.True(getAllBidLists.ElementAt(1).BidListId == id);
+                Xunit.Assert.True(getAllBidLists.ElementAt(0).BidListId == ids[0]);
+                Xunit.Assert.True(getAllBidLists.ElementAt(1).BidListId == ids[1]);
 
-                await iBidListService.DeleteBidListById(id - 1);
-                await iBidListService.DeleteBidListById(id);
+                await iBidListService.DeleteBidListById(ids[0]);
+                await iBidListService.DeleteBidListById(ids[1]);
 
 
             }
