@@ -65,12 +65,7 @@ namespace P7CreateRestApi.Filters
 {
     public class AsyncActionFilter : IAsyncActionFilter
     {
-        private readonly DtoDoubleFields _dtoDoubleFields;
 
-        public AsyncActionFilter(DtoDoubleFields dtoDoubleFields)
-        {  
-            _dtoDoubleFields = dtoDoubleFields;
-        }
         public async Task OnActionExecutionAsync(
             ActionExecutingContext context,
             ActionExecutionDelegate next)
@@ -79,18 +74,6 @@ namespace P7CreateRestApi.Filters
             // You can check or mutate context.ActionArguments here
             if (context.ModelState.Count > 0)
             {
-
-                //foreach (KeyValuePair<string, ModelStateEntry> error in context.ModelState)
-                //{
-                //    bool test = _dtoDoubleFields.dtoDoubleMemberNames.Contains(error.Key);
-
-                //    if (test == true)
-                //    {
-                //        context.ModelState.Remove(error.Key);
-                //        //context.ModelState.SetModelValue(error.Key, new ValueProviderResult("The value does not suit the double format.", CultureInfo.InvariantCulture));
-                //        context.ModelState.AddModelError(error.Key, "The value " + error.Key + " does not suit the double format.");
-                //    }
-                //}
 
                 context.Result = new BadRequestObjectResult(context.ModelState);
             }

@@ -111,7 +111,7 @@ public class Program
         builder.Services.AddAutoMapper(configuration => configuration
     .AddProfile<DtoProfile>(), typeof(IStartup));
 
-        builder.Services.AddScoped<DtoDoubleFields>();
+
         builder.Services.AddScoped<AsyncActionFilter>();
         //builder.Services.AddAutoMapper(configAction => configAction.CreateMap<BidList, BidListDto>());
         //builder.Services.AddAutoMapper(configAction => configAction.CreateMap<BidListDto, BidList>());

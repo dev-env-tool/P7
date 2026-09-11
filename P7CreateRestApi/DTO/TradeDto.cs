@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace P7CreateRestApi.DTO
@@ -10,21 +11,29 @@ namespace P7CreateRestApi.DTO
         public string Account { get; set; }
         public string AccountType { get; set; }
 
-        [RegularExpression("^(-?(\\d+\\.?\\d+|\\d+?\\,))+$", ErrorMessage = "The BuyQuantity is not a number.")]
+
         [Range(0.0001, double.MaxValue, ErrorMessage = "The BuyQuantity is not greater than 0 and smaller than 1.79 E+308.")]
-        public double? BuyQuantity { get; set; }
+        [CustomValidation(ErrorMessage = "The BuyQuantity is not a double.")]
+        [DefaultValue("1")]
+        public string? BuyQuantity { get; set; }
 
-        [RegularExpression("^(-?(\\d+\\.?\\d+|\\d+?\\,))+$", ErrorMessage = "The SellQuantity is not a number.")]
+
         [Range(0.0001, double.MaxValue, ErrorMessage = "The SellQuantity is not greater than 0 and smaller than 1.79 E+308.")]
-        public double? SellQuantity { get; set; }
+        [CustomValidation(ErrorMessage = "The SellQuantity is not a double.")]
+        [DefaultValue("1")]
+        public string? SellQuantity { get; set; }
 
-        [RegularExpression("^(-?(\\d+\\.?\\d+|\\d+?\\,))+$", ErrorMessage = "The BuyPrice is not a number.")]
+
         [Range(0.0001, double.MaxValue, ErrorMessage = "The BuyPrice is not greater than 0 and smaller than 1.79 E+308.")]
-        public double? BuyPrice { get; set; }
+        [CustomValidation(ErrorMessage = "The BuyPrice is not a double.")]
+        [DefaultValue("1")]
+        public string? BuyPrice { get; set; }
 
-        [RegularExpression("^(-?(\\d+\\.?\\d+|\\d+?\\,))+$", ErrorMessage = "The SellPrice is not a number.")]
+
         [Range(0.0001, double.MaxValue, ErrorMessage = "The SellPrice is not greater than 0 and smaller than 1.79 E+308.")]
-        public double? SellPrice { get; set; }
+        [CustomValidation(ErrorMessage = "The SellPrice is not a double.")]
+        [DefaultValue("1")]
+        public string? SellPrice { get; set; }
 
         [DataType(DataType.DateTime)]
         [Range(typeof(DateTime), "1/1/1900", "1/1/2500", ErrorMessage = "The TradeDate does not suit the DateTime format.")]
