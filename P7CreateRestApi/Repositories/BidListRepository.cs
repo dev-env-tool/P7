@@ -43,7 +43,7 @@ namespace P7CreateRestApi.Repositories
             {
                 if ((bidList.BidListId > 0) && (bidList.BidListId <= maxBidListId))
                 {
-                    _context!.Entry(bidList).State = EntityState.Modified;
+                    _context!.Update(bidList);
                     _context.SaveChanges();
                 }
             }
@@ -60,7 +60,7 @@ namespace P7CreateRestApi.Repositories
                 _context.SaveChanges();
             }
         }
-        private static async Task<int> GetMaxBidListId()
+        public async Task<int> GetMaxBidListId()
         {
             int maxBidListId = _context!.BidLists.Select(b => b.BidListId).Max();
             return await Task.FromResult(maxBidListId);

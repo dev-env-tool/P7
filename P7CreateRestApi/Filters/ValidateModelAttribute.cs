@@ -1,15 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Newtonsoft.Json.Linq;
+using P7CreateRestApi.DTO;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
 using System.Web.Http.ModelBinding;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Identity;
+
 
 //namespace P7CreateRestApi.Filters
 //{
@@ -60,6 +65,12 @@ namespace P7CreateRestApi.Filters
 {
     public class AsyncActionFilter : IAsyncActionFilter
     {
+        private readonly DtoDoubleFields _dtoDoubleFields;
+
+        public AsyncActionFilter(DtoDoubleFields dtoDoubleFields)
+        {  
+            _dtoDoubleFields = dtoDoubleFields;
+        }
         public async Task OnActionExecutionAsync(
             ActionExecutingContext context,
             ActionExecutionDelegate next)
@@ -68,6 +79,19 @@ namespace P7CreateRestApi.Filters
             // You can check or mutate context.ActionArguments here
             if (context.ModelState.Count > 0)
             {
+
+                //foreach (KeyValuePair<string, ModelStateEntry> error in context.ModelState)
+                //{
+                //    bool test = _dtoDoubleFields.dtoDoubleMemberNames.Contains(error.Key);
+
+                //    if (test == true)
+                //    {
+                //        context.ModelState.Remove(error.Key);
+                //        //context.ModelState.SetModelValue(error.Key, new ValueProviderResult("The value does not suit the double format.", CultureInfo.InvariantCulture));
+                //        context.ModelState.AddModelError(error.Key, "The value " + error.Key + " does not suit the double format.");
+                //    }
+                //}
+
                 context.Result = new BadRequestObjectResult(context.ModelState);
             }
             else 

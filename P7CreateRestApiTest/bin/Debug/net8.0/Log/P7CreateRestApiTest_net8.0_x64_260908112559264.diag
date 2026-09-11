@@ -1,0 +1,21 @@
+2026-09-08T11:25:59.2727495+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-08T11:25:59.2743295+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-08T11:25:59.2770304+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-08T11:25:59.2770402+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 11:25:59.235
+2026-09-08T11:25:59.2777046+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 25048
+2026-09-08T11:25:59.2778483+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.30
+2026-09-08T11:25:59.2778609+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.30\System.Private.CoreLib.dll
+2026-09-08T11:25:59.2778721+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-08T11:25:59.2779318+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-08T11:25:59.2779449+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 52711'
+2026-09-08T11:25:59.2796657+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-08T11:25:59.3371241+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-08T11:25:59.3482087+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-08T11:25:59.6806210+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-08T11:25:59.6915437+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.30)
+2026-09-08T11:25:59.7444382+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-08T11:25:59.7850042+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-08T11:25:59.8027426+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-08T11:26:00.9530977+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-08T11:26:00.9577756+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-08T11:26:00.9649810+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 1, Errors: 0, Failed: 0, Skipped: 0, Not Run: 0, Time: 1,153s

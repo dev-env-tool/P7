@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Moq;
 using P7CreateRestApi.Domain;
 using P7CreateRestApi.DTO;
 using P7CreateRestApi.IRepositories;
@@ -11,13 +12,21 @@ namespace P7CreateRestApi.Services
     {
         private readonly IBidListRepository _iBidListRepository;
         private readonly IMapper _mapper;
-
+        //private IBidListRepository bidListRepository;
+        //private Mock<IMapper> mockMapper;
 
         public BidListService(IBidListRepository iBidListRepository, IMapper iMapper)
         {
             _iBidListRepository = iBidListRepository;
             _mapper = iMapper;
         }
+
+        //public BidListService(IBidListRepository bidListRepository, Mock<IMapper> mockMapper)
+        //{
+        //    this.bidListRepository = bidListRepository;
+        //    this.mockMapper = mockMapper;
+        //}
+
         public async Task<IEnumerable<BidListDto>> GetAllBidListsDto()
         {
             Task<IEnumerable<BidList>> bidLists = _iBidListRepository!.GetAllBidLists();
@@ -70,12 +79,12 @@ namespace P7CreateRestApi.Services
 
         public async Task<BidListDto> MapBidListToBidListDto(BidList bidList)
         {
-            BidListDto bidListDto = _mapper.Map<BidList, BidListDto>(bidList);
+            BidListDto bidListDto = _mapper.Map<BidListDto>(bidList);
             return bidListDto;
         }
         public async Task<BidList> MapBidListDtoToBidList(BidListDto bidListDto)
         {
-            BidList bidList = _mapper.Map<BidListDto, BidList>(bidListDto);
+            BidList bidList = _mapper.Map<BidList>(bidListDto);
             return bidList;
         }
 

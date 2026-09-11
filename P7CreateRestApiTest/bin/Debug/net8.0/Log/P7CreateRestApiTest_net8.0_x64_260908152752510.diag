@@ -1,0 +1,41 @@
+2026-09-08T15:27:52.5163696+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-08T15:27:52.5174611+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-08T15:27:52.5187098+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-08T15:27:52.5187130+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 15:27:52.488
+2026-09-08T15:27:52.5191044+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 26324
+2026-09-08T15:27:52.5192286+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.30
+2026-09-08T15:27:52.5192393+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.30\System.Private.CoreLib.dll
+2026-09-08T15:27:52.5192493+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-08T15:27:52.5193538+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-08T15:27:52.5193597+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 51055'
+2026-09-08T15:27:52.5205876+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-08T15:27:52.5595517+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-08T15:27:52.5668203+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-08T15:27:52.7894988+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-08T15:27:52.7979144+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.30)
+2026-09-08T15:27:52.8387581+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-08T15:27:52.8689700+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-08T15:27:52.8824796+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-08T15:27:53.8943616+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+UnitTests.IBidListService_UpdateBidListWithBidListDto_Modify_1BidList [FAIL]
+2026-09-08T15:27:53.8946804+00:00 xUnit.net INFORMATION       System.InvalidOperationException : The instance of entity type 'BidList' cannot be tracked because another instance with the same key value for {'BidListId'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+2026-09-08T15:27:53.8949497+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-08T15:27:53.8952843+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.ThrowIdentityConflict(InternalEntityEntry entry)
+2026-09-08T15:27:53.8952986+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry, Boolean updateDuplicate)
+2026-09-08T15:27:53.8953040+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry)
+2026-09-08T15:27:53.8953076+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(InternalEntityEntry entry)
+2026-09-08T15:27:53.8953114+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTracking(InternalEntityEntry entry)
+2026-09-08T15:27:53.8953175+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+2026-09-08T15:27:53.8953242+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey)
+2026-09-08T15:27:53.8953285+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintAction(EntityEntryGraphNode`1 node)
+2026-09-08T15:27:53.8953336+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraph[TState](EntityEntryGraphNode`1 node, Func`2 handleNode)
+2026-09-08T15:27:53.8953613+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.AttachGraph(InternalEntityEntry rootEntry, EntityState targetState, EntityState storeGeneratedWithKeySetTargetState, Boolean forceStateWhenUnknownKey)
+2026-09-08T15:27:53.8953808+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.DbContext.SetEntityState(InternalEntityEntry entry, EntityState entityState)
+2026-09-08T15:27:53.8953918+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.DbContext.SetEntityState[TEntity](TEntity entity, EntityState entityState)
+2026-09-08T15:27:53.8954150+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.DbContext.Update[TEntity](TEntity entity)
+2026-09-08T15:27:53.8954307+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Repositories\BidListRepository.cs(46,0): at P7CreateRestApi.Repositories.BidListRepository.UpdateBidList(BidList bidList)
+2026-09-08T15:27:53.8954363+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\BidListService.cs(70,0): at P7CreateRestApi.Services.BidListService.UpdateBidListWithBidListDto(BidListDto bidListDto)
+2026-09-08T15:27:53.8954408+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(266,0): at P7CreateRestApiTest.DatabaseFixture.UnitTests.IBidListService_UpdateBidListWithBidListDto_Modify_1BidList()
+2026-09-08T15:27:53.8954416+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-08T15:27:53.9083459+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-08T15:27:53.9124022+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-08T15:27:53.9185004+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 1, Errors: 0, Failed: 1, Skipped: 0, Not Run: 0, Time: 1,028s

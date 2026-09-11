@@ -15,17 +15,19 @@ using P7CreateRestApi.DTO;
 using P7CreateRestApi.Filters;
 using P7CreateRestApi.IRepositories;
 using P7CreateRestApi.IServices;
+using P7CreateRestApi.JsonConverter;
 using P7CreateRestApi.LogUserNameMiddleware;
 using P7CreateRestApi.Models;
+using P7CreateRestApi.Profiles;
 using P7CreateRestApi.Repositories;
 using P7CreateRestApi.Services;
 using Serilog;
 using Serilog.Core;
 using System;
+using System.ComponentModel;
 using System.Runtime;
 using System.Security.Claims;
 using System.Text;
-
 
 
 
@@ -56,10 +58,12 @@ public class Program
         });
 
 
-        builder.Services.AddControllers().ConfigureApiBehaviorOptions(options =>
-        {
-            options.SuppressModelStateInvalidFilter = true;
-        });
+        builder.Services.AddControllers()
+            .AddJsonOptions(opt => { opt.JsonSerializerOptions.Converters.Add(new DoubleJsonConverter()); })
+            .ConfigureApiBehaviorOptions(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
 
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -97,25 +101,33 @@ public class Program
         });
 
 
+        //ILoggerFactory loggerFactory = new LoggerFactory();
 
+        //var config = new MapperConfiguration(cfg =>
+        //{
+        //    cfg.AddProfile<DtoProfile>();
+        //}, loggerFactory);
 
+        builder.Services.AddAutoMapper(configuration => configuration
+    .AddProfile<DtoProfile>(), typeof(IStartup));
 
+        builder.Services.AddScoped<DtoDoubleFields>();
         builder.Services.AddScoped<AsyncActionFilter>();
-        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<BidList, BidListDto>());
-        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<BidListDto, BidList>());
-        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<CurvePoint, CurvePointDto>());
-        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<CurvePointDto, CurvePoint>());
-        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<Rating, RatingDto>());
-        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<RatingDto, Rating>());
-        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<RuleName, RuleNameDto>());
-        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<RuleNameDto, RuleName>());
-        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<Trade, TradeDto>());
-        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<TradeDto, Trade>());
-        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<User, UserDto>());
-        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<UserDto, User>());
+        //builder.Services.AddAutoMapper(configAction => configAction.CreateMap<BidList, BidListDto>());
+        //builder.Services.AddAutoMapper(configAction => configAction.CreateMap<BidListDto, BidList>());
+        //builder.Services.AddAutoMapper(configAction => configAction.CreateMap<CurvePoint, CurvePointDto>());
+        //builder.Services.AddAutoMapper(configAction => configAction.CreateMap<CurvePointDto, CurvePoint>());
+        //builder.Services.AddAutoMapper(configAction => configAction.CreateMap<Rating, RatingDto>());
+        //builder.Services.AddAutoMapper(configAction => configAction.CreateMap<RatingDto, Rating>());
+        //builder.Services.AddAutoMapper(configAction => configAction.CreateMap<RuleName, RuleNameDto>());
+        //builder.Services.AddAutoMapper(configAction => configAction.CreateMap<RuleNameDto, RuleName>());
+        //builder.Services.AddAutoMapper(configAction => configAction.CreateMap<Trade, TradeDto>());
+        //builder.Services.AddAutoMapper(configAction => configAction.CreateMap<TradeDto, Trade>());
+        //builder.Services.AddAutoMapper(configAction => configAction.CreateMap<User, UserDto>());
+        //builder.Services.AddAutoMapper(configAction => configAction.CreateMap<UserDto, User>());
 
-        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<UpdateGeneralInfosModel, User>());
-        builder.Services.AddAutoMapper(configAction => configAction.CreateMap<RegisterModel, User>());
+        //builder.Services.AddAutoMapper(configAction => configAction.CreateMap<UpdateGeneralInfosModel, User>());
+        //builder.Services.AddAutoMapper(configAction => configAction.CreateMap<RegisterModel, User>());
 
         builder.Services.AddScoped<IBidListRepository, BidListRepository>();
         builder.Services.AddScoped<IBidListService, BidListService>();

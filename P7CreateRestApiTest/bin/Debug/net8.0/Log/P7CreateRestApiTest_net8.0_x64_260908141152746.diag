@@ -1,0 +1,47 @@
+2026-09-08T14:11:52.7530760+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-08T14:11:52.7541237+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-08T14:11:52.7553696+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-08T14:11:52.7553732+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 14:11:52.725
+2026-09-08T14:11:52.7558785+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 3924
+2026-09-08T14:11:52.7560373+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.30
+2026-09-08T14:11:52.7560478+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.30\System.Private.CoreLib.dll
+2026-09-08T14:11:52.7560578+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-08T14:11:52.7561066+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-08T14:11:52.7561189+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 59013'
+2026-09-08T14:11:52.7574679+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-08T14:11:52.7955958+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-08T14:11:52.8030791+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-08T14:11:53.0247968+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-08T14:11:53.0338361+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.30)
+2026-09-08T14:11:53.0794965+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-08T14:11:53.1139670+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-08T14:11:53.1313185+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-08T14:11:54.0627458+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+UnitTests.IBidListService_UpdateBidListWithBidListDto_Modify_1BidList [FAIL]
+2026-09-08T14:11:54.0630710+00:00 xUnit.net INFORMATION       System.InvalidOperationException : Sequence contains no elements.
+2026-09-08T14:11:54.0633869+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-08T14:11:54.0636557+00:00 xUnit.net INFORMATION            at lambda_method7(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+2026-09-08T14:11:54.0636690+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2026-09-08T14:11:54.0636725+00:00 xUnit.net INFORMATION            at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+2026-09-08T14:11:54.0636744+00:00 xUnit.net INFORMATION            at lambda_method8(Closure, QueryContext)
+2026-09-08T14:11:54.0636777+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+2026-09-08T14:11:54.0636813+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+2026-09-08T14:11:54.0636836+00:00 xUnit.net INFORMATION            at System.Linq.Queryable.Max[TSource](IQueryable`1 source)
+2026-09-08T14:11:54.0636961+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Repositories\BidListRepository.cs(65,0): at P7CreateRestApi.Repositories.BidListRepository.GetMaxBidListId()
+2026-09-08T14:11:54.0637013+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(218,0): at P7CreateRestApiTest.DatabaseFixture.UnitTests.IBidListService_UpdateBidListWithBidListDto_Modify_1BidList()
+2026-09-08T14:11:54.0637021+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-08T14:11:54.0927828+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+UnitTests.IBidListService_CreateBidListWithBidListDto_ShouldAdd_1BidList [FAIL]
+2026-09-08T14:11:54.0928066+00:00 xUnit.net INFORMATION       System.InvalidOperationException : Sequence contains no elements.
+2026-09-08T14:11:54.0928212+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-08T14:11:54.0928298+00:00 xUnit.net INFORMATION            at lambda_method7(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+2026-09-08T14:11:54.0928333+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2026-09-08T14:11:54.0928364+00:00 xUnit.net INFORMATION            at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+2026-09-08T14:11:54.0928381+00:00 xUnit.net INFORMATION            at lambda_method8(Closure, QueryContext)
+2026-09-08T14:11:54.0928415+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+2026-09-08T14:11:54.0928451+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+2026-09-08T14:11:54.0928701+00:00 xUnit.net INFORMATION            at System.Linq.Queryable.Max[TSource](IQueryable`1 source)
+2026-09-08T14:11:54.0928785+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Repositories\BidListRepository.cs(65,0): at P7CreateRestApi.Repositories.BidListRepository.GetMaxBidListId()
+2026-09-08T14:11:54.0928856+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(173,0): at P7CreateRestApiTest.DatabaseFixture.UnitTests.IBidListService_CreateBidListWithBidListDto_ShouldAdd_1BidList()
+2026-09-08T14:11:54.0928864+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-08T14:11:54.1060928+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-08T14:11:54.1111989+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-08T14:11:54.1176301+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 2, Errors: 0, Failed: 2, Skipped: 0, Not Run: 0, Time: 0,977s

@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.ComponentModel.DataAnnotations;
 
 namespace P7CreateRestApi.DTO
 {
+
     public class TradeDto
     {
         public int TradeId { get; set; }

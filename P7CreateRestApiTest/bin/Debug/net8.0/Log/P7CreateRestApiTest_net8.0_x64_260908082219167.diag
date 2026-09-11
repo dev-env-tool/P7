@@ -1,0 +1,30 @@
+2026-09-08T08:22:19.1736356+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-08T08:22:19.1747899+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-08T08:22:19.1761037+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-08T08:22:19.1761076+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 08:22:19.144
+2026-09-08T08:22:19.1765106+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 4120
+2026-09-08T08:22:19.1766154+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.30
+2026-09-08T08:22:19.1766250+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.30\System.Private.CoreLib.dll
+2026-09-08T08:22:19.1766347+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-08T08:22:19.1766805+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-08T08:22:19.1766862+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 60151'
+2026-09-08T08:22:19.1779420+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-08T08:22:19.2235859+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-08T08:22:19.2344869+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-08T08:22:19.4776172+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-08T08:22:19.4867032+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.30)
+2026-09-08T08:22:19.5361612+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-08T08:22:19.5720615+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-08T08:22:19.5897911+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-08T08:22:19.9970831+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture.CreateBidListWithBidListDto_ShouldAdd_1BidList [FAIL]
+2026-09-08T08:22:19.9974233+00:00 xUnit.net INFORMATION       System.ArgumentException : Invalid callback. This overload of the "Returns" method only accepts non-"void" (C#) or "Function" (VB.NET) delegates with parameter types matching those of the set up method.
+2026-09-08T08:22:19.9978442+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-08T08:22:19.9991148+00:00 xUnit.net INFORMATION         /_/src/Moq/MethodCall.cs(412,0): at Moq.MethodCall.ValidateCallbackReturnType(MethodInfo callbackMethod, Type expectedReturnType)
+2026-09-08T08:22:19.9991330+00:00 xUnit.net INFORMATION         /_/src/Moq/MethodCall.cs(291,0): at Moq.MethodCall.<>c__DisplayClass23_0.<SetReturnComputedValueBehavior>g__ValidateCallback|4(Delegate callback)
+2026-09-08T08:22:19.9991422+00:00 xUnit.net INFORMATION         /_/src/Moq/MethodCall.cs(259,0): at Moq.MethodCall.SetReturnComputedValueBehavior(Delegate valueFactory)
+2026-09-08T08:22:19.9991466+00:00 xUnit.net INFORMATION         /_/src/Moq/Language/Flow/NonVoidSetupPhrase.cs(268,0): at Moq.Language.Flow.NonVoidSetupPhrase`2.Returns(Delegate valueFunction)
+2026-09-08T08:22:19.9991514+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(173,0): at P7CreateRestApiTest.DatabaseFixture.CreateBidListWithBidListDto_ShouldAdd_1BidList()
+2026-09-08T08:22:19.9991524+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-08T08:22:20.0095475+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-08T08:22:20.0135381+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-08T08:22:20.0208318+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 1, Errors: 0, Failed: 1, Skipped: 0, Not Run: 0, Time: 0,424s

@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+
 namespace P7CreateRestApi.DTO
 {
     public class RuleNameDto

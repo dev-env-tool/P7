@@ -1,5 +1,8 @@
-﻿namespace P7CreateRestApi.DTO
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+
+namespace P7CreateRestApi.DTO
 {
+    [BindNever]
     public class UserDto
     {
         //public string Id { get; set; }

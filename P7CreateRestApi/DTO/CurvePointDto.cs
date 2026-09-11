@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.ComponentModel.DataAnnotations;
 
 namespace P7CreateRestApi.DTO
@@ -24,4 +25,8 @@ namespace P7CreateRestApi.DTO
         [Range(typeof(DateTime), "1/1/1900", "1/1/2500", ErrorMessage = "The CreationDate does not suit the DateTime format.")]
         public string? CreationDate { get; set; }
     }
+
+
+
 }
+

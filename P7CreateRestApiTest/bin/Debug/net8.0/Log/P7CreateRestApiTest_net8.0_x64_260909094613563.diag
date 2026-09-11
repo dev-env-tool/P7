@@ -1,0 +1,28 @@
+2026-09-09T09:46:13.5705500+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-09T09:46:13.5718304+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-09T09:46:13.5733651+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-09T09:46:13.5733677+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 09:46:13.535
+2026-09-09T09:46:13.5738864+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 9932
+2026-09-09T09:46:13.5739969+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.31
+2026-09-09T09:46:13.5740075+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.31\System.Private.CoreLib.dll
+2026-09-09T09:46:13.5740169+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-09T09:46:13.5740732+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-09T09:46:13.5740797+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 64085'
+2026-09-09T09:46:13.5756291+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-09T09:46:13.6194563+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-09T09:46:13.6277775+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-09T09:46:13.9049057+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-09T09:46:13.9144538+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.31)
+2026-09-09T09:46:13.9606274+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-09T09:46:13.9946873+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-09T09:46:14.0112196+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-09T09:46:14.9616043+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+UnitTests.IBidListService_GetAllBidLists_ShouldGet_AllBidListById [FAIL]
+2026-09-09T09:46:14.9620189+00:00 xUnit.net INFORMATION       Assert.True() Failure
+2026-09-09T09:46:14.9620293+00:00 xUnit.net INFORMATION       Expected: True
+2026-09-09T09:46:14.9620302+00:00 xUnit.net INFORMATION       Actual:   False
+2026-09-09T09:46:14.9624022+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-09T09:46:14.9627409+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(390,0): at P7CreateRestApiTest.DatabaseFixture.UnitTests.IBidListService_GetAllBidLists_ShouldGet_AllBidListById()
+2026-09-09T09:46:14.9627512+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-09T09:46:14.9777492+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-09T09:46:14.9819956+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-09T09:46:14.9885613+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 5, Errors: 0, Failed: 1, Skipped: 0, Not Run: 0, Time: 0,970s

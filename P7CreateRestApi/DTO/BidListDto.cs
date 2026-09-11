@@ -1,30 +1,43 @@
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using P7CreateRestApi.JsonConverter;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace P7CreateRestApi.DTO
 {
+
     public class BidListDto
     {
         // TODO: Map columns in data table BIDLIST with corresponding fields
-
+        
         public int BidListId { get; set; }
         public string Account { get; set; }
         public string BidType { get; set; }
 
-        [RegularExpression("^(-?(\\d+\\.?\\d+|\\d+?\\,))+$", ErrorMessage = "The BidQuantity is not a number.")]
+
+        //[RegularExpression("^(-?(\\d+\\.?\\d+|\\d)\\,?)+$", ErrorMessage = "The BidQuantity is not a number.")]
         [Range(0.0001, double.MaxValue, ErrorMessage = "The BidQuantity is not greater than 0 and smaller than 1.79 E+308.")]
-        public double? BidQuantity { get; set; } = 1;
+        [CustomValidation(ErrorMessage = "The BidQuantity is not a double.")]
+        //[JsonConverter(typeof(DoubleJsonConverter))]
+        public string? BidQuantity { get; set; }
 
-        [RegularExpression("^(-?(\\d+\\.?\\d+|\\d+?\\,))+$", ErrorMessage = "The AskQuantity is not a number.")]
+        //[RegularExpression("^(-?(\\d+\\.?\\d+|\\d+?\\,))+$", ErrorMessage = "The AskQuantity is not a number.")]
         [Range(0.0001, double.MaxValue, ErrorMessage = "The AskQuantity is not greater than 0 and smaller than 1.79 E+308.")]
-        public double? AskQuantity { get; set; } = 1;
+        [CustomValidation(ErrorMessage = "The AskQuantity is not a double.")]
+        //[JsonConverter(typeof(DoubleJsonConverter))]
+        //[CustomValidation(ErrorMessage = "The AskQuantity is not a double.")]
+        public string? AskQuantity { get; set; }
 
-        [RegularExpression("^(-?(\\d+\\.?\\d+|\\d+?\\,))+$", ErrorMessage = "The Bid is not a number.")]
+        //[RegularExpression("^(-?(\\d+\\.?\\d+|\\d+?\\,))+$", ErrorMessage = "The Bid is not a number.")]
         [Range(0.0001, double.MaxValue, ErrorMessage = "The Bid is not greater than 0 and smaller than 1.79 E+308.")]
-        public double? Bid { get; set; } = 1;
+        [CustomValidation(ErrorMessage = "The Bid is not a double.")]
+        public string? Bid { get; set; }
 
-        [RegularExpression("^(-?(\\d+\\.?\\d+|\\d+?\\,))+$", ErrorMessage = "The Ask is not a number.")]
+        //[RegularExpression("^(-?(\\d+\\.?\\d+|\\d+?\\,))+$", ErrorMessage = "The Ask is not a number.")]
         [Range(0.0001, double.MaxValue, ErrorMessage = "The Ask is not greater than 0 and smaller than 1.79 E+308.")]
-        public double? Ask { get; set; } = 1;
+        [CustomValidation(ErrorMessage = "The Ask is not a double.")]
+        //[JsonConverter(typeof(DoubleJsonConverter))]
+        public string? Ask { get; set; }
         public string Benchmark { get; set; }
 
         [DataType(DataType.DateTime)]
