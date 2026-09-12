@@ -70,12 +70,12 @@ namespace P7CreateRestApi.Services
 
         public async Task<CurvePointDto> MapCurvePointToCurvePointDto(CurvePoint curvePoint)
         {
-            CurvePointDto curvePointDto = _mapper.Map<CurvePoint, CurvePointDto>(curvePoint);
+            CurvePointDto curvePointDto = _mapper.Map<CurvePointDto>(curvePoint);
             return curvePointDto;
         }
         public async Task<CurvePoint> MapCurvePointDtoToCurvePoint(CurvePointDto curvePointDto)
         {
-            CurvePoint curvePoint = _mapper.Map<CurvePointDto, CurvePoint>(curvePointDto);
+            CurvePoint curvePoint = _mapper.Map<CurvePoint>(curvePointDto);
             return curvePoint;
         }
 

@@ -70,12 +70,12 @@ namespace P7CreateRestApi.Services
 
         public async Task<RuleNameDto> MapRuleNameToRuleNameDto(RuleName ruleName)
         {
-            RuleNameDto ruleNameDto = _mapper.Map<RuleName, RuleNameDto>(ruleName);
+            RuleNameDto ruleNameDto = _mapper.Map<RuleNameDto>(ruleName);
             return ruleNameDto;
         }
         public async Task<RuleName> MapRuleNameDtoToRuleName(RuleNameDto ruleNameDto)
         {
-            RuleName ruleName = _mapper.Map<RuleNameDto, RuleName>(ruleNameDto);
+            RuleName ruleName = _mapper.Map<RuleName>(ruleNameDto);
             return ruleName;
         }
 

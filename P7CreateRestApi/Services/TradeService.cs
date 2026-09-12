@@ -70,12 +70,12 @@ namespace P7CreateRestApi.Services
 
         public async Task<TradeDto> MapTradeToTradeDto(Trade trade)
         {
-            TradeDto tradeDto = _mapper.Map<Trade, TradeDto>(trade);
+            TradeDto tradeDto = _mapper.Map<TradeDto>(trade);
             return tradeDto;
         }
         public async Task<Trade> MapTradeDtoToTrade(TradeDto tradeDto)
         {
-            Trade trade = _mapper.Map<TradeDto, Trade>(tradeDto);
+            Trade trade = _mapper.Map<Trade>(tradeDto);
             return trade;
         }
 

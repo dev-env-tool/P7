@@ -1,0 +1,49 @@
+2026-09-12T10:03:01.4585121+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-12T10:03:01.4596861+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-12T10:03:01.4609624+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-12T10:03:01.4609657+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 10:03:01.428
+2026-09-12T10:03:01.4613957+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 13576
+2026-09-12T10:03:01.4615169+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.31
+2026-09-12T10:03:01.4615272+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.31\System.Private.CoreLib.dll
+2026-09-12T10:03:01.4615513+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-12T10:03:01.4616171+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-12T10:03:01.4616278+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 62014'
+2026-09-12T10:03:01.4629250+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-12T10:03:01.5013129+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-12T10:03:01.5082919+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-12T10:03:01.7385132+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-12T10:03:01.7474233+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.31)
+2026-09-12T10:03:01.7952451+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-12T10:03:01.8318403+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-12T10:03:01.8491337+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-12T10:03:02.5799280+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+CurvePointUnitTests+TradeUnitTests.ITradeService_GetTradeDtoById_ShouldGet_1TradeById [FAIL]
+2026-09-12T10:03:02.5803549+00:00 xUnit.net INFORMATION       Assert.Equivalent() Failure: Mismatched value on member 'TradeDate'
+2026-09-12T10:03:02.5803657+00:00 xUnit.net INFORMATION       Expected: "2026-09-12T09:53:52"
+2026-09-12T10:03:02.5803666+00:00 xUnit.net INFORMATION       Actual:   "12/09/2026 09:53:52"
+2026-09-12T10:03:02.5807167+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-12T10:03:02.5811016+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(1399,0): at P7CreateRestApiTest.DatabaseFixture.CurvePointUnitTests.TradeUnitTests.ITradeService_GetTradeDtoById_ShouldGet_1TradeById()
+2026-09-12T10:03:02.5811126+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-12T10:03:02.6130521+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+CurvePointUnitTests+TradeUnitTests.ITradeService_GetAllTrades_ShouldGet_2Trades [FAIL]
+2026-09-12T10:03:02.6130677+00:00 xUnit.net INFORMATION       Assert.True() Failure
+2026-09-12T10:03:02.6130691+00:00 xUnit.net INFORMATION       Expected: True
+2026-09-12T10:03:02.6130699+00:00 xUnit.net INFORMATION       Actual:   False
+2026-09-12T10:03:02.6130887+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-12T10:03:02.6131060+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(1481,0): at P7CreateRestApiTest.DatabaseFixture.CurvePointUnitTests.TradeUnitTests.ITradeService_GetAllTrades_ShouldGet_2Trades()
+2026-09-12T10:03:02.6131082+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-12T10:03:02.6219691+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+CurvePointUnitTests+TradeUnitTests.ITradeService_CreateTradeWithTradeDto_ShouldAdd_1Trade [FAIL]
+2026-09-12T10:03:02.6219843+00:00 xUnit.net INFORMATION       Assert.Equivalent() Failure: Mismatched value on member 'TradeDate'
+2026-09-12T10:03:02.6219857+00:00 xUnit.net INFORMATION       Expected: "2026-09-12T09:53:52"
+2026-09-12T10:03:02.6219864+00:00 xUnit.net INFORMATION       Actual:   "12/09/2026 09:53:52"
+2026-09-12T10:03:02.6219914+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-12T10:03:02.6220054+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(1219,0): at P7CreateRestApiTest.DatabaseFixture.CurvePointUnitTests.TradeUnitTests.ITradeService_CreateTradeWithTradeDto_ShouldAdd_1Trade()
+2026-09-12T10:03:02.6220079+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-12T10:03:02.6401904+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+CurvePointUnitTests+TradeUnitTests.ITradeService_UpdateTradeWithTradeDto_Modify_1Trade [FAIL]
+2026-09-12T10:03:02.6402095+00:00 xUnit.net INFORMATION       Assert.Equivalent() Failure: Mismatched value on member 'TradeDate'
+2026-09-12T10:03:02.6402108+00:00 xUnit.net INFORMATION       Expected: "2026-09-12T09:53:52"
+2026-09-12T10:03:02.6402114+00:00 xUnit.net INFORMATION       Actual:   "12/09/2026 09:53:52"
+2026-09-12T10:03:02.6402149+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-12T10:03:02.6402300+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(1295,0): at P7CreateRestApiTest.DatabaseFixture.CurvePointUnitTests.TradeUnitTests.ITradeService_UpdateTradeWithTradeDto_Modify_1Trade()
+2026-09-12T10:03:02.6402325+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-12T10:03:02.6720772+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-12T10:03:02.6761812+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-12T10:03:02.6826665+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 25, Errors: 0, Failed: 4, Skipped: 0, Not Run: 0, Time: 0,829s

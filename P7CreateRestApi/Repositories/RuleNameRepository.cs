@@ -39,7 +39,7 @@ namespace P7CreateRestApi.Repositories
 
         public async Task UpdateRuleName(RuleName ruleName)
         {
-            var existingRuleName = await _context.BidLists.FindAsync(ruleName.Id);
+            var existingRuleName = await _context.RuleNames.FindAsync(ruleName.Id);
 
             if (existingRuleName != null)
             {

@@ -1,0 +1,28 @@
+2026-09-12T08:54:24.7989346+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-12T08:54:24.8001165+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-12T08:54:24.8013378+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-12T08:54:24.8013410+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 08:54:24.764
+2026-09-12T08:54:24.8013975+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 16052
+2026-09-12T08:54:24.8015646+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.31
+2026-09-12T08:54:24.8015797+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.31\System.Private.CoreLib.dll
+2026-09-12T08:54:24.8015960+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-12T08:54:24.8016473+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-12T08:54:24.8016533+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 56219'
+2026-09-12T08:54:24.8048378+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-12T08:54:24.8508489+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-12T08:54:24.8612669+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-12T08:54:25.1723408+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-12T08:54:25.1814197+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.31)
+2026-09-12T08:54:25.2314089+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-12T08:54:25.2661362+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-12T08:54:25.2844301+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-12T08:54:35.6408979+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+CurvePointUnitTests.ICurvePointService_CreateCurvePointWithCurvePointDto_ShouldAdd_1CurvePoint [FAIL]
+2026-09-12T08:54:35.6420403+00:00 xUnit.net INFORMATION       System.InvalidOperationException : Sequence contains no elements
+2026-09-12T08:54:35.6431185+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-12T08:54:35.6438560+00:00 xUnit.net INFORMATION            at System.Linq.ThrowHelper.ThrowNoElementsException()
+2026-09-12T08:54:35.6438704+00:00 xUnit.net INFORMATION            at System.Linq.Enumerable.Last[TSource](IEnumerable`1 source)
+2026-09-12T08:54:35.6439784+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(448,0): at P7CreateRestApiTest.DatabaseFixture.CurvePointUnitTests.ICurvePointService_CreateCurvePointWithCurvePointDto_ShouldAdd_1CurvePoint()
+2026-09-12T08:54:35.6440427+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-12T08:54:35.6586758+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-12T08:54:35.6647593+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-12T08:54:35.6731171+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 1, Errors: 0, Failed: 1, Skipped: 0, Not Run: 0, Time: 10,377s

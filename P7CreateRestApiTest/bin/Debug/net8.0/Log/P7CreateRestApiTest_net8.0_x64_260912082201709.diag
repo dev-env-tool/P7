@@ -1,0 +1,278 @@
+2026-09-12T08:22:01.7159752+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-12T08:22:01.7172054+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-12T08:22:01.7185786+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-12T08:22:01.7185817+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 08:22:01.686
+2026-09-12T08:22:01.7190506+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 17404
+2026-09-12T08:22:01.7191571+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.31
+2026-09-12T08:22:01.7191674+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.31\System.Private.CoreLib.dll
+2026-09-12T08:22:01.7191773+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-12T08:22:01.7192309+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-12T08:22:01.7192372+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 60101'
+2026-09-12T08:22:01.7206606+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-12T08:22:01.7594696+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-12T08:22:01.7664772+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-12T08:22:02.0024600+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-12T08:22:02.0110678+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.31)
+2026-09-12T08:22:02.0511547+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-12T08:22:02.0868099+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-12T08:22:02.1013304+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-12T08:22:02.7295427+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+BidListUnitTests+CurvePointUnitTests.ICurvePointService_UpdateCurvePointWithCurvePointDto_Modify_1CurvePoint [FAIL]
+2026-09-12T08:22:02.7300091+00:00 xUnit.net INFORMATION       System.InvalidOperationException : Sequence contains no elements
+2026-09-12T08:22:02.7304090+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-12T08:22:02.7307542+00:00 xUnit.net INFORMATION            at System.Linq.ThrowHelper.ThrowNoElementsException()
+2026-09-12T08:22:02.7307710+00:00 xUnit.net INFORMATION            at System.Linq.Enumerable.Last[TSource](IEnumerable`1 source)
+2026-09-12T08:22:02.7307873+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(488,0): at P7CreateRestApiTest.DatabaseFixture.BidListUnitTests.CurvePointUnitTests.ICurvePointService_UpdateCurvePointWithCurvePointDto_Modify_1CurvePoint()
+2026-09-12T08:22:02.7307954+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-12T08:22:02.7688634+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+BidListUnitTests+CurvePointUnitTests.ICurvePointService_CreateCurvePointWithCurvePointDto_ShouldAdd_1CurvePoint [FAIL]
+2026-09-12T08:22:02.7688875+00:00 xUnit.net INFORMATION       System.InvalidOperationException : Sequence contains no elements
+2026-09-12T08:22:02.7689018+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-12T08:22:02.7689080+00:00 xUnit.net INFORMATION            at System.Linq.ThrowHelper.ThrowNoElementsException()
+2026-09-12T08:22:02.7689109+00:00 xUnit.net INFORMATION            at System.Linq.Enumerable.Last[TSource](IEnumerable`1 source)
+2026-09-12T08:22:02.7689209+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(448,0): at P7CreateRestApiTest.DatabaseFixture.BidListUnitTests.CurvePointUnitTests.ICurvePointService_CreateCurvePointWithCurvePointDto_ShouldAdd_1CurvePoint()
+2026-09-12T08:22:02.7689224+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-12T08:22:02.7745157+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+BidListUnitTests+CurvePointUnitTests.ICurvePointService_GetCurvePointDtoById_ShouldGet_1CurvePointById [FAIL]
+2026-09-12T08:22:02.7745417+00:00 xUnit.net INFORMATION       System.InvalidOperationException : Sequence contains no elements
+2026-09-12T08:22:02.7745486+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-12T08:22:02.7745570+00:00 xUnit.net INFORMATION            at System.Linq.ThrowHelper.ThrowNoElementsException()
+2026-09-12T08:22:02.7745613+00:00 xUnit.net INFORMATION            at System.Linq.Enumerable.Last[TSource](IEnumerable`1 source)
+2026-09-12T08:22:02.7745752+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(579,0): at P7CreateRestApiTest.DatabaseFixture.BidListUnitTests.CurvePointUnitTests.ICurvePointService_GetCurvePointDtoById_ShouldGet_1CurvePointById()
+2026-09-12T08:22:02.7745782+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-12T08:22:02.7823369+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+BidListUnitTests+CurvePointUnitTests.ICurvePointService_GetAllCurvePoints_ShouldGet_2CurvePoints [FAIL]
+2026-09-12T08:22:02.7823620+00:00 xUnit.net INFORMATION       Assert.True() Failure
+2026-09-12T08:22:02.7823634+00:00 xUnit.net INFORMATION       Expected: True
+2026-09-12T08:22:02.7823643+00:00 xUnit.net INFORMATION       Actual:   False
+2026-09-12T08:22:02.7823699+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-12T08:22:02.7823869+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(643,0): at P7CreateRestApiTest.DatabaseFixture.BidListUnitTests.CurvePointUnitTests.ICurvePointService_GetAllCurvePoints_ShouldGet_2CurvePoints()
+2026-09-12T08:22:02.7823898+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-12T08:22:02.7881305+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+BidListUnitTests+CurvePointUnitTests.ICurvePointService_DeleteCurvePointById_ShouldDelete_1CurvePoint [FAIL]
+2026-09-12T08:22:02.7881543+00:00 xUnit.net INFORMATION       System.InvalidOperationException : Sequence contains no elements
+2026-09-12T08:22:02.7881622+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-12T08:22:02.7881709+00:00 xUnit.net INFORMATION            at System.Linq.ThrowHelper.ThrowNoElementsException()
+2026-09-12T08:22:02.7881751+00:00 xUnit.net INFORMATION            at System.Linq.Enumerable.Last[TSource](IEnumerable`1 source)
+2026-09-12T08:22:02.7881859+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(540,0): at P7CreateRestApiTest.DatabaseFixture.BidListUnitTests.CurvePointUnitTests.ICurvePointService_DeleteCurvePointById_ShouldDelete_1CurvePoint()
+2026-09-12T08:22:02.7881880+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-12T08:22:02.8412125+00:00 Microsoft.Testing.Platform.Hosts.ServerTestHost WARNING [ServerTestHost.OnTaskSchedulerUnobservedTaskException] Unhandled task exception
+------Exception detail------
+System.AggregateException: A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread. (Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+AsOfDate
+)
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+AsOfDate
+
+ ---> System.FormatException: The string 'string' was not recognized as a valid DateTime. There is an unknown word starting at index '0'.
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at lambda_method201(Closure, CurvePointDto, CurvePoint, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method201(Closure, CurvePointDto, CurvePoint, ResolutionContext)
+   at P7CreateRestApi.Services.CurvePointService.MapCurvePointDtoToCurvePoint(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 78
+   at P7CreateRestApi.Services.CurvePointService.CreateCurvePointWithCurvePointDto(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 49
+   --- End of inner exception stack trace ---
+2026-09-12T08:22:02.8478360+00:00 Microsoft.Testing.Platform.Hosts.ServerTestHost WARNING [ServerTestHost.OnTaskSchedulerUnobservedTaskException] Unhandled task exception
+------Exception detail------
+System.AggregateException: A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread. (Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+AsOfDate
+)
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+AsOfDate
+
+ ---> System.FormatException: The string 'string' was not recognized as a valid DateTime. There is an unknown word starting at index '0'.
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at lambda_method249(Closure, CurvePointDto, CurvePoint, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method249(Closure, CurvePointDto, CurvePoint, ResolutionContext)
+   at P7CreateRestApi.Services.CurvePointService.MapCurvePointDtoToCurvePoint(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 78
+   at P7CreateRestApi.Services.CurvePointService.CreateCurvePointWithCurvePointDto(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 49
+   --- End of inner exception stack trace ---
+2026-09-12T08:22:02.8487045+00:00 Microsoft.Testing.Platform.Hosts.ServerTestHost WARNING [ServerTestHost.OnTaskSchedulerUnobservedTaskException] Unhandled task exception
+------Exception detail------
+System.AggregateException: A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread. (Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+AsOfDate
+)
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+AsOfDate
+
+ ---> System.FormatException: The string 'string' was not recognized as a valid DateTime. There is an unknown word starting at index '0'.
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at lambda_method248(Closure, CurvePointDto, CurvePoint, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method248(Closure, CurvePointDto, CurvePoint, ResolutionContext)
+   at P7CreateRestApi.Services.CurvePointService.MapCurvePointDtoToCurvePoint(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 78
+   at P7CreateRestApi.Services.CurvePointService.CreateCurvePointWithCurvePointDto(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 49
+   --- End of inner exception stack trace ---
+2026-09-12T08:22:02.8498993+00:00 Microsoft.Testing.Platform.Hosts.ServerTestHost WARNING [ServerTestHost.OnTaskSchedulerUnobservedTaskException] Unhandled task exception
+------Exception detail------
+System.AggregateException: A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread. (Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+AsOfDate
+)
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+AsOfDate
+
+ ---> System.FormatException: The string 'string' was not recognized as a valid DateTime. There is an unknown word starting at index '0'.
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at lambda_method250(Closure, CurvePointDto, CurvePoint, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method250(Closure, CurvePointDto, CurvePoint, ResolutionContext)
+   at P7CreateRestApi.Services.CurvePointService.MapCurvePointDtoToCurvePoint(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 78
+   at P7CreateRestApi.Services.CurvePointService.CreateCurvePointWithCurvePointDto(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 49
+   --- End of inner exception stack trace ---
+2026-09-12T08:22:02.8513636+00:00 Microsoft.Testing.Platform.Hosts.ServerTestHost WARNING [ServerTestHost.OnTaskSchedulerUnobservedTaskException] Unhandled task exception
+------Exception detail------
+System.AggregateException: A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread. (Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+AsOfDate
+)
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+AsOfDate
+
+ ---> System.FormatException: The string 'string' was not recognized as a valid DateTime. There is an unknown word starting at index '0'.
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at lambda_method249(Closure, CurvePointDto, CurvePoint, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method249(Closure, CurvePointDto, CurvePoint, ResolutionContext)
+   at P7CreateRestApi.Services.CurvePointService.MapCurvePointDtoToCurvePoint(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 78
+   at P7CreateRestApi.Services.CurvePointService.CreateCurvePointWithCurvePointDto(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 49
+   --- End of inner exception stack trace ---
+2026-09-12T08:22:02.8523446+00:00 Microsoft.Testing.Platform.Hosts.ServerTestHost WARNING [ServerTestHost.OnTaskSchedulerUnobservedTaskException] Unhandled task exception
+------Exception detail------
+System.AggregateException: A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread. (Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+AsOfDate
+)
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+AsOfDate
+
+ ---> System.FormatException: The string 'string' was not recognized as a valid DateTime. There is an unknown word starting at index '0'.
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at lambda_method11(Closure, CurvePointDto, CurvePoint, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method11(Closure, CurvePointDto, CurvePoint, ResolutionContext)
+   at P7CreateRestApi.Services.CurvePointService.MapCurvePointDtoToCurvePoint(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 78
+   at P7CreateRestApi.Services.CurvePointService.CreateCurvePointWithCurvePointDto(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 49
+   --- End of inner exception stack trace ---
+2026-09-12T08:22:02.9243261+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-12T08:22:02.9284125+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-12T08:22:02.9348333+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 10, Errors: 0, Failed: 5, Skipped: 0, Not Run: 0, Time: 0,825s

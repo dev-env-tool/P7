@@ -73,6 +73,7 @@ namespace P7CreateRestApi.Controllers
 
 
         [Authorize(Roles = "Admin")]
+        [ServiceFilter(typeof(AsyncActionFilter))]
         [HttpPut]
         [Route("")]
         public async Task<IActionResult> UpdateCurvePointById([FromBody] CurvePointDto curvePointDto)

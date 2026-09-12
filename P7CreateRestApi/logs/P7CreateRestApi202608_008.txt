@@ -27856,3 +27856,304 @@ WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
 2026-09-12 09:58:14.966 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/favicon-32x32.png - 200 628 image/png 8.1027ms
 2026-09-12 09:58:15.077 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
 2026-09-12 09:58:15.106 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 30.0945ms
+2026-09-12 10:54:10.676 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-12 11:12:10.324 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-12 11:12:11.739 +02:00 [INF] Executed DbCommand (37ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-12 11:12:11.799 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-12 11:12:11.819 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-12 11:12:11.860 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-12 11:12:11.872 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-12 11:12:11.912 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-12 11:12:11.918 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-12 11:12:12.091 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-12 11:12:12.092 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-12 11:12:12.176 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-12 11:12:12.178 +02:00 [INF] Hosting environment: Development
+2026-09-12 11:12:12.179 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-12 11:12:14.272 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-09-12 11:12:14.439 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 181.1136ms
+2026-09-12 11:12:14.447 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-09-12 11:12:14.517 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 70.5952ms
+2026-09-12 11:12:14.538 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-12 11:12:14.544 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-09-12 11:12:14.547 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 9.2084ms
+2026-09-12 11:12:14.674 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 131.1171ms
+2026-09-12 11:12:14.738 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-09-12 11:12:14.767 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 28.6021ms
+2026-09-12 11:12:50.217 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/Login/Login - application/json 65
+2026-09-12 11:12:50.277 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-09-12 11:12:50.304 +02:00 [INF] Route matched with {action = "Login", controller = "Login"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(P7CreateRestApi.Models.LoginModel) on controller P7CreateRestApi.Controllers.LoginController (P7CreateRestApi).
+2026-09-12 11:12:50.355 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-12 11:12:50.369 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2026-09-12 11:12:50.509 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2026-09-12 11:12:50.536 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2026-09-12 11:12:50.542 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-12 11:12:50.552 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2026-09-12 11:12:50.572 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2026-09-12 11:12:50.578 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-12 11:12:50.595 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2026-09-12 11:12:50.623 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE ([a].[UserId] = @__p_0) AND ([a].[RoleId] = @__p_1)
+2026-09-12 11:12:50.670 +02:00 [INF] User admin@user.com logged in at "2026-09-12T11:12:50.6699046+02:00"
+2026-09-12 11:12:50.682 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-09-12 11:12:50.689 +02:00 [INF] Executed action P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi) in 377.4425ms
+2026-09-12 11:12:50.690 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.LoginController.Login (P7CreateRestApi)'
+2026-09-12 11:12:50.693 +02:00 [INF] HTTP POST /api/Login/Login responded 200 in 416.0638 ms
+2026-09-12 11:12:50.698 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/Login/Login - 200 null text/plain; charset=utf-8 480.4565ms
+2026-09-12 11:13:12.700 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/CurvePoints - application/json 165
+2026-09-12 11:13:12.747 +02:00 [INF] UserNamehttp://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress: admin@user.com
+2026-09-12 11:13:12.750 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.CurvePointsController.CreateCurvePoint (P7CreateRestApi)'
+2026-09-12 11:13:12.755 +02:00 [INF] Route matched with {action = "CreateCurvePoint", controller = "CurvePoints"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateCurvePoint(P7CreateRestApi.DTO.CurvePointDto) on controller P7CreateRestApi.Controllers.CurvePointsController (P7CreateRestApi).
+2026-09-12 11:13:12.838 +02:00 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-09-12 11:13:26.301 +02:00 [INF] Executed action P7CreateRestApi.Controllers.CurvePointsController.CreateCurvePoint (P7CreateRestApi) in 13543.5375ms
+2026-09-12 11:13:26.303 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.CurvePointsController.CreateCurvePoint (P7CreateRestApi)'
+2026-09-12 11:13:26.305 +02:00 [ERR] HTTP POST /api/CurvePoints responded 500 in 13555.2548 ms
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+CurveId
+
+ ---> System.FormatException: The input string 'string' was not in a correct format.
+   at System.Number.ThrowFormatException[TChar](ReadOnlySpan`1 value)
+   at lambda_method203(Closure, Object, CurvePoint, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method203(Closure, Object, CurvePoint, ResolutionContext)
+   at P7CreateRestApi.Services.CurvePointService.MapCurvePointDtoToCurvePoint(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 78
+   at P7CreateRestApi.Services.CurvePointService.CreateCurvePointWithCurvePointDto(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 49
+   at P7CreateRestApi.Controllers.CurvePointsController.CreateCurvePoint(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Controllers\CurvePointsController.cs:line 70
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-09-12 11:13:26.325 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+CurveId
+
+ ---> System.FormatException: The input string 'string' was not in a correct format.
+   at System.Number.ThrowFormatException[TChar](ReadOnlySpan`1 value)
+   at lambda_method203(Closure, Object, CurvePoint, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method203(Closure, Object, CurvePoint, ResolutionContext)
+   at P7CreateRestApi.Services.CurvePointService.MapCurvePointDtoToCurvePoint(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 78
+   at P7CreateRestApi.Services.CurvePointService.CreateCurvePointWithCurvePointDto(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 49
+   at P7CreateRestApi.Controllers.CurvePointsController.CreateCurvePoint(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Controllers\CurvePointsController.cs:line 70
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-09-12 11:13:26.339 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/CurvePoints - 500 null text/plain; charset=utf-8 13638.8342ms
+2026-09-12 11:13:38.564 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/CurvePoints - application/json 160
+2026-09-12 11:13:38.571 +02:00 [INF] UserNamehttp://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress: admin@user.com
+2026-09-12 11:13:38.572 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.CurvePointsController.CreateCurvePoint (P7CreateRestApi)'
+2026-09-12 11:13:38.573 +02:00 [INF] Route matched with {action = "CreateCurvePoint", controller = "CurvePoints"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateCurvePoint(P7CreateRestApi.DTO.CurvePointDto) on controller P7CreateRestApi.Controllers.CurvePointsController (P7CreateRestApi).
+2026-09-12 11:13:52.961 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'P7Referential' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-12 11:13:54.162 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (Size = 1) (DbType = Byte), @p3='?' (DbType = Double), @p4='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [CurvePoints] ([AsOfDate], [CreationDate], [CurveId], [CurvePointValue], [Term])
+VALUES (@p0, @p1, @p2, @p3, @p4);
+SELECT [Id]
+FROM [CurvePoints]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2026-09-12 11:13:54.192 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2026-09-12 11:13:54.194 +02:00 [INF] Executed action P7CreateRestApi.Controllers.CurvePointsController.CreateCurvePoint (P7CreateRestApi) in 15619.8698ms
+2026-09-12 11:13:54.195 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.CurvePointsController.CreateCurvePoint (P7CreateRestApi)'
+2026-09-12 11:13:54.196 +02:00 [INF] HTTP POST /api/CurvePoints responded 200 in 15624.2136 ms
+2026-09-12 11:13:54.198 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/CurvePoints - 200 0 null 15634.1476ms
+2026-09-12 11:15:44.886 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7210/api/CurvePoints - application/json 163
+2026-09-12 11:15:44.894 +02:00 [INF] UserNamehttp://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress: admin@user.com
+2026-09-12 11:15:44.896 +02:00 [INF] Executing endpoint 'P7CreateRestApi.Controllers.CurvePointsController.CreateCurvePoint (P7CreateRestApi)'
+2026-09-12 11:15:44.897 +02:00 [INF] Route matched with {action = "CreateCurvePoint", controller = "CurvePoints"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateCurvePoint(P7CreateRestApi.DTO.CurvePointDto) on controller P7CreateRestApi.Controllers.CurvePointsController (P7CreateRestApi).
+2026-09-12 11:15:50.760 +02:00 [INF] Executed action P7CreateRestApi.Controllers.CurvePointsController.CreateCurvePoint (P7CreateRestApi) in 5861.4754ms
+2026-09-12 11:15:50.761 +02:00 [INF] Executed endpoint 'P7CreateRestApi.Controllers.CurvePointsController.CreateCurvePoint (P7CreateRestApi)'
+2026-09-12 11:15:50.762 +02:00 [ERR] HTTP POST /api/CurvePoints responded 500 in 5866.7494 ms
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+CurveId
+
+ ---> System.OverflowException: Value was either too large or too small for an unsigned byte.
+   at System.Number.ThrowOverflowException[TInteger]()
+   at lambda_method203(Closure, Object, CurvePoint, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method203(Closure, Object, CurvePoint, ResolutionContext)
+   at P7CreateRestApi.Services.CurvePointService.MapCurvePointDtoToCurvePoint(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 78
+   at P7CreateRestApi.Services.CurvePointService.CreateCurvePointWithCurvePointDto(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 49
+   at P7CreateRestApi.Controllers.CurvePointsController.CreateCurvePoint(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Controllers\CurvePointsController.cs:line 70
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-09-12 11:15:50.771 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+CurveId
+
+ ---> System.OverflowException: Value was either too large or too small for an unsigned byte.
+   at System.Number.ThrowOverflowException[TInteger]()
+   at lambda_method203(Closure, Object, CurvePoint, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method203(Closure, Object, CurvePoint, ResolutionContext)
+   at P7CreateRestApi.Services.CurvePointService.MapCurvePointDtoToCurvePoint(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 78
+   at P7CreateRestApi.Services.CurvePointService.CreateCurvePointWithCurvePointDto(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 49
+   at P7CreateRestApi.Controllers.CurvePointsController.CreateCurvePoint(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Controllers\CurvePointsController.cs:line 70
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-09-12 11:15:50.781 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/CurvePoints - 500 null text/plain; charset=utf-8 5895.2375ms
+2026-09-12 11:16:28.946 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-09-12 11:16:28.962 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 17.2234ms
+2026-09-12 11:16:28.987 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-09-12 11:16:28.989 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-12 11:16:28.998 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 9.7704ms
+2026-09-12 11:16:29.011 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 24.1477ms
+2026-09-12 11:16:29.164 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-09-12 11:16:29.180 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 15.8225ms
+2026-09-12 11:53:44.695 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-12 11:53:46.421 +02:00 [INF] Executed DbCommand (40ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-12 11:53:46.481 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-12 11:53:46.504 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-12 11:53:46.544 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-12 11:53:46.574 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-12 11:53:46.628 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-12 11:53:46.633 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-12 11:53:46.802 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-12 11:53:46.804 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-12 11:53:46.895 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-12 11:53:46.896 +02:00 [INF] Hosting environment: Development
+2026-09-12 11:53:46.897 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-12 11:53:49.002 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-09-12 11:53:49.139 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 150.7796ms
+2026-09-12 11:53:49.201 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-09-12 11:53:49.296 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 94.8775ms
+2026-09-12 11:53:49.337 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-12 11:53:49.345 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-09-12 11:53:49.353 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 16.7975ms
+2026-09-12 11:53:49.394 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 49.0379ms
+2026-09-12 11:53:49.555 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-09-12 11:53:49.591 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 36.5244ms

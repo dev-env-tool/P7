@@ -70,12 +70,12 @@ namespace P7CreateRestApi.Services
 
         public async Task<RatingDto> MapRatingToRatingDto(Rating rating)
         {
-            RatingDto ratingDto = _mapper.Map<Rating, RatingDto>(rating);
+            RatingDto ratingDto = _mapper.Map<RatingDto>(rating);
             return ratingDto;
         }
         public async Task<Rating> MapRatingDtoToRating(RatingDto ratingDto)
         {
-            Rating rating = _mapper.Map<RatingDto, Rating>(ratingDto);
+            Rating rating = _mapper.Map<Rating>(ratingDto);
             return rating;
         }
 
