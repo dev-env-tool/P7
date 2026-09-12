@@ -59,10 +59,5 @@ namespace P7CreateRestApi.Repositories
                 await _context.SaveChangesAsync();
             }
         }
-        //public async Task<int> GetMaxBidListId()
-        //{
-        //    int maxBidListId = _context!.BidLists.Select(b => b.BidListId).Max();
-        //    return await Task.FromResult(maxBidListId);
-        //}
     }
 }

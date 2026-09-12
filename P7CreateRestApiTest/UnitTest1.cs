@@ -45,7 +45,7 @@ namespace P7CreateRestApiTest
 
 
 
-        public class UnitTests
+        public class BidListUnitTests
         {
             private P7Referential GetInMemoryDbContext()
             {

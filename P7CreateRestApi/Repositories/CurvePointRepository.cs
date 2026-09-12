@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using P7CreateRestApi.Data;
 using P7CreateRestApi.Domain;
 using P7CreateRestApi.IRepositories;
+using System.Collections;
 
 
 namespace P7CreateRestApi.Repositories
@@ -31,21 +32,19 @@ namespace P7CreateRestApi.Repositories
         {
             if (curvePoint != null)
             {
-                _context!.CurvePoints.Add(curvePoint);
-                _context.SaveChanges();
+                await _context!.CurvePoints.AddAsync(curvePoint);
+                await _context!.SaveChangesAsync();
             }
         }
 
         public async Task UpdateCurvePoint(CurvePoint curvePoint)
         {
-            int maxCurvePointId = await GetMaxCurvePointId();
-            if (curvePoint != null)
+            var existingCurvePoint = await _context.CurvePoints.FindAsync(curvePoint.Id);
+
+            if (existingCurvePoint != null)
             {
-                if ((curvePoint.Id > 0) && (curvePoint.Id <= maxCurvePointId))
-                {
-                    _context!.Entry(curvePoint).State = EntityState.Modified;
-                    _context.SaveChanges();
-                }
+                _context.Entry(existingCurvePoint).CurrentValues.SetValues(curvePoint);
+                await _context!.SaveChangesAsync();
             }
         }
 
@@ -57,13 +56,8 @@ namespace P7CreateRestApi.Repositories
             if (curvePoint != null)
             {
                 _context!.CurvePoints.Remove(curvePoint);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
-        }
-        private static async Task<int> GetMaxCurvePointId()
-        {
-            int maxCurvePointId = _context!.CurvePoints.Select(r => r.Id).Max();
-            return await Task.FromResult(maxCurvePointId);
         }
     }
 }

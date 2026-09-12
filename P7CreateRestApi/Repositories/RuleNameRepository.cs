@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using P7CreateRestApi.Data;
 using P7CreateRestApi.Domain;
 using P7CreateRestApi.IRepositories;
+using System.Collections;
 
 
 namespace P7CreateRestApi.Repositories
@@ -31,21 +32,19 @@ namespace P7CreateRestApi.Repositories
         {
             if (ruleName != null)
             {
-                _context!.RuleNames.Add(ruleName);
-                _context.SaveChanges();
+                await _context!.RuleNames.AddAsync(ruleName);
+                await _context!.SaveChangesAsync();
             }
         }
 
         public async Task UpdateRuleName(RuleName ruleName)
         {
-            int maxRuleNameId = await GetMaxRuleNameId();
-            if (ruleName != null)
+            var existingRuleName = await _context.BidLists.FindAsync(ruleName.Id);
+
+            if (existingRuleName != null)
             {
-                if ((ruleName.Id > 0) && (ruleName.Id <= maxRuleNameId))
-                {
-                    _context!.Entry(ruleName).State = EntityState.Modified;
-                    _context.SaveChanges();
-                }
+                _context.Entry(existingRuleName).CurrentValues.SetValues(ruleName);
+                await _context!.SaveChangesAsync();
             }
         }
 
@@ -57,13 +56,8 @@ namespace P7CreateRestApi.Repositories
             if (ruleName != null)
             {
                 _context!.RuleNames.Remove(ruleName);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
-        }
-        private static async Task<int> GetMaxRuleNameId()
-        {
-            int maxRuleNameId = _context!.RuleNames.Select(r => r.Id).Max();
-            return await Task.FromResult(maxRuleNameId);
         }
     }
 }

@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using P7CreateRestApi.Data;
 using P7CreateRestApi.Domain;
 using P7CreateRestApi.IRepositories;
+using System.Collections;
 
 
 namespace P7CreateRestApi.Repositories
@@ -31,21 +32,19 @@ namespace P7CreateRestApi.Repositories
         {
             if (rating != null)
             {
-                _context!.Ratings.Add(rating);
-                _context.SaveChanges();
+                await _context!.Ratings.AddAsync(rating);
+                await _context!.SaveChangesAsync();
             }
         }
 
         public async Task UpdateRating(Rating rating)
         {
-            int maxRatingId = await GetMaxRatingId();
-            if (rating != null)
+            var existingRating = await _context.BidLists.FindAsync(rating.Id);
+
+            if (existingRating != null)
             {
-                if ((rating.Id > 0) && (rating.Id <= maxRatingId))
-                {
-                    _context!.Entry(rating).State = EntityState.Modified;
-                    _context.SaveChanges();
-                }
+                _context.Entry(existingRating).CurrentValues.SetValues(rating);
+                await _context!.SaveChangesAsync();
             }
         }
 
@@ -57,13 +56,8 @@ namespace P7CreateRestApi.Repositories
             if (rating != null)
             {
                 _context!.Ratings.Remove(rating);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
-        }
-        private static async Task<int> GetMaxRatingId()
-        {
-            int maxRatingId = _context!.Ratings.Select(r => r.Id).Max();
-            return await Task.FromResult(maxRatingId);
         }
     }
 }

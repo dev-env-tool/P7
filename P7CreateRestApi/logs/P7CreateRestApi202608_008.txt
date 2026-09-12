@@ -27809,3 +27809,50 @@ WHERE @@ROWCOUNT = 1 AND [BidListId] = scope_identity();
 2026-09-11 14:34:00.119 +02:00 [INF] HTTP POST /api/BidLists responded 200 in 25139.6345 ms
 2026-09-11 14:34:00.121 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7210/api/BidLists - 200 0 null 25192.6517ms
 2026-09-11 14:38:43.145 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-12 09:58:08.455 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-12 09:58:10.766 +02:00 [INF] Executed DbCommand (64ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-12 09:58:10.874 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2026-09-12 09:58:10.918 +02:00 [INF] User profile is available. Using 'C:\Users\edoua\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-09-12 09:58:10.970 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-12 09:58:10.995 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-12 09:58:11.077 +02:00 [INF] Entity Framework Core 6.0.16 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.16' with options: None
+2026-09-12 09:58:11.085 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[Fullname], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[Password], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[Role], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2026-09-12 09:58:11.544 +02:00 [INF] Now listening on: https://localhost:7210
+2026-09-12 09:58:11.547 +02:00 [INF] Now listening on: http://localhost:5267
+2026-09-12 09:58:11.944 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-09-12 09:58:11.948 +02:00 [INF] Hosting environment: Development
+2026-09-12 09:58:11.949 +02:00 [INF] Content root path: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi
+2026-09-12 09:58:13.748 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger - null null
+2026-09-12 09:58:14.222 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger - 301 null null 482.2816ms
+2026-09-12 09:58:14.297 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/index.html - null null
+2026-09-12 09:58:14.437 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/index.html - 200 null text/html;charset=utf-8 139.8955ms
+2026-09-12 09:58:14.535 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/swagger-ui.css - null null
+2026-09-12 09:58:14.539 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/swagger-ui-bundle.js - null null
+2026-09-12 09:58:14.544 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - null null
+2026-09-12 09:58:14.539 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/swagger-ui-standalone-preset.js - null null
+2026-09-12 09:58:14.547 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - null null
+2026-09-12 09:58:14.597 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - 200 14935 application/javascript; charset=utf-8 50.285ms
+2026-09-12 09:58:14.642 +02:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-09-12 09:58:14.643 +02:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-09-12 09:58:14.652 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/swagger-ui.css - 200 144929 text/css 117.4234ms
+2026-09-12 09:58:14.653 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/swagger-ui-standalone-preset.js - 200 312163 text/javascript 114.1358ms
+2026-09-12 09:58:14.670 +02:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-09-12 09:58:14.673 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/swagger-ui-bundle.js - 200 1061536 text/javascript 134.3416ms
+2026-09-12 09:58:14.715 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - 200 null text/javascript; charset=UTF-8 171.3896ms
+2026-09-12 09:58:14.958 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/favicon-32x32.png - null null
+2026-09-12 09:58:14.963 +02:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-09-12 09:58:14.966 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/favicon-32x32.png - 200 628 image/png 8.1027ms
+2026-09-12 09:58:15.077 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - null null
+2026-09-12 09:58:15.106 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 30.0945ms

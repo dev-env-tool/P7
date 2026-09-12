@@ -1,9 +1,10 @@
 
 //using Dot.Net.WebApi.Controllers.Domain;
+using Microsoft.EntityFrameworkCore;
 using P7CreateRestApi.Data;
 using P7CreateRestApi.Domain;
-using Microsoft.EntityFrameworkCore;
 using P7CreateRestApi.IRepositories;
+using System.Collections;
 
 namespace P7CreateRestApi.Repositories
 {
@@ -32,21 +33,18 @@ namespace P7CreateRestApi.Repositories
         {
             if (trade != null)
             {
-                _context!.Trades.Add(trade);
-                _context.SaveChanges();
+                await _context!.Trades.AddAsync(trade);
+                await _context!.SaveChangesAsync();
             }
         }
         public async Task UpdateTrade(Trade trade)
         {
-            int maxTradeId = await GetMaxTradeId();
-            if (trade != null)
-            {
-                if ((trade.TradeId > 0) && (trade.TradeId <= maxTradeId))
-                {
-                    _context!.Entry(trade).State = EntityState.Modified;
-                    _context.SaveChanges();
+            var existingTrade = await _context.Trades.FindAsync(trade.TradeId);
 
-                }
+            if (existingTrade != null)
+            {
+                _context.Entry(existingTrade).CurrentValues.SetValues(trade);
+                await _context!.SaveChangesAsync();
             }
         }
 
@@ -57,14 +55,8 @@ namespace P7CreateRestApi.Repositories
             if (trade != null)
             {
                 _context!.Trades.Remove(trade);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
-        }
-
-        private static async Task<int> GetMaxTradeId()
-        {
-            int maxTradeId = _context!.Trades.Select(t => t.TradeId).Max();
-            return await Task.FromResult(maxTradeId);
         }
     }
 }
