@@ -1,0 +1,31 @@
+2026-09-14T09:22:00.2281399+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-14T09:22:00.2300121+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-14T09:22:00.2320936+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-14T09:22:00.2321022+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 09:22:00.177
+2026-09-14T09:22:00.2321853+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 11780
+2026-09-14T09:22:00.2323482+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.31
+2026-09-14T09:22:00.2323745+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.31\System.Private.CoreLib.dll
+2026-09-14T09:22:00.2324926+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-14T09:22:00.2325775+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-14T09:22:00.2325861+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 64945'
+2026-09-14T09:22:00.2378298+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-14T09:22:00.3204927+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-14T09:22:00.3369645+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-14T09:22:01.0057372+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-14T09:22:01.0236812+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.31)
+2026-09-14T09:22:01.1219339+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-14T09:22:01.1879647+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-14T09:22:01.2209861+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-14T09:22:09.7975306+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+BidListUnitTests.IAsyncActionFilter_And_ValidationAttribute_ShouldReturn_1Error [FAIL]
+2026-09-14T09:22:09.7988328+00:00 xUnit.net INFORMATION       System.ArgumentNullException : Value cannot be null. (Parameter 'httpContext')
+2026-09-14T09:22:09.8000875+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-14T09:22:09.8012560+00:00 xUnit.net INFORMATION            at System.ArgumentNullException.Throw(String paramName)
+2026-09-14T09:22:09.8012781+00:00 xUnit.net INFORMATION            at System.ArgumentNullException.ThrowIfNull(Object argument, String paramName)
+2026-09-14T09:22:09.8012917+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Mvc.ActionContext..ctor(HttpContext httpContext, RouteData routeData, ActionDescriptor actionDescriptor, ModelStateDictionary modelState)
+2026-09-14T09:22:09.8012966+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Mvc.ActionContext..ctor(ActionContext actionContext)
+2026-09-14T09:22:09.8013048+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext..ctor(ActionContext actionContext, IList`1 filters, IDictionary`2 actionArguments, Object controller)
+2026-09-14T09:22:09.8015741+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(461,0): at P7CreateRestApiTest.DatabaseFixture.BidListUnitTests.IAsyncActionFilter_And_ValidationAttribute_ShouldReturn_1Error()
+2026-09-14T09:22:09.8016666+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-14T09:22:09.8313822+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-14T09:22:09.8423323+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-14T09:22:09.8550918+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 1, Errors: 0, Failed: 1, Skipped: 0, Not Run: 0, Time: 8,617s

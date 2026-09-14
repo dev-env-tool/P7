@@ -11,10 +11,8 @@ namespace P7CreateRestApi.DTO
         public string SandPRating { get; set; }
         public string FitchRating { get; set; }
 
-
-
-        [Range(0.0001, double.MaxValue, ErrorMessage = "The order number is not greater than 0 and smaller than 1.79 E+308.")]
-        [CustomValidation(ErrorMessage = "The OrderNumber is not a double.")]
+        [Range(0, 256, ErrorMessage = "The OrderNumber is not a byte as its value not equal or greater than 0 and smaller or equal to 256.")]
+        [CustomValidationAttributeForByte(ErrorMessage = "The OrderNumber is not a byte.")]
         [DefaultValue("1")]
         public string? OrderNumber { get; set; }
     }

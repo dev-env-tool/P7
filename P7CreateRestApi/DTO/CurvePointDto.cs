@@ -8,7 +8,10 @@ namespace P7CreateRestApi.DTO
     {
         // TODO: Map columns in data table CURVEPOINT with corresponding fields
         public int Id { get; set; }
-        public byte? CurveId { get; set; }
+
+        [Range(0, 256, ErrorMessage = "The CurveId is not a byte as its value not equal or greater than 0 and smaller or equal to 256.")]
+        [CustomValidationAttributeForByte(ErrorMessage = "The CurveId is not a byte.")]
+        public string? CurveId { get; set; }
 
         [DataType(DataType.DateTime)]
         [Range(typeof(DateTime), "1/1/1900", "1/1/2500", ErrorMessage = "The AsOfDate does not suit the DateTime format.")]

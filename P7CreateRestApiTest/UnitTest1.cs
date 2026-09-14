@@ -1,8 +1,13 @@
 using AutoMapper;
 using Castle.Core.Logging;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Abstractions;
+using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
-
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,11 +21,13 @@ using P7CreateRestApi.Controllers;
 using P7CreateRestApi.Data;
 using P7CreateRestApi.Domain;
 using P7CreateRestApi.DTO;
+using P7CreateRestApi.Filters;
 using P7CreateRestApi.IRepositories;
 using P7CreateRestApi.IServices;
 using P7CreateRestApi.Profiles;
 using P7CreateRestApi.Repositories;
 using P7CreateRestApi.Services;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
@@ -28,6 +35,7 @@ using System.Linq;
 using System.Net.NetworkInformation;
 using System.Security.Cryptography;
 using System.Security.Principal;
+using System.Web.Http.ModelBinding;
 using System.Xml.Linq;
 using Xunit;
 using Xunit.Internal;
@@ -403,6 +411,152 @@ namespace P7CreateRestApiTest
 
 
             }
+
+
+            [Fact]
+            public async Task AsyncActionFilter_WithWrongBidListDto_ShouldReturn_8Errors()
+            {
+                BidListDto wrongBidListDto = new BidListDto
+                {
+                    BidListId = 0,
+                    Account = "test2",
+                    BidType = "abc",
+                    BidQuantity = "abc",
+                    AskQuantity = "abcd",
+                    Bid = "abcde",
+                    Ask = "abcde",
+                    Benchmark = "string",
+                    BidListDate = "erhk",
+                    Commentary = "string",
+                    BidSecurity = "string",
+                    BidStatus = "string",
+                    Trader = "string",
+                    Book = "string",
+                    CreationName = "string",
+                    CreationDate = "kjg",
+                    RevisionName = "string",
+                    RevisionDate = "ioj",
+                    DealName = "string",
+                    DealType = "string",
+                    SourceListId = "string",
+                    Side = "string"
+                };
+
+
+                var validationResults = new List<ValidationResult>();
+                var validationContext = new ValidationContext(wrongBidListDto);
+                Validator.TryValidateObject(wrongBidListDto, validationContext, validationResults, validateAllProperties: true);
+
+
+                var modelState = new Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary();
+                foreach (var vr in validationResults)
+                {
+                    var key = vr.MemberNames.FirstOrDefault() ?? string.Empty;
+                    modelState.AddModelError(key, vr.ErrorMessage);
+                }
+
+                var httpContext = new DefaultHttpContext();
+                var routeData = new Microsoft.AspNetCore.Routing.RouteData();
+                routeData.Values["controller"] = "MyController";
+                routeData.Values["action"] = "Create";
+                var actionContext = new ActionContext(httpContext, routeData, new ActionDescriptor(), modelState);
+                var actionExecutingContext = new ActionExecutingContext(
+                    actionContext,
+                    new List<IFilterMetadata>(),      
+                    new Dictionary<string, object>(), 
+                    controller: null
+                );
+
+
+                ActionExecutionDelegate next = () => Task.FromResult<ActionExecutedContext>(
+                    new ActionExecutedContext(actionContext, new List<IFilterMetadata>(), controller: null)
+                );
+                var filter = new AsyncActionFilter();
+                await filter.OnActionExecutionAsync(actionExecutingContext, next);
+                var error0 = modelState.ElementAt(0);
+                var error1 = modelState.ElementAt(1);
+                var error2 = modelState.ElementAt(2);
+                var error3 = modelState.ElementAt(3);
+                var error4 = modelState.ElementAt(4);
+                var error5 = modelState.ElementAt(5);
+                var error6 = modelState.ElementAt(6);
+
+                // Assert
+                Xunit.Assert.Equal("The Ask is not greater than 0 and smaller than 1.79 E+308.", error0.Value.Errors[0].ErrorMessage);
+                Xunit.Assert.Equal("The Ask is not a double.", error0.Value.Errors[1].ErrorMessage);
+                Xunit.Assert.Equal("The Bid is not greater than 0 and smaller than 1.79 E+308.", error1.Value.Errors[0].ErrorMessage);
+                Xunit.Assert.Equal("The Bid is not a double.", error1.Value.Errors[1].ErrorMessage);
+                Xunit.Assert.Equal("The AskQuantity is not greater than 0 and smaller than 1.79 E+308.", error2.Value.Errors[0].ErrorMessage);
+                Xunit.Assert.Equal("The AskQuantity is not a double.", error2.Value.Errors[1].ErrorMessage);
+                Xunit.Assert.Equal("The BidListDate does not suit the DateTime format.", error3.Value.Errors[0].ErrorMessage);
+                Xunit.Assert.Equal("The BidQuantity is not greater than 0 and smaller than 1.79 E+308.", error4.Value.Errors[0].ErrorMessage);
+                Xunit.Assert.Equal("The BidQuantity is not a double.", error4.Value.Errors[1].ErrorMessage);
+                Xunit.Assert.Equal("The CreationDate does not suit the DateTime format.", error5.Value.Errors[0].ErrorMessage);
+                Xunit.Assert.Equal("The RevisionDate does not suit the DateTime format.", error6.Value.Errors[0].ErrorMessage);
+                Xunit.Assert.True(modelState.ErrorCount == 11);
+            }
+
+
+            //    [Fact]
+            //    public async Task IBidListService_CreateBidListWithBidListDto_ShouldReturn_1Error()
+            //    {
+            //        /// Arrange
+            //        Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+            //        var config = new MapperConfiguration(cfg =>
+            //        {
+            //            cfg.AddProfile<DtoProfile>();
+            //        }, loggerFactory);
+            //        IMapper mapper = config.CreateMapper();
+
+            //        var context = GetInMemoryDbContext();
+            //        var bidListrepository = new BidListRepository(context);
+            //        IBidListService iBidListService = new BidListService(bidListrepository, mapper);
+            //        CustomValidationAttribute customValidationAttribute = new CustomValidationAttribute();
+
+            //        BidListDto bidListDto = new BidListDto
+            //        {
+            //            BidListId = 0,
+            //            Account = "test",
+            //            BidType = "string",
+            //            BidQuantity = "abc",
+            //            AskQuantity = "0,0001",
+            //            Bid = "0,0001",
+            //            Ask = "0,0001",
+            //            Benchmark = "string",
+            //            BidListDate = "11/08/2026 12:53:27",
+            //            Commentary = "string",
+            //            BidSecurity = "string",
+            //            BidStatus = "string",
+            //            Trader = "string",
+            //            Book = "string",
+            //            CreationName = "string",
+            //            CreationDate = "11/08/2026 12:53:27",
+            //            RevisionName = "string",
+            //            RevisionDate = "11/08/2026 12:53:27",
+            //            DealName = "string",
+            //            DealType = "string",
+            //            SourceListId = "string",
+            //            Side = "string"
+            //        };
+
+            //        ///Act
+            //        //bool result = customValidationAttribute.IsValid(bidListDto);
+            //        Task createBidList = iBidListService.CreateBidListWithBidListDto(bidListDto);
+            //        //Task filterModelState = customValidationAttribute.;
+            //        int bidListIdFound = iBidListService.GetAllBidListsDto().Result.Select(b => b.BidListId).Last();
+            //        BidListDto foundBidListDto = iBidListService.GetBidListDtoById(bidListIdFound).Result.FirstOrDefault();
+            //        bidListDto.BidListId = bidListIdFound;
+
+            //        ///Assert
+            //        //Xunit.Assert.True(result);
+            //        Xunit.Assert.True(createBidList.IsCompletedSuccessfully);
+            //        Xunit.Assert.Equivalent(bidListDto, foundBidListDto);
+
+            //        await iBidListService.DeleteBidListById(bidListIdFound);
+
+            //    }
+            //}
+
         }
         public class CurvePointUnitTests
         {
@@ -435,7 +589,7 @@ namespace P7CreateRestApiTest
                 CurvePointDto curvePointDto = new CurvePointDto
                 {
                     Id = 0,
-                    CurveId = 1,
+                    CurveId = "1",
                     AsOfDate = "11/08/2026 12:53:27",
                     Term = "0,0001",
                     CurvePointValue = "0,0001",
@@ -476,7 +630,7 @@ namespace P7CreateRestApiTest
                 CurvePointDto curvePointDto = new CurvePointDto
                 {
                     Id = 0,
-                    CurveId = 1,
+                    CurveId = "1",
                     AsOfDate = "11/08/2026 12:53:27",
                     Term = "0,0001",
                     CurvePointValue = "0,0001",
@@ -490,7 +644,7 @@ namespace P7CreateRestApiTest
                 CurvePointDto modifiedCurvePointDto = new CurvePointDto
                 {
                     Id = curvePointIdFound,
-                    CurveId = 1,
+                    CurveId = "1",
                     AsOfDate = "11/08/2026 12:53:27",
                     Term = "3",
                     CurvePointValue = "0,0001",
@@ -528,7 +682,7 @@ namespace P7CreateRestApiTest
                 CurvePointDto curvePointDto = new CurvePointDto
                 {
                     Id = 0,
-                    CurveId = 1,
+                    CurveId = "1",
                     AsOfDate = "11/08/2026 12:53:27",
                     Term = "0,0001",
                     CurvePointValue = "0,0001",
@@ -566,7 +720,7 @@ namespace P7CreateRestApiTest
                 CurvePointDto curvePointDto = new CurvePointDto
                 {
                     Id = 0,
-                    CurveId = 1,
+                    CurveId = "1",
                     AsOfDate = "11/08/2026 12:53:27",
                     Term = "0,0001",
                     CurvePointValue = "0,0001",
@@ -609,7 +763,7 @@ namespace P7CreateRestApiTest
                 CurvePointDto curvePointDto1 = new CurvePointDto
                 {
                     Id = 0,
-                    CurveId = 1,
+                    CurveId = "1",
                     AsOfDate = "11/08/2026 12:53:27",
                     Term = "0,0001",
                     CurvePointValue = "0,0001",
@@ -620,13 +774,13 @@ namespace P7CreateRestApiTest
                 CurvePointDto curvePointDto2 = new CurvePointDto
                 {
                     Id = 0,
-                    CurveId = 2,
+                    CurveId = "2",
                     AsOfDate = "11/08/2026 12:53:27",
                     Term = "0,0001",
                     CurvePointValue = "0,0001",
                     CreationDate = "11/08/2026 12:53:27",
                 };
-                    
+
 
 
                 Task createCurvePoint1 = iCurvePointService.CreateCurvePointWithCurvePointDto(curvePointDto1);
@@ -652,843 +806,1083 @@ namespace P7CreateRestApiTest
 
             }
 
-
-
-
-            public class RatingUnitTests
+            [Fact]
+            public async Task AsyncActionFilter_WithWrongCurvePointDto_ShouldReturn_8Errors()
             {
-                private P7Referential GetInMemoryDbContext()
+                CurvePointDto wrongCurvePointDto = new CurvePointDto
                 {
-                    var options = new DbContextOptionsBuilder<P7Referential>()
-                        .UseInMemoryDatabase(databaseName: "TestDatabase3")
-                        .Options;
-                    return new P7Referential(options);
+                    Id = 0,
+                    CurveId = "2000",
+                    AsOfDate = "ruioolk",
+                    Term = "abc",
+                    CurvePointValue = "abcd",
+                    CreationDate = "kiuyjk",
+                };
+
+
+                var validationResults = new List<ValidationResult>();
+                var validationContext = new ValidationContext(wrongCurvePointDto);
+                Validator.TryValidateObject(wrongCurvePointDto, validationContext, validationResults, validateAllProperties: true);
+
+
+                var modelState = new Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary();
+                foreach (var vr in validationResults)
+                {
+                    var key = vr.MemberNames.FirstOrDefault() ?? string.Empty;
+                    modelState.AddModelError(key, vr.ErrorMessage);
                 }
 
+                var httpContext = new DefaultHttpContext();
+                var routeData = new Microsoft.AspNetCore.Routing.RouteData();
+                routeData.Values["controller"] = "MyController";
+                routeData.Values["action"] = "Create";
+                var actionContext = new ActionContext(httpContext, routeData, new ActionDescriptor(), modelState);
+                var actionExecutingContext = new ActionExecutingContext(
+                    actionContext,
+                    new List<IFilterMetadata>(),
+                    new Dictionary<string, object>(),
+                    controller: null
+                );
 
 
-                [Fact]
-                public async Task IRatingService_CreateRatingWithRatingDto_ShouldAdd_1Rating()
-                {
-                    /// Arrange
-                    Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
-                    var config = new MapperConfiguration(cfg =>
-                    {
-                        cfg.AddProfile<DtoProfile>();
-                    }, loggerFactory);
-                    IMapper mapper = config.CreateMapper();
-
-                    var context = GetInMemoryDbContext();
-                    var ratingrepository = new RatingRepository(context);
-                    IRatingService iRatingService = new RatingService(ratingrepository, mapper);
-                    CustomValidationAttribute customValidationAttribute = new CustomValidationAttribute();
-
-                    RatingDto ratingDto = new RatingDto
-                    {
-                        Id = 0,
-                        MoodysRating = "AAA",
-                        FitchRating = "AAA",
-                        SandPRating = "AAA",
-                        OrderNumber = "10",
-                    };
-
-                    ///Act
-                    //bool result = customValidationAttribute.IsValid(ratingDto);
-                    Task createRating = iRatingService.CreateRatingWithRatingDto(ratingDto);
-                    int ratingIdFound = iRatingService.GetAllRatingsDto().Result.Select(r => r.Id).Last();
-                    RatingDto foundRatingDto = iRatingService.GetRatingDtoById(ratingIdFound).Result.FirstOrDefault();
-                    ratingDto.Id = ratingIdFound;
-
-                    ///Assert
-                    //Xunit.Assert.True(result);
-                    Xunit.Assert.True(createRating.IsCompletedSuccessfully);
-                    Xunit.Assert.Equivalent(ratingDto, foundRatingDto);
-
-                    await iRatingService.DeleteRatingById(ratingIdFound);
-
-                }
-
-                [Fact]
-                public async Task IRatingService_UpdateRatingWithRatingDto_Modify_1Rating()
-                {
-                    /// Arrange
-                    Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
-                    var config = new MapperConfiguration(cfg =>
-                    {
-                        cfg.AddProfile<DtoProfile>();
-                    }, loggerFactory);
-                    IMapper mapper = config.CreateMapper();
-
-                    var context = GetInMemoryDbContext();
-                    var ratingrepository = new RatingRepository(context);
-                    IRatingService iRatingService = new RatingService(ratingrepository, mapper);
-
-                    RatingDto ratingDto = new RatingDto
-                    {
-                        Id = 0,
-                        MoodysRating = "AAA",
-                        FitchRating = "AAA",
-                        SandPRating = "AAA",
-                        OrderNumber = "10",
-                    };
-
-
-                    Task createRating = iRatingService.CreateRatingWithRatingDto(ratingDto);
-                    int ratingIdFound = iRatingService.GetAllRatingsDto().Result.Select(r => r.Id).Last();
-
-                    RatingDto modifiedRatingDto = new RatingDto
-                    {
-                        Id = ratingIdFound,
-                        MoodysRating = "AAA",
-                        FitchRating = "AAA",
-                        SandPRating = "AAA",
-                        OrderNumber = "10",
-                    };
-
-
-                    ///Act
-                    await iRatingService.UpdateRatingWithRatingDto(modifiedRatingDto);
-                    RatingDto modifiedFoundRatingDto = iRatingService.GetRatingDtoById(ratingIdFound).Result.FirstOrDefault();
-                    ratingDto.Id = ratingIdFound;
-
-                    ///Assert
-                    Xunit.Assert.Equivalent(modifiedRatingDto, modifiedFoundRatingDto);
-
-                    await iRatingService.DeleteRatingById(ratingIdFound);
-
-                }
-
-                [Fact]
-                public async Task IRatingService_DeleteRatingById_ShouldDelete_1Rating()
-                {
-                    /// Arrange
-                    Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
-                    var config = new MapperConfiguration(cfg =>
-                    {
-                        cfg.AddProfile<DtoProfile>();
-                    }, loggerFactory);
-                    IMapper mapper = config.CreateMapper();
-
-                    var context = GetInMemoryDbContext();
-                    var ratingrepository = new RatingRepository(context);
-                    IRatingService iRatingService = new RatingService(ratingrepository, mapper);
-
-                    RatingDto ratingDto = new RatingDto
-                    {
-                        Id = 0,
-                        MoodysRating = "AAA",
-                        FitchRating = "AAA",
-                        SandPRating = "AAA",
-                        OrderNumber = "10",
-                    };
-
-                    Task createRating = iRatingService.CreateRatingWithRatingDto(ratingDto);
-                    //int id = await ratingrepository.GetMaxRatingId();
-                    int productIdFound = iRatingService.GetAllRatingsDto().Result.Select(r => r.Id).Last();
-
-                    Xunit.Assert.True(createRating.IsCompletedSuccessfully);
-                    ///Act
-                    Task deleteRating = iRatingService.DeleteRatingById(productIdFound);
-                    ///Assert
-                    Xunit.Assert.True(iRatingService.GetRatingDtoById(productIdFound).Result.FirstOrDefault() == null);
-                    Xunit.Assert.True(deleteRating.IsCompletedSuccessfully);
-
-                }
-
-                [Fact]
-                public async Task IRatingService_GetRatingDtoById_ShouldGet_1RatingById()
-                {
-                    /// Arrange
-                    Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
-                    var config = new MapperConfiguration(cfg =>
-                    {
-                        cfg.AddProfile<DtoProfile>();
-                    }, loggerFactory);
-                    IMapper mapper = config.CreateMapper();
-
-                    var context = GetInMemoryDbContext();
-                    var ratingrepository = new RatingRepository(context);
-                    IRatingService iRatingService = new RatingService(ratingrepository, mapper);
-
-                    RatingDto ratingDto = new RatingDto
-                    {
-                        Id = 0,
-                        MoodysRating = "AAA",
-                        FitchRating = "AAA",
-                        SandPRating = "AAA",
-                        OrderNumber = "10",
-                    };
-
-
-                    Task createRating = iRatingService.CreateRatingWithRatingDto(ratingDto);
-                    //int id = await ratingrepository.GetMaxRatingId();
-                    int ratingIdFound = iRatingService.GetAllRatingsDto().Result.Select(r => r.Id).Last();
-                    RatingDto FoundRatingDto = iRatingService.GetRatingDtoById(ratingIdFound).Result.FirstOrDefault();
-
-                    ///Act
-                    ratingDto.Id = ratingIdFound;
-                    Task getRatingById = ratingrepository.GetRatingById(ratingIdFound);
-
-                    ///Assert
-                    Xunit.Assert.Equivalent(ratingDto, FoundRatingDto);
-                    Xunit.Assert.True(createRating.IsCompletedSuccessfully);
-                    Xunit.Assert.True(getRatingById.IsCompletedSuccessfully);
-
-                    await iRatingService.DeleteRatingById(ratingIdFound);
-                }
-
-                [Fact]
-                public async Task IRatingService_GetAllRatings_ShouldGet_2Ratings()
-                {
-                    /// Arrange
-                    Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
-                    var config = new MapperConfiguration(cfg =>
-                    {
-                        cfg.AddProfile<DtoProfile>();
-                    }, loggerFactory);
-                    IMapper mapper = config.CreateMapper();
-
-                    var context = GetInMemoryDbContext();
-                    var ratingrepository = new RatingRepository(context);
-                    IRatingService iRatingService = new RatingService(ratingrepository, mapper);
-
-                    RatingDto ratingDto1 = new RatingDto
-                    {
-                        Id = 0,
-                        MoodysRating = "AAA",
-                        FitchRating = "AAA",
-                        SandPRating = "AAA",
-                        OrderNumber = "10",
-                    };
-
-
-                    RatingDto ratingDto2 = new RatingDto
-                    {
-                        Id = 0,
-                        MoodysRating = "AAA",
-                        FitchRating = "AAA",
-                        SandPRating = "AAA",
-                        OrderNumber = "10",
-                    };
-
-
-
-                    Task createRating1 = iRatingService.CreateRatingWithRatingDto(ratingDto1);
-                    Task createRating2 = iRatingService.CreateRatingWithRatingDto(ratingDto2);
-                    //int id = await ratingrepository.GetMaxRatingId();
-                    List<int> ratingFoundids = iRatingService.GetAllRatingsDto().Result.Select(r => r.Id).ToList();
-
-
-                    ///Act
-
-                    var getAllRatings = iRatingService.GetAllRatingsDto().Result.Where(r => r.Id > 0);
-
-                    ///Assert
-                    Xunit.Assert.True(createRating1.IsCompletedSuccessfully);
-                    Xunit.Assert.True(createRating2.IsCompletedSuccessfully);
-                    Xunit.Assert.True(getAllRatings.Count() == 2);
-                    Xunit.Assert.True(getAllRatings.ElementAt(0).Id == ratingFoundids[0]);
-                    Xunit.Assert.True(getAllRatings.ElementAt(1).Id == ratingFoundids[1]);
-
-                    await iRatingService.DeleteRatingById(ratingFoundids[0]);
-                    await iRatingService.DeleteRatingById(ratingFoundids[1]);
-
-
-                }
-
+                ActionExecutionDelegate next = () => Task.FromResult<ActionExecutedContext>(
+                    new ActionExecutedContext(actionContext, new List<IFilterMetadata>(), controller: null)
+                );
+                var filter = new AsyncActionFilter();
+                await filter.OnActionExecutionAsync(actionExecutingContext, next);
+                var error0 = modelState.ElementAt(0);
+                var error1 = modelState.ElementAt(1);
+                var error2 = modelState.ElementAt(2);
+                var error3 = modelState.ElementAt(3);
+                var error4 = modelState.ElementAt(4);
+                int test = modelState.ErrorCount;
+                //Assert
+                Xunit.Assert.Equal("The Term is not greater than 0 and smaller than 1.79 E+308.", error0.Value.Errors[0].ErrorMessage);
+                Xunit.Assert.Equal("The Term is not a double.", error0.Value.Errors[1].ErrorMessage);
+                Xunit.Assert.Equal("The CurveId is not a byte as its value not equal or greater than 0 and smaller or equal to 256.", error1.Value.Errors[0].ErrorMessage);
+                Xunit.Assert.Equal("The CurveId is not a byte.", error1.Value.Errors[1].ErrorMessage);
+                Xunit.Assert.Equal("The AsOfDate does not suit the DateTime format.", error2.Value.Errors[0].ErrorMessage);
+                Xunit.Assert.Equal("The CreationDate does not suit the DateTime format.", error3.Value.Errors[0].ErrorMessage);
+                Xunit.Assert.Equal("The CurvePointValue is not greater than 0 and smaller than 1.79 E+308.", error4.Value.Errors[0].ErrorMessage);
+                Xunit.Assert.Equal("The CurvePointValue is not a double.", error4.Value.Errors[1].ErrorMessage);
+                Xunit.Assert.True(modelState.ErrorCount == 8);
             }
+        }
 
-            public class RuleNameUnitTests
+        public class RatingUnitTests
+        {
+            private P7Referential GetInMemoryDbContext()
             {
-                private P7Referential GetInMemoryDbContext()
-                {
-                    var options = new DbContextOptionsBuilder<P7Referential>()
-                        .UseInMemoryDatabase(databaseName: "TestDatabase4")
-                        .Options;
-                    return new P7Referential(options);
-                }
-
-
-
-                [Fact]
-                public async Task IRuleNameService_CreateRuleNameWithRuleNameDto_ShouldAdd_1RuleName()
-                {
-                    /// Arrange
-                    Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
-                    var config = new MapperConfiguration(cfg =>
-                    {
-                        cfg.AddProfile<DtoProfile>();
-                    }, loggerFactory);
-                    IMapper mapper = config.CreateMapper();
-
-                    var context = GetInMemoryDbContext();
-                    var ruleNamerepository = new RuleNameRepository(context);
-                    IRuleNameService iRuleNameService = new RuleNameService(ruleNamerepository, mapper);
-                    CustomValidationAttribute customValidationAttribute = new CustomValidationAttribute();
-
-                    RuleNameDto ruleNameDto = new RuleNameDto
-                    {
-                        Id = 0,
-                        Name = "test",
-                        Description = "testdescription",
-                        Json = "Json",
-                        Template = "Template",
-                        SqlStr = "testsqlstringfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
-                        SqlPart = "testsqlpartfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
-                    };
-
-                    ///Act
-                    //bool result = customValidationAttribute.IsValid(ruleNameDto);
-                    Task createRuleName = iRuleNameService.CreateRuleNameWithRuleNameDto(ruleNameDto);
-                    int ruleNameIdFound = iRuleNameService.GetAllRuleNamesDto().Result.Select(r => r.Id).Last();
-                    RuleNameDto foundRuleNameDto = iRuleNameService.GetRuleNameDtoById(ruleNameIdFound).Result.FirstOrDefault();
-                    ruleNameDto.Id = ruleNameIdFound;
-
-                    ///Assert
-                    //Xunit.Assert.True(result);
-                    Xunit.Assert.True(createRuleName.IsCompletedSuccessfully);
-                    Xunit.Assert.Equivalent(ruleNameDto, foundRuleNameDto);
-
-                    await iRuleNameService.DeleteRuleNameById(ruleNameIdFound);
-
-                }
-
-                [Fact]
-                public async Task IRuleNameService_UpdateRuleNameWithRuleNameDto_Modify_1RuleName()
-                {
-                    /// Arrange
-                    Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
-                    var config = new MapperConfiguration(cfg =>
-                    {
-                        cfg.AddProfile<DtoProfile>();
-                    }, loggerFactory);
-                    IMapper mapper = config.CreateMapper();
-
-                    var context = GetInMemoryDbContext();
-                    var ruleNamerepository = new RuleNameRepository(context);
-                    IRuleNameService iRuleNameService = new RuleNameService(ruleNamerepository, mapper);
-
-                    RuleNameDto ruleNameDto = new RuleNameDto
-                    {
-                        Id = 0,
-                        Name = "test",
-                        Description = "testdescription",
-                        Json = "Json",
-                        Template = "Template",
-                        SqlStr = "testsqlstringfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
-                        SqlPart = "testsqlpartfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
-                    };
-
-
-                    Task createRuleName = iRuleNameService.CreateRuleNameWithRuleNameDto(ruleNameDto);
-                    int ruleNameIdFound = iRuleNameService.GetAllRuleNamesDto().Result.Select(r => r.Id).Last();
-
-                    RuleNameDto modifiedRuleNameDto = new RuleNameDto
-                    {
-                        Id = ruleNameIdFound,
-                        Name = "test2mod",
-                        Description = "testdescription",
-                        Json = "Json",
-                        Template = "Template",
-                        SqlStr = "testsqlstringfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
-                        SqlPart = "testsqlpartfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
-                    };
-
-
-                    ///Act
-                    await iRuleNameService.UpdateRuleNameWithRuleNameDto(modifiedRuleNameDto);
-                    RuleNameDto modifiedFoundRuleNameDto = iRuleNameService.GetRuleNameDtoById(ruleNameIdFound).Result.FirstOrDefault();
-                    ruleNameDto.Id = ruleNameIdFound;
-
-                    ///Assert
-                    Xunit.Assert.Equivalent(modifiedRuleNameDto, modifiedFoundRuleNameDto);
-
-                    await iRuleNameService.DeleteRuleNameById(ruleNameIdFound);
-
-                }
-
-                [Fact]
-                public async Task IRuleNameService_DeleteRuleNameById_ShouldDelete_1RuleName()
-                {
-                    /// Arrange
-                    Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
-                    var config = new MapperConfiguration(cfg =>
-                    {
-                        cfg.AddProfile<DtoProfile>();
-                    }, loggerFactory);
-                    IMapper mapper = config.CreateMapper();
-
-                    var context = GetInMemoryDbContext();
-                    var ruleNamerepository = new RuleNameRepository(context);
-                    IRuleNameService iRuleNameService = new RuleNameService(ruleNamerepository, mapper);
-
-                    RuleNameDto ruleNameDto = new RuleNameDto
-                    {
-                        Id = 0,
-                        Name = "test",
-                        Description = "testdescription",
-                        Json = "Json",
-                        Template = "Template",
-                        SqlStr = "testsqlstringfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
-                        SqlPart = "testsqlpartfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
-                    };
-
-                    Task createRuleName = iRuleNameService.CreateRuleNameWithRuleNameDto(ruleNameDto);
-                    //int id = await ruleNamerepository.GetMaxRuleNameId();
-                    int productIdFound = iRuleNameService.GetAllRuleNamesDto().Result.Select(r => r.Id).Last();
-
-                    Xunit.Assert.True(createRuleName.IsCompletedSuccessfully);
-                    ///Act
-                    Task deleteRuleName = iRuleNameService.DeleteRuleNameById(productIdFound);
-                    ///Assert
-                    Xunit.Assert.True(iRuleNameService.GetRuleNameDtoById(productIdFound).Result.FirstOrDefault() == null);
-                    Xunit.Assert.True(deleteRuleName.IsCompletedSuccessfully);
-
-                }
-
-                [Fact]
-                public async Task IRuleNameService_GetRuleNameDtoById_ShouldGet_1RuleNameById()
-                {
-                    /// Arrange
-                    Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
-                    var config = new MapperConfiguration(cfg =>
-                    {
-                        cfg.AddProfile<DtoProfile>();
-                    }, loggerFactory);
-                    IMapper mapper = config.CreateMapper();
-
-                    var context = GetInMemoryDbContext();
-                    var ruleNamerepository = new RuleNameRepository(context);
-                    IRuleNameService iRuleNameService = new RuleNameService(ruleNamerepository, mapper);
-
-                    RuleNameDto ruleNameDto = new RuleNameDto
-                    {
-                        Id = 0,
-                        Name = "test",
-                        Description = "testdescription",
-                        Json = "Json",
-                        Template = "Template",
-                        SqlStr = "testsqlstringfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
-                        SqlPart = "testsqlpartfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
-                    };
-
-
-                    Task createRuleName = iRuleNameService.CreateRuleNameWithRuleNameDto(ruleNameDto);
-                    //int id = await ruleNamerepository.GetMaxRuleNameId();
-                    int ruleNameIdFound = iRuleNameService.GetAllRuleNamesDto().Result.Select(r => r.Id).Last();
-                    RuleNameDto FoundRuleNameDto = iRuleNameService.GetRuleNameDtoById(ruleNameIdFound).Result.FirstOrDefault();
-
-                    ///Act
-                    ruleNameDto.Id = ruleNameIdFound;
-                    Task getRuleNameById = ruleNamerepository.GetRuleNameById(ruleNameIdFound);
-
-                    ///Assert
-                    Xunit.Assert.Equivalent(ruleNameDto, FoundRuleNameDto);
-                    Xunit.Assert.True(createRuleName.IsCompletedSuccessfully);
-                    Xunit.Assert.True(getRuleNameById.IsCompletedSuccessfully);
-
-                    await iRuleNameService.DeleteRuleNameById(ruleNameIdFound);
-                }
-
-                [Fact]
-                public async Task IRuleNameService_GetAllRuleNames_ShouldGet_2RuleNames()
-                {
-                    /// Arrange
-                    Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
-                    var config = new MapperConfiguration(cfg =>
-                    {
-                        cfg.AddProfile<DtoProfile>();
-                    }, loggerFactory);
-                    IMapper mapper = config.CreateMapper();
-
-                    var context = GetInMemoryDbContext();
-                    var ruleNamerepository = new RuleNameRepository(context);
-                    IRuleNameService iRuleNameService = new RuleNameService(ruleNamerepository, mapper);
-
-                    RuleNameDto ruleNameDto1 = new RuleNameDto
-                    {
-                        Id = 0,
-                        Name = "test1",
-                        Description = "testdescription",
-                        Json = "Json",
-                        Template = "Template",
-                        SqlStr = "testsqlstringfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
-                        SqlPart = "testsqlpartfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
-                    };
-
-
-                    RuleNameDto ruleNameDto2 = new RuleNameDto
-                    {
-                        Id = 0,
-                        Name = "test2",
-                        Description = "testdescription",
-                        Json = "Json",
-                        Template = "Template",
-                        SqlStr = "testsqlstringfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
-                        SqlPart = "testsqlpartfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
-                    };
-
-
-
-                    Task createRuleName1 = iRuleNameService.CreateRuleNameWithRuleNameDto(ruleNameDto1);
-                    Task createRuleName2 = iRuleNameService.CreateRuleNameWithRuleNameDto(ruleNameDto2);
-                    //int id = await ruleNamerepository.GetMaxRuleNameId();
-                    List<int> ruleNameFoundids = iRuleNameService.GetAllRuleNamesDto().Result.Select(r => r.Id).ToList();
-
-
-                    ///Act
-
-                    var getAllRuleNames = iRuleNameService.GetAllRuleNamesDto().Result.Where(r => r.Id > 0);
-
-                    ///Assert
-                    Xunit.Assert.True(createRuleName1.IsCompletedSuccessfully);
-                    Xunit.Assert.True(createRuleName2.IsCompletedSuccessfully);
-                    Xunit.Assert.True(getAllRuleNames.Count() == 2);
-                    Xunit.Assert.True(getAllRuleNames.ElementAt(0).Id == ruleNameFoundids[0]);
-                    Xunit.Assert.True(getAllRuleNames.ElementAt(1).Id == ruleNameFoundids[1]);
-
-                    await iRuleNameService.DeleteRuleNameById(ruleNameFoundids[0]);
-                    await iRuleNameService.DeleteRuleNameById(ruleNameFoundids[1]);
-
-
-                }
-
+                var options = new DbContextOptionsBuilder<P7Referential>()
+                    .UseInMemoryDatabase(databaseName: "TestDatabase3")
+                    .Options;
+                return new P7Referential(options);
             }
 
 
-            public class TradeUnitTests
+
+            [Fact]
+            public async Task IRatingService_CreateRatingWithRatingDto_ShouldAdd_1Rating()
             {
-                private P7Referential GetInMemoryDbContext()
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
                 {
-                    var options = new DbContextOptionsBuilder<P7Referential>()
-                        .UseInMemoryDatabase(databaseName: "TestDatabase5")
-                        .Options;
-                    return new P7Referential(options);
-                }
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
 
+                var context = GetInMemoryDbContext();
+                var ratingrepository = new RatingRepository(context);
+                IRatingService iRatingService = new RatingService(ratingrepository, mapper);
+                CustomValidationAttribute customValidationAttribute = new CustomValidationAttribute();
 
-
-                [Fact]
-                public async Task ITradeService_CreateTradeWithTradeDto_ShouldAdd_1Trade()
+                RatingDto ratingDto = new RatingDto
                 {
-                    /// Arrange
-                    Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
-                    var config = new MapperConfiguration(cfg =>
-                    {
-                        cfg.AddProfile<DtoProfile>();
-                    }, loggerFactory);
-                    IMapper mapper = config.CreateMapper();
+                    Id = 0,
+                    MoodysRating = "AAA",
+                    FitchRating = "AAA",
+                    SandPRating = "AAA",
+                    OrderNumber = "10",
+                };
 
-                    var context = GetInMemoryDbContext();
-                    var traderepository = new TradeRepository(context);
-                    ITradeService iTradeService = new TradeService(traderepository, mapper);
-                    CustomValidationAttribute customValidationAttribute = new CustomValidationAttribute();
+                ///Act
+                //bool result = customValidationAttribute.IsValid(ratingDto);
+                Task createRating = iRatingService.CreateRatingWithRatingDto(ratingDto);
+                int ratingIdFound = iRatingService.GetAllRatingsDto().Result.Select(r => r.Id).Last();
+                RatingDto foundRatingDto = iRatingService.GetRatingDtoById(ratingIdFound).Result.FirstOrDefault();
+                ratingDto.Id = ratingIdFound;
 
-                    TradeDto tradeDto = new TradeDto
-                    {
-                        TradeId = 0,
-                        Account = "string",
-                        AccountType = "string",
-                        BuyQuantity = "1",
-                        SellQuantity = "1",
-                        BuyPrice = "1",
-                        SellPrice = "1",
-                        TradeDate = "12/09/2026 09:53:52",
-                        TradeSecurity = "string",
-                        TradeStatus = "string",
-                        Trader = "string",
-                        Benchmark = "string",
-                        Book = "string",
-                        CreationName = "string",
-                        CreationDate = "12/09/2026 09:53:52",
-                        RevisionName = "string",
-                        RevisionDate = "12/09/2026 09:53:52",
-                        DealName = "string"
-                    };
+                ///Assert
+                //Xunit.Assert.True(result);
+                Xunit.Assert.True(createRating.IsCompletedSuccessfully);
+                Xunit.Assert.Equivalent(ratingDto, foundRatingDto);
 
-                    ///Act
-                    //bool result = customValidationAttribute.IsValid(tradeDto);
-                    Task createTrade = iTradeService.CreateTradeWithTradeDto(tradeDto);
-                    int tradeIdFound = iTradeService.GetAllTradesDto().Result.Select(t => t.TradeId).Last();
-                    TradeDto foundTradeDto = iTradeService.GetTradeDtoById(tradeIdFound).Result.FirstOrDefault();
-                    tradeDto.TradeId = tradeIdFound;
-
-                    ///Assert
-                    //Xunit.Assert.True(result);
-                    Xunit.Assert.True(createTrade.IsCompletedSuccessfully);
-                    Xunit.Assert.Equivalent(tradeDto, foundTradeDto);
-
-                    await iTradeService.DeleteTradeById(tradeIdFound);
-
-                }
-
-                [Fact]
-                public async Task ITradeService_UpdateTradeWithTradeDto_Modify_1Trade()
-                {
-                    /// Arrange
-                    Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
-                    var config = new MapperConfiguration(cfg =>
-                    {
-                        cfg.AddProfile<DtoProfile>();
-                    }, loggerFactory);
-                    IMapper mapper = config.CreateMapper();
-
-                    var context = GetInMemoryDbContext();
-                    var traderepository = new TradeRepository(context);
-                    ITradeService iTradeService = new TradeService(traderepository, mapper);
-
-                    TradeDto tradeDto = new TradeDto
-                    {
-                        TradeId = 0,
-                        Account = "string",
-                        AccountType = "string",
-                        BuyQuantity = "1",
-                        SellQuantity = "1",
-                        BuyPrice = "1",
-                        SellPrice = "1",
-                        TradeDate = "12/09/2026 09:53:52",
-                        TradeSecurity = "string",
-                        TradeStatus = "string",
-                        Trader = "string",
-                        Benchmark = "string",
-                        Book = "string",
-                        CreationName = "string",
-                        CreationDate = "12/09/2026 09:53:52",
-                        RevisionName = "string",
-                        RevisionDate = "12/09/2026 09:53:52",
-                        DealName = "string"
-                    };
-
-
-                    Task createTrade = iTradeService.CreateTradeWithTradeDto(tradeDto);
-                    int tradeIdFound = iTradeService.GetAllTradesDto().Result.Select(t => t.TradeId).Last();
-
-                    TradeDto modifiedTradeDto = new TradeDto
-                    {
-                        TradeId = tradeIdFound,
-                        Account = "stringmodified",
-                        AccountType = "string",
-                        BuyQuantity = "1",
-                        SellQuantity = "1",
-                        BuyPrice = "1",
-                        SellPrice = "1",
-                        TradeDate = "12/09/2026 09:53:52",
-                        TradeSecurity = "string",
-                        TradeStatus = "string",
-                        Trader = "string",
-                        Benchmark = "string",
-                        Book = "string",
-                        CreationName = "string",
-                        CreationDate = "12/09/2026 09:53:52",
-                        RevisionName = "string",
-                        RevisionDate = "12/09/2026 09:53:52",
-                        DealName = "string"
-                    };
-
-
-                    ///Act
-                    await iTradeService.UpdateTradeWithTradeDto(modifiedTradeDto);
-                    TradeDto modifiedFoundTradeDto = iTradeService.GetTradeDtoById(tradeIdFound).Result.FirstOrDefault();
-                    tradeDto.TradeId = tradeIdFound;
-
-                    ///Assert
-                    Xunit.Assert.Equivalent(modifiedTradeDto, modifiedFoundTradeDto);
-
-                    await iTradeService.DeleteTradeById(tradeIdFound);
-
-                }
-
-                [Fact]
-                public async Task ITradeService_DeleteTradeById_ShouldDelete_1Trade()
-                {
-                    /// Arrange
-                    Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
-                    var config = new MapperConfiguration(cfg =>
-                    {
-                        cfg.AddProfile<DtoProfile>();
-                    }, loggerFactory);
-                    IMapper mapper = config.CreateMapper();
-
-                    var context = GetInMemoryDbContext();
-                    var traderepository = new TradeRepository(context);
-                    ITradeService iTradeService = new TradeService(traderepository, mapper);
-
-                    TradeDto tradeDto = new TradeDto
-                    {
-                        TradeId = 0,
-                        Account = "string",
-                        AccountType = "string",
-                        BuyQuantity = "1",
-                        SellQuantity = "1",
-                        BuyPrice = "1",
-                        SellPrice = "1",
-                        TradeDate = "12/09/2026 09:53:52",
-                        TradeSecurity = "string",
-                        TradeStatus = "string",
-                        Trader = "string",
-                        Benchmark = "string",
-                        Book = "string",
-                        CreationName = "string",
-                        CreationDate = "12/09/2026 09:53:52",
-                        RevisionName = "string",
-                        RevisionDate = "12/09/2026 09:53:52",
-                        DealName = "string"
-                    };
-
-                    Task createTrade = iTradeService.CreateTradeWithTradeDto(tradeDto);
-                    //int id = await traderepository.GetMaxTradeId();
-                    int productIdFound = iTradeService.GetAllTradesDto().Result.Select(t => t.TradeId).Last();
-
-                    Xunit.Assert.True(createTrade.IsCompletedSuccessfully);
-                    ///Act
-                    Task deleteTrade = iTradeService.DeleteTradeById(productIdFound);
-                    ///Assert
-                    Xunit.Assert.True(iTradeService.GetTradeDtoById(productIdFound).Result.FirstOrDefault() == null);
-                    Xunit.Assert.True(deleteTrade.IsCompletedSuccessfully);
-
-                }
-
-                [Fact]
-                public async Task ITradeService_GetTradeDtoById_ShouldGet_1TradeById()
-                {
-                    /// Arrange
-                    Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
-                    var config = new MapperConfiguration(cfg =>
-                    {
-                        cfg.AddProfile<DtoProfile>();
-                    }, loggerFactory);
-                    IMapper mapper = config.CreateMapper();
-
-                    var context = GetInMemoryDbContext();
-                    var traderepository = new TradeRepository(context);
-                    ITradeService iTradeService = new TradeService(traderepository, mapper);
-
-                    TradeDto tradeDto = new TradeDto
-                    {
-                        TradeId = 0,
-                        Account = "string",
-                        AccountType = "string",
-                        BuyQuantity = "1",
-                        SellQuantity = "1",
-                        BuyPrice = "1",
-                        SellPrice = "1",
-                        TradeDate = "12/09/2026 09:53:52",
-                        TradeSecurity = "string",
-                        TradeStatus = "string",
-                        Trader = "string",
-                        Benchmark = "string",
-                        Book = "string",
-                        CreationName = "string",
-                        CreationDate = "12/09/2026 09:53:52",
-                        RevisionName = "string",
-                        RevisionDate = "12/09/2026 09:53:52",
-                        DealName = "string"
-                    };
-
-
-                    Task createTrade = iTradeService.CreateTradeWithTradeDto(tradeDto);
-                    //int id = await traderepository.GetMaxTradeId();
-                    int tradeIdFound = iTradeService.GetAllTradesDto().Result.Select(t => t.TradeId).Last();
-                    TradeDto FoundTradeDto = iTradeService.GetTradeDtoById(tradeIdFound).Result.FirstOrDefault();
-
-                    ///Act
-                    tradeDto.TradeId = tradeIdFound;
-                    Task getTradeById = traderepository.GetTradeById(tradeIdFound);
-
-                    ///Assert
-                    Xunit.Assert.Equivalent(tradeDto, FoundTradeDto);
-                    Xunit.Assert.True(createTrade.IsCompletedSuccessfully);
-                    Xunit.Assert.True(getTradeById.IsCompletedSuccessfully);
-
-                    await iTradeService.DeleteTradeById(tradeIdFound);
-                }
-
-                [Fact]
-                public async Task ITradeService_GetAllTrades_ShouldGet_2Trades()
-                {
-                    /// Arrange
-                    Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
-                    var config = new MapperConfiguration(cfg =>
-                    {
-                        cfg.AddProfile<DtoProfile>();
-                    }, loggerFactory);
-                    IMapper mapper = config.CreateMapper();
-
-                    var context = GetInMemoryDbContext();
-                    var traderepository = new TradeRepository(context);
-                    ITradeService iTradeService = new TradeService(traderepository, mapper);
-
-                    TradeDto tradeDto1 = new TradeDto
-                    {
-                        TradeId = 0,
-                        Account = "string",
-                        AccountType = "string",
-                        BuyQuantity = "1",
-                        SellQuantity = "1",
-                        BuyPrice = "1",
-                        SellPrice = "1",
-                        TradeDate = "12/09/2026 09:53:52",
-                        TradeSecurity = "string",
-                        TradeStatus = "string",
-                        Trader = "string",
-                        Benchmark = "string",
-                        Book = "string",
-                        CreationName = "string",
-                        CreationDate = "12/09/2026 09:53:52",
-                        RevisionName = "string",
-                        RevisionDate = "12/09/2026 09:53:52",
-                        DealName = "string"
-                    };
-
-
-                    TradeDto tradeDto2 = new TradeDto
-                    {
-                        TradeId = 0,
-                        Account = "string2test",
-                        AccountType = "string",
-                        BuyQuantity = "1",
-                        SellQuantity = "1",
-                        BuyPrice = "1",
-                        SellPrice = "1",
-                        TradeDate = "12/09/2026 09:53:52",
-                        TradeSecurity = "string",
-                        TradeStatus = "string",
-                        Trader = "string",
-                        Benchmark = "string",
-                        Book = "string",
-                        CreationName = "string",
-                        CreationDate = "12/09/2026 09:53:52",
-                        RevisionName = "string",
-                        RevisionDate = "12/09/2026 09:53:52",
-                        DealName = "string"
-                    };
-
-
-
-                    Task createTrade1 = iTradeService.CreateTradeWithTradeDto(tradeDto1);
-                    Task createTrade2 = iTradeService.CreateTradeWithTradeDto(tradeDto2);
-                    //int id = await traderepository.GetMaxTradeId();
-                    List<int> tradeFoundids = iTradeService.GetAllTradesDto().Result.Select(t => t.TradeId).ToList();
-
-
-                    ///Act
-
-                    var getAllTrades = iTradeService.GetAllTradesDto().Result.Where(t => t.TradeId > 0);
-
-                    ///Assert
-                    Xunit.Assert.True(createTrade1.IsCompletedSuccessfully);
-                    Xunit.Assert.True(createTrade2.IsCompletedSuccessfully);
-                    Xunit.Assert.True(getAllTrades.Count() == 2);
-                    Xunit.Assert.True(getAllTrades.ElementAt(0).TradeId == tradeFoundids[0]);
-                    Xunit.Assert.True(getAllTrades.ElementAt(1).TradeId == tradeFoundids[1]);
-
-                    await iTradeService.DeleteTradeById(tradeFoundids[0]);
-                    await iTradeService.DeleteTradeById(tradeFoundids[1]);
-
-
-                }
+                await iRatingService.DeleteRatingById(ratingIdFound);
 
             }
+
+            [Fact]
+            public async Task IRatingService_UpdateRatingWithRatingDto_Modify_1Rating()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var ratingrepository = new RatingRepository(context);
+                IRatingService iRatingService = new RatingService(ratingrepository, mapper);
+
+                RatingDto ratingDto = new RatingDto
+                {
+                    Id = 0,
+                    MoodysRating = "AAA",
+                    FitchRating = "AAA",
+                    SandPRating = "AAA",
+                    OrderNumber = "10",
+                };
+
+
+                Task createRating = iRatingService.CreateRatingWithRatingDto(ratingDto);
+                int ratingIdFound = iRatingService.GetAllRatingsDto().Result.Select(r => r.Id).Last();
+
+                RatingDto modifiedRatingDto = new RatingDto
+                {
+                    Id = ratingIdFound,
+                    MoodysRating = "AAA",
+                    FitchRating = "AAA",
+                    SandPRating = "AAA",
+                    OrderNumber = "10",
+                };
+
+
+                ///Act
+                await iRatingService.UpdateRatingWithRatingDto(modifiedRatingDto);
+                RatingDto modifiedFoundRatingDto = iRatingService.GetRatingDtoById(ratingIdFound).Result.FirstOrDefault();
+                ratingDto.Id = ratingIdFound;
+
+                ///Assert
+                Xunit.Assert.Equivalent(modifiedRatingDto, modifiedFoundRatingDto);
+
+                await iRatingService.DeleteRatingById(ratingIdFound);
+
+            }
+
+            [Fact]
+            public async Task IRatingService_DeleteRatingById_ShouldDelete_1Rating()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var ratingrepository = new RatingRepository(context);
+                IRatingService iRatingService = new RatingService(ratingrepository, mapper);
+
+                RatingDto ratingDto = new RatingDto
+                {
+                    Id = 0,
+                    MoodysRating = "AAA",
+                    FitchRating = "AAA",
+                    SandPRating = "AAA",
+                    OrderNumber = "10",
+                };
+
+                Task createRating = iRatingService.CreateRatingWithRatingDto(ratingDto);
+                //int id = await ratingrepository.GetMaxRatingId();
+                int productIdFound = iRatingService.GetAllRatingsDto().Result.Select(r => r.Id).Last();
+
+                Xunit.Assert.True(createRating.IsCompletedSuccessfully);
+                ///Act
+                Task deleteRating = iRatingService.DeleteRatingById(productIdFound);
+                ///Assert
+                Xunit.Assert.True(iRatingService.GetRatingDtoById(productIdFound).Result.FirstOrDefault() == null);
+                Xunit.Assert.True(deleteRating.IsCompletedSuccessfully);
+
+            }
+
+            [Fact]
+            public async Task IRatingService_GetRatingDtoById_ShouldGet_1RatingById()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var ratingrepository = new RatingRepository(context);
+                IRatingService iRatingService = new RatingService(ratingrepository, mapper);
+
+                RatingDto ratingDto = new RatingDto
+                {
+                    Id = 0,
+                    MoodysRating = "AAA",
+                    FitchRating = "AAA",
+                    SandPRating = "AAA",
+                    OrderNumber = "10",
+                };
+
+
+                Task createRating = iRatingService.CreateRatingWithRatingDto(ratingDto);
+                //int id = await ratingrepository.GetMaxRatingId();
+                int ratingIdFound = iRatingService.GetAllRatingsDto().Result.Select(r => r.Id).Last();
+                RatingDto FoundRatingDto = iRatingService.GetRatingDtoById(ratingIdFound).Result.FirstOrDefault();
+
+                ///Act
+                ratingDto.Id = ratingIdFound;
+                Task getRatingById = ratingrepository.GetRatingById(ratingIdFound);
+
+                ///Assert
+                Xunit.Assert.Equivalent(ratingDto, FoundRatingDto);
+                Xunit.Assert.True(createRating.IsCompletedSuccessfully);
+                Xunit.Assert.True(getRatingById.IsCompletedSuccessfully);
+
+                await iRatingService.DeleteRatingById(ratingIdFound);
+            }
+
+            [Fact]
+            public async Task IRatingService_GetAllRatings_ShouldGet_2Ratings()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var ratingrepository = new RatingRepository(context);
+                IRatingService iRatingService = new RatingService(ratingrepository, mapper);
+
+                RatingDto ratingDto1 = new RatingDto
+                {
+                    Id = 0,
+                    MoodysRating = "AAA",
+                    FitchRating = "AAA",
+                    SandPRating = "AAA",
+                    OrderNumber = "10",
+                };
+
+
+                RatingDto ratingDto2 = new RatingDto
+                {
+                    Id = 0,
+                    MoodysRating = "AAA",
+                    FitchRating = "AAA",
+                    SandPRating = "AAA",
+                    OrderNumber = "10",
+                };
+
+
+
+                Task createRating1 = iRatingService.CreateRatingWithRatingDto(ratingDto1);
+                Task createRating2 = iRatingService.CreateRatingWithRatingDto(ratingDto2);
+                //int id = await ratingrepository.GetMaxRatingId();
+                List<int> ratingFoundids = iRatingService.GetAllRatingsDto().Result.Select(r => r.Id).ToList();
+
+
+                ///Act
+
+                var getAllRatings = iRatingService.GetAllRatingsDto().Result.Where(r => r.Id > 0);
+
+                ///Assert
+                Xunit.Assert.True(createRating1.IsCompletedSuccessfully);
+                Xunit.Assert.True(createRating2.IsCompletedSuccessfully);
+                Xunit.Assert.True(getAllRatings.Count() == 2);
+                Xunit.Assert.True(getAllRatings.ElementAt(0).Id == ratingFoundids[0]);
+                Xunit.Assert.True(getAllRatings.ElementAt(1).Id == ratingFoundids[1]);
+
+                await iRatingService.DeleteRatingById(ratingFoundids[0]);
+                await iRatingService.DeleteRatingById(ratingFoundids[1]);
+
+
+            }
+
+            [Fact]
+            public async Task AsyncActionFilter_WithWrongRatingDto_ShouldReturn_8Errors()
+            {
+                RatingDto wrongRatingDto = new RatingDto
+                {
+                    Id = 0,
+                    MoodysRating = "AAA",
+                    FitchRating = "AAA",
+                    SandPRating = "AAA",
+                    OrderNumber = "jfg",
+                };
+
+
+                var validationResults = new List<ValidationResult>();
+                var validationContext = new ValidationContext(wrongRatingDto);
+                Validator.TryValidateObject(wrongRatingDto, validationContext, validationResults, validateAllProperties: true);
+
+
+                var modelState = new Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary();
+                foreach (var vr in validationResults)
+                {
+                    var key = vr.MemberNames.FirstOrDefault() ?? string.Empty;
+                    modelState.AddModelError(key, vr.ErrorMessage);
+                }
+
+                var httpContext = new DefaultHttpContext();
+                var routeData = new Microsoft.AspNetCore.Routing.RouteData();
+                routeData.Values["controller"] = "MyController";
+                routeData.Values["action"] = "Create";
+                var actionContext = new ActionContext(httpContext, routeData, new ActionDescriptor(), modelState);
+                var actionExecutingContext = new ActionExecutingContext(
+                    actionContext,
+                    new List<IFilterMetadata>(),
+                    new Dictionary<string, object>(),
+                    controller: null
+                );
+
+
+                ActionExecutionDelegate next = () => Task.FromResult<ActionExecutedContext>(
+                    new ActionExecutedContext(actionContext, new List<IFilterMetadata>(), controller: null)
+                );
+                var filter = new AsyncActionFilter();
+                await filter.OnActionExecutionAsync(actionExecutingContext, next);
+                var error0 = modelState.ElementAt(0);
+                int test = modelState.ErrorCount;
+                //Assert
+                Xunit.Assert.Equal("The OrderNumber is not a byte as its value not equal or greater than 0 and smaller or equal to 256.", error0.Value.Errors[0].ErrorMessage);
+                Xunit.Assert.Equal("The OrderNumber is not a byte.", error0.Value.Errors[1].ErrorMessage);
+                Xunit.Assert.True(modelState.ErrorCount == 2);
+            }
+        }
+
+        public class RuleNameUnitTests
+        {
+            private P7Referential GetInMemoryDbContext()
+            {
+                var options = new DbContextOptionsBuilder<P7Referential>()
+                    .UseInMemoryDatabase(databaseName: "TestDatabase4")
+                    .Options;
+                return new P7Referential(options);
+            }
+
+
+
+            [Fact]
+            public async Task IRuleNameService_CreateRuleNameWithRuleNameDto_ShouldAdd_1RuleName()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var ruleNamerepository = new RuleNameRepository(context);
+                IRuleNameService iRuleNameService = new RuleNameService(ruleNamerepository, mapper);
+                CustomValidationAttribute customValidationAttribute = new CustomValidationAttribute();
+
+                RuleNameDto ruleNameDto = new RuleNameDto
+                {
+                    Id = 0,
+                    Name = "test",
+                    Description = "testdescription",
+                    Json = "Json",
+                    Template = "Template",
+                    SqlStr = "testsqlstringfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
+                    SqlPart = "testsqlpartfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
+                };
+
+                ///Act
+                //bool result = customValidationAttribute.IsValid(ruleNameDto);
+                Task createRuleName = iRuleNameService.CreateRuleNameWithRuleNameDto(ruleNameDto);
+                int ruleNameIdFound = iRuleNameService.GetAllRuleNamesDto().Result.Select(r => r.Id).Last();
+                RuleNameDto foundRuleNameDto = iRuleNameService.GetRuleNameDtoById(ruleNameIdFound).Result.FirstOrDefault();
+                ruleNameDto.Id = ruleNameIdFound;
+
+                ///Assert
+                //Xunit.Assert.True(result);
+                Xunit.Assert.True(createRuleName.IsCompletedSuccessfully);
+                Xunit.Assert.Equivalent(ruleNameDto, foundRuleNameDto);
+
+                await iRuleNameService.DeleteRuleNameById(ruleNameIdFound);
+
+            }
+
+            [Fact]
+            public async Task IRuleNameService_UpdateRuleNameWithRuleNameDto_Modify_1RuleName()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var ruleNamerepository = new RuleNameRepository(context);
+                IRuleNameService iRuleNameService = new RuleNameService(ruleNamerepository, mapper);
+
+                RuleNameDto ruleNameDto = new RuleNameDto
+                {
+                    Id = 0,
+                    Name = "test",
+                    Description = "testdescription",
+                    Json = "Json",
+                    Template = "Template",
+                    SqlStr = "testsqlstringfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
+                    SqlPart = "testsqlpartfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
+                };
+
+
+                Task createRuleName = iRuleNameService.CreateRuleNameWithRuleNameDto(ruleNameDto);
+                int ruleNameIdFound = iRuleNameService.GetAllRuleNamesDto().Result.Select(r => r.Id).Last();
+
+                RuleNameDto modifiedRuleNameDto = new RuleNameDto
+                {
+                    Id = ruleNameIdFound,
+                    Name = "test2mod",
+                    Description = "testdescription",
+                    Json = "Json",
+                    Template = "Template",
+                    SqlStr = "testsqlstringfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
+                    SqlPart = "testsqlpartfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
+                };
+
+
+                ///Act
+                await iRuleNameService.UpdateRuleNameWithRuleNameDto(modifiedRuleNameDto);
+                RuleNameDto modifiedFoundRuleNameDto = iRuleNameService.GetRuleNameDtoById(ruleNameIdFound).Result.FirstOrDefault();
+                ruleNameDto.Id = ruleNameIdFound;
+
+                ///Assert
+                Xunit.Assert.Equivalent(modifiedRuleNameDto, modifiedFoundRuleNameDto);
+
+                await iRuleNameService.DeleteRuleNameById(ruleNameIdFound);
+
+            }
+
+            [Fact]
+            public async Task IRuleNameService_DeleteRuleNameById_ShouldDelete_1RuleName()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var ruleNamerepository = new RuleNameRepository(context);
+                IRuleNameService iRuleNameService = new RuleNameService(ruleNamerepository, mapper);
+
+                RuleNameDto ruleNameDto = new RuleNameDto
+                {
+                    Id = 0,
+                    Name = "test",
+                    Description = "testdescription",
+                    Json = "Json",
+                    Template = "Template",
+                    SqlStr = "testsqlstringfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
+                    SqlPart = "testsqlpartfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
+                };
+
+                Task createRuleName = iRuleNameService.CreateRuleNameWithRuleNameDto(ruleNameDto);
+                //int id = await ruleNamerepository.GetMaxRuleNameId();
+                int productIdFound = iRuleNameService.GetAllRuleNamesDto().Result.Select(r => r.Id).Last();
+
+                Xunit.Assert.True(createRuleName.IsCompletedSuccessfully);
+                ///Act
+                Task deleteRuleName = iRuleNameService.DeleteRuleNameById(productIdFound);
+                ///Assert
+                Xunit.Assert.True(iRuleNameService.GetRuleNameDtoById(productIdFound).Result.FirstOrDefault() == null);
+                Xunit.Assert.True(deleteRuleName.IsCompletedSuccessfully);
+
+            }
+
+            [Fact]
+            public async Task IRuleNameService_GetRuleNameDtoById_ShouldGet_1RuleNameById()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var ruleNamerepository = new RuleNameRepository(context);
+                IRuleNameService iRuleNameService = new RuleNameService(ruleNamerepository, mapper);
+
+                RuleNameDto ruleNameDto = new RuleNameDto
+                {
+                    Id = 0,
+                    Name = "test",
+                    Description = "testdescription",
+                    Json = "Json",
+                    Template = "Template",
+                    SqlStr = "testsqlstringfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
+                    SqlPart = "testsqlpartfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
+                };
+
+
+                Task createRuleName = iRuleNameService.CreateRuleNameWithRuleNameDto(ruleNameDto);
+                //int id = await ruleNamerepository.GetMaxRuleNameId();
+                int ruleNameIdFound = iRuleNameService.GetAllRuleNamesDto().Result.Select(r => r.Id).Last();
+                RuleNameDto FoundRuleNameDto = iRuleNameService.GetRuleNameDtoById(ruleNameIdFound).Result.FirstOrDefault();
+
+                ///Act
+                ruleNameDto.Id = ruleNameIdFound;
+                Task getRuleNameById = ruleNamerepository.GetRuleNameById(ruleNameIdFound);
+
+                ///Assert
+                Xunit.Assert.Equivalent(ruleNameDto, FoundRuleNameDto);
+                Xunit.Assert.True(createRuleName.IsCompletedSuccessfully);
+                Xunit.Assert.True(getRuleNameById.IsCompletedSuccessfully);
+
+                await iRuleNameService.DeleteRuleNameById(ruleNameIdFound);
+            }
+
+            [Fact]
+            public async Task IRuleNameService_GetAllRuleNames_ShouldGet_2RuleNames()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var ruleNamerepository = new RuleNameRepository(context);
+                IRuleNameService iRuleNameService = new RuleNameService(ruleNamerepository, mapper);
+
+                RuleNameDto ruleNameDto1 = new RuleNameDto
+                {
+                    Id = 0,
+                    Name = "test1",
+                    Description = "testdescription",
+                    Json = "Json",
+                    Template = "Template",
+                    SqlStr = "testsqlstringfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
+                    SqlPart = "testsqlpartfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
+                };
+
+
+                RuleNameDto ruleNameDto2 = new RuleNameDto
+                {
+                    Id = 0,
+                    Name = "test2",
+                    Description = "testdescription",
+                    Json = "Json",
+                    Template = "Template",
+                    SqlStr = "testsqlstringfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
+                    SqlPart = "testsqlpartfhhhhhhhhhhhhhhhhhhhhhhhhh/fffffffffffffff/ffffffffff",
+                };
+
+
+
+                Task createRuleName1 = iRuleNameService.CreateRuleNameWithRuleNameDto(ruleNameDto1);
+                Task createRuleName2 = iRuleNameService.CreateRuleNameWithRuleNameDto(ruleNameDto2);
+                //int id = await ruleNamerepository.GetMaxRuleNameId();
+                List<int> ruleNameFoundids = iRuleNameService.GetAllRuleNamesDto().Result.Select(r => r.Id).ToList();
+
+
+                ///Act
+
+                var getAllRuleNames = iRuleNameService.GetAllRuleNamesDto().Result.Where(r => r.Id > 0);
+
+                ///Assert
+                Xunit.Assert.True(createRuleName1.IsCompletedSuccessfully);
+                Xunit.Assert.True(createRuleName2.IsCompletedSuccessfully);
+                Xunit.Assert.True(getAllRuleNames.Count() == 2);
+                Xunit.Assert.True(getAllRuleNames.ElementAt(0).Id == ruleNameFoundids[0]);
+                Xunit.Assert.True(getAllRuleNames.ElementAt(1).Id == ruleNameFoundids[1]);
+
+                await iRuleNameService.DeleteRuleNameById(ruleNameFoundids[0]);
+                await iRuleNameService.DeleteRuleNameById(ruleNameFoundids[1]);
+
+            }
+
+
+            [Fact]
+            public async Task AsyncActionFilter_WithWrongRuleNameDto_ShouldReturn_0Error()
+            {
+                RuleNameDto wrongRuleNameDto = new RuleNameDto
+                {
+                    Id = 0,
+                    Name = "hgfekjg+6",
+                    Description = "jfgk48/",
+                    Json = "tgqdjk625",
+                    Template = "12589",
+                    SqlStr = "12359",
+                    SqlPart = "2589",
+                };
+
+
+                var validationResults = new List<ValidationResult>();
+                var validationContext = new ValidationContext(wrongRuleNameDto);
+                Validator.TryValidateObject(wrongRuleNameDto, validationContext, validationResults, validateAllProperties: true);
+
+
+                var modelState = new Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary();
+                foreach (var vr in validationResults)
+                {
+                    var key = vr.MemberNames.FirstOrDefault() ?? string.Empty;
+                    modelState.AddModelError(key, vr.ErrorMessage);
+                }
+
+                var httpContext = new DefaultHttpContext();
+                var routeData = new Microsoft.AspNetCore.Routing.RouteData();
+                routeData.Values["controller"] = "MyController";
+                routeData.Values["action"] = "Create";
+                var actionContext = new ActionContext(httpContext, routeData, new ActionDescriptor(), modelState);
+                var actionExecutingContext = new ActionExecutingContext(
+                    actionContext,
+                    new List<IFilterMetadata>(),
+                    new Dictionary<string, object>(),
+                    controller: null
+                );
+
+
+                ActionExecutionDelegate next = () => Task.FromResult<ActionExecutedContext>(
+                    new ActionExecutedContext(actionContext, new List<IFilterMetadata>(), controller: null)
+                );
+                var filter = new AsyncActionFilter();
+                await filter.OnActionExecutionAsync(actionExecutingContext, next);
+                int test = modelState.ErrorCount;
+                //Assert
+                Xunit.Assert.True(modelState.ErrorCount == 0);
+            }
+
+
+        }
+
+
+        public class TradeUnitTests
+        {
+            private P7Referential GetInMemoryDbContext()
+            {
+                var options = new DbContextOptionsBuilder<P7Referential>()
+                    .UseInMemoryDatabase(databaseName: "TestDatabase5")
+                    .Options;
+                return new P7Referential(options);
+            }
+
+
+
+            [Fact]
+            public async Task ITradeService_CreateTradeWithTradeDto_ShouldAdd_1Trade()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var traderepository = new TradeRepository(context);
+                ITradeService iTradeService = new TradeService(traderepository, mapper);
+                CustomValidationAttribute customValidationAttribute = new CustomValidationAttribute();
+
+                TradeDto tradeDto = new TradeDto
+                {
+                    TradeId = 0,
+                    Account = "string",
+                    AccountType = "string",
+                    BuyQuantity = "1",
+                    SellQuantity = "1",
+                    BuyPrice = "1",
+                    SellPrice = "1",
+                    TradeDate = "12/09/2026 09:53:52",
+                    TradeSecurity = "string",
+                    TradeStatus = "string",
+                    Trader = "string",
+                    Benchmark = "string",
+                    Book = "string",
+                    CreationName = "string",
+                    CreationDate = "12/09/2026 09:53:52",
+                    RevisionName = "string",
+                    RevisionDate = "12/09/2026 09:53:52",
+                    DealName = "string"
+                };
+
+                ///Act
+                //bool result = customValidationAttribute.IsValid(tradeDto);
+                Task createTrade = iTradeService.CreateTradeWithTradeDto(tradeDto);
+                int tradeIdFound = iTradeService.GetAllTradesDto().Result.Select(t => t.TradeId).Last();
+                TradeDto foundTradeDto = iTradeService.GetTradeDtoById(tradeIdFound).Result.FirstOrDefault();
+                tradeDto.TradeId = tradeIdFound;
+
+                ///Assert
+                //Xunit.Assert.True(result);
+                Xunit.Assert.True(createTrade.IsCompletedSuccessfully);
+                Xunit.Assert.Equivalent(tradeDto, foundTradeDto);
+
+                await iTradeService.DeleteTradeById(tradeIdFound);
+
+            }
+
+            [Fact]
+            public async Task ITradeService_UpdateTradeWithTradeDto_Modify_1Trade()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var traderepository = new TradeRepository(context);
+                ITradeService iTradeService = new TradeService(traderepository, mapper);
+
+                TradeDto tradeDto = new TradeDto
+                {
+                    TradeId = 0,
+                    Account = "string",
+                    AccountType = "string",
+                    BuyQuantity = "1",
+                    SellQuantity = "1",
+                    BuyPrice = "1",
+                    SellPrice = "1",
+                    TradeDate = "12/09/2026 09:53:52",
+                    TradeSecurity = "string",
+                    TradeStatus = "string",
+                    Trader = "string",
+                    Benchmark = "string",
+                    Book = "string",
+                    CreationName = "string",
+                    CreationDate = "12/09/2026 09:53:52",
+                    RevisionName = "string",
+                    RevisionDate = "12/09/2026 09:53:52",
+                    DealName = "string"
+                };
+
+
+                Task createTrade = iTradeService.CreateTradeWithTradeDto(tradeDto);
+                int tradeIdFound = iTradeService.GetAllTradesDto().Result.Select(t => t.TradeId).Last();
+
+                TradeDto modifiedTradeDto = new TradeDto
+                {
+                    TradeId = tradeIdFound,
+                    Account = "stringmodified",
+                    AccountType = "string",
+                    BuyQuantity = "1",
+                    SellQuantity = "1",
+                    BuyPrice = "1",
+                    SellPrice = "1",
+                    TradeDate = "12/09/2026 09:53:52",
+                    TradeSecurity = "string",
+                    TradeStatus = "string",
+                    Trader = "string",
+                    Benchmark = "string",
+                    Book = "string",
+                    CreationName = "string",
+                    CreationDate = "12/09/2026 09:53:52",
+                    RevisionName = "string",
+                    RevisionDate = "12/09/2026 09:53:52",
+                    DealName = "string"
+                };
+
+
+                ///Act
+                await iTradeService.UpdateTradeWithTradeDto(modifiedTradeDto);
+                TradeDto modifiedFoundTradeDto = iTradeService.GetTradeDtoById(tradeIdFound).Result.FirstOrDefault();
+                tradeDto.TradeId = tradeIdFound;
+
+                ///Assert
+                Xunit.Assert.Equivalent(modifiedTradeDto, modifiedFoundTradeDto);
+
+                await iTradeService.DeleteTradeById(tradeIdFound);
+
+            }
+
+            [Fact]
+            public async Task ITradeService_DeleteTradeById_ShouldDelete_1Trade()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var traderepository = new TradeRepository(context);
+                ITradeService iTradeService = new TradeService(traderepository, mapper);
+
+                TradeDto tradeDto = new TradeDto
+                {
+                    TradeId = 0,
+                    Account = "string",
+                    AccountType = "string",
+                    BuyQuantity = "1",
+                    SellQuantity = "1",
+                    BuyPrice = "1",
+                    SellPrice = "1",
+                    TradeDate = "12/09/2026 09:53:52",
+                    TradeSecurity = "string",
+                    TradeStatus = "string",
+                    Trader = "string",
+                    Benchmark = "string",
+                    Book = "string",
+                    CreationName = "string",
+                    CreationDate = "12/09/2026 09:53:52",
+                    RevisionName = "string",
+                    RevisionDate = "12/09/2026 09:53:52",
+                    DealName = "string"
+                };
+
+                Task createTrade = iTradeService.CreateTradeWithTradeDto(tradeDto);
+                //int id = await traderepository.GetMaxTradeId();
+                int productIdFound = iTradeService.GetAllTradesDto().Result.Select(t => t.TradeId).Last();
+
+                Xunit.Assert.True(createTrade.IsCompletedSuccessfully);
+                ///Act
+                Task deleteTrade = iTradeService.DeleteTradeById(productIdFound);
+                ///Assert
+                Xunit.Assert.True(iTradeService.GetTradeDtoById(productIdFound).Result.FirstOrDefault() == null);
+                Xunit.Assert.True(deleteTrade.IsCompletedSuccessfully);
+
+            }
+
+            [Fact]
+            public async Task ITradeService_GetTradeDtoById_ShouldGet_1TradeById()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var traderepository = new TradeRepository(context);
+                ITradeService iTradeService = new TradeService(traderepository, mapper);
+
+                TradeDto tradeDto = new TradeDto
+                {
+                    TradeId = 0,
+                    Account = "string",
+                    AccountType = "string",
+                    BuyQuantity = "1",
+                    SellQuantity = "1",
+                    BuyPrice = "1",
+                    SellPrice = "1",
+                    TradeDate = "12/09/2026 09:53:52",
+                    TradeSecurity = "string",
+                    TradeStatus = "string",
+                    Trader = "string",
+                    Benchmark = "string",
+                    Book = "string",
+                    CreationName = "string",
+                    CreationDate = "12/09/2026 09:53:52",
+                    RevisionName = "string",
+                    RevisionDate = "12/09/2026 09:53:52",
+                    DealName = "string"
+                };
+
+
+                Task createTrade = iTradeService.CreateTradeWithTradeDto(tradeDto);
+                //int id = await traderepository.GetMaxTradeId();
+                int tradeIdFound = iTradeService.GetAllTradesDto().Result.Select(t => t.TradeId).Last();
+                TradeDto FoundTradeDto = iTradeService.GetTradeDtoById(tradeIdFound).Result.FirstOrDefault();
+
+                ///Act
+                tradeDto.TradeId = tradeIdFound;
+                Task getTradeById = traderepository.GetTradeById(tradeIdFound);
+
+                ///Assert
+                Xunit.Assert.Equivalent(tradeDto, FoundTradeDto);
+                Xunit.Assert.True(createTrade.IsCompletedSuccessfully);
+                Xunit.Assert.True(getTradeById.IsCompletedSuccessfully);
+
+                await iTradeService.DeleteTradeById(tradeIdFound);
+            }
+
+            [Fact]
+            public async Task ITradeService_GetAllTrades_ShouldGet_2Trades()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var traderepository = new TradeRepository(context);
+                ITradeService iTradeService = new TradeService(traderepository, mapper);
+
+                TradeDto tradeDto1 = new TradeDto
+                {
+                    TradeId = 0,
+                    Account = "string",
+                    AccountType = "string",
+                    BuyQuantity = "1",
+                    SellQuantity = "1",
+                    BuyPrice = "1",
+                    SellPrice = "1",
+                    TradeDate = "12/09/2026 09:53:52",
+                    TradeSecurity = "string",
+                    TradeStatus = "string",
+                    Trader = "string",
+                    Benchmark = "string",
+                    Book = "string",
+                    CreationName = "string",
+                    CreationDate = "12/09/2026 09:53:52",
+                    RevisionName = "string",
+                    RevisionDate = "12/09/2026 09:53:52",
+                    DealName = "string"
+                };
+
+
+                TradeDto tradeDto2 = new TradeDto
+                {
+                    TradeId = 0,
+                    Account = "string2test",
+                    AccountType = "string",
+                    BuyQuantity = "1",
+                    SellQuantity = "1",
+                    BuyPrice = "1",
+                    SellPrice = "1",
+                    TradeDate = "12/09/2026 09:53:52",
+                    TradeSecurity = "string",
+                    TradeStatus = "string",
+                    Trader = "string",
+                    Benchmark = "string",
+                    Book = "string",
+                    CreationName = "string",
+                    CreationDate = "12/09/2026 09:53:52",
+                    RevisionName = "string",
+                    RevisionDate = "12/09/2026 09:53:52",
+                    DealName = "string"
+                };
+
+
+
+                Task createTrade1 = iTradeService.CreateTradeWithTradeDto(tradeDto1);
+                Task createTrade2 = iTradeService.CreateTradeWithTradeDto(tradeDto2);
+                //int id = await traderepository.GetMaxTradeId();
+                List<int> tradeFoundids = iTradeService.GetAllTradesDto().Result.Select(t => t.TradeId).ToList();
+
+
+                ///Act
+
+                var getAllTrades = iTradeService.GetAllTradesDto().Result.Where(t => t.TradeId > 0);
+
+                ///Assert
+                Xunit.Assert.True(createTrade1.IsCompletedSuccessfully);
+                Xunit.Assert.True(createTrade2.IsCompletedSuccessfully);
+                Xunit.Assert.True(getAllTrades.Count() == 2);
+                Xunit.Assert.True(getAllTrades.ElementAt(0).TradeId == tradeFoundids[0]);
+                Xunit.Assert.True(getAllTrades.ElementAt(1).TradeId == tradeFoundids[1]);
+
+                await iTradeService.DeleteTradeById(tradeFoundids[0]);
+                await iTradeService.DeleteTradeById(tradeFoundids[1]);
+
+
+            }
+
+            [Fact]
+            public async Task AsyncActionFilter_WithWrongTradeDto_ShouldReturn_11Errors()
+            {
+                TradeDto wrongTradeDto = new TradeDto
+                {
+                    TradeId = 0,
+                    Account = "string2test",
+                    AccountType = "string",
+                    BuyQuantity = "abc",
+                    SellQuantity = "abcd",
+                    BuyPrice = "abcde",
+                    SellPrice = "abcdef",
+                    TradeDate = "jh",
+                    TradeSecurity = "string",
+                    TradeStatus = "string",
+                    Trader = "string",
+                    Benchmark = "string",
+                    Book = "string",
+                    CreationName = "string",
+                    CreationDate = "ytj",
+                    RevisionName = "string",
+                    RevisionDate = "juytj",
+                    DealName = "string"
+                };
+
+
+                var validationResults = new List<ValidationResult>();
+                var validationContext = new ValidationContext(wrongTradeDto);
+                Validator.TryValidateObject(wrongTradeDto, validationContext, validationResults, validateAllProperties: true);
+
+
+                var modelState = new Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary();
+                foreach (var vr in validationResults)
+                {
+                    var key = vr.MemberNames.FirstOrDefault() ?? string.Empty;
+                    modelState.AddModelError(key, vr.ErrorMessage);
+                }
+
+                var httpContext = new DefaultHttpContext();
+                var routeData = new Microsoft.AspNetCore.Routing.RouteData();
+                routeData.Values["controller"] = "MyController";
+                routeData.Values["action"] = "Create";
+                var actionContext = new ActionContext(httpContext, routeData, new ActionDescriptor(), modelState);
+                var actionExecutingContext = new ActionExecutingContext(
+                    actionContext,
+                    new List<IFilterMetadata>(),
+                    new Dictionary<string, object>(),
+                    controller: null
+                );
+
+
+                ActionExecutionDelegate next = () => Task.FromResult<ActionExecutedContext>(
+                    new ActionExecutedContext(actionContext, new List<IFilterMetadata>(), controller: null)
+                );
+                var filter = new AsyncActionFilter();
+                await filter.OnActionExecutionAsync(actionExecutingContext, next);
+                var error0 = modelState.ElementAt(0);
+                var error1 = modelState.ElementAt(1);
+                var error2 = modelState.ElementAt(2);
+                var error3 = modelState.ElementAt(3);
+                var error4 = modelState.ElementAt(4);
+                var error5 = modelState.ElementAt(5);
+                var error6 = modelState.ElementAt(6);
+
+                // Assert
+                Xunit.Assert.Equal("The BuyPrice is not greater than 0 and smaller than 1.79 E+308.", error0.Value.Errors[0].ErrorMessage);
+                Xunit.Assert.Equal("The BuyPrice is not a double.", error0.Value.Errors[1].ErrorMessage);
+                Xunit.Assert.Equal("The SellPrice is not greater than 0 and smaller than 1.79 E+308.", error1.Value.Errors[0].ErrorMessage);
+                Xunit.Assert.Equal("The SellPrice is not a double.", error1.Value.Errors[1].ErrorMessage);
+                Xunit.Assert.Equal("The TradeDate does not suit the DateTime format.", error2.Value.Errors[0].ErrorMessage);
+                Xunit.Assert.Equal("The BuyQuantity is not greater than 0 and smaller than 1.79 E+308.", error3.Value.Errors[0].ErrorMessage);
+                Xunit.Assert.Equal("The BuyQuantity is not a double.", error3.Value.Errors[1].ErrorMessage);
+                Xunit.Assert.Equal("The CreationDate does not suit the DateTime format.", error4.Value.Errors[0].ErrorMessage);
+                Xunit.Assert.Equal("The RevisionDate does not suit the DateTime format.", error5.Value.Errors[0].ErrorMessage);
+                Xunit.Assert.Equal("The SellQuantity is not greater than 0 and smaller than 1.79 E+308.", error6.Value.Errors[0].ErrorMessage);
+                Xunit.Assert.Equal("The SellQuantity is not a double.", error6.Value.Errors[1].ErrorMessage);
+                Xunit.Assert.True(modelState.ErrorCount == 11);
+            }
+
+        }
             //[Fact]
             //public async Task IBidLoginService_Login_ShouldLog_1User()
             //{
@@ -1516,7 +1910,7 @@ namespace P7CreateRestApiTest
             //        new P7CreateRestApi.Domain.User { Email = "adminuser@test.com", Password = "Passadmintest15.", Role = "Admin" }
             //    };
 
-        }
+        
     }
 }
 

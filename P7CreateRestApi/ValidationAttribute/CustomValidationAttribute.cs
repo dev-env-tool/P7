@@ -21,3 +21,21 @@ public class CustomValidationAttribute : ValidationAttribute
         }
     }
 }
+
+public class CustomValidationAttributeForByte : ValidationAttribute
+{
+    public override bool IsValid(object value)
+    {
+        var byteValue = value.ToString();
+        int outputvalue;
+        bool success = int.TryParse(byteValue, out (outputvalue));
+        if (success && outputvalue < 256)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
