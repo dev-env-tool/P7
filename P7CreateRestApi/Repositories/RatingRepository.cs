@@ -39,7 +39,7 @@ namespace P7CreateRestApi.Repositories
 
         public async Task UpdateRating(Rating rating)
         {
-            var existingRating = await _context.BidLists.FindAsync(rating.Id);
+            var existingRating = await _context.Ratings.FindAsync(rating.Id);
 
             if (existingRating != null)
             {

@@ -83,7 +83,6 @@ namespace P7CreateRestApiTest
 
                 BidListDto bidListDto = new BidListDto
                 {
-                    BidListId = 0,
                     Account = "test",
                     BidType = "string",
                     BidQuantity = "0,0001",
@@ -124,6 +123,57 @@ namespace P7CreateRestApiTest
             }
 
             [Fact]
+            public async Task IBidListService_CreateBidListWithWrongBidListDto_ShouldNotAdd_1BidList()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var bidListrepository = new BidListRepository(context);
+                IBidListService iBidListService = new BidListService(bidListrepository, mapper);
+                CustomValidationAttribute customValidationAttribute = new CustomValidationAttribute();
+
+                BidListDto wrongBidListDto = new BidListDto
+                {
+                    Account = "test",
+                    BidType = "string",
+                    BidQuantity = "abc",
+                    AskQuantity = "0,0001",
+                    Bid = "0,0001",
+                    Ask = "0,0001",
+                    Benchmark = "string",
+                    BidListDate = "11/08/2026 12:53:27",
+                    Commentary = "string",
+                    BidSecurity = "string",
+                    BidStatus = "string",
+                    Trader = "string",
+                    Book = "string",
+                    CreationName = "string",
+                    CreationDate = "11/08/2026 12:53:27",
+                    RevisionName = "string",
+                    RevisionDate = "11/08/2026 12:53:27",
+                    DealName = "string",
+                    DealType = "string",
+                    SourceListId = "string",
+                    Side = "string"
+                };
+
+                ///Act
+                Task createBidList = iBidListService.CreateBidListWithBidListDto(wrongBidListDto);
+                bool foundBidListDto = (iBidListService.GetAllBidListsDto().Result.Select(b => b).Count() > 0);
+
+                ///Assert
+                Xunit.Assert.False(createBidList.IsCompletedSuccessfully);
+                Xunit.Assert.True(createBidList.IsFaulted);
+                Xunit.Assert.False(foundBidListDto);
+            }
+
+            [Fact]
             public async Task IBidListService_UpdateBidListWithBidListDto_Modify_1BidList()
             {
                 /// Arrange
@@ -140,7 +190,6 @@ namespace P7CreateRestApiTest
 
                 BidListDto bidListDto = new BidListDto
                 {
-                    BidListId = 0,
                     Account = "test",
                     BidType = "string",
                     BidQuantity = "0,0001",
@@ -224,7 +273,6 @@ namespace P7CreateRestApiTest
 
                 BidListDto bidListDto = new BidListDto
                 {
-                    BidListId = 0,
                     Account = "test",
                     BidType = "string",
                     BidQuantity = "2",
@@ -278,7 +326,6 @@ namespace P7CreateRestApiTest
 
                 BidListDto bidListDto = new BidListDto
                 {
-                    BidListId = 0,
                     Account = "test",
                     BidType = "string",
                     BidQuantity = "2",
@@ -337,7 +384,6 @@ namespace P7CreateRestApiTest
 
                 BidListDto bidListDto1 = new BidListDto
                 {
-                    BidListId = 0,
                     Account = "test",
                     BidType = "string",
                     BidQuantity = "2",
@@ -364,7 +410,6 @@ namespace P7CreateRestApiTest
 
                 BidListDto bidListDto2 = new BidListDto
                 {
-                    BidListId = 0,
                     Account = "test2",
                     BidType = "string",
                     BidQuantity = "3",
@@ -588,7 +633,6 @@ namespace P7CreateRestApiTest
 
                 CurvePointDto curvePointDto = new CurvePointDto
                 {
-                    Id = 0,
                     CurveId = "1",
                     AsOfDate = "11/08/2026 12:53:27",
                     Term = "0,0001",
@@ -613,6 +657,42 @@ namespace P7CreateRestApiTest
             }
 
             [Fact]
+            public async Task IBidListService_CreateBidListWithWrongCurvePointDto_ShouldNotAdd_1CurvePoint()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var CurvePointRepository = new CurvePointRepository(context);
+                ICurvePointService curvePointService = new CurvePointService(CurvePointRepository, mapper);
+                CustomValidationAttribute customValidationAttribute = new CustomValidationAttribute();
+
+                CurvePointDto wrongCurvePointDto = new CurvePointDto
+                {
+                    CurveId = "1",
+                    AsOfDate = "f",
+                    Term = "0,0001",
+                    CurvePointValue = "0,0001",
+                    CreationDate = "g",
+                };
+
+
+                ///Act
+                Task createCurvePoint = curvePointService.CreateCurvePointWithCurvePointDto(wrongCurvePointDto);
+                bool foundCurvePointDto = (curvePointService.GetAllCurvePointsDto().Result.Select(c => c).Count() > 0);
+
+                ///Assert
+                Xunit.Assert.False(createCurvePoint.IsCompletedSuccessfully);
+                Xunit.Assert.True(createCurvePoint.IsFaulted);
+                Xunit.Assert.False(foundCurvePointDto);
+            }
+
+            [Fact]
             public async Task ICurvePointService_UpdateCurvePointWithCurvePointDto_Modify_1CurvePoint()
             {
                 /// Arrange
@@ -629,7 +709,6 @@ namespace P7CreateRestApiTest
 
                 CurvePointDto curvePointDto = new CurvePointDto
                 {
-                    Id = 0,
                     CurveId = "1",
                     AsOfDate = "11/08/2026 12:53:27",
                     Term = "0,0001",
@@ -681,7 +760,6 @@ namespace P7CreateRestApiTest
 
                 CurvePointDto curvePointDto = new CurvePointDto
                 {
-                    Id = 0,
                     CurveId = "1",
                     AsOfDate = "11/08/2026 12:53:27",
                     Term = "0,0001",
@@ -719,7 +797,6 @@ namespace P7CreateRestApiTest
 
                 CurvePointDto curvePointDto = new CurvePointDto
                 {
-                    Id = 0,
                     CurveId = "1",
                     AsOfDate = "11/08/2026 12:53:27",
                     Term = "0,0001",
@@ -762,7 +839,6 @@ namespace P7CreateRestApiTest
 
                 CurvePointDto curvePointDto1 = new CurvePointDto
                 {
-                    Id = 0,
                     CurveId = "1",
                     AsOfDate = "11/08/2026 12:53:27",
                     Term = "0,0001",
@@ -811,7 +887,6 @@ namespace P7CreateRestApiTest
             {
                 CurvePointDto wrongCurvePointDto = new CurvePointDto
                 {
-                    Id = 0,
                     CurveId = "2000",
                     AsOfDate = "ruioolk",
                     Term = "abc",
@@ -899,7 +974,6 @@ namespace P7CreateRestApiTest
 
                 RatingDto ratingDto = new RatingDto
                 {
-                    Id = 0,
                     MoodysRating = "AAA",
                     FitchRating = "AAA",
                     SandPRating = "AAA",
@@ -923,7 +997,43 @@ namespace P7CreateRestApiTest
             }
 
             [Fact]
-            public async Task IRatingService_UpdateRatingWithRatingDto_Modify_1Rating()
+            public async Task IBidListService_CreateBidListWithWrongRatingDto_ShouldNotAdd_1Rating()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var RatingRepository = new RatingRepository(context);
+                IRatingService ratingService = new RatingService(RatingRepository, mapper);
+                CustomValidationAttribute customValidationAttribute = new CustomValidationAttribute();
+
+                RatingDto wrongRatingDto = new RatingDto
+                {
+                    MoodysRating = "",
+                    FitchRating = "AAA",
+                    SandPRating = "AAA",
+                    OrderNumber = "6000",
+                };
+
+
+                ///Act
+                Task createRating = ratingService.CreateRatingWithRatingDto(wrongRatingDto);
+                bool foundRatingDto = (ratingService.GetAllRatingsDto().Result.Select(c => c).Count() > 0);
+
+                ///Assert
+                Xunit.Assert.False(createRating.IsCompletedSuccessfully);
+                Xunit.Assert.True(createRating.IsFaulted);
+                Xunit.Assert.False(foundRatingDto);
+            }
+
+
+            [Fact]
+            public async Task IRatingService_UpdateRatingWithRatingDto_Should_Modify_1Rating()
             {
                 /// Arrange
                 Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
@@ -939,7 +1049,6 @@ namespace P7CreateRestApiTest
 
                 RatingDto ratingDto = new RatingDto
                 {
-                    Id = 0,
                     MoodysRating = "AAA",
                     FitchRating = "AAA",
                     SandPRating = "AAA",
@@ -953,7 +1062,7 @@ namespace P7CreateRestApiTest
                 RatingDto modifiedRatingDto = new RatingDto
                 {
                     Id = ratingIdFound,
-                    MoodysRating = "AAA",
+                    MoodysRating = "BBB",
                     FitchRating = "AAA",
                     SandPRating = "AAA",
                     OrderNumber = "10",
@@ -989,7 +1098,6 @@ namespace P7CreateRestApiTest
 
                 RatingDto ratingDto = new RatingDto
                 {
-                    Id = 0,
                     MoodysRating = "AAA",
                     FitchRating = "AAA",
                     SandPRating = "AAA",
@@ -1026,7 +1134,6 @@ namespace P7CreateRestApiTest
 
                 RatingDto ratingDto = new RatingDto
                 {
-                    Id = 0,
                     MoodysRating = "AAA",
                     FitchRating = "AAA",
                     SandPRating = "AAA",
@@ -1068,7 +1175,6 @@ namespace P7CreateRestApiTest
 
                 RatingDto ratingDto1 = new RatingDto
                 {
-                    Id = 0,
                     MoodysRating = "AAA",
                     FitchRating = "AAA",
                     SandPRating = "AAA",
@@ -1078,7 +1184,6 @@ namespace P7CreateRestApiTest
 
                 RatingDto ratingDto2 = new RatingDto
                 {
-                    Id = 0,
                     MoodysRating = "AAA",
                     FitchRating = "AAA",
                     SandPRating = "AAA",
@@ -1115,7 +1220,6 @@ namespace P7CreateRestApiTest
             {
                 RatingDto wrongRatingDto = new RatingDto
                 {
-                    Id = 0,
                     MoodysRating = "AAA",
                     FitchRating = "AAA",
                     SandPRating = "AAA",
@@ -1192,7 +1296,6 @@ namespace P7CreateRestApiTest
 
                 RuleNameDto ruleNameDto = new RuleNameDto
                 {
-                    Id = 0,
                     Name = "test",
                     Description = "testdescription",
                     Json = "Json",
@@ -1234,7 +1337,6 @@ namespace P7CreateRestApiTest
 
                 RuleNameDto ruleNameDto = new RuleNameDto
                 {
-                    Id = 0,
                     Name = "test",
                     Description = "testdescription",
                     Json = "Json",
@@ -1288,7 +1390,6 @@ namespace P7CreateRestApiTest
 
                 RuleNameDto ruleNameDto = new RuleNameDto
                 {
-                    Id = 0,
                     Name = "test",
                     Description = "testdescription",
                     Json = "Json",
@@ -1327,7 +1428,6 @@ namespace P7CreateRestApiTest
 
                 RuleNameDto ruleNameDto = new RuleNameDto
                 {
-                    Id = 0,
                     Name = "test",
                     Description = "testdescription",
                     Json = "Json",
@@ -1371,7 +1471,6 @@ namespace P7CreateRestApiTest
 
                 RuleNameDto ruleNameDto1 = new RuleNameDto
                 {
-                    Id = 0,
                     Name = "test1",
                     Description = "testdescription",
                     Json = "Json",
@@ -1383,7 +1482,6 @@ namespace P7CreateRestApiTest
 
                 RuleNameDto ruleNameDto2 = new RuleNameDto
                 {
-                    Id = 0,
                     Name = "test2",
                     Description = "testdescription",
                     Json = "Json",
@@ -1422,7 +1520,6 @@ namespace P7CreateRestApiTest
             {
                 RuleNameDto wrongRuleNameDto = new RuleNameDto
                 {
-                    Id = 0,
                     Name = "hgfekjg+6",
                     Description = "jfgk48/",
                     Json = "tgqdjk625",
@@ -1501,7 +1598,6 @@ namespace P7CreateRestApiTest
 
                 TradeDto tradeDto = new TradeDto
                 {
-                    TradeId = 0,
                     Account = "string",
                     AccountType = "string",
                     BuyQuantity = "1",
@@ -1538,6 +1634,56 @@ namespace P7CreateRestApiTest
             }
 
             [Fact]
+            public async Task IBidListService_CreateBidListWithWrongTradeDto_ShouldNotAdd_1Trade()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var TradeRepository = new TradeRepository(context);
+                ITradeService tradeService = new TradeService(TradeRepository, mapper);
+                CustomValidationAttribute customValidationAttribute = new CustomValidationAttribute();
+
+                TradeDto wrongTradeDto = new TradeDto
+                {
+                    Account = "string",
+                    AccountType = "string",
+                    BuyQuantity = "1",
+                    SellQuantity = "1",
+                    BuyPrice = "1",
+                    SellPrice = "1",
+                    TradeDate = "2",
+                    TradeSecurity = "string",
+                    TradeStatus = "string",
+                    Trader = "string",
+                    Benchmark = "string",
+                    Book = "string",
+                    CreationName = "string",
+                    CreationDate = "12/09/2026 09:53:52",
+                    RevisionName = "string",
+                    RevisionDate = "12/09/2026 09:53:52",
+                    DealName = "string"
+                };
+
+
+                ///Act
+                Task createTrade = tradeService.CreateTradeWithTradeDto(wrongTradeDto);
+                bool foundTradeDto = (tradeService.GetAllTradesDto().Result.Select(c => c).Count() > 0);
+
+                ///Assert
+                Xunit.Assert.False(createTrade.IsCompletedSuccessfully);
+                Xunit.Assert.True(createTrade.IsFaulted);
+                Xunit.Assert.False(foundTradeDto);
+            }
+
+
+
+            [Fact]
             public async Task ITradeService_UpdateTradeWithTradeDto_Modify_1Trade()
             {
                 /// Arrange
@@ -1554,7 +1700,6 @@ namespace P7CreateRestApiTest
 
                 TradeDto tradeDto = new TradeDto
                 {
-                    TradeId = 0,
                     Account = "string",
                     AccountType = "string",
                     BuyQuantity = "1",
@@ -1630,7 +1775,6 @@ namespace P7CreateRestApiTest
 
                 TradeDto tradeDto = new TradeDto
                 {
-                    TradeId = 0,
                     Account = "string",
                     AccountType = "string",
                     BuyQuantity = "1",
@@ -1680,7 +1824,6 @@ namespace P7CreateRestApiTest
 
                 TradeDto tradeDto = new TradeDto
                 {
-                    TradeId = 0,
                     Account = "string",
                     AccountType = "string",
                     BuyQuantity = "1",
@@ -1735,7 +1878,6 @@ namespace P7CreateRestApiTest
 
                 TradeDto tradeDto1 = new TradeDto
                 {
-                    TradeId = 0,
                     Account = "string",
                     AccountType = "string",
                     BuyQuantity = "1",
@@ -1758,7 +1900,6 @@ namespace P7CreateRestApiTest
 
                 TradeDto tradeDto2 = new TradeDto
                 {
-                    TradeId = 0,
                     Account = "string2test",
                     AccountType = "string",
                     BuyQuantity = "1",
@@ -1808,7 +1949,6 @@ namespace P7CreateRestApiTest
             {
                 TradeDto wrongTradeDto = new TradeDto
                 {
-                    TradeId = 0,
                     Account = "string2test",
                     AccountType = "string",
                     BuyQuantity = "abc",
