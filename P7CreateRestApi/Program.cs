@@ -15,7 +15,7 @@ using P7CreateRestApi.DTO;
 using P7CreateRestApi.Filters;
 using P7CreateRestApi.IRepositories;
 using P7CreateRestApi.IServices;
-using P7CreateRestApi.JsonConverter;
+//using P7CreateRestApi.JsonConverter;
 using P7CreateRestApi.LogUserNameMiddleware;
 using P7CreateRestApi.Models;
 using P7CreateRestApi.Profiles;
@@ -59,11 +59,16 @@ public class Program
 
 
         builder.Services.AddControllers()
-            .AddJsonOptions(opt => { opt.JsonSerializerOptions.Converters.Add(new DoubleJsonConverter()); })
             .ConfigureApiBehaviorOptions(options =>
             {
                 options.SuppressModelStateInvalidFilter = true;
             });
+        //builder.Services.AddControllers()
+        //    .AddJsonOptions(opt => { opt.JsonSerializerOptions.Converters.Add(new DoubleJsonConverter()); })
+        //    .ConfigureApiBehaviorOptions(options =>
+        //    {
+        //        options.SuppressModelStateInvalidFilter = true;
+        //    });
 
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

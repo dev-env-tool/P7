@@ -35,48 +35,56 @@ namespace P7CreateRestApi.Repositories
                                   .ToListAsync();
         }
 
-        public async Task CreateUser(User user)
+        public async Task<IdentityResult> CreateUser(User user)
         {
+            var result = await _userManager.CreateAsync(user, user.Password);
             if (user != null)
             {
-                await _userManager.CreateAsync(user, user.Password);
-                await _userManager.AddToRoleAsync(user, user.Role);
+                
+                if (result.Succeeded && user.Role == "")
+                {
+                    user.Role = "Member";
+                    await _userManager.AddToRoleAsync(user, user.Role);
+                    return result;
+                }
+                if (result.Succeeded && user.Role == null)
+                {
+                    user.Role = "Member";
+                    await _userManager.AddToRoleAsync(user, user.Role);
+                    return result;
+                }
             }
-
+            return result;
         }
 
-        public async Task UpdateUser(User user)
+        public async Task<IdentityResult> UpdateUser(User user)
         {
             User userToFind = await _userManager.FindByEmailAsync(user.Email);
             if (userToFind == null)
             {
-                return;
+                return IdentityResult.Failed(new IdentityError { Description = "User does not exist." });
             }
             else
             {
                 userToFind.UserName = user.UserName;
-                var result = await _userManager.UpdateAsync(userToFind);
+                var resultFoundUser = await _userManager.UpdateAsync(userToFind);
 
                 if(user.Role != null) 
                 {
-                    if (!await _userManager.IsInRoleAsync(userToFind, user.Role))
+                    bool IsInRole = await _userManager.IsInRoleAsync(userToFind, user.Role);
+                    if (!IsInRole)
                     {
-                        if (!await _roleManager.RoleExistsAsync(user.Role))
+                        var roleUpdateResult = await _userManager.AddToRoleAsync(userToFind, user.Role);
+                        IList<string> foundRoles = await _userManager.GetRolesAsync(userToFind);
+                        foundRoles.Remove(user.Role);
+                        foreach (var role in foundRoles)
                         {
-                            return;
+                            await _userManager.RemoveFromRoleAsync(userToFind, role);
                         }
-                        else
-                        {
-                            var roleUpdateResult = await _userManager.AddToRoleAsync(userToFind, user.Role);
-                            IList<string> foundRoles = await _userManager.GetRolesAsync(userToFind);
-                            foundRoles.Remove(user.Role);
-                            foreach (var role in foundRoles)
-                            {
-                                await _userManager.RemoveFromRoleAsync(userToFind, role);
-                            }
-                        }
+                        return roleUpdateResult;
                     }
                 }
+                return resultFoundUser;
 
             }
             //if (user != null)
@@ -90,17 +98,27 @@ namespace P7CreateRestApi.Repositories
         }
 
 
-        public async Task UpdateUserPassword(User user, UpdatePasswordModel updatePasswordModel)
+        public async Task<IdentityResult> UpdateUserPassword(User user, UpdatePasswordModel updatePasswordModel)
         {
             User userToFind = await _userManager.FindByEmailAsync(user.Email);
             if (userToFind == null)
             {
-                return;
+                return IdentityResult.Failed(new IdentityError { Description = "User does not exist." });
             }
             else
             {
                 var result = await _userManager.ChangePasswordAsync(userToFind, updatePasswordModel.CurrentPassword, updatePasswordModel.NewPassword);
+                return result;
             }
+            //User userToFind = await _userManager.FindByEmailAsync(user.Email);
+            //if (userToFind == null)
+            //{
+            //    return;
+            //}
+            //else
+            //{
+            //    var result = await _userManager.ChangePasswordAsync(userToFind, updatePasswordModel.CurrentPassword, updatePasswordModel.NewPassword);
+            //}
 
         }
 

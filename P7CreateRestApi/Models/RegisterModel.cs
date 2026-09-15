@@ -7,7 +7,10 @@ namespace P7CreateRestApi.Models
     public class RegisterModel
     {
         public string UserName { get; set; }
-        public string Email { get; set; }
+
+        [Required(ErrorMessage = "The email is required")]
+        [EmailAddress(ErrorMessage = "The email address is not correct")]
+        public required string Email { get; set; }
         public string Password { get; set; } = string.Empty;
         public string Role { get; set; } = "Admin / Member";
     }

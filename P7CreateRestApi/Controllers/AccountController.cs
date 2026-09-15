@@ -8,6 +8,7 @@ using P7CreateRestApi.IRepositories;
 using P7CreateRestApi.IServices;
 using P7CreateRestApi.Models;
 using P7CreateRestApi.Services;
+using System.Threading.Tasks.Sources;
 
 namespace P7CreateRestApi.Controllers
 {
@@ -63,25 +64,43 @@ namespace P7CreateRestApi.Controllers
 
 
         [HttpPost("")]
-        //[Route("register")]
+        [ServiceFilter(typeof(AsyncActionFilter))]
         public async Task<IActionResult> CreateUser([FromBody] RegisterModel registerModel)
         {
-            User user = new User() { UserName = registerModel.UserName, Email = registerModel.Email, Role = registerModel.Role };
-            var result = _userManager.CreateAsync(user, registerModel.Password);
-            if (result.Result.Errors.Any())
-            {
-                return BadRequest(result.Result);
+            if (!ModelState.IsValid)
+            { 
+                return BadRequest(ModelState);
             }
-            var role = _userManager.AddToRoleAsync(user, registerModel.Role);
-            if (role.Result.Errors.Any())
+
+            IdentityResult result = await _iUserService.CreateUserWithRegisterModel(registerModel);
+
+            if (!result.Succeeded)
             {
-                return BadRequest(role.Result);
-            }
-            if (ModelState.Any())
-            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
                 return BadRequest(ModelState);
             }
             return Ok("User was successfully registered.");
+
+
+            //User user = new User() { UserName = registerModel.UserName, Email = registerModel.Email, Role = registerModel.Role };
+            //var result = _userManager.CreateAsync(user, registerModel.Password);
+            //if (result.Result.Errors.Any())
+            //{
+            //    return BadRequest(result.Result);
+            //}
+            //var role = _userManager.AddToRoleAsync(user, registerModel.Role);
+            //if (role.Result.Errors.Any())
+            //{
+            //    return BadRequest(role.Result);
+            //}
+            //if (ModelState.Any())
+            //{
+            //    return BadRequest(ModelState);
+            //}
+            //return Ok("User was successfully registered.");
         }
 
 
@@ -89,50 +108,113 @@ namespace P7CreateRestApi.Controllers
         [Route("generalinfo/{email}")]
         public async Task<IActionResult> UpdateUserByEmail(string email, [FromBody] UpdateGeneralInfosModel updateGeneralInfosModel)
         {
-            if (email == "")
+            if (!ModelState.IsValid)
             {
-                return BadRequest("Bad request. UserNamemust be a character string.");
+                return BadRequest(ModelState);
             }
-            User userToFind = await _userManager.FindByEmailAsync(email);
+            IdentityResult result = await _iUserService.UpdateUserWithUpdateGeneralInfosModel(email, updateGeneralInfosModel);
+
+            if (!result.Succeeded)
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+                return BadRequest(ModelState);
+            }
+            return Ok("User was successfully registered.");
 
 
-            if (userToFind == null)
-            {
-                return NotFound("The information with the specified UserName was not found.");
-            }
-            else
-            {
-                userToFind.UserName = updateGeneralInfosModel.UserName;
-                var result = await _userManager.UpdateAsync(userToFind);
 
-                if (!await _userManager.IsInRoleAsync(userToFind, updateGeneralInfosModel.Role))
-                {
-                    if (!await _roleManager.RoleExistsAsync(updateGeneralInfosModel.Role))
-                    {
-                        return BadRequest("Please give one of the followig roles : Admin or Member.");
-                    }
-                    else
-                    {
-                        var roleUpdateResult = await _userManager.AddToRoleAsync(userToFind, updateGeneralInfosModel.Role);
-                        IList<string> foundRoles = await _userManager.GetRolesAsync(userToFind);
-                        foundRoles.Remove(updateGeneralInfosModel.Role);
-                        foreach (var role in foundRoles)
-                        {
-                            await _userManager.RemoveFromRoleAsync(userToFind, role);
-                        }
-                    }
-                }
-                if (result.Succeeded)
-                {
-                    return Ok(result.Succeeded);
-                }
-                else
-                {
-                    return BadRequest(result.Errors);
-                }
-            }
+
+
+            //if (email == "")
+            //{
+            //    return BadRequest("Bad request. UserNamemust be a character string.");
+            //}
+            //User userToFind = await _userManager.FindByEmailAsync(email);
+
+
+            //if (userToFind == null)
+            //{
+            //    return NotFound("The information with the specified UserName was not found.");
+            //}
+            //else
+            //{
+            //    userToFind.UserName = updateGeneralInfosModel.UserName;
+            //    var result = await _userManager.UpdateAsync(userToFind);
+
+            //    if (!await _userManager.IsInRoleAsync(userToFind, updateGeneralInfosModel.Role))
+            //    {
+            //        if (!await _roleManager.RoleExistsAsync(updateGeneralInfosModel.Role))
+            //        {
+            //            return BadRequest("Please give one of the followig roles : Admin or Member.");
+            //        }
+            //        else
+            //        {
+            //            var roleUpdateResult = await _userManager.AddToRoleAsync(userToFind, updateGeneralInfosModel.Role);
+            //            IList<string> foundRoles = await _userManager.GetRolesAsync(userToFind);
+            //            foundRoles.Remove(updateGeneralInfosModel.Role);
+            //            foreach (var role in foundRoles)
+            //            {
+            //                await _userManager.RemoveFromRoleAsync(userToFind, role);
+            //            }
+            //        }
+            //    }
+            //    if (result.Succeeded)
+            //    {
+            //        return Ok(result.Succeeded);
+            //    }
+            //    else
+            //    {
+            //        return BadRequest(result.Errors);
+            //    }
+
+
+            //if (email == "")
+            //{
+            //    return BadRequest("Bad request. UserNamemust be a character string.");
+            //}
+            //User userToFind = await _userManager.FindByEmailAsync(email);
+
+
+            //if (userToFind == null)
+            //{
+            //    return NotFound("The information with the specified UserName was not found.");
+            //}
+            //else
+            //{
+            //    userToFind.UserName = updateGeneralInfosModel.UserName;
+            //    var result = await _userManager.UpdateAsync(userToFind);
+
+            //    if (!await _userManager.IsInRoleAsync(userToFind, updateGeneralInfosModel.Role))
+            //    {
+            //        if (!await _roleManager.RoleExistsAsync(updateGeneralInfosModel.Role))
+            //        {
+            //            return BadRequest("Please give one of the followig roles : Admin or Member.");
+            //        }
+            //        else
+            //        {
+            //            var roleUpdateResult = await _userManager.AddToRoleAsync(userToFind, updateGeneralInfosModel.Role);
+            //            IList<string> foundRoles = await _userManager.GetRolesAsync(userToFind);
+            //            foundRoles.Remove(updateGeneralInfosModel.Role);
+            //            foreach (var role in foundRoles)
+            //            {
+            //                await _userManager.RemoveFromRoleAsync(userToFind, role);
+            //            }
+            //        }
+            //    }
+            //    if (result.Succeeded)
+            //    {
+            //        return Ok(result.Succeeded);
+            //    }
+            //    else
+            //    {
+            //        return BadRequest(result.Errors);
+            //    }
+            //}
+
         }
-
 
         [HttpPut]
         [Route("password/{email}")]
