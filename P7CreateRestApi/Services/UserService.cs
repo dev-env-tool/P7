@@ -125,9 +125,19 @@ namespace P7CreateRestApi.Services
             //}
 
         }
-        public async Task DeleteUserByEmail(string email)
+        public async Task<IdentityResult> DeleteUserByEmail(string email)
         {
-            await _iUserRepository.DeleteUserByEmail(email);
+            var userDtoExists = GetUserDtoByEmail(email).Result.Select(u => u).Count();
+            bool userExists = userDtoExists > 0;
+            if (!userExists)
+            {
+                return IdentityResult.Failed(new IdentityError { Description = "The email does not exist." });
+            }
+            else
+            {
+                IdentityResult result = await _iUserRepository.DeleteUserByEmail(email);
+                return result;
+            }
         }
 
         public async Task<UserDto> MapUserToUserDto(User user)

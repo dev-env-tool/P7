@@ -2090,8 +2090,8 @@ namespace P7CreateRestApiTest
 
                 P7CreateRestApi.Models.RegisterModel registerModel = new P7CreateRestApi.Models.RegisterModel
                 {
-                    UserName = "test123456789abcd",
-                    Email = "test123456789abcd@gmail.com",
+                    UserName = "registerModel",
+                    Email = "registerModel@gmail.com",
                     Password = "test123.Pass",
                     Role = "Member",
                 };
@@ -2157,8 +2157,8 @@ namespace P7CreateRestApiTest
 
                 P7CreateRestApi.Models.RegisterModel registerModel = new P7CreateRestApi.Models.RegisterModel
                 {
-                    UserName = "test123456789abcd",
-                    Email = "test123456789abcd@gmail.com",
+                    UserName = "registerModel",
+                    Email = "registerModel@gmail.com",
                     Password = "test123.Pass",
                     Role = "Member",
                 };
@@ -2229,16 +2229,16 @@ namespace P7CreateRestApiTest
 
                 P7CreateRestApi.Models.RegisterModel registerModel1 = new P7CreateRestApi.Models.RegisterModel
                 {
-                    UserName = "test123456789abcd",
-                    Email = "test123456789abcd@gmail.com",
+                    UserName = "registerModel1",
+                    Email = "registerModel1@gmail.com",
                     Password = "test123.Pass",
                     Role = "Member",
                 };
 
                 P7CreateRestApi.Models.RegisterModel registerModel2 = new P7CreateRestApi.Models.RegisterModel
                 {
-                    UserName = "test123456789abcd",
-                    Email = "test123456789abcd@gmail.com",
+                    UserName = "registerModel2",
+                    Email = "registerModel2@gmail.com",
                     Password = "test123.Pass",
                     Role = "Member",
                 };
@@ -2310,7 +2310,7 @@ namespace P7CreateRestApiTest
 
                 P7CreateRestApi.Models.RegisterModel registerModel1 = new P7CreateRestApi.Models.RegisterModel
                 {
-                    UserName = "test123456789abcd",
+                    UserName = "registerModel1",
                     Email = "test123456789abcd@gmail.com",
                     Password = "test123.Pass",
                     Role = "Member",
@@ -2318,8 +2318,8 @@ namespace P7CreateRestApiTest
 
                 P7CreateRestApi.Models.RegisterModel registerModel2 = new P7CreateRestApi.Models.RegisterModel
                 {
-                    UserName = "test123456789abcd",
-                    Email = "test123456789abcd@gmail.com",
+                    UserName = "registerModel2",
+                    Email = "test1abcd@gmail.com",
                     Password = "test123.Pass",
                     Role = "Member",
                 };
@@ -2338,7 +2338,7 @@ namespace P7CreateRestApiTest
                 Xunit.Assert.True(createUser2.IsCompletedSuccessfully);
                 Xunit.Assert.Equivalent(registerModel1.UserName, userDtoFound1.UserName);
                 Xunit.Assert.Equivalent(registerModel1.Role, userDtoFound1.Role);
-                Xunit.Assert.Equal(2, userDtoFoundafterDeletetionCount);
+                Xunit.Assert.Equal(1, userDtoFoundafterDeletetionCount);
                 await iUserService.DeleteUserByEmail(registerModel1.Email);
                 await iUserService.DeleteUserByEmail(registerModel2.Email);
             }

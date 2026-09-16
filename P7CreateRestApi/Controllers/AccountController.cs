@@ -19,14 +19,9 @@ namespace P7CreateRestApi.Controllers
     public class AccountController : Controller
     {
         private readonly IUserService _iUserService;
-        private readonly UserManager<User> _userManager;
-        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public AccountController(UserManager<User> userManager, RoleManager<IdentityRole> roleManager,
-            IUserService userService)
+        public AccountController(IUserService userService)
         {
-            _userManager = userManager;
-            _roleManager = roleManager;
             _iUserService = userService;
         }
 
@@ -220,29 +215,51 @@ namespace P7CreateRestApi.Controllers
         [Route("password/{email}")]
         public async Task<IActionResult> UpdateUserPasswordByEmail(string email, [FromBody] UpdatePasswordModel updatePasswordModel)
         {
- if (email == "")
+            if (!ModelState.IsValid)
             {
-                return BadRequest("Bad request. UserNamemust be a character string.");
+                return BadRequest(ModelState);
             }
-            User userToFind = await _userManager.FindByEmailAsync(email);
+            IdentityResult result = await _iUserService.UpdateUserPasswordWithUpdatePasswordModel(email, updatePasswordModel);
+
+            if (!result.Succeeded)
+            {
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+                return BadRequest(ModelState);
+            }
+            return Ok("User was successfully registered.");
 
 
-            if (userToFind == null)
-            {
-                return NotFound("The information with the specified UserName was not found.");
-            }
-            else
-            {
-                var result = await _userManager.ChangePasswordAsync(userToFind, updatePasswordModel.CurrentPassword, updatePasswordModel.NewPassword);
-                if (result.Succeeded)
-                {
-                    return Ok(result.Succeeded);
-                }
-                else
-                {
-                    return BadRequest(result.Errors);
-                }
-            }
+
+
+
+
+
+            //if (email == "")
+            //{
+            //    return BadRequest("Bad request. UserNamemust be a character string.");
+            //}
+            //User userToFind = await _userManager.FindByEmailAsync(email);
+
+
+            //if (userToFind == null)
+            //{
+            //    return NotFound("The information with the specified UserName was not found.");
+            //}
+            //else
+            //{
+            //    var result = await _userManager.ChangePasswordAsync(userToFind, updatePasswordModel.CurrentPassword, updatePasswordModel.NewPassword);
+            //    if (result.Succeeded)
+            //    {
+            //        return Ok(result.Succeeded);
+            //    }
+            //    else
+            //    {
+            //        return BadRequest(result.Errors);
+            //    }
+            //}
 
         }
 
@@ -260,17 +277,15 @@ namespace P7CreateRestApi.Controllers
 
         [HttpDelete]
         [Route("{email}")]
-        public async Task<IActionResult> DeleteUserByEmail(string email)
+        public async Task<IActionResult> DeleteUserByUserName(string email)
         {
-
             if (email == "")
             {
                 return BadRequest("Bad request. UserName must be a character string.");
             }
             else
             {
-                User user = await _userManager.FindByEmailAsync(email);
-                var result = await _userManager.DeleteAsync(user);
+                IdentityResult result = await _iUserService.DeleteUserByEmail(email);  
                 if (result.Errors.Any())
                 {
                     return BadRequest(result.Errors);

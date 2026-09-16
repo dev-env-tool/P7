@@ -13,7 +13,7 @@ namespace P7CreateRestApi.IServices
         Task<IdentityResult> CreateUserWithRegisterModel(RegisterModel registerModel);
         Task<IdentityResult> UpdateUserWithUpdateGeneralInfosModel(string email, UpdateGeneralInfosModel updateGeneralInfosModel);
         Task<IdentityResult> UpdateUserPasswordWithUpdatePasswordModel(string email, UpdatePasswordModel updatePasswordModel);
-        Task DeleteUserByEmail(string email);
+        Task<IdentityResult> DeleteUserByEmail(string email);
         Task<UserDto> MapUserToUserDto(User user);
         Task<User> MapUserDtoToUser(UserDto userDto);
         Task<User> MapRegisterModelToUser(RegisterModel registerModel);

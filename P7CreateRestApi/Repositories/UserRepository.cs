@@ -141,14 +141,17 @@ namespace P7CreateRestApi.Repositories
         }
 
 
-        public async Task DeleteUserByEmail(string email)
+        public async Task<IdentityResult> DeleteUserByEmail(string email)
         {
-            User user = _context!.Users.First(u => u.Email == email);
-
-            if (user != null)
+            User userToFind = await _userManager.FindByEmailAsync(email);
+            if (userToFind == null)
             {
-                _context!.Users.Remove(user);
-                _context!.SaveChanges();
+                return IdentityResult.Failed(new IdentityError { Description = "User does not exist." });
+            }
+            else
+            {
+                var result = await _userManager.DeleteAsync(userToFind);
+                return result;
             }
 
         }

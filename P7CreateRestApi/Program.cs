@@ -55,6 +55,7 @@ public class Program
             options.Password.RequireUppercase = true;
             options.Password.RequiredLength = 10;
             options.Password.RequiredUniqueChars = 1;
+            options.User.RequireUniqueEmail = true;
         });
 
 

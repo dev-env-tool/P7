@@ -1,0 +1,37 @@
+2026-09-16T12:52:21.2442375+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-16T12:52:21.2455283+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-16T12:52:21.2469889+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-16T12:52:21.2469931+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 12:52:21.213
+2026-09-16T12:52:21.2474246+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 6116
+2026-09-16T12:52:21.2475822+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.31
+2026-09-16T12:52:21.2475928+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.31\System.Private.CoreLib.dll
+2026-09-16T12:52:21.2476029+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-16T12:52:21.2476512+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-16T12:52:21.2476620+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 61908'
+2026-09-16T12:52:21.2489895+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-16T12:52:21.2942306+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-16T12:52:21.3040864+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-16T12:52:21.5567576+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-16T12:52:21.5660718+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.31)
+2026-09-16T12:52:21.6110333+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-16T12:52:21.6551092+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-16T12:52:21.6698196+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-16T12:52:22.8087816+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+UserUnitTests.IBidListService_CreateBidListWithBidListDto_ShouldGet_1UserById [FAIL]
+2026-09-16T12:52:22.8091369+00:00 xUnit.net INFORMATION       System.InvalidOperationException : Sequence contains more than one element
+2026-09-16T12:52:22.8094273+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-16T12:52:22.8100633+00:00 xUnit.net INFORMATION            at System.Linq.ThrowHelper.ThrowMoreThanOneElementException()
+2026-09-16T12:52:22.8100758+00:00 xUnit.net INFORMATION            at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+2026-09-16T12:52:22.8100777+00:00 xUnit.net INFORMATION            at lambda_method286(Closure)
+2026-09-16T12:52:22.8100817+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryQueryExpression.ResultEnumerable.GetEnumerator()
+2026-09-16T12:52:22.8100867+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryShapedQueryCompilingExpressionVisitor.QueryingEnumerable`1.Enumerator.MoveNextHelper()
+2026-09-16T12:52:22.8101117+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryShapedQueryCompilingExpressionVisitor.QueryingEnumerable`1.Enumerator.MoveNextAsync()
+2026-09-16T12:52:22.8101177+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+2026-09-16T12:52:22.8101236+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+2026-09-16T12:52:22.8101265+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Identity.UserManager`1.FindByEmailAsync(String email)
+2026-09-16T12:52:22.8101387+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Repositories\UserRepository.cs(146,0): at P7CreateRestApi.Repositories.UserRepository.DeleteUserByEmail(String email)
+2026-09-16T12:52:22.8101441+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\UserService.cs(138,0): at P7CreateRestApi.Services.UserService.DeleteUserByEmail(String email)
+2026-09-16T12:52:22.8101558+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(2342,0): at P7CreateRestApiTest.DatabaseFixture.UserUnitTests.IBidListService_CreateBidListWithBidListDto_ShouldGet_1UserById()
+2026-09-16T12:52:22.8101582+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-16T12:52:22.8220395+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-16T12:52:22.8261840+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-16T12:52:22.8326120+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 1, Errors: 0, Failed: 1, Skipped: 0, Not Run: 0, Time: 1,155s

@@ -11,7 +11,7 @@ namespace P7CreateRestApi.IRepositories
         Task<IdentityResult> CreateUser(User user);
         Task<IdentityResult> UpdateUser(User user);
         Task<IdentityResult> UpdateUserPassword(User user, UpdatePasswordModel updatePasswordModel);
-        Task DeleteUserByEmail(string email);
+        Task<IdentityResult> DeleteUserByEmail(string email);
 
     }
 }
