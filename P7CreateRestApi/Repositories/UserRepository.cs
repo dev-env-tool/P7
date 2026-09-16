@@ -16,13 +16,15 @@ namespace P7CreateRestApi.Repositories
         private readonly UserManager<User> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
-        public UserRepository(ApplicationDbContext context, 
-            UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
+
+        public UserRepository(ApplicationDbContext context,
+           UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
         {
             _context = context;
             _userManager = userManager;
             _roleManager = roleManager;
         }
+
 
         public async Task<IEnumerable<User>> GetAllUsers()
         {
@@ -31,28 +33,44 @@ namespace P7CreateRestApi.Repositories
 
         public async Task<IEnumerable<User>> GetUserByEmail(string email)
         {
-            return await _context!.Users.Where(u => u.UserName == email)
+            return await _context!.Users.Where(u => u.Email == email)
                                   .ToListAsync();
         }
 
         public async Task<IdentityResult> CreateUser(User user)
         {
             var result = await _userManager.CreateAsync(user, user.Password);
+            bool roleIsValid1 = user.Role.Equals("Member");
+            bool roleIsValid2 = user.Role.Equals("Admin");
+
             if (user != null)
             {
-                
-                if (result.Succeeded && user.Role == "")
+
+                //if (result.Succeeded && user.Role == "")
+                //{
+                //    user.Role = "Member";
+                //    await _userManager.AddToRoleAsync(user, user.Role);
+                //    return result;
+                //}
+                //if (result.Succeeded && user.Role == null)
+                //{
+                //    user.Role = "Member";
+                //    await _userManager.AddToRoleAsync(user, user.Role);
+                //    return result;
+                //}
+                //if ((result.Succeeded && !roleIsValid1) || (result.Succeeded && !roleIsValid2))
+                //{
+                //    user.Role = "Member";
+                //    await _userManager.AddToRoleAsync(user, user.Role);
+                //    return result;
+                //}
+                if ((result.Succeeded && roleIsValid1) || (result.Succeeded && roleIsValid2))
                 {
-                    user.Role = "Member";
-                    await _userManager.AddToRoleAsync(user, user.Role);
+                    var test = await _userManager.AddToRoleAsync(user, user.Role);
+                    int test2 = 1;
                     return result;
                 }
-                if (result.Succeeded && user.Role == null)
-                {
-                    user.Role = "Member";
-                    await _userManager.AddToRoleAsync(user, user.Role);
-                    return result;
-                }
+
             }
             return result;
         }

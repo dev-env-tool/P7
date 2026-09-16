@@ -11,6 +11,9 @@ namespace P7CreateRestApi.Models
         [Required(ErrorMessage = "The email is required")]
         [EmailAddress(ErrorMessage = "The email address is not correct")]
         public required string Email { get; set; }
+        
+        
+        //Password validation comes directly from Identity
         public string Password { get; set; } = string.Empty;
         public string Role { get; set; } = "Admin / Member";
     }
