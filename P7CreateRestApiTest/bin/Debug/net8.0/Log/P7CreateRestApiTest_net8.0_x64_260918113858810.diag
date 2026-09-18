@@ -1,0 +1,198 @@
+2026-09-18T11:38:58.8232624+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-18T11:38:58.8251451+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-18T11:38:58.8273740+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-18T11:38:58.8273801+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 11:38:58.765
+2026-09-18T11:38:58.8280576+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 23136
+2026-09-18T11:38:58.8282559+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.31
+2026-09-18T11:38:58.8282852+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.31\System.Private.CoreLib.dll
+2026-09-18T11:38:58.8283021+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-18T11:38:58.8283793+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-18T11:38:58.8283953+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 60173'
+2026-09-18T11:38:58.8304678+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-18T11:38:58.8989801+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-18T11:38:58.9103243+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-18T11:38:59.3233017+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-18T11:38:59.3374135+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.31)
+2026-09-18T11:38:59.4046995+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-18T11:38:59.4737276+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-18T11:38:59.5220638+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-18T11:39:01.6802660+00:00 Microsoft.Testing.Platform.Hosts.ServerTestHost WARNING [ServerTestHost.OnTaskSchedulerUnobservedTaskException] Unhandled task exception
+------Exception detail------
+System.AggregateException: A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread. (Error mapping types.
+
+Mapping types:
+RatingDto -> Rating
+P7CreateRestApi.DTO.RatingDto -> P7CreateRestApi.Domain.Rating
+
+Type Map configuration:
+RatingDto -> Rating
+P7CreateRestApi.DTO.RatingDto -> P7CreateRestApi.Domain.Rating
+
+Destination Member:
+OrderNumber
+)
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+RatingDto -> Rating
+P7CreateRestApi.DTO.RatingDto -> P7CreateRestApi.Domain.Rating
+
+Type Map configuration:
+RatingDto -> Rating
+P7CreateRestApi.DTO.RatingDto -> P7CreateRestApi.Domain.Rating
+
+Destination Member:
+OrderNumber
+
+ ---> System.OverflowException: Value was either too large or too small for an unsigned byte.
+   at System.Number.ThrowOverflowException[TInteger]()
+   at lambda_method806(Closure, Object, Rating, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method806(Closure, Object, Rating, ResolutionContext)
+   at P7CreateRestApi.Services.RatingService.MapRatingDtoToRating(RatingDto ratingDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\RatingService.cs:line 78
+   at P7CreateRestApi.Services.RatingService.CreateRatingWithRatingDto(RatingDto ratingDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\RatingService.cs:line 49
+   --- End of inner exception stack trace ---
+2026-09-18T11:39:01.7029212+00:00 Microsoft.Testing.Platform.Hosts.ServerTestHost WARNING [ServerTestHost.OnTaskSchedulerUnobservedTaskException] Unhandled task exception
+------Exception detail------
+System.AggregateException: A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread. (Error mapping types.
+
+Mapping types:
+BidListDto -> BidList
+P7CreateRestApi.DTO.BidListDto -> P7CreateRestApi.Domain.BidList
+
+Type Map configuration:
+BidListDto -> BidList
+P7CreateRestApi.DTO.BidListDto -> P7CreateRestApi.Domain.BidList
+
+Destination Member:
+BidQuantity
+)
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+BidListDto -> BidList
+P7CreateRestApi.DTO.BidListDto -> P7CreateRestApi.Domain.BidList
+
+Type Map configuration:
+BidListDto -> BidList
+P7CreateRestApi.DTO.BidListDto -> P7CreateRestApi.Domain.BidList
+
+Destination Member:
+BidQuantity
+
+ ---> System.FormatException: The input string 'abc' was not in a correct format.
+   at System.Number.ThrowFormatException[TChar](ReadOnlySpan`1 value)
+   at System.Convert.ToDouble(String value)
+   at lambda_method794(Closure, Object, BidList, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method794(Closure, Object, BidList, ResolutionContext)
+   at P7CreateRestApi.Services.BidListService.MapBidListDtoToBidList(BidListDto bidListDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\BidListService.cs:line 87
+   at P7CreateRestApi.Services.BidListService.CreateBidListWithBidListDto(BidListDto bidListDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\BidListService.cs:line 58
+   --- End of inner exception stack trace ---
+2026-09-18T11:39:01.7388051+00:00 Microsoft.Testing.Platform.Hosts.ServerTestHost WARNING [ServerTestHost.OnTaskSchedulerUnobservedTaskException] Unhandled task exception
+------Exception detail------
+System.AggregateException: A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread. (Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+AsOfDate
+)
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+AsOfDate
+
+ ---> System.FormatException: The string 'f' was not recognized as a valid DateTime. There is an unknown word starting at index '0'.
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at lambda_method815(Closure, Object, CurvePoint, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method815(Closure, Object, CurvePoint, ResolutionContext)
+   at P7CreateRestApi.Services.CurvePointService.MapCurvePointDtoToCurvePoint(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 78
+   at P7CreateRestApi.Services.CurvePointService.CreateCurvePointWithCurvePointDto(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 49
+   --- End of inner exception stack trace ---
+2026-09-18T11:39:01.7404074+00:00 Microsoft.Testing.Platform.Hosts.ServerTestHost WARNING [ServerTestHost.OnTaskSchedulerUnobservedTaskException] Unhandled task exception
+------Exception detail------
+System.AggregateException: A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread. (Error mapping types.
+
+Mapping types:
+TradeDto -> Trade
+P7CreateRestApi.DTO.TradeDto -> P7CreateRestApi.Domain.Trade
+
+Type Map configuration:
+TradeDto -> Trade
+P7CreateRestApi.DTO.TradeDto -> P7CreateRestApi.Domain.Trade
+
+Destination Member:
+TradeDate
+)
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+TradeDto -> Trade
+P7CreateRestApi.DTO.TradeDto -> P7CreateRestApi.Domain.Trade
+
+Type Map configuration:
+TradeDto -> Trade
+P7CreateRestApi.DTO.TradeDto -> P7CreateRestApi.Domain.Trade
+
+Destination Member:
+TradeDate
+
+ ---> System.FormatException: String '2' was not recognized as a valid DateTime.
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at lambda_method841(Closure, Object, Trade, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method841(Closure, Object, Trade, ResolutionContext)
+   at P7CreateRestApi.Services.TradeService.MapTradeDtoToTrade(TradeDto tradeDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\TradeService.cs:line 78
+   at P7CreateRestApi.Services.TradeService.CreateTradeWithTradeDto(TradeDto tradeDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\TradeService.cs:line 49
+   --- End of inner exception stack trace ---
+2026-09-18T11:39:03.0610481+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+UserUnitTests.IBidListService_UpdateUserWithUpdateGeneralInfosModel_ShouldUpdate_1User [FAIL]
+2026-09-18T11:39:03.0617942+00:00 xUnit.net INFORMATION       Assert.True() Failure
+2026-09-18T11:39:03.0618151+00:00 xUnit.net INFORMATION       Expected: True
+2026-09-18T11:39:03.0618170+00:00 xUnit.net INFORMATION       Actual:   False
+2026-09-18T11:39:03.0622958+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-18T11:39:03.0631315+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(2497,0): at P7CreateRestApiTest.DatabaseFixture.UserUnitTests.IBidListService_UpdateUserWithUpdateGeneralInfosModel_ShouldUpdate_1User()
+2026-09-18T11:39:03.0631527+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-18T11:39:03.1855234+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-18T11:39:03.1732290+00:00 Microsoft.Testing.Platform.Hosts.ServerTestHost WARNING [ServerTestHost.OnTaskSchedulerUnobservedTaskException] Unhandled task exception
+------Exception detail------
+System.AggregateException: A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread. (The instance of entity type 'User' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.)
+ ---> System.InvalidOperationException: The instance of entity type 'User' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.ThrowIdentityConflict(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry, Boolean updateDuplicate)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.NullableKeyIdentityMap`1.Add(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.StartTracking(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey, Nullable`1 fallbackState)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintAction(EntityEntryGraphNode`1 node)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraph[TState](EntityEntryGraphNode`1 node, Func`2 handleNode)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.AttachGraph(InternalEntityEntry rootEntry, EntityState targetState, EntityState storeGeneratedWithKeySetTargetState, Boolean forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.DbContext.SetEntityState(InternalEntityEntry entry, EntityState entityState)
+   at Microsoft.EntityFrameworkCore.DbContext.SetEntityState[TEntity](TEntity entity, EntityState entityState)
+   at Microsoft.EntityFrameworkCore.DbContext.Attach[TEntity](TEntity entity)
+   at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.UpdateAsync(TUser user, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.UpdateUserAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.AddToRoleAsync(TUser user, String role)
+   at P7CreateRestApi.Repositories.UserRepository.UpdateUserByEmail(String email, User user) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Repositories\UserRepository.cs:line 90
+   at P7CreateRestApi.Services.UserService.UpdateUserWithUpdateGeneralInfosModel(String email, UpdateGeneralInfosModel updateGeneralInfosModel) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\UserService.cs:line 84
+   --- End of inner exception stack trace ---
+2026-09-18T11:39:03.1941713+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-18T11:39:03.2039385+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 41, Errors: 0, Failed: 1, Skipped: 0, Not Run: 0, Time: 3,684s

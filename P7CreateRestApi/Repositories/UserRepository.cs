@@ -5,6 +5,8 @@ using P7CreateRestApi.Data;
 using P7CreateRestApi.Domain;
 using P7CreateRestApi.IRepositories;
 using P7CreateRestApi.Models;
+using System.ComponentModel.DataAnnotations;
+using System.Data;
 using static Duende.IdentityServer.Models.IdentityResources;
 
 namespace P7CreateRestApi.Repositories
@@ -39,32 +41,28 @@ namespace P7CreateRestApi.Repositories
 
         public async Task<IdentityResult> CreateUser(User user)
         {
+
             var result = await _userManager.CreateAsync(user, user.Password);
             bool roleIsValid1 = user.Role.Equals("Member");
             bool roleIsValid2 = user.Role.Equals("Admin");
 
-            if (user != null)
+            if (user != null && result.Succeeded)
             {
 
-                //if (result.Succeeded && user.Role == "")
-                //{
-                //    user.Role = "Member";
-                //    await _userManager.AddToRoleAsync(user, user.Role);
-                //    return result;
-                //}
-                //if (result.Succeeded && user.Role == null)
-                //{
-                //    user.Role = "Member";
-                //    await _userManager.AddToRoleAsync(user, user.Role);
-                //    return result;
-                //}
-                //if ((result.Succeeded && !roleIsValid1) || (result.Succeeded && !roleIsValid2))
-                //{
-                //    user.Role = "Member";
-                //    await _userManager.AddToRoleAsync(user, user.Role);
-                //    return result;
-                //}
-                if ((result.Succeeded && roleIsValid1) || (result.Succeeded && roleIsValid2))
+                if (user.Role == "" || user.Role == null)
+                {
+                    user.Role = "Member";
+                    await _userManager.AddToRoleAsync(user, user.Role);
+                    return result;
+                }
+
+                if ((!roleIsValid1) && (!roleIsValid2))
+                {
+                    user.Role = "Member";
+                    await _userManager.AddToRoleAsync(user, user.Role);
+                    return result;
+                }
+                if ((roleIsValid1) || (roleIsValid2))
                 {
                     var test = await _userManager.AddToRoleAsync(user, user.Role);
                     int test2 = 1;
@@ -75,36 +73,77 @@ namespace P7CreateRestApi.Repositories
             return result;
         }
 
-        public async Task<IdentityResult> UpdateUser(User user)
+        public async Task<IdentityResult> UpdateUserByEmail(string email, User user)
         {
-            User userToFind = await _userManager.FindByEmailAsync(user.Email);
+            //User userToFind = GetUserByEmail(email).Result.First();
+            var userToFind = await _userManager.FindByEmailAsync(email);
             if (userToFind == null)
             {
                 return IdentityResult.Failed(new IdentityError { Description = "User does not exist." });
             }
             else
             {
-                userToFind.UserName = user.UserName;
-                var resultFoundUser = await _userManager.UpdateAsync(userToFind);
-
-                if(user.Role != null) 
+                if (user.UserName != null)
                 {
-                    bool IsInRole = await _userManager.IsInRoleAsync(userToFind, user.Role);
-                    if (!IsInRole)
+                    
+                    var setUserNameAsync = await _userManager.SetUserNameAsync(userToFind, user.UserName);
+                    if (!setUserNameAsync.Succeeded)
                     {
-                        var roleUpdateResult = await _userManager.AddToRoleAsync(userToFind, user.Role);
-                        IList<string> foundRoles = await _userManager.GetRolesAsync(userToFind);
-                        foundRoles.Remove(user.Role);
-                        foreach (var role in foundRoles)
-                        {
-                            await _userManager.RemoveFromRoleAsync(userToFind, role);
-                        }
-                        return roleUpdateResult;
+                        return IdentityResult.Failed(new IdentityError { Description = "The new username could not be changed." });
+                    }
+                    
+                    Task setNormalizedUserName = _userManager.UpdateNormalizedUserNameAsync(userToFind);
+                    if (!setNormalizedUserName.IsCompletedSuccessfully || setNormalizedUserName.IsCanceled || setNormalizedUserName.IsFaulted)
+                    {
+                        return IdentityResult.Failed(new IdentityError { Description = "The new normalizedusername could not be changed." });
+                    }
+                    await _userManager.UpdateAsync(user);
+                }
+                if (user.Role != null)
+                {
+                    var roleRemoveResult = await _userManager.RemoveFromRoleAsync(userToFind, userToFind.Role);
+                    if (!roleRemoveResult.Succeeded)
+                    {
+                        return IdentityResult.Failed(new IdentityError { Description = "The previous role could not be removed from the user." });
+                    }
+
+                    var roleUpdateResult = await _userManager.AddToRoleAsync(userToFind, user.Role);
+                    if (!roleUpdateResult.Succeeded)
+                    {
+                        return IdentityResult.Failed(new IdentityError { Description = "The new role could not be added to the user." });
+                    }
+
+                    userToFind.Role = user.Role;
+                    var updateRoleinUser = await _userManager.UpdateAsync(userToFind);
+                    if (!updateRoleinUser.Succeeded)
+                    {
+                        return IdentityResult.Failed(new IdentityError { Description = "The new front-end role could not be added to the user." });
                     }
                 }
-                return resultFoundUser;
+                return IdentityResult.Success;
 
             }
+            //    bool IsInRole = await _userManager.IsInRoleAsync(userToFind, user.Role);
+            //    if (!IsInRole)
+            //    {
+            //        IdentityResult roleUpdateResult = await _userManager.AddToRoleAsync(userToFind, user.Role);
+            //        IEnumerable<IdentityError> errors = roleUpdateResult.Errors;
+            //        IList<string> foundRoles = await _userManager.GetRolesAsync(userToFind);
+            //        foundRoles.Remove(user.Role);
+            //        foreach (var role in foundRoles)
+            //        {
+            //            await _userManager.RemoveFromRoleAsync(userToFind, role);
+            //        }
+            //        return roleUpdateResult;
+            //    }
+            //    userToFind.UserName = user.UserName;
+            //    userToFind.Role = user.Role;
+            //    var resultFoundUser = await _userManager.UpdateAsync(userToFind);
+            //    return resultFoundUser;
+            //}
+            //return IdentityResult.Failed(new IdentityError { Description = "The update failed." });
+
+
             //if (user != null)
             //{
             //    if (GetUserByEmail(user.UserName) != null)
@@ -113,8 +152,8 @@ namespace P7CreateRestApi.Repositories
             //        _context!.SaveChanges();
             //    }
             //}
-        }
 
+        }
 
         public async Task<IdentityResult> UpdateUserPassword(User user, UpdatePasswordModel updatePasswordModel)
         {

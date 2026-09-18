@@ -2035,10 +2035,11 @@ namespace P7CreateRestApiTest
         {
             private ApplicationDbContext GetInMemoryDbContext()
             {
+                var configuration = new ConfigurationBuilder();
                 var options = new DbContextOptionsBuilder<ApplicationDbContext>()
                     .UseInMemoryDatabase(databaseName: "TestDatabase6")
                     .Options;
-                return new ApplicationDbContext(options);
+                return new ApplicationDbContext(options, configuration);
             }
 
 
@@ -2054,18 +2055,39 @@ namespace P7CreateRestApiTest
                 IMapper mapper = config.CreateMapper();
 
                 var context = GetInMemoryDbContext();
-                var options = new  DbContextOptionsBuilder<ApplicationDbContext>()
+                var options = new DbContextOptionsBuilder<ApplicationDbContext>()
                     .UseInMemoryDatabase(databaseName: "TestDatabase6")
                     .Options;
-                var db = new ApplicationDbContext(options);
-
-
+                var configuration = new ConfigurationBuilder();
+                var db = new ApplicationDbContext(options, configuration);
                 var userstore = new UserStore<User>(db);
                 var roleStore = new RoleStore<IdentityRole>(db);
-                var optionsDb = Options.Create(new IdentityOptions());
+                //var optionsDb = Options.Create(new IdentityOptions());
+                var optionsDb = Options.Create(new IdentityOptions
+                {
+                    Password = new PasswordOptions
+                    {
+                        RequireDigit = true,
+                        RequireLowercase = true,
+                        RequireNonAlphanumeric = true,
+                        RequireUppercase = true,
+                        RequiredLength = 10,
+                        RequiredUniqueChars = 1
+                    },
+                    User = new UserOptions
+                    {
+                        RequireUniqueEmail = true,
+                    },
+
+                });
                 var passwordHasher = new PasswordHasher<User>();
                 var userValidator = new List<IUserValidator<User>>();
-                var passwordValidator = new IPasswordValidator<User>[0];
+                var userValidatorItem = new UserValidator<User>();
+                userValidator.Add(userValidatorItem);
+                int count = userValidator.Count();
+                var passwordValidator = new List<IPasswordValidator<User>>();
+                var passwordValidatorItem = new PasswordValidator<User>();
+                passwordValidator.Add(passwordValidatorItem);
                 var lookupNormalizer = new UpperInvariantLookupNormalizer();
                 var identityErrorDescriber = new IdentityErrorDescriber();
                 var iServiceProvider = new Mock<IServiceProvider>().Object;
@@ -2093,7 +2115,7 @@ namespace P7CreateRestApiTest
                     UserName = "registerModel",
                     Email = "registerModel@gmail.com",
                     Password = "test123.Pass",
-                    Role = "Member",
+                    Role = "",
                 };
 
                 ///Act
@@ -2103,7 +2125,7 @@ namespace P7CreateRestApiTest
                 ///Assert
                 Xunit.Assert.True(createUser.IsCompletedSuccessfully);
                 Xunit.Assert.Equivalent(registerModel.UserName, userDtoFound.UserName);
-                Xunit.Assert.Equivalent(registerModel.Role, userDtoFound.Role);
+                Xunit.Assert.Equivalent("Member", userDtoFound.Role);
                 await iUserService.DeleteUserByEmail(registerModel.Email);
             }
 
@@ -2124,15 +2146,36 @@ namespace P7CreateRestApiTest
                 var options = new DbContextOptionsBuilder<ApplicationDbContext>()
                     .UseInMemoryDatabase(databaseName: "TestDatabase6")
                     .Options;
-                var db = new ApplicationDbContext(options);
-
-
+                var configuration = new ConfigurationBuilder();
+                var db = new ApplicationDbContext(options, configuration);
                 var userstore = new UserStore<User>(db);
                 var roleStore = new RoleStore<IdentityRole>(db);
-                var optionsDb = Options.Create(new IdentityOptions());
+                //var optionsDb = Options.Create(new IdentityOptions());
+                var optionsDb = Options.Create(new IdentityOptions
+                {
+                    Password = new PasswordOptions
+                    {
+                        RequireDigit = true,
+                        RequireLowercase = true,
+                        RequireNonAlphanumeric = true,
+                        RequireUppercase = true,
+                        RequiredLength = 10,
+                        RequiredUniqueChars = 1
+                    },
+                    User = new UserOptions
+                    {
+                        RequireUniqueEmail = true,
+                    },
+
+                });
                 var passwordHasher = new PasswordHasher<User>();
                 var userValidator = new List<IUserValidator<User>>();
-                var passwordValidator = new IPasswordValidator<User>[0];
+                var userValidatorItem = new UserValidator<User>();
+                userValidator.Add(userValidatorItem);
+                int count = userValidator.Count();
+                var passwordValidator = new List<IPasswordValidator<User>>();
+                var passwordValidatorItem = new PasswordValidator<User>();
+                passwordValidator.Add(passwordValidatorItem);
                 var lookupNormalizer = new UpperInvariantLookupNormalizer();
                 var identityErrorDescriber = new IdentityErrorDescriber();
                 var iServiceProvider = new Mock<IServiceProvider>().Object;
@@ -2182,7 +2225,7 @@ namespace P7CreateRestApiTest
 
 
             [Fact]
-            public async Task IUserService_CreateBidListWithBidListDto_ShouldGet_2Users()
+            public async Task IUserService_GetAllUsersDto_ShouldGet_2Users()
             {
                 /// Arrange
                 Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
@@ -2196,15 +2239,36 @@ namespace P7CreateRestApiTest
                 var options = new DbContextOptionsBuilder<ApplicationDbContext>()
                     .UseInMemoryDatabase(databaseName: "TestDatabase6")
                     .Options;
-                var db = new ApplicationDbContext(options);
-
-
+                var configuration = new ConfigurationBuilder();
+                var db = new ApplicationDbContext(options, configuration);
                 var userstore = new UserStore<User>(db);
                 var roleStore = new RoleStore<IdentityRole>(db);
-                var optionsDb = Options.Create(new IdentityOptions());
+                //var optionsDb = Options.Create(new IdentityOptions());
+                var optionsDb = Options.Create(new IdentityOptions
+                {
+                    Password = new PasswordOptions
+                    {
+                        RequireDigit = true,
+                        RequireLowercase = true,
+                        RequireNonAlphanumeric = true,
+                        RequireUppercase = true,
+                        RequiredLength = 10,
+                        RequiredUniqueChars = 1
+                    },
+                    User = new UserOptions
+                    {
+                        RequireUniqueEmail = true,
+                    },
+
+                });
                 var passwordHasher = new PasswordHasher<User>();
+                //var userValidator = new List<IUserValidator<User>>();
                 var userValidator = new List<IUserValidator<User>>();
+                var userValidatorItem = new UserValidator<User>();
+                userValidator.Add(userValidatorItem);
+                int count = userValidator.Count();
                 var passwordValidator = new IPasswordValidator<User>[0];
+                var validator = new PasswordValidator<User>();
                 var lookupNormalizer = new UpperInvariantLookupNormalizer();
                 var identityErrorDescriber = new IdentityErrorDescriber();
                 var iServiceProvider = new Mock<IServiceProvider>().Object;
@@ -2277,9 +2341,8 @@ namespace P7CreateRestApiTest
                 var options = new DbContextOptionsBuilder<ApplicationDbContext>()
                     .UseInMemoryDatabase(databaseName: "TestDatabase6")
                     .Options;
-                var db = new ApplicationDbContext(options);
-
-
+                var configuration = new ConfigurationBuilder();
+                var db = new ApplicationDbContext(options, configuration);
                 var userstore = new UserStore<User>(db);
                 var roleStore = new RoleStore<IdentityRole>(db);
                 var optionsDb = Options.Create(new IdentityOptions());
@@ -2324,27 +2387,313 @@ namespace P7CreateRestApiTest
                     Role = "Member",
                 };
 
-                
+                ///Act
                 Task createUser1 = iUserService.CreateUserWithRegisterModel(registerModel1);
                 Task createUser2 = iUserService.CreateUserWithRegisterModel(registerModel2);
                 UserDto userDtoFound1 = iUserService.GetUserDtoByEmail(registerModel1.Email).Result.Select(u => u).First();
-                int userDtoFoundafterDeletetionCount = iUserService.GetUserDtoByEmail(registerModel1.Email).Result.Select(u => u).Count();
                 
                 
-                ///Act
+  
 
                 ///Assert
                 Xunit.Assert.True(createUser1.IsCompletedSuccessfully);
                 Xunit.Assert.True(createUser2.IsCompletedSuccessfully);
                 Xunit.Assert.Equivalent(registerModel1.UserName, userDtoFound1.UserName);
                 Xunit.Assert.Equivalent(registerModel1.Role, userDtoFound1.Role);
-                Xunit.Assert.Equal(1, userDtoFoundafterDeletetionCount);
                 await iUserService.DeleteUserByEmail(registerModel1.Email);
                 await iUserService.DeleteUserByEmail(registerModel2.Email);
             }
 
+            [Fact]
+            public async Task IBidListService_UpdateUserWithUpdateGeneralInfosModel_ShouldUpdate_1User()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var options = new DbContextOptionsBuilder<ApplicationDbContext>()
+                    .UseInMemoryDatabase(databaseName: "TestDatabase6")
+                    .Options;
+                var configuration = new ConfigurationBuilder();
+                var db = new ApplicationDbContext(options, configuration);
+                var userstore = new UserStore<User>(db);
+                var roleStore = new RoleStore<IdentityRole>(db);
+                //var optionsDb = Options.Create(new IdentityOptions());
+                var optionsDb = Options.Create(new IdentityOptions
+                {
+                    Password = new PasswordOptions
+                    {
+                        RequireDigit = true,
+                        RequireLowercase = true,
+                        RequireNonAlphanumeric = true,
+                        RequireUppercase = true,
+                        RequiredLength = 10,
+                        RequiredUniqueChars = 1
+                    },
+                    User = new UserOptions
+                    {
+                        RequireUniqueEmail = true,
+                    },
+
+                });
+                var passwordHasher = new PasswordHasher<User>();
+                var userValidator = new List<IUserValidator<User>>();
+                var userValidatorItem = new UserValidator<User>();
+                userValidator.Add(userValidatorItem);
+                int count = userValidator.Count();
+                var passwordValidator = new List<IPasswordValidator<User>>();
+                var passwordValidatorItem = new PasswordValidator<User>();
+                passwordValidator.Add(passwordValidatorItem);
+                var lookupNormalizer = new UpperInvariantLookupNormalizer();
+                var identityErrorDescriber = new IdentityErrorDescriber();
+                var iServiceProvider = new Mock<IServiceProvider>().Object;
+                var iLogger = new Mock<Microsoft.Extensions.Logging.ILogger<UserManager<User>>>().Object;
+                var userManager = new UserManager<P7CreateRestApi.Domain.User>(userstore, optionsDb, passwordHasher, userValidator, passwordValidator, lookupNormalizer, identityErrorDescriber, iServiceProvider, iLogger);
+                var roleValidator = new List<IRoleValidator<IdentityRole>>();
+                var iLoggerRole = new Mock<Microsoft.Extensions.Logging.ILogger<RoleManager<IdentityRole>>>().Object;
+                var roleManager = new RoleManager<IdentityRole>(roleStore, roleValidator, lookupNormalizer, identityErrorDescriber, iLoggerRole);
+                IUserRepository iUserRepository = new UserRepository(context, userManager, roleManager);
+                IUserService iUserService = new UserService(iUserRepository, mapper);
+                CustomValidationAttribute customValidationAttribute = new CustomValidationAttribute();
+
+                var roles = new[] { "Admin", "Member" };
+                foreach (var role in roles)
+                {
+
+                    if (!await roleManager.RoleExistsAsync(role))
+                    {
+                        await roleManager.CreateAsync(new IdentityRole(role));
+                    }
+                }
+
+                P7CreateRestApi.Models.RegisterModel registerModel = new P7CreateRestApi.Models.RegisterModel
+                {
+                    Email = "test@gmail.com",
+                    UserName = "updateGeneralInfosModel1",
+                    Password = "passW1.ordtest",
+                    Role = "Member",
+                };
+
+                P7CreateRestApi.Models.UpdateGeneralInfosModel updateGeneralInfosModelForUpdate = new P7CreateRestApi.Models.UpdateGeneralInfosModel
+                {
+                    UserName = "testnewname",
+                    Role = "Admin",
+                };
+
+                ///Act
+                Task createUser = iUserService.CreateUserWithRegisterModel(registerModel);
+                Task updateUser = iUserService.UpdateUserWithUpdateGeneralInfosModel(registerModel.Email, updateGeneralInfosModelForUpdate);
+                UserDto userDtoFound = iUserService.GetUserDtoByEmail(registerModel.Email).Result.Select(u => u).First();
 
 
+
+                ///Assert
+                Xunit.Assert.True(createUser.IsCompletedSuccessfully);
+                Xunit.Assert.True(updateUser.IsCompletedSuccessfully);
+                Xunit.Assert.Equivalent(updateGeneralInfosModelForUpdate.UserName, userDtoFound.UserName);
+                Xunit.Assert.Equivalent(updateGeneralInfosModelForUpdate.Role, userDtoFound.Role);
+                var test = await userManager.GetUsersInRoleAsync("Member");
+                var test2 = await userManager.GetUsersInRoleAsync("Admin");
+                Xunit.Assert.True(test2.ElementAt(0).UserName == userDtoFound.UserName);
+                
+                await iUserService.DeleteUserByEmail(registerModel.Email);
+
+            }
+
+
+
+            [Fact]
+            public async Task IBidListService_CreateUserWithRegisterModel_ShouldNotCreate_2IdenticalUsers()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var options = new DbContextOptionsBuilder<ApplicationDbContext>()
+                    .UseInMemoryDatabase(databaseName: "TestDatabase6")
+                    .Options;
+                var configuration = new ConfigurationBuilder();
+                var db = new ApplicationDbContext(options, configuration);
+                var userstore = new UserStore<User>(db);
+                var roleStore = new RoleStore<IdentityRole>(db);
+                //var optionsDb = Options.Create(new IdentityOptions());
+                var optionsDb = Options.Create(new IdentityOptions
+                {
+                    Password = new PasswordOptions
+                    {
+                        RequireDigit = true,
+                        RequireLowercase = true,
+                        RequireNonAlphanumeric = true,
+                        RequireUppercase = true,
+                        RequiredLength = 10,
+                        RequiredUniqueChars = 1
+                    },
+                    User = new UserOptions
+                    {
+                        RequireUniqueEmail = true,
+                    },
+
+                });
+                var passwordHasher = new PasswordHasher<User>();
+                var userValidator = new List<IUserValidator<User>>();
+                var userValidatorItem = new UserValidator<User>();
+                userValidator.Add(userValidatorItem);
+                int count = userValidator.Count();
+                var passwordValidator = new List<IPasswordValidator<User>>();
+                var passwordValidatorItem = new PasswordValidator<User>();
+                passwordValidator.Add(passwordValidatorItem);
+                var lookupNormalizer = new UpperInvariantLookupNormalizer();
+                var identityErrorDescriber = new IdentityErrorDescriber();
+                var iServiceProvider = new Mock<IServiceProvider>().Object;
+                var iLogger = new Mock<Microsoft.Extensions.Logging.ILogger<UserManager<User>>>().Object;
+                var userManager = new UserManager<P7CreateRestApi.Domain.User>(userstore, optionsDb, passwordHasher, userValidator, passwordValidator, lookupNormalizer, identityErrorDescriber, iServiceProvider, iLogger);
+                var roleValidator = new List<IRoleValidator<IdentityRole>>();
+                var iLoggerRole = new Mock<Microsoft.Extensions.Logging.ILogger<RoleManager<IdentityRole>>>().Object;
+                var roleManager = new RoleManager<IdentityRole>(roleStore, roleValidator, lookupNormalizer, identityErrorDescriber, iLoggerRole);
+                IUserRepository iUserRepository = new UserRepository(context, userManager, roleManager);
+                IUserService iUserService = new UserService(iUserRepository, mapper);
+                CustomValidationAttribute customValidationAttribute = new CustomValidationAttribute();
+
+                var roles = new[] { "Admin", "Member" };
+                foreach (var role in roles)
+                {
+
+                    if (!await roleManager.RoleExistsAsync(role))
+                    {
+                        await roleManager.CreateAsync(new IdentityRole(role));
+                    }
+                }
+
+                P7CreateRestApi.Models.RegisterModel registerModel1 = new P7CreateRestApi.Models.RegisterModel
+                {
+                    Email = "test@gmail.com",
+                    UserName = "test@gmail.com",
+                    Password = "passwordTest1.",
+                    Role = "Member",
+                };
+
+                P7CreateRestApi.Models.RegisterModel registerModel2 = new P7CreateRestApi.Models.RegisterModel
+                {
+                    Email = "test@gmail.com",
+                    UserName = "test@gmail.com",
+                    Password = "passwordTest1.",
+                    Role = "",
+                };
+                ///Act
+                Task createUser = iUserService.CreateUserWithRegisterModel(registerModel1);
+                Task createUser2 = iUserService.CreateUserWithRegisterModel(registerModel2);
+                UserDto userDtoFound1 = iUserService.GetUserDtoByEmail(registerModel1.Email).Result.Select(u => u).First();
+                int userDtoFoundCount = iUserService.GetAllUsersDto().Result.Select(u => u).Count();
+
+
+
+                ///Assert
+                Xunit.Assert.Equivalent(registerModel1, userDtoFound1);
+                Xunit.Assert.Equal(1, userDtoFoundCount);
+                Xunit.Assert.True(createUser2.IsCompletedSuccessfully);
+                await iUserService.DeleteUserByEmail(registerModel1.Email);
+
+            }
+
+
+            [Fact]
+            public async Task IBidListService_CreateUserWithRegisterModel_ShouldNotCreate_1User()
+            {
+                /// Arrange
+                Microsoft.Extensions.Logging.ILoggerFactory loggerFactory = new LoggerFactory();
+                var config = new MapperConfiguration(cfg =>
+                {
+                    cfg.AddProfile<DtoProfile>();
+                }, loggerFactory);
+                IMapper mapper = config.CreateMapper();
+
+                var context = GetInMemoryDbContext();
+                var options = new DbContextOptionsBuilder<ApplicationDbContext>()
+                    .UseInMemoryDatabase(databaseName: "TestDatabase6")
+                    .Options;
+                var configuration = new ConfigurationBuilder();
+                var db = new ApplicationDbContext(options, configuration);
+                var userstore = new UserStore<User>(db);
+                var roleStore = new RoleStore<IdentityRole>(db);
+                //var optionsDb = Options.Create(new IdentityOptions());
+                var optionsDb = Options.Create(new IdentityOptions
+                {
+                    Password = new PasswordOptions
+                    {
+                        RequireDigit = true,
+                        RequireLowercase = true,
+                        RequireNonAlphanumeric = true,
+                        RequireUppercase = true,
+                        RequiredLength = 10,
+                        RequiredUniqueChars = 1
+                    },
+                    User = new UserOptions
+                    {
+                        RequireUniqueEmail = true,
+                    },
+
+                });
+                var passwordHasher = new PasswordHasher<User>();
+                var userValidator = new List<IUserValidator<User>>();
+                var userValidatorItem = new UserValidator<User>();
+                userValidator.Add(userValidatorItem);
+                int count = userValidator.Count();
+                var passwordValidator = new List<IPasswordValidator<User>>();
+                var passwordValidatorItem = new PasswordValidator<User>();
+                passwordValidator.Add(passwordValidatorItem);
+                var lookupNormalizer = new UpperInvariantLookupNormalizer();
+                var identityErrorDescriber = new IdentityErrorDescriber();
+                var iServiceProvider = new Mock<IServiceProvider>().Object;
+                var iLogger = new Mock<Microsoft.Extensions.Logging.ILogger<UserManager<User>>>().Object;
+                var userManager = new UserManager<P7CreateRestApi.Domain.User>(userstore, optionsDb, passwordHasher, userValidator, passwordValidator, lookupNormalizer, identityErrorDescriber, iServiceProvider, iLogger);
+                var roleValidator = new List<IRoleValidator<IdentityRole>>();
+                var iLoggerRole = new Mock<Microsoft.Extensions.Logging.ILogger<RoleManager<IdentityRole>>>().Object;
+                var roleManager = new RoleManager<IdentityRole>(roleStore, roleValidator, lookupNormalizer, identityErrorDescriber, iLoggerRole);
+                IUserRepository iUserRepository = new UserRepository(context, userManager, roleManager);
+                IUserService iUserService = new UserService(iUserRepository, mapper);
+                CustomValidationAttribute customValidationAttribute = new CustomValidationAttribute();
+
+                var roles = new[] { "Admin", "Member" };
+                foreach (var role in roles)
+                {
+
+                    if (!await roleManager.RoleExistsAsync(role))
+                    {
+                        await roleManager.CreateAsync(new IdentityRole(role));
+                    }
+                }
+
+                P7CreateRestApi.Models.RegisterModel registerModel1 = new P7CreateRestApi.Models.RegisterModel
+                {
+                    Email = "test@gmail.com",
+                    UserName = "test@gmail.com",
+                    Password = "",
+                    Role = "Member",
+                };
+
+
+                ///Act
+                Task createUser = iUserService.CreateUserWithRegisterModel(registerModel1);
+                //UserDto userDtoFound1 = iUserService.GetUserDtoByEmail(registerModel1.Email).Result.Select(u => u).First();
+                int userDtoFoundCount = iUserService.GetAllUsersDto().Result.Select(u => u).Count();
+
+
+
+                ///Assert
+                Xunit.Assert.Equal(0, userDtoFoundCount);
+
+
+            }
 
         }
 

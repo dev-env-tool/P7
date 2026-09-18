@@ -1,0 +1,44 @@
+2026-09-17T08:40:15.6748095+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-17T08:40:15.6758735+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-17T08:40:15.6771588+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-17T08:40:15.6771615+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 08:40:15.644
+2026-09-17T08:40:15.6775427+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 10588
+2026-09-17T08:40:15.6776609+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.31
+2026-09-17T08:40:15.6776701+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.31\System.Private.CoreLib.dll
+2026-09-17T08:40:15.6776937+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-17T08:40:15.6777761+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-17T08:40:15.6777818+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 62343'
+2026-09-17T08:40:15.6790144+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-17T08:40:15.7140919+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-17T08:40:15.7208279+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-17T08:40:15.9522392+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-17T08:40:15.9610556+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.31)
+2026-09-17T08:40:16.0033292+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-17T08:40:16.0412475+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-17T08:40:16.0563444+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-17T08:40:17.6052031+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+UserUnitTests.IBidListService_CreateUserWithRegisterModel_ShouldNotCreate_1User [FAIL]
+2026-09-17T08:40:17.6056370+00:00 xUnit.net INFORMATION       System.InvalidOperationException : Sequence contains more than one element
+2026-09-17T08:40:17.6059774+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-17T08:40:17.6063028+00:00 xUnit.net INFORMATION            at System.Linq.ThrowHelper.ThrowMoreThanOneElementException()
+2026-09-17T08:40:17.6063185+00:00 xUnit.net INFORMATION            at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+2026-09-17T08:40:17.6063206+00:00 xUnit.net INFORMATION            at lambda_method289(Closure)
+2026-09-17T08:40:17.6063250+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryQueryExpression.ResultEnumerable.GetEnumerator()
+2026-09-17T08:40:17.6063302+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryShapedQueryCompilingExpressionVisitor.QueryingEnumerable`1.Enumerator.MoveNextHelper()
+2026-09-17T08:40:17.6063357+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryShapedQueryCompilingExpressionVisitor.QueryingEnumerable`1.Enumerator.MoveNextAsync()
+2026-09-17T08:40:17.6063417+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+2026-09-17T08:40:17.6063483+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+2026-09-17T08:40:17.6063512+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Identity.UserManager`1.FindByEmailAsync(String email)
+2026-09-17T08:40:17.6063660+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Repositories\UserRepository.cs(146,0): at P7CreateRestApi.Repositories.UserRepository.DeleteUserByEmail(String email)
+2026-09-17T08:40:17.6063721+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\UserService.cs(137,0): at P7CreateRestApi.Services.UserService.DeleteUserByEmail(String email)
+2026-09-17T08:40:17.6063868+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(2513,0): at P7CreateRestApiTest.DatabaseFixture.UserUnitTests.IBidListService_CreateUserWithRegisterModel_ShouldNotCreate_1User()
+2026-09-17T08:40:17.6063893+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-17T08:40:17.7240316+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+UserUnitTests.IBidListService_UpdateUserWithUpdateGeneralInfosModel_ShouldUpdate_1User [FAIL]
+2026-09-17T08:40:17.7240528+00:00 xUnit.net INFORMATION       Assert.Equivalent() Failure
+2026-09-17T08:40:17.7240538+00:00 xUnit.net INFORMATION       Expected: "updatedname"
+2026-09-17T08:40:17.7240553+00:00 xUnit.net INFORMATION       Actual:   "test@gmail.com"
+2026-09-17T08:40:17.7240715+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-17T08:40:17.7241169+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(2417,0): at P7CreateRestApiTest.DatabaseFixture.UserUnitTests.IBidListService_UpdateUserWithUpdateGeneralInfosModel_ShouldUpdate_1User()
+2026-09-17T08:40:17.7241201+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-17T08:40:17.8127357+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-17T08:40:17.8173307+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-17T08:40:17.8242122+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 6, Errors: 0, Failed: 2, Skipped: 0, Not Run: 0, Time: 1,759s

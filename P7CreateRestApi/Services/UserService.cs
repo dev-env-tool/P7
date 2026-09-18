@@ -57,7 +57,6 @@ namespace P7CreateRestApi.Services
             {
                 return IdentityResult.Failed(new IdentityError { Description = "The Mapping failed." });
             }
-
             IdentityResult result = await _iUserRepository.CreateUser(user);
             return result;
 
@@ -82,7 +81,7 @@ namespace P7CreateRestApi.Services
             {
                 return IdentityResult.Failed(new IdentityError { Description = "The Mapping failed." });
             }
-            IdentityResult result = await _iUserRepository.UpdateUser(user);
+            IdentityResult result = await _iUserRepository.UpdateUserByEmail(email, user);
             return result;
         }
 
