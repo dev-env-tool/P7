@@ -2474,7 +2474,7 @@ namespace P7CreateRestApiTest
                 P7CreateRestApi.Models.RegisterModel registerModel = new P7CreateRestApi.Models.RegisterModel
                 {
                     Email = "test@gmail.com",
-                    UserName = "updateGeneralInfosModel1",
+                    UserName = "register",
                     Password = "passW1.ordtest",
                     Role = "Member",
                 };
@@ -2486,20 +2486,22 @@ namespace P7CreateRestApiTest
                 };
 
                 ///Act
-                Task createUser = iUserService.CreateUserWithRegisterModel(registerModel);
-                Task updateUser = iUserService.UpdateUserWithUpdateGeneralInfosModel(registerModel.Email, updateGeneralInfosModelForUpdate);
-                UserDto userDtoFound = iUserService.GetUserDtoByEmail(registerModel.Email).Result.Select(u => u).First();
-
-
+                var createUser = await iUserService.CreateUserWithRegisterModel(registerModel);
+                var updateUser = await iUserService.UpdateUserWithUpdateGeneralInfosModel(registerModel.Email, updateGeneralInfosModelForUpdate);
+                var updateUser2 = await iUserService.UpdateUserWithUpdateGeneralInfosModel(registerModel.Email, updateGeneralInfosModelForUpdate);
+                // Persistency = staus before/during/after the action. _userManager.UpdateAsync does not tell the new database instance about the updates in test environement.
+                // We must use context.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Email == registerModel.Email); to retrieve the updated user
+                var userDtoFoundwithoutPertisency = await context.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Email == registerModel.Email);
+               
 
                 ///Assert
-                Xunit.Assert.True(createUser.IsCompletedSuccessfully);
-                Xunit.Assert.True(updateUser.IsCompletedSuccessfully);
-                Xunit.Assert.Equivalent(updateGeneralInfosModelForUpdate.UserName, userDtoFound.UserName);
-                Xunit.Assert.Equivalent(updateGeneralInfosModelForUpdate.Role, userDtoFound.Role);
-                var test = await userManager.GetUsersInRoleAsync("Member");
+                Xunit.Assert.True(createUser.Succeeded);
+                Xunit.Assert.True(updateUser.Succeeded);
+                Xunit.Assert.Equivalent(updateGeneralInfosModelForUpdate.UserName, userDtoFoundwithoutPertisency.UserName);
+                Xunit.Assert.Equivalent(updateGeneralInfosModelForUpdate.Role, userDtoFoundwithoutPertisency.Role);
+                var test1 = await userManager.GetUsersInRoleAsync("Member");
                 var test2 = await userManager.GetUsersInRoleAsync("Admin");
-                Xunit.Assert.True(test2.ElementAt(0).UserName == userDtoFound.UserName);
+                Xunit.Assert.True(test2.ElementAt(0).UserName == userDtoFoundwithoutPertisency.UserName);
                 
                 await iUserService.DeleteUserByEmail(registerModel.Email);
 
@@ -2598,7 +2600,9 @@ namespace P7CreateRestApiTest
 
 
                 ///Assert
-                Xunit.Assert.Equivalent(registerModel1, userDtoFound1);
+                Xunit.Assert.Equivalent(registerModel1.Email, userDtoFound1.Email);
+                Xunit.Assert.Equivalent(registerModel1.UserName, userDtoFound1.UserName);
+                Xunit.Assert.Equivalent(registerModel1.Role, userDtoFound1.Role);
                 Xunit.Assert.Equal(1, userDtoFoundCount);
                 Xunit.Assert.True(createUser2.IsCompletedSuccessfully);
                 await iUserService.DeleteUserByEmail(registerModel1.Email);

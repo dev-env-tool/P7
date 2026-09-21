@@ -117,7 +117,7 @@ namespace P7CreateRestApi.Controllers
                 }
                 return BadRequest(ModelState);
             }
-            return Ok("User was successfully registered.");
+            return Ok("User was successfully modified.");
 
 
 
@@ -229,7 +229,7 @@ namespace P7CreateRestApi.Controllers
                 }
                 return BadRequest(ModelState);
             }
-            return Ok("User was successfully registered.");
+            return Ok("User was successfully modified.");
 
 
 

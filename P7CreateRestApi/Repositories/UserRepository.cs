@@ -97,20 +97,21 @@ namespace P7CreateRestApi.Repositories
                     {
                         return IdentityResult.Failed(new IdentityError { Description = "The new normalizedusername could not be changed." });
                     }
-                    await _userManager.UpdateAsync(user);
+                    await _userManager.UpdateAsync(userToFind);
                 }
                 if (user.Role != null)
                 {
+                    var roleUpdateResult = await _userManager.AddToRoleAsync(userToFind, user.Role);
+                    if (!roleUpdateResult.Succeeded)
+                    {
+                        return IdentityResult.Failed(new IdentityError { Description = "The new role could not be added to the user. The user is already in role " + user.Role });
+                    }
+
+
                     var roleRemoveResult = await _userManager.RemoveFromRoleAsync(userToFind, userToFind.Role);
                     if (!roleRemoveResult.Succeeded)
                     {
                         return IdentityResult.Failed(new IdentityError { Description = "The previous role could not be removed from the user." });
-                    }
-
-                    var roleUpdateResult = await _userManager.AddToRoleAsync(userToFind, user.Role);
-                    if (!roleUpdateResult.Succeeded)
-                    {
-                        return IdentityResult.Failed(new IdentityError { Description = "The new role could not be added to the user." });
                     }
 
                     userToFind.Role = user.Role;
@@ -120,6 +121,10 @@ namespace P7CreateRestApi.Repositories
                         return IdentityResult.Failed(new IdentityError { Description = "The new front-end role could not be added to the user." });
                     }
                 }
+
+                string test = userToFind.UserName;
+                string test2 = userToFind.NormalizedUserName;
+
                 return IdentityResult.Success;
 
             }

@@ -1,0 +1,29 @@
+2026-09-21T14:15:38.7790838+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-21T14:15:38.7802071+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-21T14:15:38.7815409+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-21T14:15:38.7815445+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 14:15:38.748
+2026-09-21T14:15:38.7820296+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 19728
+2026-09-21T14:15:38.7821606+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.31
+2026-09-21T14:15:38.7821718+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.31\System.Private.CoreLib.dll
+2026-09-21T14:15:38.7821819+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-21T14:15:38.7822656+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-21T14:15:38.7822729+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 57959'
+2026-09-21T14:15:38.7838890+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-21T14:15:38.8244387+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-21T14:15:38.8316225+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-21T14:15:39.0430824+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-21T14:15:39.0505821+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.31)
+2026-09-21T14:15:39.0870415+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-21T14:15:39.1194934+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-21T14:15:39.1323209+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-21T14:15:40.1068346+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+UserUnitTests.IBidListService_UpdateUserWithUpdateGeneralInfosModel_ShouldUpdate_1User [FAIL]
+2026-09-21T14:15:40.1072249+00:00 xUnit.net INFORMATION       System.InvalidOperationException : The entity type 'UserDto' was not found. Ensure that the entity type has been added to the model.
+2026-09-21T14:15:40.1074882+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-21T14:15:40.1077327+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.GetOrCreateEntry(Object entity)
+2026-09-21T14:15:40.1077474+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.DbContext.EntryWithoutDetectChanges[TEntity](TEntity entity)
+2026-09-21T14:15:40.1077507+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.DbContext.Entry[TEntity](TEntity entity)
+2026-09-21T14:15:40.1077615+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(2499,0): at P7CreateRestApiTest.DatabaseFixture.UserUnitTests.IBidListService_UpdateUserWithUpdateGeneralInfosModel_ShouldUpdate_1User()
+2026-09-21T14:15:40.1077633+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-21T14:15:40.1204233+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-21T14:15:40.1244679+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-21T14:15:40.1331699+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 1, Errors: 0, Failed: 1, Skipped: 0, Not Run: 0, Time: 0,990s
