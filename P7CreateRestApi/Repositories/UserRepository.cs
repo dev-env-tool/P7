@@ -170,6 +170,11 @@ namespace P7CreateRestApi.Repositories
             else
             {
                 var result = await _userManager.ChangePasswordAsync(userToFind, updatePasswordModel.CurrentPassword, updatePasswordModel.NewPassword);
+                if (result.Succeeded)
+                {
+                    userToFind.Password = updatePasswordModel.NewPassword;
+                    await _userManager.UpdateAsync(userToFind);
+                }
                 return result;
             }
             //User userToFind = await _userManager.FindByEmailAsync(user.Email);
