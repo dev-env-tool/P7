@@ -32,12 +32,12 @@
 //        public async Task<IActionResult> Login([FromBody] LoginModel loginModel)
 //        {
 //            //TODO: implement the UserManager from Identity to validate User and return a security token.
-//            var result = await _signInManager.PasswordSignInAsync(loginModel.UserName, loginModel.Password, true, false);
+//            var result = await _signInManager.PasswordSignInAsync(loginModel.Email, loginModel.Password, true, false);
 //            if (result.Succeeded)
 //            {
 //                IEnumerable<Claim> claims = new List<Claim>()
 //                {
-//                    new Claim(ClaimTypes.Email, loginModel.UserName),
+//                    new Claim(ClaimTypes.Email, loginModel.Email),
 //                    new Claim(ClaimTypes.Role,"Admin"),
 //                };
 //                var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_iConfiguration.GetSection("Jwt:Key").Value));
@@ -108,14 +108,14 @@ namespace P7CreateRestApi.Controllers
         public async Task<IActionResult> Login([FromBody] LoginModel loginModel)
         {
             //TODO: implement the UserManager from Identity to validate User and return a security token.
-            bool result = await _iLoginService.Login(loginModel);
-            if (result == true)
+            var result = await _iLoginService.Login(loginModel);
+            if (result.Succeeded)
             {
                 string tokenString = await _iLoginService.GenerateTokenString(loginModel);
-                Log.Information("User {UserName} logged in at {Now}", loginModel.UserName, DateTime.Now);
+                Log.Information("User {UserName} logged in at {Now}", loginModel.Email, DateTime.Now);
                 return Ok(tokenString);
             }
-            Log.Warning("Access was denied for User {UserName} trying to login at {Now}", loginModel.UserName, DateTime.Now);
+            Log.Warning("Access was denied for User {UserName} trying to login at {Now}", loginModel.Email, DateTime.Now);
             return BadRequest("Access denied");
         }
 

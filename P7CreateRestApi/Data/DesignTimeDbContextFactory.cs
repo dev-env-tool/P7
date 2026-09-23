@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
-using P7CreateRestApi.Data;
 
-namespace P3AddNewFunctionalityDotNetCore.Models
+
+namespace P7CreateRestApi.Data
 {
     public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<P7Referential>
     {

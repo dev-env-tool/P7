@@ -141,7 +141,7 @@ namespace P7CreateRestApi.Repositories
             //        }
             //        return roleUpdateResult;
             //    }
-            //    userToFind.UserName = user.UserName;
+            //    userToFind.Email = user.Email;
             //    userToFind.Role = user.Role;
             //    var resultFoundUser = await _userManager.UpdateAsync(userToFind);
             //    return resultFoundUser;
@@ -151,7 +151,7 @@ namespace P7CreateRestApi.Repositories
 
             //if (user != null)
             //{
-            //    if (GetUserByEmail(user.UserName) != null)
+            //    if (GetUserByEmail(user.Email) != null)
             //    {
             //        _context!.Entry(user).State = EntityState.Modified;
             //        _context!.SaveChanges();

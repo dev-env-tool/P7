@@ -1,0 +1,262 @@
+2026-09-22T12:52:30.2498893+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-22T12:52:30.2511017+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-22T12:52:30.2522942+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-22T12:52:30.2522972+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 12:52:30.219
+2026-09-22T12:52:30.2526955+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 5284
+2026-09-22T12:52:30.2527932+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.31
+2026-09-22T12:52:30.2528036+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.31\System.Private.CoreLib.dll
+2026-09-22T12:52:30.2528140+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-22T12:52:30.2528598+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-22T12:52:30.2528704+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 51987'
+2026-09-22T12:52:30.2542459+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-22T12:52:30.2961547+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-22T12:52:30.3052291+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-22T12:52:30.5805517+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-22T12:52:30.5911225+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.31)
+2026-09-22T12:52:30.6368906+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-22T12:52:30.6784057+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-22T12:52:30.6929888+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-22T12:52:31.5068862+00:00 Microsoft.Testing.Platform.Hosts.ServerTestHost WARNING [ServerTestHost.OnTaskSchedulerUnobservedTaskException] Unhandled task exception
+------Exception detail------
+System.AggregateException: A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread. (Error mapping types.
+
+Mapping types:
+BidListDto -> BidList
+P7CreateRestApi.DTO.BidListDto -> P7CreateRestApi.Domain.BidList
+
+Type Map configuration:
+BidListDto -> BidList
+P7CreateRestApi.DTO.BidListDto -> P7CreateRestApi.Domain.BidList
+
+Destination Member:
+BidQuantity
+)
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+BidListDto -> BidList
+P7CreateRestApi.DTO.BidListDto -> P7CreateRestApi.Domain.BidList
+
+Type Map configuration:
+BidListDto -> BidList
+P7CreateRestApi.DTO.BidListDto -> P7CreateRestApi.Domain.BidList
+
+Destination Member:
+BidQuantity
+
+ ---> System.FormatException: The input string 'abc' was not in a correct format.
+   at System.Number.ThrowFormatException[TChar](ReadOnlySpan`1 value)
+   at System.Convert.ToDouble(String value)
+   at lambda_method858(Closure, Object, BidList, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method858(Closure, Object, BidList, ResolutionContext)
+   at P7CreateRestApi.Services.BidListService.MapBidListDtoToBidList(BidListDto bidListDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\BidListService.cs:line 87
+   at P7CreateRestApi.Services.BidListService.CreateBidListWithBidListDto(BidListDto bidListDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\BidListService.cs:line 58
+   --- End of inner exception stack trace ---
+2026-09-22T12:52:31.5360295+00:00 Microsoft.Testing.Platform.Hosts.ServerTestHost WARNING [ServerTestHost.OnTaskSchedulerUnobservedTaskException] Unhandled task exception
+------Exception detail------
+System.AggregateException: A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread. (Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+AsOfDate
+)
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+AsOfDate
+
+ ---> System.FormatException: The string 'f' was not recognized as a valid DateTime. There is an unknown word starting at index '0'.
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at lambda_method871(Closure, Object, CurvePoint, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method871(Closure, Object, CurvePoint, ResolutionContext)
+   at P7CreateRestApi.Services.CurvePointService.MapCurvePointDtoToCurvePoint(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 78
+   at P7CreateRestApi.Services.CurvePointService.CreateCurvePointWithCurvePointDto(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 49
+   --- End of inner exception stack trace ---
+2026-09-22T12:52:31.5937617+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+UserUnitTests.IUserService_GetAllUsersDto_ShouldGet_2Users [FAIL]
+2026-09-22T12:52:31.5941126+00:00 xUnit.net INFORMATION       System.InvalidOperationException : Sequence contains more than one element
+2026-09-22T12:52:31.5943896+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-22T12:52:31.5949425+00:00 xUnit.net INFORMATION            at System.Linq.ThrowHelper.ThrowMoreThanOneElementException()
+2026-09-22T12:52:31.5949605+00:00 xUnit.net INFORMATION            at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+2026-09-22T12:52:31.5949635+00:00 xUnit.net INFORMATION            at lambda_method1283(Closure)
+2026-09-22T12:52:31.5949698+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryQueryExpression.ResultEnumerable.GetEnumerator()
+2026-09-22T12:52:31.5949790+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryShapedQueryCompilingExpressionVisitor.QueryingEnumerable`1.Enumerator.MoveNextHelper()
+2026-09-22T12:52:31.5949868+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryShapedQueryCompilingExpressionVisitor.QueryingEnumerable`1.Enumerator.MoveNextAsync()
+2026-09-22T12:52:31.5949962+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+2026-09-22T12:52:31.5950054+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+2026-09-22T12:52:31.5950137+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.IsInRoleAsync(TUser user, String normalizedRoleName, CancellationToken cancellationToken)
+2026-09-22T12:52:31.5950275+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Identity.UserManager`1.AddToRoleAsync(TUser user, String role)
+2026-09-22T12:52:31.5950481+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Repositories\UserRepository.cs(67,0): at P7CreateRestApi.Repositories.UserRepository.CreateUser(User user)
+2026-09-22T12:52:31.5950555+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\UserService.cs(60,0): at P7CreateRestApi.Services.UserService.CreateUserWithRegisterModel(RegisterModel registerModel)
+2026-09-22T12:52:31.5950606+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(2312,0): at P7CreateRestApiTest.DatabaseFixture.UserUnitTests.IUserService_GetAllUsersDto_ShouldGet_2Users()
+2026-09-22T12:52:31.5950614+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-22T12:52:31.5959020+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+LoginUnitTests.IBidLoginService_Login_ShouldLog_1User [FAIL]
+2026-09-22T12:52:31.5959396+00:00 xUnit.net INFORMATION       System.InvalidOperationException : Sequence contains more than one element
+2026-09-22T12:52:31.5959585+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-22T12:52:31.5959654+00:00 xUnit.net INFORMATION            at System.Linq.ThrowHelper.ThrowMoreThanOneElementException()
+2026-09-22T12:52:31.5959688+00:00 xUnit.net INFORMATION            at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+2026-09-22T12:52:31.5959702+00:00 xUnit.net INFORMATION            at lambda_method1283(Closure)
+2026-09-22T12:52:31.5959741+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryQueryExpression.ResultEnumerable.GetEnumerator()
+2026-09-22T12:52:31.5959792+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryShapedQueryCompilingExpressionVisitor.QueryingEnumerable`1.Enumerator.MoveNextHelper()
+2026-09-22T12:52:31.5959841+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryShapedQueryCompilingExpressionVisitor.QueryingEnumerable`1.Enumerator.MoveNextAsync()
+2026-09-22T12:52:31.5959901+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+2026-09-22T12:52:31.5959960+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+2026-09-22T12:52:31.5960011+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.IsInRoleAsync(TUser user, String normalizedRoleName, CancellationToken cancellationToken)
+2026-09-22T12:52:31.5960051+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Identity.UserManager`1.AddToRoleAsync(TUser user, String role)
+2026-09-22T12:52:31.5960116+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Repositories\UserRepository.cs(67,0): at P7CreateRestApi.Repositories.UserRepository.CreateUser(User user)
+2026-09-22T12:52:31.5960163+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\UserService.cs(60,0): at P7CreateRestApi.Services.UserService.CreateUserWithRegisterModel(RegisterModel registerModel)
+2026-09-22T12:52:31.5960365+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(3022,0): at P7CreateRestApiTest.DatabaseFixture.LoginUnitTests.IBidLoginService_Login_ShouldLog_1User()
+2026-09-22T12:52:31.5960372+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-22T12:52:31.6715597+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+UserUnitTests.IBidListService_CreateUserWithRegisterModel_ShouldNotCreate_2IdenticalUsers [FAIL]
+2026-09-22T12:52:31.6716261+00:00 xUnit.net INFORMATION       System.InvalidOperationException : Sequence contains more than one element
+2026-09-22T12:52:31.6716373+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-22T12:52:31.6716643+00:00 xUnit.net INFORMATION            at System.Linq.ThrowHelper.ThrowMoreThanOneElementException()
+2026-09-22T12:52:31.6716677+00:00 xUnit.net INFORMATION            at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+2026-09-22T12:52:31.6716692+00:00 xUnit.net INFORMATION            at lambda_method1283(Closure)
+2026-09-22T12:52:31.6716732+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryQueryExpression.ResultEnumerable.GetEnumerator()
+2026-09-22T12:52:31.6716783+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryShapedQueryCompilingExpressionVisitor.QueryingEnumerable`1.Enumerator.MoveNextHelper()
+2026-09-22T12:52:31.6716833+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryShapedQueryCompilingExpressionVisitor.QueryingEnumerable`1.Enumerator.MoveNextAsync()
+2026-09-22T12:52:31.6716915+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+2026-09-22T12:52:31.6716974+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+2026-09-22T12:52:31.6717026+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.IsInRoleAsync(TUser user, String normalizedRoleName, CancellationToken cancellationToken)
+2026-09-22T12:52:31.6717058+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Identity.UserManager`1.AddToRoleAsync(TUser user, String role)
+2026-09-22T12:52:31.6717188+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Repositories\UserRepository.cs(67,0): at P7CreateRestApi.Repositories.UserRepository.CreateUser(User user)
+2026-09-22T12:52:31.6717239+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\UserService.cs(60,0): at P7CreateRestApi.Services.UserService.CreateUserWithRegisterModel(RegisterModel registerModel)
+2026-09-22T12:52:31.6717355+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(2715,0): at P7CreateRestApiTest.DatabaseFixture.UserUnitTests.IBidListService_CreateUserWithRegisterModel_ShouldNotCreate_2IdenticalUsers()
+2026-09-22T12:52:31.6717387+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-22T12:52:31.6794442+00:00 Microsoft.Testing.Platform.Hosts.ServerTestHost WARNING [ServerTestHost.OnTaskSchedulerUnobservedTaskException] Unhandled task exception
+------Exception detail------
+System.AggregateException: A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread. (Error mapping types.
+
+Mapping types:
+TradeDto -> Trade
+P7CreateRestApi.DTO.TradeDto -> P7CreateRestApi.Domain.Trade
+
+Type Map configuration:
+TradeDto -> Trade
+P7CreateRestApi.DTO.TradeDto -> P7CreateRestApi.Domain.Trade
+
+Destination Member:
+TradeDate
+)
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+TradeDto -> Trade
+P7CreateRestApi.DTO.TradeDto -> P7CreateRestApi.Domain.Trade
+
+Type Map configuration:
+TradeDto -> Trade
+P7CreateRestApi.DTO.TradeDto -> P7CreateRestApi.Domain.Trade
+
+Destination Member:
+TradeDate
+
+ ---> System.FormatException: String '2' was not recognized as a valid DateTime.
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at lambda_method924(Closure, Object, Trade, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method924(Closure, Object, Trade, ResolutionContext)
+   at P7CreateRestApi.Services.TradeService.MapTradeDtoToTrade(TradeDto tradeDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\TradeService.cs:line 78
+   at P7CreateRestApi.Services.TradeService.CreateTradeWithTradeDto(TradeDto tradeDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\TradeService.cs:line 49
+   --- End of inner exception stack trace ---
+2026-09-22T12:52:31.6989121+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+UserUnitTests.IBidListService_CreateBidListWithBidListDto_ShouldReturn_4Errors [FAIL]
+2026-09-22T12:52:31.6989326+00:00 xUnit.net INFORMATION       Assert.Equal() Failure: Values differ
+2026-09-22T12:52:31.6989336+00:00 xUnit.net INFORMATION       Expected: 0
+2026-09-22T12:52:31.6989341+00:00 xUnit.net INFORMATION       Actual:   3
+2026-09-22T12:52:31.6989391+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-22T12:52:31.6989480+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(2910,0): at P7CreateRestApiTest.DatabaseFixture.UserUnitTests.IBidListService_CreateBidListWithBidListDto_ShouldReturn_4Errors()
+2026-09-22T12:52:31.6989498+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-22T12:52:31.8684451+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+UserUnitTests.IBidListService_UpdateUserWithUpdatePasswordModel_ShouldUpdate_1PasswordUser [FAIL]
+2026-09-22T12:52:31.8684639+00:00 xUnit.net INFORMATION       Assert.True() Failure
+2026-09-22T12:52:31.8684647+00:00 xUnit.net INFORMATION       Expected: True
+2026-09-22T12:52:31.8684653+00:00 xUnit.net INFORMATION       Actual:   False
+2026-09-22T12:52:31.8684686+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-22T12:52:31.8684774+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(2623,0): at P7CreateRestApiTest.DatabaseFixture.UserUnitTests.IBidListService_UpdateUserWithUpdatePasswordModel_ShouldUpdate_1PasswordUser()
+2026-09-22T12:52:31.8684790+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-22T12:52:32.0138905+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+UserUnitTests.IBidListService_CreateBidListWithBidListDto_ShouldGet_1UserById [FAIL]
+2026-09-22T12:52:32.0139088+00:00 xUnit.net INFORMATION       System.InvalidOperationException : Sequence contains more than one element
+2026-09-22T12:52:32.0139169+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-22T12:52:32.0139241+00:00 xUnit.net INFORMATION            at System.Linq.ThrowHelper.ThrowMoreThanOneElementException()
+2026-09-22T12:52:32.0139274+00:00 xUnit.net INFORMATION            at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+2026-09-22T12:52:32.0139288+00:00 xUnit.net INFORMATION            at lambda_method1283(Closure)
+2026-09-22T12:52:32.0139328+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryQueryExpression.ResultEnumerable.GetEnumerator()
+2026-09-22T12:52:32.0139378+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryShapedQueryCompilingExpressionVisitor.QueryingEnumerable`1.Enumerator.MoveNextHelper()
+2026-09-22T12:52:32.0139428+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryShapedQueryCompilingExpressionVisitor.QueryingEnumerable`1.Enumerator.MoveNextAsync()
+2026-09-22T12:52:32.0139488+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+2026-09-22T12:52:32.0139547+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+2026-09-22T12:52:32.0139599+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.IsInRoleAsync(TUser user, String normalizedRoleName, CancellationToken cancellationToken)
+2026-09-22T12:52:32.0139638+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Identity.UserManager`1.AddToRoleAsync(TUser user, String role)
+2026-09-22T12:52:32.0139708+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Repositories\UserRepository.cs(67,0): at P7CreateRestApi.Repositories.UserRepository.CreateUser(User user)
+2026-09-22T12:52:32.0139754+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\UserService.cs(60,0): at P7CreateRestApi.Services.UserService.CreateUserWithRegisterModel(RegisterModel registerModel)
+2026-09-22T12:52:32.0139815+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(2415,0): at P7CreateRestApiTest.DatabaseFixture.UserUnitTests.IBidListService_CreateBidListWithBidListDto_ShouldGet_1UserById()
+2026-09-22T12:52:32.0139842+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-22T12:52:32.0966444+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+UserUnitTests.IUserService_CreateUserWithRegisterModel_ShouldAdd_1User [FAIL]
+2026-09-22T12:52:32.0966952+00:00 xUnit.net INFORMATION       System.InvalidOperationException : Sequence contains more than one element
+2026-09-22T12:52:32.0967087+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-22T12:52:32.0967204+00:00 xUnit.net INFORMATION            at System.Linq.ThrowHelper.ThrowMoreThanOneElementException()
+2026-09-22T12:52:32.0967250+00:00 xUnit.net INFORMATION            at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+2026-09-22T12:52:32.0967269+00:00 xUnit.net INFORMATION            at lambda_method1283(Closure)
+2026-09-22T12:52:32.0967322+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryQueryExpression.ResultEnumerable.GetEnumerator()
+2026-09-22T12:52:32.0967390+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryShapedQueryCompilingExpressionVisitor.QueryingEnumerable`1.Enumerator.MoveNextHelper()
+2026-09-22T12:52:32.0967458+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryShapedQueryCompilingExpressionVisitor.QueryingEnumerable`1.Enumerator.MoveNextAsync()
+2026-09-22T12:52:32.0967541+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+2026-09-22T12:52:32.0967625+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+2026-09-22T12:52:32.0967705+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.IsInRoleAsync(TUser user, String normalizedRoleName, CancellationToken cancellationToken)
+2026-09-22T12:52:32.0967759+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Identity.UserManager`1.AddToRoleAsync(TUser user, String role)
+2026-09-22T12:52:32.0967973+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Repositories\UserRepository.cs(55,0): at P7CreateRestApi.Repositories.UserRepository.CreateUser(User user)
+2026-09-22T12:52:32.0968046+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\UserService.cs(60,0): at P7CreateRestApi.Services.UserService.CreateUserWithRegisterModel(RegisterModel registerModel)
+2026-09-22T12:52:32.0968299+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(2123,0): at P7CreateRestApiTest.DatabaseFixture.UserUnitTests.IUserService_CreateUserWithRegisterModel_ShouldAdd_1User()
+2026-09-22T12:52:32.0968312+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-22T12:52:32.1075060+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+UserUnitTests.IBidListService_CreateUserWithRegisterModel_ShouldNotCreate_1User [FAIL]
+2026-09-22T12:52:32.1075500+00:00 xUnit.net INFORMATION       Assert.Equal() Failure: Values differ
+2026-09-22T12:52:32.1075527+00:00 xUnit.net INFORMATION       Expected: 0
+2026-09-22T12:52:32.1075536+00:00 xUnit.net INFORMATION       Actual:   5
+2026-09-22T12:52:32.1075935+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-22T12:52:32.1076216+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(2817,0): at P7CreateRestApiTest.DatabaseFixture.UserUnitTests.IBidListService_CreateUserWithRegisterModel_ShouldNotCreate_1User()
+2026-09-22T12:52:32.1076257+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-22T12:52:32.2095630+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+UserUnitTests.IBidListService_UpdateUserWithUpdateGeneralInfosModel_ShouldUpdate_1User [FAIL]
+2026-09-22T12:52:32.2095810+00:00 xUnit.net INFORMATION       System.InvalidOperationException : Sequence contains more than one element
+2026-09-22T12:52:32.2095882+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-22T12:52:32.2095955+00:00 xUnit.net INFORMATION            at System.Linq.ThrowHelper.ThrowMoreThanOneElementException()
+2026-09-22T12:52:32.2095989+00:00 xUnit.net INFORMATION            at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+2026-09-22T12:52:32.2096004+00:00 xUnit.net INFORMATION            at lambda_method1283(Closure)
+2026-09-22T12:52:32.2096045+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryQueryExpression.ResultEnumerable.GetEnumerator()
+2026-09-22T12:52:32.2096097+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryShapedQueryCompilingExpressionVisitor.QueryingEnumerable`1.Enumerator.MoveNextHelper()
+2026-09-22T12:52:32.2096148+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryShapedQueryCompilingExpressionVisitor.QueryingEnumerable`1.Enumerator.MoveNextAsync()
+2026-09-22T12:52:32.2096211+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+2026-09-22T12:52:32.2096272+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+2026-09-22T12:52:32.2096326+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.IsInRoleAsync(TUser user, String normalizedRoleName, CancellationToken cancellationToken)
+2026-09-22T12:52:32.2096358+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Identity.UserManager`1.AddToRoleAsync(TUser user, String role)
+2026-09-22T12:52:32.2096434+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Repositories\UserRepository.cs(104,0): at P7CreateRestApi.Repositories.UserRepository.UpdateUserByEmail(String email, User user)
+2026-09-22T12:52:32.2096483+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\UserService.cs(84,0): at P7CreateRestApi.Services.UserService.UpdateUserWithUpdateGeneralInfosModel(String email, UpdateGeneralInfosModel updateGeneralInfosModel)
+2026-09-22T12:52:32.2096535+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(2513,0): at P7CreateRestApiTest.DatabaseFixture.UserUnitTests.IBidListService_UpdateUserWithUpdateGeneralInfosModel_ShouldUpdate_1User()
+2026-09-22T12:52:32.2096543+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-22T12:52:32.2907680+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+UserUnitTests.IUserService_DeleteUserByEmail_ShouldDelete_1User [FAIL]
+2026-09-22T12:52:32.2908158+00:00 xUnit.net INFORMATION       Assert.True() Failure
+2026-09-22T12:52:32.2908167+00:00 xUnit.net INFORMATION       Expected: True
+2026-09-22T12:52:32.2908172+00:00 xUnit.net INFORMATION       Actual:   False
+2026-09-22T12:52:32.2908201+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-22T12:52:32.2908308+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(2219,0): at P7CreateRestApiTest.DatabaseFixture.UserUnitTests.IUserService_DeleteUserByEmail_ShouldDelete_1User()
+2026-09-22T12:52:32.2908319+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-22T12:52:32.2965798+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-22T12:52:32.3016718+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-22T12:52:32.3089156+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 44, Errors: 0, Failed: 10, Skipped: 0, Not Run: 0, Time: 1,605s

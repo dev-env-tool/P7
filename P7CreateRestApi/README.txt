@@ -25,8 +25,14 @@ bearer+space+paste the JWT character string
 
 
 This project uses logfile to know who the app was used. The folder "logs" stores the logfiles. Just open the last one edited/created.
-Attached you will find a test project containing unit tests at service and repository level only. They use the real code, you can get a coverage analysis via the :
+
+
+You will find a test project containing unit tests at service and repository level only. They use the real code, you can get a coverage analysis via the :
 	Visual studio button called "Analyse code coverage for all tests".
+	Ase these tests use the real code with an in-memory database fixture, you may run tests under 3 playlists :
+	- 1st for all business entities
+	- 2nd for all User class
+	- 3rd for Login/out service
 
 
 This projects uses DTOS to safely display / create or update the business information.

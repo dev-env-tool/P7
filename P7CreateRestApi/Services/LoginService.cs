@@ -27,14 +27,28 @@ namespace P7CreateRestApi.Services
             _iConfiguration = iConfiguration;
         }
 
-        public async Task<bool> Login(LoginModel loginModel)
+        //public async Task<bool> Login(LoginModel loginModel)
+        //{
+        //    var result = await _signInManager.PasswordSignInAsync(loginModel.Email, loginModel.Password, true, false);
+        //    if (result.Succeeded)
+        //    {
+        //        return (result.Succeeded);
+        //    }
+        //    return false;
+
+        //}
+        public async Task<Microsoft.AspNetCore.Identity.SignInResult> Login(LoginModel loginModel)
         {
-            var result = await _signInManager.PasswordSignInAsync(loginModel.UserName, loginModel.Password, true, false);
+            var result2 = await _userManager.FindByEmailAsync(loginModel.Email);
+            var ok = await _userManager.CheckPasswordAsync(result2, result2.Password);
+
+            var result = await _signInManager.PasswordSignInAsync(loginModel.Email, loginModel.Password, true, false);
+
             if (result.Succeeded)
             {
-                return (result.Succeeded);
+                return result;
             }
-            return false;
+            return Microsoft.AspNetCore.Identity.SignInResult.NotAllowed;
 
         }
 
@@ -52,7 +66,7 @@ namespace P7CreateRestApi.Services
 
         public async Task<string> GenerateTokenString(LoginModel loginModel)
         {
-            User user = await _userManager.FindByEmailAsync(loginModel.UserName);
+            User user = await _userManager.FindByEmailAsync(loginModel.Email);
             string role = "Member";
             bool isAdmin = await _userManager.IsInRoleAsync(user, "Admin");
             if (isAdmin == true)
@@ -62,7 +76,7 @@ namespace P7CreateRestApi.Services
 
             IEnumerable<Claim> claims = new List<Claim>()
             {
-                new Claim(ClaimTypes.Email, loginModel.UserName),
+                new Claim(ClaimTypes.Email, loginModel.Email),
                 new Claim(ClaimTypes.Role,role),
             };
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_iConfiguration.GetSection("Jwt:Key").Value));

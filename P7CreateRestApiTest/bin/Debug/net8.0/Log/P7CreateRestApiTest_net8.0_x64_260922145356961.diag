@@ -1,0 +1,32 @@
+2026-09-22T14:53:56.9689164+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-22T14:53:56.9700772+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-22T14:53:56.9713200+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-22T14:53:56.9713227+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 14:53:56.939
+2026-09-22T14:53:56.9717523+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 22296
+2026-09-22T14:53:56.9719107+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.31
+2026-09-22T14:53:56.9719222+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.31\System.Private.CoreLib.dll
+2026-09-22T14:53:56.9719363+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-22T14:53:56.9719914+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-22T14:53:56.9719975+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 49204'
+2026-09-22T14:53:56.9736859+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-22T14:53:57.0152423+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-22T14:53:57.0251467+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-22T14:53:57.2654406+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-22T14:53:57.2741853+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.31)
+2026-09-22T14:53:57.3156081+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-22T14:53:57.3527968+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-22T14:53:57.3678525+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-22T14:53:58.4499811+00:00 xUnit.net ERROR     P7CreateRestApiTest.DatabaseFixture+LoginUnitTests.IBidLoginService_Login_ShouldLogin_1User [FAIL]
+2026-09-22T14:53:58.4506894+00:00 xUnit.net INFORMATION       System.InvalidOperationException : HttpContext must not be null.
+2026-09-22T14:53:58.4510639+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-22T14:53:58.4514446+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Identity.SignInManager`1.get_Context()
+2026-09-22T14:53:58.4514646+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Identity.SignInManager`1.SignInWithClaimsAsync(TUser user, AuthenticationProperties authenticationProperties, IEnumerable`1 additionalClaims)
+2026-09-22T14:53:58.4514741+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Identity.SignInManager`1.SignInOrTwoFactorAsync(TUser user, Boolean isPersistent, String loginProvider, Boolean bypassTwoFactor)
+2026-09-22T14:53:58.4514826+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Identity.SignInManager`1.PasswordSignInAsync(TUser user, String password, Boolean isPersistent, Boolean lockoutOnFailure)
+2026-09-22T14:53:58.4514916+00:00 xUnit.net INFORMATION            at Microsoft.AspNetCore.Identity.SignInManager`1.PasswordSignInAsync(String userName, String password, Boolean isPersistent, Boolean lockoutOnFailure)
+2026-09-22T14:53:58.4515146+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\LoginService.cs(42,0): at P7CreateRestApi.Services.LoginService.Login(LoginModel loginModel)
+2026-09-22T14:53:58.4515245+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UnitTest1.cs(3024,0): at P7CreateRestApiTest.DatabaseFixture.LoginUnitTests.IBidLoginService_Login_ShouldLogin_1User()
+2026-09-22T14:53:58.4515281+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-22T14:53:58.4669125+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-22T14:53:58.4711858+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-22T14:53:58.4778566+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 1, Errors: 0, Failed: 1, Skipped: 0, Not Run: 0, Time: 1,102s

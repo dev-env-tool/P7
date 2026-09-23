@@ -261,7 +261,7 @@ public class Program
         //    if (await userManager.FindByEmailAsync(userAdminEmail) == null)
         //    {
         //        var userAdmin = new User();
-        //        userAdmin.UserName = userAdminEmail;
+        //        userAdmin.Email = userAdminEmail;
         //        userAdmin.Email = userAdminEmail;
         //        userAdmin.Role = role;
         //        userAdmin.Password = userAdminPassword;
@@ -282,7 +282,7 @@ public class Program
         //    if (await userManager.FindByEmailAsync(userMemberEmail) == null)
         //    {
         //        var userMember = new User();
-        //        userMember.UserName = userMemberEmail;
+        //        userMember.Email = userMemberEmail;
         //        userMember.Email = userMemberEmail;
         //        userMember.Role = role;
         //        userMember.Password = userMemberPassword;

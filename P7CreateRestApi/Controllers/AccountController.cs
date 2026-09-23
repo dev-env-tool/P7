@@ -80,7 +80,7 @@ namespace P7CreateRestApi.Controllers
             return Ok("User was successfully registered.");
 
 
-            //User user = new User() { UserName = registerModel.UserName, Email = registerModel.Email, Role = registerModel.Role };
+            //User user = new User() { Email = registerModel.Email, Email = registerModel.Email, Role = registerModel.Role };
             //var result = _userManager.CreateAsync(user, registerModel.Password);
             //if (result.Result.Errors.Any())
             //{
@@ -132,11 +132,11 @@ namespace P7CreateRestApi.Controllers
 
             //if (userToFind == null)
             //{
-            //    return NotFound("The information with the specified UserName was not found.");
+            //    return NotFound("The information with the specified Email was not found.");
             //}
             //else
             //{
-            //    userToFind.UserName = updateGeneralInfosModel.UserName;
+            //    userToFind.Email = updateGeneralInfosModel.Email;
             //    var result = await _userManager.UpdateAsync(userToFind);
 
             //    if (!await _userManager.IsInRoleAsync(userToFind, updateGeneralInfosModel.Role))
@@ -175,11 +175,11 @@ namespace P7CreateRestApi.Controllers
 
             //if (userToFind == null)
             //{
-            //    return NotFound("The information with the specified UserName was not found.");
+            //    return NotFound("The information with the specified Email was not found.");
             //}
             //else
             //{
-            //    userToFind.UserName = updateGeneralInfosModel.UserName;
+            //    userToFind.Email = updateGeneralInfosModel.Email;
             //    var result = await _userManager.UpdateAsync(userToFind);
 
             //    if (!await _userManager.IsInRoleAsync(userToFind, updateGeneralInfosModel.Role))
@@ -246,7 +246,7 @@ namespace P7CreateRestApi.Controllers
 
             //if (userToFind == null)
             //{
-            //    return NotFound("The information with the specified UserName was not found.");
+            //    return NotFound("The information with the specified Email was not found.");
             //}
             //else
             //{

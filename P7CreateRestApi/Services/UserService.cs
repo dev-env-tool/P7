@@ -50,7 +50,7 @@ namespace P7CreateRestApi.Services
 
         public async Task<IdentityResult> CreateUserWithRegisterModel(RegisterModel registerModel)
         {
-            //User user = new User() { UserName = registerModel.UserName, Email = registerModel.Email, Role = registerModel.Role };
+            //User user = new User() { Email = registerModel.Email, Email = registerModel.Email, Role = registerModel.Role };
             User user = await MapRegisterModelToUser(registerModel);
 
             if (user == null)
@@ -60,7 +60,7 @@ namespace P7CreateRestApi.Services
             IdentityResult result = await _iUserRepository.CreateUser(user);
             return result;
 
-            ////User user = new User() { UserName = registerModel.UserName, Email = registerModel.Email, Role = registerModel.Role };
+            ////User user = new User() { Email = registerModel.Email, Email = registerModel.Email, Role = registerModel.Role };
             //User user = await MapRegisterModelToToUser(registerModel);
             //if (user != null)
             //{
