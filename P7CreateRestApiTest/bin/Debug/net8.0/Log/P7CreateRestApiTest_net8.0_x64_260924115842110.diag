@@ -1,0 +1,35 @@
+2026-09-24T11:58:42.1171116+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-24T11:58:42.1181921+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-24T11:58:42.1194303+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-24T11:58:42.1194339+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 11:58:42.088
+2026-09-24T11:58:42.1198843+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 18452
+2026-09-24T11:58:42.1199922+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.31
+2026-09-24T11:58:42.1200099+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.31\System.Private.CoreLib.dll
+2026-09-24T11:58:42.1200197+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-24T11:58:42.1200794+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-24T11:58:42.1200857+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 65419'
+2026-09-24T11:58:42.1216311+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-24T11:58:42.1598586+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-24T11:58:42.1669101+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-24T11:58:42.4062512+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-24T11:58:42.4149564+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.31)
+2026-09-24T11:58:42.4583269+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-24T11:58:42.4978763+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-24T11:58:42.5121785+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-24T11:58:43.1992175+00:00 xUnit.net ERROR     P7CreateRestApiControllerUnitTests.DatabaseFixture+BidListUnitTests.IBidListController_DeleteBidListById_ShouldDelete_1BidList [FAIL]
+2026-09-24T11:58:43.1995191+00:00 xUnit.net INFORMATION       Assert.True() Failure
+2026-09-24T11:58:43.1995289+00:00 xUnit.net INFORMATION       Expected: True
+2026-09-24T11:58:43.1995296+00:00 xUnit.net INFORMATION       Actual:   False
+2026-09-24T11:58:43.1997716+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T11:58:43.2000138+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\ControllerUnitTests.cs(318,0): at P7CreateRestApiControllerUnitTests.DatabaseFixture.BidListUnitTests.IBidListController_DeleteBidListById_ShouldDelete_1BidList()
+2026-09-24T11:58:43.2000257+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T11:58:43.2413386+00:00 xUnit.net ERROR     P7CreateRestApiControllerUnitTests.DatabaseFixture+BidListUnitTests.IBidListController_GetAllBidLists_ShouldGet_2BidLists [FAIL]
+2026-09-24T11:58:43.2413556+00:00 xUnit.net INFORMATION       Assert.Equal() Failure: Values differ
+2026-09-24T11:58:43.2413566+00:00 xUnit.net INFORMATION       Expected: 2
+2026-09-24T11:58:43.2413571+00:00 xUnit.net INFORMATION       Actual:   3
+2026-09-24T11:58:43.2413687+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T11:58:43.2413824+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\ControllerUnitTests.cs(474,0): at P7CreateRestApiControllerUnitTests.DatabaseFixture.BidListUnitTests.IBidListController_GetAllBidLists_ShouldGet_2BidLists()
+2026-09-24T11:58:43.2413839+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T11:58:43.2505601+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-24T11:58:43.2544958+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-24T11:58:43.2606549+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 2, Errors: 0, Failed: 2, Skipped: 0, Not Run: 0, Time: 0,741s

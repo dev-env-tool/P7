@@ -1,0 +1,363 @@
+2026-09-24T11:10:08.2061424+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-24T11:10:08.2074220+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-24T11:10:08.2088976+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-24T11:10:08.2089020+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 11:10:08.176
+2026-09-24T11:10:08.2093009+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 3760
+2026-09-24T11:10:08.2094143+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.31
+2026-09-24T11:10:08.2094255+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.31\System.Private.CoreLib.dll
+2026-09-24T11:10:08.2094354+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-24T11:10:08.2095057+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-24T11:10:08.2095121+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 52902'
+2026-09-24T11:10:08.2108402+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-24T11:10:08.2515040+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-24T11:10:08.2609813+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-24T11:10:08.5019592+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-24T11:10:08.5145856+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.31)
+2026-09-24T11:10:08.5581481+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-24T11:10:08.5985241+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-24T11:10:08.6136025+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-24T11:10:08.9578136+00:00 xUnit.net ERROR     P7CreateRestApiControllerUnitTests.CurvePointUnitTests.ICurvePointController_DeleteCurvePointById_ShouldDelete_1CurvePoint [FAIL]
+2026-09-24T11:10:08.9582573+00:00 xUnit.net INFORMATION       System.InvalidOperationException : An attempt was made to use the context instance while it is being configured. A DbContext instance cannot be used inside 'OnConfiguring' since it is still being configured at this point. This can happen if a second operation is started on this context instance before a previous operation completed. Any instance members are not guaranteed to be thread safe.
+2026-09-24T11:10:08.9586137+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T11:10:08.9589040+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+2026-09-24T11:10:08.9589201+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+2026-09-24T11:10:08.9589266+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+2026-09-24T11:10:08.9589334+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Internal.IDbContextDependencies.get_StateManager()
+2026-09-24T11:10:08.9589391+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.EntryWithoutDetectChanges(TEntity entity)
+2026-09-24T11:10:08.9589456+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.AddAsync(TEntity entity, CancellationToken cancellationToken)
+2026-09-24T11:10:08.9589641+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Repositories\CurvePointRepository.cs(35,0): at P7CreateRestApi.Repositories.CurvePointRepository.CreateCurvePoint(CurvePoint curvePoint)
+2026-09-24T11:10:08.9589730+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs(52,0): at P7CreateRestApi.Services.CurvePointService.CreateCurvePointWithCurvePointDto(CurvePointDto curvePointDto)
+2026-09-24T11:10:08.9589829+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\ControllerUnitTests.cs(732,0): at P7CreateRestApiControllerUnitTests.CurvePointUnitTests.ICurvePointController_DeleteCurvePointById_ShouldDelete_1CurvePoint()
+2026-09-24T11:10:08.9589845+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T11:10:08.9598128+00:00 xUnit.net ERROR     P7CreateRestApiControllerUnitTests.DatabaseFixture+BidListUnitTests.IBidListController_WithWrongBidListDto_ShouldReturn_8Errors [FAIL]
+2026-09-24T11:10:08.9598369+00:00 xUnit.net INFORMATION       AutoMapper.AutoMapperMappingException : Error mapping types.
+2026-09-24T11:10:08.9598387+00:00 xUnit.net INFORMATION       
+2026-09-24T11:10:08.9598394+00:00 xUnit.net INFORMATION       Mapping types:
+2026-09-24T11:10:08.9598402+00:00 xUnit.net INFORMATION       BidListDto -> BidList
+2026-09-24T11:10:08.9598424+00:00 xUnit.net INFORMATION       P7CreateRestApi.DTO.BidListDto -> P7CreateRestApi.Domain.BidList
+2026-09-24T11:10:08.9598433+00:00 xUnit.net INFORMATION       
+2026-09-24T11:10:08.9598440+00:00 xUnit.net INFORMATION       Type Map configuration:
+2026-09-24T11:10:08.9598446+00:00 xUnit.net INFORMATION       BidListDto -> BidList
+2026-09-24T11:10:08.9598453+00:00 xUnit.net INFORMATION       P7CreateRestApi.DTO.BidListDto -> P7CreateRestApi.Domain.BidList
+2026-09-24T11:10:08.9598459+00:00 xUnit.net INFORMATION       
+2026-09-24T11:10:08.9598465+00:00 xUnit.net INFORMATION       Destination Member:
+2026-09-24T11:10:08.9598471+00:00 xUnit.net INFORMATION       BidQuantity
+2026-09-24T11:10:08.9598477+00:00 xUnit.net INFORMATION       
+2026-09-24T11:10:08.9598484+00:00 xUnit.net INFORMATION       ---- System.FormatException : The input string 'abc' was not in a correct format.
+2026-09-24T11:10:08.9598667+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T11:10:08.9598779+00:00 xUnit.net INFORMATION            at lambda_method48(Closure, Object, BidList, ResolutionContext)
+2026-09-24T11:10:08.9598886+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\BidListService.cs(87,0): at P7CreateRestApi.Services.BidListService.MapBidListDtoToBidList(BidListDto bidListDto)
+2026-09-24T11:10:08.9598963+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\BidListService.cs(58,0): at P7CreateRestApi.Services.BidListService.CreateBidListWithBidListDto(BidListDto bidListDto)
+2026-09-24T11:10:08.9599048+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Controllers\BidListsController.cs(72,0): at P7CreateRestApi.Controllers.BidListsController.CreateBidList(BidListDto BidListDto)
+2026-09-24T11:10:08.9599123+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\ControllerUnitTests.cs(543,0): at P7CreateRestApiControllerUnitTests.DatabaseFixture.BidListUnitTests.IBidListController_WithWrongBidListDto_ShouldReturn_8Errors()
+2026-09-24T11:10:08.9599140+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T11:10:08.9599149+00:00 xUnit.net INFORMATION         ----- Inner Stack Trace -----
+2026-09-24T11:10:08.9599192+00:00 xUnit.net INFORMATION            at System.Number.ThrowFormatException[TChar](ReadOnlySpan`1 value)
+2026-09-24T11:10:08.9599211+00:00 xUnit.net INFORMATION            at System.Convert.ToDouble(String value)
+2026-09-24T11:10:08.9599236+00:00 xUnit.net INFORMATION            at lambda_method48(Closure, Object, BidList, ResolutionContext)
+2026-09-24T11:10:09.2136634+00:00 xUnit.net ERROR     P7CreateRestApiControllerUnitTests.CurvePointUnitTests.ICurvePointController_CreateCurvePoint_ShouldAdd_1CurvePoint [FAIL]
+2026-09-24T11:10:09.2136865+00:00 xUnit.net INFORMATION       System.ArgumentException : An item with the same key has already been added. Key: 1
+2026-09-24T11:10:09.2136999+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T11:10:09.2137147+00:00 xUnit.net INFORMATION            at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+2026-09-24T11:10:09.2137198+00:00 xUnit.net INFORMATION            at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+2026-09-24T11:10:09.2137282+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Storage.Internal.InMemoryTable`1.Create(IUpdateEntry entry, IDiagnosticsLogger`1 updateLogger)
+2026-09-24T11:10:09.2137424+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Storage.Internal.InMemoryStore.ExecuteTransaction(IList`1 entries, IDiagnosticsLogger`1 updateLogger)
+2026-09-24T11:10:09.2137519+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Storage.Internal.InMemoryDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+2026-09-24T11:10:09.2137602+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+2026-09-24T11:10:09.2137710+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-09-24T11:10:09.2137793+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-09-24T11:10:09.2137885+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-09-24T11:10:09.2138020+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Repositories\CurvePointRepository.cs(36,0): at P7CreateRestApi.Repositories.CurvePointRepository.CreateCurvePoint(CurvePoint curvePoint)
+2026-09-24T11:10:09.2138111+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs(52,0): at P7CreateRestApi.Services.CurvePointService.CreateCurvePointWithCurvePointDto(CurvePointDto curvePointDto)
+2026-09-24T11:10:09.2138205+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Controllers\CurvePointsController.cs(70,0): at P7CreateRestApi.Controllers.CurvePointsController.CreateCurvePoint(CurvePointDto curvePointDto)
+2026-09-24T11:10:09.2138287+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\ControllerUnitTests.cs(610,0): at P7CreateRestApiControllerUnitTests.CurvePointUnitTests.ICurvePointController_CreateCurvePoint_ShouldAdd_1CurvePoint()
+2026-09-24T11:10:09.2138300+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T11:10:09.2239444+00:00 xUnit.net ERROR     P7CreateRestApiServicesUnitTests.DatabaseFixture+BidListUnitTests.IBidListService_DeleteBidListById_ShouldDelete_1BidList [FAIL]
+2026-09-24T11:10:09.2239823+00:00 xUnit.net INFORMATION       System.ArgumentException : An item with the same key has already been added. Key: 1
+2026-09-24T11:10:09.2239899+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T11:10:09.2239980+00:00 xUnit.net INFORMATION            at System.Collections.Generic.Dictionary`2.TryInsert(TKey key, TValue value, InsertionBehavior behavior)
+2026-09-24T11:10:09.2240010+00:00 xUnit.net INFORMATION            at System.Collections.Generic.Dictionary`2.Add(TKey key, TValue value)
+2026-09-24T11:10:09.2240067+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Storage.Internal.InMemoryTable`1.Create(IUpdateEntry entry, IDiagnosticsLogger`1 updateLogger)
+2026-09-24T11:10:09.2240117+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Storage.Internal.InMemoryStore.ExecuteTransaction(IList`1 entries, IDiagnosticsLogger`1 updateLogger)
+2026-09-24T11:10:09.2240169+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Storage.Internal.InMemoryDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+2026-09-24T11:10:09.2240220+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+2026-09-24T11:10:09.2240283+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-09-24T11:10:09.2240329+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-09-24T11:10:09.2240377+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-09-24T11:10:09.2240450+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Repositories\BidListRepository.cs(35,0): at P7CreateRestApi.Repositories.BidListRepository.CreateBidList(BidList bidList)
+2026-09-24T11:10:09.2240508+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\BidListService.cs(61,0): at P7CreateRestApi.Services.BidListService.CreateBidListWithBidListDto(BidListDto bidListDto)
+2026-09-24T11:10:09.2240570+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\ServicesUnitTests.cs(279,0): at P7CreateRestApiServicesUnitTests.DatabaseFixture.BidListUnitTests.IBidListService_DeleteBidListById_ShouldDelete_1BidList()
+2026-09-24T11:10:09.2240584+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T11:10:09.2336835+00:00 xUnit.net ERROR     P7CreateRestApiControllerUnitTests.CurvePointUnitTests.ICurvePointController_GetCurvePointDtoById_ShouldGet_1CurvePointById [FAIL]
+2026-09-24T11:10:09.2337068+00:00 xUnit.net INFORMATION       System.InvalidOperationException : An attempt was made to use the model while it was being created. A DbContext instance cannot be used inside 'OnModelCreating' in any way that makes use of the model that is being created.
+2026-09-24T11:10:09.2337275+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T11:10:09.2337456+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+2026-09-24T11:10:09.2337510+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+2026-09-24T11:10:09.2337592+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+2026-09-24T11:10:09.2337649+00:00 xUnit.net INFORMATION            at ResolveService(ILEmitResolverBuilderRuntimeContext, ServiceProviderEngineScope)
+2026-09-24T11:10:09.2337702+00:00 xUnit.net INFORMATION            at ResolveService(ILEmitResolverBuilderRuntimeContext, ServiceProviderEngineScope)
+2026-09-24T11:10:09.2337753+00:00 xUnit.net INFORMATION            at ResolveService(ILEmitResolverBuilderRuntimeContext, ServiceProviderEngineScope)
+2026-09-24T11:10:09.2337806+00:00 xUnit.net INFORMATION            at ResolveService(ILEmitResolverBuilderRuntimeContext, ServiceProviderEngineScope)
+2026-09-24T11:10:09.2337839+00:00 xUnit.net INFORMATION            at ResolveService(ILEmitResolverBuilderRuntimeContext, ServiceProviderEngineScope)
+2026-09-24T11:10:09.2337870+00:00 xUnit.net INFORMATION            at ResolveService(ILEmitResolverBuilderRuntimeContext, ServiceProviderEngineScope)
+2026-09-24T11:10:09.2337925+00:00 xUnit.net INFORMATION            at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+2026-09-24T11:10:09.2337967+00:00 xUnit.net INFORMATION            at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+2026-09-24T11:10:09.2338016+00:00 xUnit.net INFORMATION            at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+2026-09-24T11:10:09.2338061+00:00 xUnit.net INFORMATION            at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+2026-09-24T11:10:09.2338089+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+2026-09-24T11:10:09.2338118+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+2026-09-24T11:10:09.2338146+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+2026-09-24T11:10:09.2338173+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+2026-09-24T11:10:09.2338217+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Internal.IDbContextDependencies.get_StateManager()
+2026-09-24T11:10:09.2338253+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.EntryWithoutDetectChanges(TEntity entity)
+2026-09-24T11:10:09.2338303+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.AddAsync(TEntity entity, CancellationToken cancellationToken)
+2026-09-24T11:10:09.2338387+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Repositories\CurvePointRepository.cs(35,0): at P7CreateRestApi.Repositories.CurvePointRepository.CreateCurvePoint(CurvePoint curvePoint)
+2026-09-24T11:10:09.2338438+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs(52,0): at P7CreateRestApi.Services.CurvePointService.CreateCurvePointWithCurvePointDto(CurvePointDto curvePointDto)
+2026-09-24T11:10:09.2338488+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Controllers\CurvePointsController.cs(70,0): at P7CreateRestApi.Controllers.CurvePointsController.CreateCurvePoint(CurvePointDto curvePointDto)
+2026-09-24T11:10:09.2338543+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\ControllerUnitTests.cs(767,0): at P7CreateRestApiControllerUnitTests.CurvePointUnitTests.ICurvePointController_GetCurvePointDtoById_ShouldGet_1CurvePointById()
+2026-09-24T11:10:09.2338552+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T11:10:09.2530169+00:00 xUnit.net ERROR     P7CreateRestApiControllerUnitTests.CurvePointUnitTests.ICurvePointController_WithWrongCurvePointDto_ShouldReturn_8Errors [FAIL]
+2026-09-24T11:10:09.2530363+00:00 xUnit.net INFORMATION       System.ArgumentOutOfRangeException : Specified argument was out of the range of valid values. (Parameter 'index')
+2026-09-24T11:10:09.2530402+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T11:10:09.2530459+00:00 xUnit.net INFORMATION            at System.Linq.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument)
+2026-09-24T11:10:09.2530490+00:00 xUnit.net INFORMATION            at System.Linq.Enumerable.ElementAt[TSource](IEnumerable`1 source, Int32 index)
+2026-09-24T11:10:09.2530789+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\ControllerUnitTests.cs(907,0): at P7CreateRestApiControllerUnitTests.CurvePointUnitTests.ICurvePointController_WithWrongCurvePointDto_ShouldReturn_8Errors()
+2026-09-24T11:10:09.2530811+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T11:10:09.3086600+00:00 xUnit.net ERROR     P7CreateRestApiControllerUnitTests.CurvePointUnitTests.ICurvePointController_GetAllCurvePoints_ShouldGet_2CurvePoints [FAIL]
+2026-09-24T11:10:09.3086836+00:00 xUnit.net INFORMATION       Assert.True() Failure
+2026-09-24T11:10:09.3086853+00:00 xUnit.net INFORMATION       Expected: True
+2026-09-24T11:10:09.3086861+00:00 xUnit.net INFORMATION       Actual:   False
+2026-09-24T11:10:09.3086972+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T11:10:09.3087119+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\ControllerUnitTests.cs(844,0): at P7CreateRestApiControllerUnitTests.CurvePointUnitTests.ICurvePointController_GetAllCurvePoints_ShouldGet_2CurvePoints()
+2026-09-24T11:10:09.3087148+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T11:10:09.3088403+00:00 xUnit.net ERROR     P7CreateRestApiServicesUnitTests.DatabaseFixture+CurvePointUnitTests.ICurvePointService_GetAllCurvePoints_ShouldGet_2CurvePoints [FAIL]
+2026-09-24T11:10:09.3088447+00:00 xUnit.net INFORMATION       Assert.True() Failure
+2026-09-24T11:10:09.3088457+00:00 xUnit.net INFORMATION       Expected: True
+2026-09-24T11:10:09.3088465+00:00 xUnit.net INFORMATION       Actual:   False
+2026-09-24T11:10:09.3088553+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T11:10:09.3088684+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\ServicesUnitTests.cs(852,0): at P7CreateRestApiServicesUnitTests.DatabaseFixture.CurvePointUnitTests.ICurvePointService_GetAllCurvePoints_ShouldGet_2CurvePoints()
+2026-09-24T11:10:09.3088707+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T11:10:09.3185885+00:00 xUnit.net ERROR     P7CreateRestApiServicesUnitTests.DatabaseFixture+BidListUnitTests.IBidListService_GetBidListDtoById_ShouldGet_1BidListById [FAIL]
+2026-09-24T11:10:09.3186234+00:00 xUnit.net INFORMATION       System.AggregateException : One or more errors occurred. (A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.)
+2026-09-24T11:10:09.3186261+00:00 xUnit.net INFORMATION       ---- System.InvalidOperationException : A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+2026-09-24T11:10:09.3186504+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T11:10:09.3186697+00:00 xUnit.net INFORMATION            at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+2026-09-24T11:10:09.3186758+00:00 xUnit.net INFORMATION            at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+2026-09-24T11:10:09.3186871+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\ServicesUnitTests.cs(334,0): at P7CreateRestApiServicesUnitTests.DatabaseFixture.BidListUnitTests.IBidListService_GetBidListDtoById_ShouldGet_1BidListById()
+2026-09-24T11:10:09.3186891+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T11:10:09.3186901+00:00 xUnit.net INFORMATION         ----- Inner Stack Trace -----
+2026-09-24T11:10:09.3186969+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+2026-09-24T11:10:09.3187066+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryShapedQueryCompilingExpressionVisitor.QueryingEnumerable`1.Enumerator.MoveNextAsync()
+2026-09-24T11:10:09.3187189+00:00 xUnit.net INFORMATION            at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.Enumerator.MoveNextAsync()
+2026-09-24T11:10:09.3187330+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+2026-09-24T11:10:09.3187456+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+2026-09-24T11:10:09.3187603+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Repositories\BidListRepository.cs(26,0): at P7CreateRestApi.Repositories.BidListRepository.GetBidListById(Int32 id)
+2026-09-24T11:10:09.3187695+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\BidListService.cs(47,0): at P7CreateRestApi.Services.BidListService.GetBidListDtoById(Int32 id)
+2026-09-24T11:10:09.3316789+00:00 xUnit.net ERROR     P7CreateRestApiServicesUnitTests.DatabaseFixture+CurvePointUnitTests.ICurvePointService_CreateCurvePointWithCurvePointDto_ShouldAdd_1CurvePoint [FAIL]
+2026-09-24T11:10:09.3317071+00:00 xUnit.net INFORMATION       System.AggregateException : One or more errors occurred. (A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.)
+2026-09-24T11:10:09.3317125+00:00 xUnit.net INFORMATION       ---- System.InvalidOperationException : A second operation was started on this context instance before a previous operation completed. This is usually caused by different threads concurrently using the same instance of DbContext. For more information on how to avoid threading issues with DbContext, see https://go.microsoft.com/fwlink/?linkid=2097913.
+2026-09-24T11:10:09.3317270+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T11:10:09.3317409+00:00 xUnit.net INFORMATION            at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+2026-09-24T11:10:09.3317465+00:00 xUnit.net INFORMATION            at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+2026-09-24T11:10:09.3317588+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\ServicesUnitTests.cs(624,0): at P7CreateRestApiServicesUnitTests.DatabaseFixture.CurvePointUnitTests.ICurvePointService_CreateCurvePointWithCurvePointDto_ShouldAdd_1CurvePoint()
+2026-09-24T11:10:09.3317605+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T11:10:09.3317615+00:00 xUnit.net INFORMATION         ----- Inner Stack Trace -----
+2026-09-24T11:10:09.3317687+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.Infrastructure.Internal.ConcurrencyDetector.EnterCriticalSection()
+2026-09-24T11:10:09.3317779+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Query.Internal.InMemoryShapedQueryCompilingExpressionVisitor.QueryingEnumerable`1.Enumerator.MoveNextAsync()
+2026-09-24T11:10:09.3317864+00:00 xUnit.net INFORMATION            at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.Enumerator.MoveNextAsync()
+2026-09-24T11:10:09.3317971+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+2026-09-24T11:10:09.3318053+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+2026-09-24T11:10:09.3318143+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Repositories\CurvePointRepository.cs(27,0): at P7CreateRestApi.Repositories.CurvePointRepository.GetCurvePointById(Int32 id)
+2026-09-24T11:10:09.3318227+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs(38,0): at P7CreateRestApi.Services.CurvePointService.GetCurvePointDtoById(Int32 id)
+2026-09-24T11:10:09.3675101+00:00 Microsoft.Testing.Platform.Hosts.ServerTestHost WARNING [ServerTestHost.OnTaskSchedulerUnobservedTaskException] Unhandled task exception
+------Exception detail------
+System.AggregateException: A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread. (Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+Term
+)
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+Term
+
+ ---> System.FormatException: The input string 'fsg' was not in a correct format.
+   at System.Number.ThrowFormatException[TChar](ReadOnlySpan`1 value)
+   at System.Convert.ToDouble(String value)
+   at lambda_method999(Closure, Object, CurvePoint, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method999(Closure, Object, CurvePoint, ResolutionContext)
+   at P7CreateRestApi.Services.CurvePointService.MapCurvePointDtoToCurvePoint(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 78
+   at P7CreateRestApi.Services.CurvePointService.CreateCurvePointWithCurvePointDto(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 49
+   at P7CreateRestApi.Controllers.CurvePointsController.CreateCurvePoint(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Controllers\CurvePointsController.cs:line 70
+   --- End of inner exception stack trace ---
+2026-09-24T11:10:09.3744824+00:00 xUnit.net ERROR     P7CreateRestApiServicesUnitTests.DatabaseFixture+BidListUnitTests.IBidListService_CreateBidListWithBidListDto_ShouldAdd_1BidList [FAIL]
+2026-09-24T11:10:09.3745047+00:00 xUnit.net INFORMATION       Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException : Attempted to update or delete an entity that does not exist in the store.
+2026-09-24T11:10:09.3745164+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T11:10:09.3745312+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Storage.Internal.InMemoryTable`1.Delete(IUpdateEntry entry, IDiagnosticsLogger`1 updateLogger)
+2026-09-24T11:10:09.3745391+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Storage.Internal.InMemoryStore.ExecuteTransaction(IList`1 entries, IDiagnosticsLogger`1 updateLogger)
+2026-09-24T11:10:09.3745488+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.InMemory.Storage.Internal.InMemoryDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+2026-09-24T11:10:09.3745568+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+2026-09-24T11:10:09.3745674+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-09-24T11:10:09.3745756+00:00 xUnit.net INFORMATION            at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-09-24T11:10:09.3745866+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Repositories\BidListRepository.cs(59,0): at P7CreateRestApi.Repositories.BidListRepository.DeleteBidListById(Int32 id)
+2026-09-24T11:10:09.3745937+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\BidListService.cs(77,0): at P7CreateRestApi.Services.BidListService.DeleteBidListById(Int32 id)
+2026-09-24T11:10:09.3746019+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\ServicesUnitTests.cs(101,0): at P7CreateRestApiServicesUnitTests.DatabaseFixture.BidListUnitTests.IBidListService_CreateBidListWithBidListDto_ShouldAdd_1BidList()
+2026-09-24T11:10:09.3746037+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T11:10:09.3963756+00:00 xUnit.net ERROR     P7CreateRestApiServicesUnitTests.DatabaseFixture+BidListUnitTests.IBidListService_GetAllBidLists_ShouldGet_2BidLists [FAIL]
+2026-09-24T11:10:09.3963948+00:00 xUnit.net INFORMATION       Assert.True() Failure
+2026-09-24T11:10:09.3963967+00:00 xUnit.net INFORMATION       Expected: True
+2026-09-24T11:10:09.3963976+00:00 xUnit.net INFORMATION       Actual:   False
+2026-09-24T11:10:09.3964027+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T11:10:09.3964193+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\ServicesUnitTests.cs(428,0): at P7CreateRestApiServicesUnitTests.DatabaseFixture.BidListUnitTests.IBidListService_GetAllBidLists_ShouldGet_2BidLists()
+2026-09-24T11:10:09.3964227+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T11:10:09.4023235+00:00 xUnit.net ERROR     P7CreateRestApiControllerUnitTests.DatabaseFixture+BidListUnitTests.IBidListController_GetAllBidLists_ShouldGet_2BidLists [FAIL]
+2026-09-24T11:10:09.4023324+00:00 xUnit.net INFORMATION       Assert.True() Failure
+2026-09-24T11:10:09.4023332+00:00 xUnit.net INFORMATION       Expected: True
+2026-09-24T11:10:09.4023337+00:00 xUnit.net INFORMATION       Actual:   False
+2026-09-24T11:10:09.4023373+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T11:10:09.4023460+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\ControllerUnitTests.cs(465,0): at P7CreateRestApiControllerUnitTests.DatabaseFixture.BidListUnitTests.IBidListController_GetAllBidLists_ShouldGet_2BidLists()
+2026-09-24T11:10:09.4023474+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T11:10:09.4064384+00:00 xUnit.net ERROR     P7CreateRestApiServicesUnitTests.DatabaseFixture+CurvePointUnitTests.IBidListService_CreateBidListWithWrongCurvePointDto_ShouldNotAdd_1CurvePoint [FAIL]
+2026-09-24T11:10:09.4064614+00:00 xUnit.net INFORMATION       Assert.False() Failure
+2026-09-24T11:10:09.4064628+00:00 xUnit.net INFORMATION       Expected: False
+2026-09-24T11:10:09.4064635+00:00 xUnit.net INFORMATION       Actual:   True
+2026-09-24T11:10:09.4064699+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T11:10:09.4064846+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\ServicesUnitTests.cs(669,0): at P7CreateRestApiServicesUnitTests.DatabaseFixture.CurvePointUnitTests.IBidListService_CreateBidListWithWrongCurvePointDto_ShouldNotAdd_1CurvePoint()
+2026-09-24T11:10:09.4064869+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T11:10:09.4102856+00:00 xUnit.net ERROR     P7CreateRestApiServicesUnitTests.DatabaseFixture+BidListUnitTests.IBidListService_CreateBidListWithWrongBidListDto_ShouldNotAdd_1BidList [FAIL]
+2026-09-24T11:10:09.4103082+00:00 xUnit.net INFORMATION       Assert.False() Failure
+2026-09-24T11:10:09.4103101+00:00 xUnit.net INFORMATION       Expected: False
+2026-09-24T11:10:09.4103109+00:00 xUnit.net INFORMATION       Actual:   True
+2026-09-24T11:10:09.4103165+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T11:10:09.4103346+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\ServicesUnitTests.cs(153,0): at P7CreateRestApiServicesUnitTests.DatabaseFixture.BidListUnitTests.IBidListService_CreateBidListWithWrongBidListDto_ShouldNotAdd_1BidList()
+2026-09-24T11:10:09.4103376+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T11:10:09.4191159+00:00 Microsoft.Testing.Platform.Hosts.ServerTestHost WARNING [ServerTestHost.OnTaskSchedulerUnobservedTaskException] Unhandled task exception
+------Exception detail------
+System.AggregateException: A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread. (Error mapping types.
+
+Mapping types:
+BidListDto -> BidList
+P7CreateRestApi.DTO.BidListDto -> P7CreateRestApi.Domain.BidList
+
+Type Map configuration:
+BidListDto -> BidList
+P7CreateRestApi.DTO.BidListDto -> P7CreateRestApi.Domain.BidList
+
+Destination Member:
+BidQuantity
+)
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+BidListDto -> BidList
+P7CreateRestApi.DTO.BidListDto -> P7CreateRestApi.Domain.BidList
+
+Type Map configuration:
+BidListDto -> BidList
+P7CreateRestApi.DTO.BidListDto -> P7CreateRestApi.Domain.BidList
+
+Destination Member:
+BidQuantity
+
+ ---> System.FormatException: The input string 'abc' was not in a correct format.
+   at System.Number.ThrowFormatException[TChar](ReadOnlySpan`1 value)
+   at System.Convert.ToDouble(String value)
+   at lambda_method1071(Closure, Object, BidList, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method1071(Closure, Object, BidList, ResolutionContext)
+   at P7CreateRestApi.Services.BidListService.MapBidListDtoToBidList(BidListDto bidListDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\BidListService.cs:line 87
+   at P7CreateRestApi.Services.BidListService.CreateBidListWithBidListDto(BidListDto bidListDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\BidListService.cs:line 58
+   --- End of inner exception stack trace ---
+2026-09-24T11:10:09.4246849+00:00 Microsoft.Testing.Platform.Hosts.ServerTestHost WARNING [ServerTestHost.OnTaskSchedulerUnobservedTaskException] Unhandled task exception
+------Exception detail------
+System.AggregateException: A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread. (Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+AsOfDate
+)
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Type Map configuration:
+CurvePointDto -> CurvePoint
+P7CreateRestApi.DTO.CurvePointDto -> P7CreateRestApi.Domain.CurvePoint
+
+Destination Member:
+AsOfDate
+
+ ---> System.FormatException: The string 'f' was not recognized as a valid DateTime. There is an unknown word starting at index '0'.
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.Convert.ToDateTime(String value)
+   at lambda_method1070(Closure, Object, CurvePoint, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method1070(Closure, Object, CurvePoint, ResolutionContext)
+   at P7CreateRestApi.Services.CurvePointService.MapCurvePointDtoToCurvePoint(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 78
+   at P7CreateRestApi.Services.CurvePointService.CreateCurvePointWithCurvePointDto(CurvePointDto curvePointDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\CurvePointService.cs:line 49
+   --- End of inner exception stack trace ---
+2026-09-24T11:10:09.4259152+00:00 Microsoft.Testing.Platform.Hosts.ServerTestHost WARNING [ServerTestHost.OnTaskSchedulerUnobservedTaskException] Unhandled task exception
+------Exception detail------
+System.AggregateException: A Task's exception(s) were not observed either by Waiting on the Task or accessing its Exception property. As a result, the unobserved exception was rethrown by the finalizer thread. (Error mapping types.
+
+Mapping types:
+RatingDto -> Rating
+P7CreateRestApi.DTO.RatingDto -> P7CreateRestApi.Domain.Rating
+
+Type Map configuration:
+RatingDto -> Rating
+P7CreateRestApi.DTO.RatingDto -> P7CreateRestApi.Domain.Rating
+
+Destination Member:
+OrderNumber
+)
+ ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+RatingDto -> Rating
+P7CreateRestApi.DTO.RatingDto -> P7CreateRestApi.Domain.Rating
+
+Type Map configuration:
+RatingDto -> Rating
+P7CreateRestApi.DTO.RatingDto -> P7CreateRestApi.Domain.Rating
+
+Destination Member:
+OrderNumber
+
+ ---> System.OverflowException: Value was either too large or too small for an unsigned byte.
+   at System.Number.ThrowOverflowException[TInteger]()
+   at lambda_method1072(Closure, Object, Rating, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method1072(Closure, Object, Rating, ResolutionContext)
+   at P7CreateRestApi.Services.RatingService.MapRatingDtoToRating(RatingDto ratingDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\RatingService.cs:line 78
+   at P7CreateRestApi.Services.RatingService.CreateRatingWithRatingDto(RatingDto ratingDto) in C:\Users\edoua\source\repos\OC\P7\P7CreateRestApi\Services\RatingService.cs:line 49
+   --- End of inner exception stack trace ---
+2026-09-24T11:10:10.4194988+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-24T11:10:10.4239691+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-24T11:10:10.4303844+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 57, Errors: 0, Failed: 15, Skipped: 0, Not Run: 0, Time: 1,808s

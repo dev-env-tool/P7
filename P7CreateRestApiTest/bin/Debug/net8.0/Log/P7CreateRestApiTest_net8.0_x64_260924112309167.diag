@@ -1,0 +1,35 @@
+2026-09-24T11:23:09.1728946+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-24T11:23:09.1739274+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-24T11:23:09.1751887+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-24T11:23:09.1751915+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 11:23:09.146
+2026-09-24T11:23:09.1755696+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 21284
+2026-09-24T11:23:09.1756548+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.31
+2026-09-24T11:23:09.1756638+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.31\System.Private.CoreLib.dll
+2026-09-24T11:23:09.1756728+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-24T11:23:09.1757155+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-24T11:23:09.1757256+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 61079'
+2026-09-24T11:23:09.1769195+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-24T11:23:09.2125481+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-24T11:23:09.2193351+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-24T11:23:09.4849292+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-24T11:23:09.4937113+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.31)
+2026-09-24T11:23:09.5329842+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-24T11:23:09.5718561+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-24T11:23:09.5860456+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-24T11:23:10.3827320+00:00 xUnit.net ERROR     P7CreateRestApiControllerUnitTests.CurvePointUnitTests.ICurvePointController_WithWrongCurvePointDto_ShouldReturn_8Errors [FAIL]
+2026-09-24T11:23:10.3831164+00:00 xUnit.net INFORMATION       System.ArgumentOutOfRangeException : Specified argument was out of the range of valid values. (Parameter 'index')
+2026-09-24T11:23:10.3834692+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T11:23:10.3838313+00:00 xUnit.net INFORMATION            at System.Linq.ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument argument)
+2026-09-24T11:23:10.3838387+00:00 xUnit.net INFORMATION            at System.Linq.Enumerable.ElementAt[TSource](IEnumerable`1 source, Int32 index)
+2026-09-24T11:23:10.3838522+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\ControllerUnitTests.cs(908,0): at P7CreateRestApiControllerUnitTests.CurvePointUnitTests.ICurvePointController_WithWrongCurvePointDto_ShouldReturn_8Errors()
+2026-09-24T11:23:10.3838560+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T11:23:10.3918897+00:00 xUnit.net ERROR     P7CreateRestApiControllerUnitTests.CurvePointUnitTests.ICurvePointController_GetAllCurvePoints_ShouldGet_2CurvePoints [FAIL]
+2026-09-24T11:23:10.3919083+00:00 xUnit.net INFORMATION       Assert.True() Failure
+2026-09-24T11:23:10.3919091+00:00 xUnit.net INFORMATION       Expected: True
+2026-09-24T11:23:10.3919095+00:00 xUnit.net INFORMATION       Actual:   False
+2026-09-24T11:23:10.3920031+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T11:23:10.3920174+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\ControllerUnitTests.cs(845,0): at P7CreateRestApiControllerUnitTests.CurvePointUnitTests.ICurvePointController_GetAllCurvePoints_ShouldGet_2CurvePoints()
+2026-09-24T11:23:10.3920190+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T11:23:10.4097601+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-24T11:23:10.4161925+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-24T11:23:10.4236447+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 5, Errors: 0, Failed: 2, Skipped: 0, Not Run: 0, Time: 0,825s

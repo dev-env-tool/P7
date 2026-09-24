@@ -30,9 +30,9 @@ This project uses logfile to know who the app was used. The folder "logs" stores
 You will find a test project containing unit tests at service and repository level only. They use the real code, you can get a coverage analysis via the :
 	Visual studio button called "Analyse code coverage for all tests".
 	Ase these tests use the real code with an in-memory database fixture, you may run tests under 3 playlists :
-	- 1st for all business entities
-	- 2nd for all User class
-	- 3rd for Login/out service
+	- 1st for all business services
+	- 2nd for all business controllers
+	- 3nd for all User class
 
 
 This projects uses DTOS to safely display / create or update the business information.

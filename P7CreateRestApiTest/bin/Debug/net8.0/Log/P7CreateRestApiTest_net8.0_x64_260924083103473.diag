@@ -1,0 +1,56 @@
+2026-09-24T08:31:03.4793449+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Version: 2.4.0+a2a92fdb11ad38cd55b31223c4cfbb070fa01c05
+2026-09-24T08:31:03.4804263+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging mode: asynchronous
+2026-09-24T08:31:03.4817412+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Logging level: Information
+2026-09-24T08:31:03.4817442+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION CreateBuilderAsync entry time: 08:31:03.450
+2026-09-24T08:31:03.4821828+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION PID: 20272
+2026-09-24T08:31:03.4823123+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime information: win-x64 - .NET 8.0.31
+2026-09-24T08:31:03.4823219+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Runtime location: C:\Program Files\dotnet\shared\Microsoft.NETCore.App\8.0.31\System.Private.CoreLib.dll
+2026-09-24T08:31:03.4823310+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION IsDynamicCodeSupported: True
+2026-09-24T08:31:03.4824122+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Test module: C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\P7CreateRestApiTest.dll
+2026-09-24T08:31:03.4824229+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION Command line arguments: '--server --diagnostic --diagnostic-verbosity Information --diagnostic-output-directory C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\bin\Debug\net8.0\Log --results-directory C:\Users\edoua\source\repos\OC\P7\TestResults --client-port 50801'
+2026-09-24T08:31:03.4837330+00:00 Microsoft.Testing.Platform.Builder.TestApplication INFORMATION TESTINGPLATFORM_DEFAULT_HANG_TIMEOUT: ''
+2026-09-24T08:31:03.5208820+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting RegisterEnvironmentVariablesConfigurationSource: 'True'
+2026-09-24T08:31:03.5276217+00:00 Microsoft.Testing.Platform.Hosts.TestHostBuilder INFORMATION Setting PlatformExitProcessOnUnhandledException: 'False', config file: False environment variable: 
+2026-09-24T08:31:03.7453155+00:00 Microsoft.Testing.Platform.Requests.TestHostTestFrameworkInvoker INFORMATION Test framework UID: '30ea7c6e-dd24-4152-a360-1387158cd41d' Version: '4.0.0' DisplayName: 'xUnit.net v3 Microsoft.Testing.Platform test framework' Description: 'xUnit.net v3 Microsoft.Testing.Platform test framework'
+2026-09-24T08:31:03.7538353+00:00 xUnit.net INFORMATION xUnit.net v3 In-Process Runner v4.0.0+8bf043c053 (64-bit .NET 8.0.31)
+2026-09-24T08:31:03.7955526+00:00 xUnit.net INFORMATION   Discovering: P7CreateRestApiTest
+2026-09-24T08:31:03.8325663+00:00 xUnit.net INFORMATION   Discovered:  P7CreateRestApiTest
+2026-09-24T08:31:03.8466040+00:00 xUnit.net INFORMATION   Starting:    P7CreateRestApiTest
+2026-09-24T08:31:05.0462070+00:00 xUnit.net ERROR     P7CreateRestApiUsersServicesUnitTests.DatabaseFixture+UserUnitTests.IUserService_GetAllUsersDto_ShouldGet_2Users [FAIL]
+2026-09-24T08:31:05.0467341+00:00 xUnit.net INFORMATION       Assert.Equivalent() Failure
+2026-09-24T08:31:05.0467465+00:00 xUnit.net INFORMATION       Expected: "registerModel1"
+2026-09-24T08:31:05.0467478+00:00 xUnit.net INFORMATION       Actual:   "registerModel2"
+2026-09-24T08:31:05.0470387+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T08:31:05.0481826+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UsersSericesUnitTests.cs(322,0): at P7CreateRestApiUsersServicesUnitTests.DatabaseFixture.UserUnitTests.IUserService_GetAllUsersDto_ShouldGet_2Users()
+2026-09-24T08:31:05.0482034+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T08:31:05.0571035+00:00 xUnit.net ERROR     P7CreateRestApiUsersServicesUnitTests.DatabaseFixture+UserUnitTests.IBidListService_CreateUserWithRegisterModel_ShouldNotCreate_1User [FAIL]
+2026-09-24T08:31:05.0571419+00:00 xUnit.net INFORMATION       Assert.Equal() Failure: Values differ
+2026-09-24T08:31:05.0571429+00:00 xUnit.net INFORMATION       Expected: 0
+2026-09-24T08:31:05.0571433+00:00 xUnit.net INFORMATION       Actual:   2
+2026-09-24T08:31:05.0571641+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T08:31:05.0571845+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UsersSericesUnitTests.cs(819,0): at P7CreateRestApiUsersServicesUnitTests.DatabaseFixture.UserUnitTests.IBidListService_CreateUserWithRegisterModel_ShouldNotCreate_1User()
+2026-09-24T08:31:05.0571866+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T08:31:05.2085048+00:00 xUnit.net ERROR     P7CreateRestApiUsersServicesUnitTests.DatabaseFixture+UserUnitTests.IBidListService_CreateBidListWithBidListDto_ShouldGet_1UserById [FAIL]
+2026-09-24T08:31:05.2085277+00:00 xUnit.net INFORMATION       System.InvalidOperationException : Sequence contains no elements
+2026-09-24T08:31:05.2085321+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T08:31:05.2085364+00:00 xUnit.net INFORMATION            at System.Linq.ThrowHelper.ThrowNoElementsException()
+2026-09-24T08:31:05.2085390+00:00 xUnit.net INFORMATION            at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+2026-09-24T08:31:05.2085675+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UsersSericesUnitTests.cs(418,0): at P7CreateRestApiUsersServicesUnitTests.DatabaseFixture.UserUnitTests.IBidListService_CreateBidListWithBidListDto_ShouldGet_1UserById()
+2026-09-24T08:31:05.2085689+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T08:31:05.5710969+00:00 xUnit.net ERROR     P7CreateRestApiUsersServicesUnitTests.DatabaseFixture+UserUnitTests.IBidListService_CreateBidListWithBidListDto_ShouldReturn_4Errors [FAIL]
+2026-09-24T08:31:05.5711197+00:00 xUnit.net INFORMATION       Assert.Equal() Failure: Values differ
+2026-09-24T08:31:05.5711207+00:00 xUnit.net INFORMATION       Expected: 0
+2026-09-24T08:31:05.5711212+00:00 xUnit.net INFORMATION       Actual:   2
+2026-09-24T08:31:05.5711245+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T08:31:05.5711345+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UsersSericesUnitTests.cs(912,0): at P7CreateRestApiUsersServicesUnitTests.DatabaseFixture.UserUnitTests.IBidListService_CreateBidListWithBidListDto_ShouldReturn_4Errors()
+2026-09-24T08:31:05.5711361+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T08:31:05.7951946+00:00 xUnit.net ERROR     P7CreateRestApiUsersServicesUnitTests.DatabaseFixture+UserUnitTests.IBidListService_CreateUserWithRegisterModel_ShouldNotCreate_2IdenticalUsers [FAIL]
+2026-09-24T08:31:05.7952276+00:00 xUnit.net INFORMATION       Assert.Equal() Failure: Values differ
+2026-09-24T08:31:05.7952308+00:00 xUnit.net INFORMATION       Expected: 1
+2026-09-24T08:31:05.7952322+00:00 xUnit.net INFORMATION       Actual:   3
+2026-09-24T08:31:05.7952406+00:00 xUnit.net INFORMATION       Stack Trace:
+2026-09-24T08:31:05.7952620+00:00 xUnit.net INFORMATION         C:\Users\edoua\source\repos\OC\P7\P7CreateRestApiTest\UsersSericesUnitTests.cs(728,0): at P7CreateRestApiUsersServicesUnitTests.DatabaseFixture.UserUnitTests.IBidListService_CreateUserWithRegisterModel_ShouldNotCreate_2IdenticalUsers()
+2026-09-24T08:31:05.7952653+00:00 xUnit.net INFORMATION         --- End of stack trace from previous location ---
+2026-09-24T08:31:05.8061676+00:00 xUnit.net INFORMATION   Finished:    P7CreateRestApiTest (ID = '85c59f38d321a6aa660d48af987aa50b27c6a3a29ea784487e44c3736b73470a')
+2026-09-24T08:31:05.8109184+00:00 xUnit.net INFORMATION === TEST EXECUTION SUMMARY ===
+2026-09-24T08:31:05.8170062+00:00 xUnit.net INFORMATION    P7CreateRestApiTest  Total: 9, Errors: 0, Failed: 5, Skipped: 0, Not Run: 0, Time: 1,961s

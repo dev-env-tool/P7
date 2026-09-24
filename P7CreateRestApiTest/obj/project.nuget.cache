@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Qlv+ZIfGuYA=",
+  "dgSpecHash": "gCQWVlR49/w=",
   "success": true,
   "projectFilePath": "C:\\Users\\edoua\\source\\repos\\OC\\P7\\P7CreateRestApiTest\\P7CreateRestApiTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\edoua\\.nuget\\packages\\automapper\\15.1.3\\automapper.15.1.3.nupkg.sha512",
     "C:\\Users\\edoua\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\edoua\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
+    "C:\\Users\\edoua\\.nuget\\packages\\coverlet.msbuild\\10.0.1\\coverlet.msbuild.10.0.1.nupkg.sha512",
     "C:\\Users\\edoua\\.nuget\\packages\\duende.identityserver\\5.2.0\\duende.identityserver.5.2.0.nupkg.sha512",
     "C:\\Users\\edoua\\.nuget\\packages\\duende.identityserver.aspnetidentity\\5.2.0\\duende.identityserver.aspnetidentity.5.2.0.nupkg.sha512",
     "C:\\Users\\edoua\\.nuget\\packages\\duende.identityserver.entityframework\\5.2.0\\duende.identityserver.entityframework.5.2.0.nupkg.sha512",
